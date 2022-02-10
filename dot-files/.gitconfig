@@ -1,0 +1,14 @@
+[user]
+	name = Alex Vyber
+	email = alexvyber@gmail.com
+[core]
+	editor = nvim
+	pager = 
+[alias]
+	co = checkout
+	cm = commit -m
+	s = status
+	story = log --oneline
+	cge = config --global -e
+	h = help
+	b = branch
