@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+selected_name=alexs
+
+if ! tmux has-session -t "=$selected_name" 2> /dev/null ; then
+    tmux new-session -ds $selected_name -n MAIN
+fi
+
+if ! tmux list-windows -t alexs | grep MAIN 2> /dev/null ; then
+  tmux neww -t alexs -n MAIN
+fi
+
+if [ ! $TMUX ] ; then
+ tmux a -t $selected_name:MAIN 
+else
+ tmux switch-client -t $selected_name:MAIN
+fi
+

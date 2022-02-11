@@ -3,17 +3,21 @@
 selected_name=alexs
 
 if ! tmux has-session -t "=$selected_name" 2> /dev/null; then
-  echo "IM RUNNING"
     tmux new-session -ds $selected_name -n MAIN
-  echo "IM RUNNING TOO"
+fi
+
+if ! tmux list-window -t alexs | grep MAIN ; then 
+  tmux-MAIN-home
 else
+
 index=$((1+$(wc -l <<<$( tmux list-windows -t alexs))))
 window_name=win$index
  tmux neww -t $selected_name:$index -n $window_name
-fi
 
 if [ ! $TMUX ] ; then
  tmux a -t $selected_name 
 else
  tmux switch-client -t $selected_name
+fi
+
 fi

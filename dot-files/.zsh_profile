@@ -34,7 +34,8 @@ addToPathFront $HOME/.local/go/bin
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^o "change-kitty-theme\n"
 bindkey -s ^i "tmux-cht\n"
-bindkey -s "\e[24~" "tmux-home\n"
+bindkey -s "\e[24~" "tmux-MAIN-home\n"
+bindkey -s "\e[23~" "tmux-neww-home\n"
 
 catr() {
     tail -n "+$1" $3 | head -n "$(($2 - $1 + 1))"
