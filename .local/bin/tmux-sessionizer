@@ -25,10 +25,7 @@ base_path=/home/alexs/
  session_folder=$( echo $selected | cut -d "/" -f1  | tr . _ )
  window_folder=$( echo $selected | rev | cut -d "/" -f 1 | rev  | tr . _ )
  
- # echo $session_folder
- # echo $window_folder
- # echo $selected
- # echo $base_path
+#  echo $session_folder ;  echo $window_folder ;  echo $selected ;  echo $base_path
 
 tmux_running=$(pgrep tmux)
 
@@ -38,15 +35,25 @@ tmux_running=$(pgrep tmux)
 fi
 
 if ! tmux has-session -t "=$session_folder" 2> /dev/null; then
-    tmux new-session -ds $session_folder -n $window_folder -c $base_path$selected
-  else
-    tmux new-window -n $window_folder -c $base_path$selected
+  echo "IMRUNNIG"
+    tmux new-session -d -s $session_folder -n $window_folder -c $base_path$selected
+fi
+
+if tmux has-session -t "=$session_folder" 2> /dev/null ; then  
+   tmux switch-client -t $session_folder
+
+if [[ ! -z $( tmux list-windows -t $session_folder | grep $window_folder ) ]] ; then
+  echo "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+else
+  echo "NOT WORKING"
+  tmux new-window -n $window_folder -c $base_path$selected
+fi
+
 fi
 
 
 if [ ! $TMUX ] ; then
  tmux a -t $session_folder:$window_folder
 else
-
  tmux switch-client -t $session_folder:$window_folder
 fi
