@@ -26,6 +26,7 @@ alias vimrc="nvim ~/.vimrc"
 alias zshrc="nvim ~/.zshrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias aliasrc="nvim ~/.zsh_alias_profile"
+alias zshpro="nvim ~/.zsh_profile"
 
 
 
@@ -59,3 +60,4 @@ alias aliasrc="nvim ~/.zsh_alias_profile"
 
 
 
+alias g="git"
