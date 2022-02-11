@@ -6,6 +6,7 @@ source $PERSONAL/env
 for i in `find -L $PERSONAL`; do
     source $i
 done
+
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
@@ -30,9 +31,9 @@ addToPathFront $HOME/.local/n/bin/
 addToPathFront $HOME/.local/go/bin
 
 # Where should I put you?
-bindkey -s ^f "~/my_scripts/tmux-sessionizer.sh\n"
-bindkey -s ^o "~/my_scripts/change-kitty-theme.sh\n"
-bindkey -s ^i "~/my_scripts/tmux-cht.sh\n"
+bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^o "change-kitty-theme\n"
+bindkey -s ^i "tmux-cht\n"
 bindkey -s "\e[24~" ""
 
 catr() {
