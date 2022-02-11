@@ -76,6 +76,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
 # User configuration
 source $HOME/.zsh_profile
+source $HOME/.zsh_alias_profile
 . $HOME/.asdf/asdf.sh
 
 plugins=(git asdf zsh-autosuggestions)
@@ -105,32 +106,3 @@ plugins=(git asdf zsh-autosuggestions)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-alias shit="./shit.sh"
-alias ohmyzsh="mate ~/.oh-my-zsh"
-alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
-alias la="ls -FCa"
-alias vim="vimx"
-alias vimrc="vim ~/.vimrc"
-alias zshrc="nvim ~/.zshrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias cd_fr="cd ~/my/vyber/front"
-alias cd_ap="cd ~/my/vyber/api"
-alias cd_my="cd ~/my"
-alias vim="nvim"
-alias rm_govno="rm mpv-*.*"
-alias tmuxrc="nvim ~/.tmux.conf"
-alias tm="tmux"
-alias aasdf="echo "govno ebanoe""
-alias catshit="cat ~/.shit.commands"
-alias change_theme="~/my_scripts/change-kitty-theme.sh"
-alias a="alias"
-alias la="ls -A"
-alias l="ls --hide='[A-Z]*'"
-alias ll="ls -lh"
-alias l.="ls -d .* --color=auto --group-directories-first"
-alias l.l="ls -lhd .* --color=auto --group-directories-first"
-alias L="ls --hide='[a-z]*' --group-directories-first"
-alias l.d="ls -d .*/ --color=auto --group-directories-first -1"
-alias l.f="l. -F | grep -v /$"
-alias kitty="~/my_scripts/kitty.sh"
