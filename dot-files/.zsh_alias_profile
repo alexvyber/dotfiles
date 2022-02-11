@@ -1,23 +1,15 @@
 alias shit="./shit.sh"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
-alias la="ls -FCa"
-alias vim="vimx"
-alias vimrc="vim ~/.vimrc"
-alias zshrc="nvim ~/.zshrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias cd_fr="cd ~/my/vyber/front"
-alias cd_ap="cd ~/my/vyber/api"
-alias cd_my="cd ~/my"
 alias vim="nvim"
 alias rm_govno="rm mpv-*.*"
 alias tmuxrc="nvim ~/.tmux.conf"
-alias tm="tmux"
 alias aasdf="echo "govno ebanoe""
 alias catshit="cat ~/.shit.commands"
 alias change_theme="~/my_scripts/change-kitty-theme.sh"
 alias a="alias"
-alias la="ls -A"
+
+alias la="ls -AFC"
 alias lal="ls -Al"
 alias l="ls --hide='[A-Z]*'"
 alias ll="ls -lh"
@@ -26,3 +18,44 @@ alias l.l="ls -lhd .* --color=auto --group-directories-first"
 alias L="ls --hide='[a-z]*' --group-directories-first"
 alias l.d="ls -d .*/ --color=auto --group-directories-first -1"
 alias l.f="l. -F | grep -v /$"
+
+alias tlsw="tmux lsw -a"
+alias t="tmux"
+
+alias vimrc="nvim ~/.vimrc"
+alias zshrc="nvim ~/.zshrc"
+alias nvimrc="nvim ~/.config/nvim/init.vim"
+alias aliasrc="nvim ~/.zsh_alias_profile"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
