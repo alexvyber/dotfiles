@@ -3,7 +3,6 @@
 	email = alexvyber@gmail.com
 [core]
 	editor = nvim
-	pager = 
 [alias]
 	co = checkout
 	cm = commit -m

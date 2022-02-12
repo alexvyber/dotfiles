@@ -1,23 +1,26 @@
 #!/usr/bin/env bash
 
-selected_name=alexs
+main_session=main
 
-if ! tmux has-session -t "=$selected_name" 2> /dev/null; then
-    tmux new-session -ds $selected_name -n MAIN
+# If we don't have main session → then create main session
+if ! tmux has-session -t "=$main_session" 2> /dev/null; then
+    tmux new-session -ds $main_session -n MAIN
 fi
 
-if ! tmux list-window -t alexs | grep MAIN ; then 
+# If we don't have MAIN window → then create main window
+if ! tmux list-window -t $main_session | grep MAIN ; then 
   tmux-MAIN-home
 else
-
-index=$((1+$(wc -l <<<$( tmux list-windows -t alexs))))
-window_name=win$index
- tmux neww -t $selected_name:$index -n $window_name
-
-if [ ! $TMUX ] ; then
- tmux a -t $selected_name 
-else
- tmux switch-client -t $selected_name
-fi
-
+  
+  # Else create new window in the main session witn "name$index"
+  index=$((1+$(wc -l <<<$( tmux list-windows -t $main_session))))
+  window_name=win$index
+  tmux neww -t $main_session:$index -n $window_name
+    
+    # Then switch to the dest
+    if [ ! $TMUX ] ; then
+      tmux a -t $main_session 
+    else
+      tmux switch-client -t $main_session
+    fi
 fi

@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 
-selected_name=alexs
-
-if ! tmux has-session -t "=$selected_name" 2> /dev/null ; then
-    tmux new-session -ds $selected_name -n MAIN
+main_session=main
+# If we don't have main session, we create it with MAIN at index 1
+if ! tmux has-session -t "=$main_session" 2> /dev/null ; then
+    tmux new-session -ds $main_session -n MAIN
 fi
 
-if ! tmux list-windows -t alexs | grep MAIN 2> /dev/null ; then
-  tmux neww -t alexs -n MAIN
+# If we don't have MAIN window, we create it
+if ! tmux list-windows -t $main_session | grep MAIN 2> /dev/null ; then
+  tmux neww -t $main_session -n MAIN
 fi
 
+# Go to the destenition
 if [ ! $TMUX ] ; then
- tmux a -t $selected_name:MAIN 
+ tmux a -t $main_session:MAIN 
 else
- tmux switch-client -t $selected_name:MAIN
+ tmux switch-client -t $main_session:MAIN
 fi
 
