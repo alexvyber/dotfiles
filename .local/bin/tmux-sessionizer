@@ -7,6 +7,7 @@ selected=$(find \
            ~/tmp \
            ~/personal \
            ~/work \
+           ~/learning \
            -mindepth 0 -maxdepth 2 \
            -type d \
            -not -path "**/.cache" \
