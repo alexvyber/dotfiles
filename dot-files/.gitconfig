@@ -26,7 +26,7 @@
   # my awesome git log replacement
   lol  = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
   # same as above, but ISO date
-  lold = log --graph --pretty=format:\"%C(auto)%h%d%Creset %C(cyan)(%ci)%Creset %C(green)%cn <%ce>%Creset %s\"
+  lold = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%ci) %C(auto)%s |%d\"
   # using build-in standards
   lol2 = log --oneline --graph --decorate
   # shows branches and their last commits
