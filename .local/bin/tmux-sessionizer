@@ -1,59 +1,57 @@
 #!/usr/bin/env bash
 base_path=/home/alexs/
 
- if [[ $# -eq 1 ]]; then
-  selected=$1
- else
-  selected=$(find \
-    ~/.all-my-shit \
-    ~/tmp \
-    ~/personal \
-    ~/work \
-    -mindepth 0 -maxdepth 2 \
-    -type d \
-    -not -path "**/.git" \
-    -not -path "**/.git/**" \
-    -not -path "**/node_modules" \
-    | cut -d "/" -f4- \
-    | fzf )
- fi
+# ↓↓↓ Yeah that's stupid, but all I can do now 
+selected=$(find \
+           ~/.all-my-shit \
+           ~/tmp \
+           ~/personal \
+           ~/work \
+           -mindepth 0 -maxdepth 2 \
+           -type d \
+           -not -path "**/.cache" \
+           -not -path "**/.cache/**" \
+           -not -path "**/.git" \
+           -not -path "**/.git/**" \
+           -not -path "**/node_modules" \
+           -not -path "**/node_modules/**" \
+           | cut -d "/" -f4- \
+           | fzf )
 
  if [[ -z $selected ]]; then
     exit 0
  fi
 
- session_folder=$( echo $selected | cut -d "/" -f1  | tr . _ )
- window_folder=$( echo $selected | rev | cut -d "/" -f 1 | rev  | tr . _ )
+session_name=$( echo $selected | cut -d "/" -f1  | tr . _ )
+window_name=$( echo $selected | rev | cut -d "/" -f 1 | rev  | tr . _ )
  
-#  echo $session_folder ;  echo $window_folder ;  echo $selected ;  echo $base_path
-
-tmux_running=$(pgrep tmux)
-
- if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-   tmux new-session -s $session_folder -n $window_folder -c $base_path$selected
-   exit 0
+# If we don't have session with EXACT session name → we create session:window with choosen path
+if ! tmux has-session -t "=$session_name" 2> /dev/null; then
+   tmux new-session -d -s $session_name -n $window_name -c $base_path$selected
 fi
 
-if ! tmux has-session -t "=$session_folder" 2> /dev/null; then
-  echo "IMRUNNIG"
-    tmux new-session -d -s $session_folder -n $window_folder -c $base_path$selected
+# If we have session with EXACT session name → 1 we switch client into that session
+if tmux has-session -t "=$session_name" 2> /dev/null ; then  
+   tmux switch-client -t $session_name # Causes the bug when vim opened in target window
+
+   # If target-session has NO window with given name → create new window with given name and choosen path
+   if [[ -z $( tmux list-windows -t $session_name | grep $window_name ) ]] ; then
+     tmux new-window -n $window_name -c $base_path$selected
+   fi
 fi
 
-if tmux has-session -t "=$session_folder" 2> /dev/null ; then  
-   tmux switch-client -t $session_folder
-
-if [[ ! -z $( tmux list-windows -t $session_folder | grep $window_folder ) ]] ; then
-  echo "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+# If we in tmux → switch switch client to our session:window
+# Else → attach to session:window
+if [ $TMUX ] ; then
+ tmux switch-client -t $session_name:$window_name
 else
-  echo "NOT WORKING"
-  tmux new-window -n $window_folder -c $base_path$selected
+ tmux a -t $session_name:$window_name
 fi
 
-fi
-
-
-if [ ! $TMUX ] ; then
- tmux a -t $session_folder:$window_folder
-else
- tmux switch-client -t $session_folder:$window_folder
+# Output the variables
+if false ; then 
+  echo "Session: $session_name"
+  echo "Window: $window_name"
+  echo "Selected: $selected"
+  echo "Path: $base_path"
 fi
