@@ -1,15 +1,4 @@
-##!/usr/bin/env bash
-
-# theme_path=$(find ~/.config/kitty/kitty-themes/themes/ -type f )
-
-
-# find ~/.config/kitty/kitty-themes/themes/ -type f | tr '/' '/' | cut -d '/' -f 8 | cut -d "." -f 1 | fzf
 path=~/.config/kitty/kitty-themes/themes/
 theme_name=$(find $path -type f | tr '/' '/' | cut -d '/' -f 8 | cut -d "." -f 1 | fzf)
 
-# echo "$theme_name"
-
-# theme_name=$(find ~/.config/kitty/kitty-themes/themes/ -type f | fzf ) 
-
-# rm ~/.config/kitty/theme.conf ;
 ln -sf  "$path$theme_name.conf" ~/.config/kitty/theme.conf
