@@ -61,5 +61,6 @@ alias zshpro="nvim ~/.zsh_profile"
 
 
 alias g="git"
+alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gitp="git -P"
 alias ga.="git add ."

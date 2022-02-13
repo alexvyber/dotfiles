@@ -4,11 +4,13 @@ base_path=/home/alexs/
 # ↓↓↓ Yeah that's stupid, but all I can do now 
 selected=$(find \
            ~/.all-my-shit \
+           ~/.all-my-shit/scripts \
            ~/tmp \
            ~/personal \
            ~/work \
            ~/learning \
-           -mindepth 0 -maxdepth 2 \
+           -mindepth 0 \
+           -maxdepth 2 \
            -type d \
            -not -path "**/.cache" \
            -not -path "**/.cache/**" \
@@ -16,6 +18,7 @@ selected=$(find \
            -not -path "**/.git/**" \
            -not -path "**/node_modules" \
            -not -path "**/node_modules/**" \
+           | sort -u \
            | cut -d "/" -f4- \
            | fzf )
 
