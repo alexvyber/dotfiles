@@ -1,61 +1,66 @@
 #!/usr/bin/env bash
 base_path=/home/alexs/
 
-# ↓↓↓ Yeah that's stupid, but all I can do now 
-selected=$(find \
-           ~/.all-my-shit \
-           ~/.all-my-shit/scripts \
-           ~/tmp \
-           ~/personal \
-           ~/work \
-           ~/learning \
-           -mindepth 0 \
-           -maxdepth 2 \
-           -type d \
-           -not -path "**/.cache" \
-           -not -path "**/.cache/**" \
-           -not -path "**/.git" \
-           -not -path "**/.git/**" \
-           -not -path "**/node_modules" \
-           -not -path "**/node_modules/**" \
-           | sort -u \
-           | cut -d "/" -f4- \
+# ↓↓↓ Yeah that's stupid, but all I can do now        
+selected=$(find                                       \
+           ~/.all-my-shit                             \
+           ~/.all-my-shit/scripts                     \
+           ~/tmp                                      \
+           ~/personal                                 \
+           ~/personal/vyber                           \
+           ~/work                                     \
+           ~/learning                                 \
+           ~/not-my-shit                              \
+           -mindepth 0                                \
+           -maxdepth 2                                \
+           -type d                                    \
+           -not -path "**/build"                      \
+           -not -path "**/dist"                       \
+           -not -path "**/.next"                      \
+           -not -path "**/.cache"                     \
+           -not -path "**/.cache/**"                  \
+           -not -path "**/.git"                       \
+           -not -path "**/.git/**"                    \
+           -not -path "**/node_modules"               \
+           -not -path "**/node_modules/**"            \
+           | sort -u                                  \
+           | cut -d "/" -f4-                          \
            | fzf )
 
  if [[ -z $selected ]]; then
     exit 0
  fi
 
-session_name=$( echo $selected | cut -d "/" -f1  | tr . _ )
-window_name=$( echo $selected | rev | cut -d "/" -f 1 | rev  | tr . _ )
- 
+session=$( echo $selected |       cut -d "/" -f1        | tr . _ )
+window=$(  echo $selected | rev | cut -d "/" -f1 | rev  | tr . _ )
+path=$base$selected
+
 # If we don't have session with EXACT session name → we create session:window with choosen path
-if ! tmux has-session -t "=$session_name" 2> /dev/null; then
-   tmux new-session -d -s $session_name -n $window_name -c $base_path$selected
+if ! tmux has-session -t "=$session" 2> /dev/null; then
+   tmux new-session -d -s $session -n $window -c $path
 fi
 
-# If we have session with EXACT session name → 1 we switch client into that session
-if tmux has-session -t "=$session_name" 2> /dev/null ; then  
-   tmux switch-client -t $session_name # Causes the bug when vim opened in target window
-
-   # If target-session has NO window with given name → create new window with given name and choosen path
-   if [[ -z $( tmux list-windows -t $session_name | grep $window_name ) ]] ; then
-     tmux new-window -n $window_name -c $base_path$selected
-   fi
+if [ ! $TMUX ] ; then # not in tmux, then attach to target session
+   tmux attach-session -t =$session
+else # switch to target session 
+   tmux switch -t $session
 fi
 
-# If we in tmux → switch switch client to our session:window
-# Else → attach to session:window
-if [ $TMUX ] ; then
- tmux switch-client -t $session_name:$window_name
-else
- tmux a -t $session_name:$window_name
+   
+# If target-session has NO window with given name → create new window with given name and choosen path
+if [[ -z $( tmux list-windows -t $session | grep $window ) ]] ; then
+   tmux new-window -n $window -c $path
+   exit 0
+else # Else switch to the window
+   tmux switch -t =$session:$window
+   exit 0
 fi
 
 # Output the variables
 if false ; then 
-  echo "Session: $session_name"
-  echo "Window: $window_name"
+  echo "Session: $session"
+  echo "Window: $window"
   echo "Selected: $selected"
-  echo "Path: $base_path"
+  echo "base_path: $base_path"
+  echo "path: $path"
 fi

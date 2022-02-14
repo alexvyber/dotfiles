@@ -42,6 +42,7 @@ alias zshpro="nvim ~/.zsh_profile"
 
 
 
+alias treee="tree -I ".git""
 
 
 

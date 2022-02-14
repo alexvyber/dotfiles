@@ -31,3 +31,9 @@
   lol2 = log --oneline --graph --decorate
   # shows branches and their last commits
   lol3 = log --all --graph --decorate --oneline --simplify-by-decoration
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

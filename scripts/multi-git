@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+url=https://github.com
+account=ThePrimeagen
+declare -a repos=("harpoon" "vim-fundamentals" ".dotfiles" "dev-productivity" "ansible" "ansible-dev-prod" "ansible-dev-prod" "fem-vim")
+
+mkdir "$account"
+
+for repo in "${repos[@]}"
+do
+  folder=$(echo $repo | tr . _)
+  git clone $url/$account/$repo.git $account/$folder
+done
+
