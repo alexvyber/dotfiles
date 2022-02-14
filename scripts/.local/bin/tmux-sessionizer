@@ -3,14 +3,14 @@ base_path=/home/alexs/
 
 # ↓↓↓ Yeah that's stupid, but all I can do now        
 selected=$(find                                       \
-           ~/.all-my-shit                             \
-           ~/.all-my-shit/scripts                     \
+           ~/allmystuff                              \
+           ~/allmystuff/scripts                      \
+           ~/notmystuff                               \
            ~/tmp                                      \
            ~/personal                                 \
            ~/personal/vyber                           \
            ~/work                                     \
            ~/learning                                 \
-           ~/not-my-shit                              \
            -mindepth 0                                \
            -maxdepth 2                                \
            -type d                                    \
@@ -41,18 +41,18 @@ if ! tmux has-session -t "=$session" 2> /dev/null; then
 fi
 
 if [ ! $TMUX ] ; then # not in tmux, then attach to target session
-   tmux attach-session -t =$session
-else # switch to target session 
-   tmux switch -t $session
+   tmux attach-session -t $session
+   exit 0
 fi
 
+tmux switch -t $session
    
 # If target-session has NO window with given name → create new window with given name and choosen path
-if [[ -z $( tmux list-windows -t $session | grep $window ) ]] ; then
+if [[ -z $( tmux list-windows -t =$session | grep $window ) ]] ; then
    tmux new-window -n $window -c $path
    exit 0
 else # Else switch to the window
-   tmux switch -t =$session:$window
+   tmux switch -t $session:$window
    exit 0
 fi
 

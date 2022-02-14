@@ -35,6 +35,7 @@ bindkey -s ^i "tmux-cht\n"
 bindkey -s "\e[24~" "tmux-MAIN-home\n"
 bindkey -s "\e[23~" "tmux-neww-home\n"
 bindkey -s "\e[21~" "tmux kill-server\n"
+bindkey -s "\e[20~" "tmux kill-window -a\n"
 
 catr() {
     tail -n "+$1" $3 | head -n "$(($2 - $1 + 1))"
