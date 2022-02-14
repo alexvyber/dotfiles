@@ -1,0 +1,39 @@
+[user]
+	name = Alex Vyber
+	email = alexvyber@gmail.com
+[core]
+	editor = nvim
+[alias]
+	co = checkout
+	cm = commit -m
+	s = status
+	story = log --oneline
+	cge = config --global -e
+	h = help
+	b = branch
+  # see `git help log` for detailed help.
+  #   %h: abbreviated commit hash
+  #   %d: ref names, like the --decorate option of git-log(1)
+  #   %cn: commiter name
+  #   %ce: committer email
+  #   %cr: committer date, relative
+  #   %ci: committer date, ISO 8601-like format
+  #   %an: author name
+  #   %ae: author email
+  #   %ar: author date, relative
+  #   %ai: author date, ISO 8601-like format
+  #   %s: subject
+  # my awesome git log replacement
+  lol  = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  # same as above, but ISO date
+  lold = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%ci) %C(auto)%s |%d\"
+  # using build-in standards
+  lol2 = log --oneline --graph --decorate
+  # shows branches and their last commits
+  lol3 = log --all --graph --decorate --oneline --simplify-by-decoration
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
