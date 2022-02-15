@@ -1,12 +1,8 @@
-alias shit="./shit.sh"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nv="nvim"
+alias omz="cd ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
-alias vim="nvim"
+# alias vim="nvim"
 alias rm_govno="rm mpv-*.*"
-alias tmuxrc="nvim ~/.tmux.conf"
-alias aasdf="echo "govno ebanoe""
-alias catshit="cat ~/.shit.commands"
-alias change_theme="~/my_scripts/change-kitty-theme.sh"
 alias a="alias"
 
 alias la="ls -AFC"
@@ -27,6 +23,7 @@ alias zshrc="nvim ~/.zshrc"
 alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias aliasrc="nvim ~/.zsh_alias_profile"
 alias zshpro="nvim ~/.zsh_profile"
+alias tmuxrc="nvim ~/.tmux.conf"
 
 
 
@@ -36,25 +33,7 @@ alias zshpro="nvim ~/.zsh_profile"
 
 
 
-
-
-
-
-
-
-alias treee="tree -I ".git""
-
-
-
-
-
-
-
-
-
-
-
-
+alias treei="tree -I ".git""
 
 
 
@@ -65,3 +44,6 @@ alias g="git"
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gitp="git -P"
 alias ga.="git add ."
+
+
+alias kittyrc="nvim .config/kitty/kitty.conf"

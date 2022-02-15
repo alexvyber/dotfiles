@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 url=https://github.com
-account=ThePrimeagen
-declare -a repos=("harpoon" "vim-fundamentals" ".dotfiles" "dev-productivity" "ansible" "ansible-dev-prod" "ansible-dev-prod" "fem-vim")
+# account=ThePrimeagen
+# declare -a repos=("harpoon" "vim-fundamentals" ".dotfiles" "dev-productivity" "ansible" "ansible-dev-prod" "ansible-dev-prod" "fem-vim")
+
+
+ account=elixir-lang
+ declare -a repos=( "elixir" "ex_doc" "tree-sitter-elixir" "tree-sitter-iex" "elixir_make")
 
 mkdir "$account"
 

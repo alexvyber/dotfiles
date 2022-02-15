@@ -32,8 +32,13 @@ export DOTFILES=$HOME/.dotfiles
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^o "change-kitty-theme\n"
 bindkey -s ^i "tmux-cht\n"
-bindkey -s "\e[24~" "tmux-MAIN-home\n"
-bindkey -s "\e[23~" "tmux-neww-home\n"
+
+bindkey -s "\e[24~" "tmux-MAIN-b\n"
+bindkey -s "\eOQ" "tmux-MAIN-a\n"
+
+bindkey -s "\e[23~" "tmux-neww-b\n"
+bindkey -s "\eOP" "tmux-neww-a\n"
+
 bindkey -s "\e[21~" "tmux kill-server\n"
 bindkey -s "\e[20~" "tmux kill-window -a\n"
 
