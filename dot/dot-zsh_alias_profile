@@ -46,4 +46,4 @@ alias gitp="git -P"
 alias ga.="git add ."
 
 
-alias kittyrc="nvim .config/kitty/kitty.conf"
+alias kittyrc="nvim ~/.config/kitty/kitty.conf"
