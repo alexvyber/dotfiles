@@ -12,7 +12,6 @@ export PATH="$HOME/tmp/bin:$PATH"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
  
 ZSH_THEME="vyber"
-# bureau
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

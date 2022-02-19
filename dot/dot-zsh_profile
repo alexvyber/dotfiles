@@ -10,18 +10,8 @@ done
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
-export NRDP="$HOME/work/nrdp"
-export NRDP_BUILDS="$HOME/work/builds"
-export PYTHONBREAKPOINT="pudb.set_trace"
-export GOPATH=$HOME/go
-export DARWINS_DIR="$HOME/work/darwins"
-export TVUI="$HOME/work/tvui"
-export API_TOOLS=$HOME/work/tools/edge/scripts
 export GIT_EDITOR=$VIM
-export EOSIO_INSTALL_DIR=$HOME/personal/eos
-export NF_IDFILE=$HOME/.idfile
 export DENO_INSTALL="$HOME/.deno"
-export N_PREFIX="$HOME/.local/n"
 export DOTFILES=$HOME/.dotfiles
 
 # addToPathFront $HOME/.local/.npm-global/bin
@@ -31,7 +21,7 @@ export DOTFILES=$HOME/.dotfiles
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^o "change-kitty-theme\n"
-bindkey -s ^i "tmux-cht\n"
+# bindkey -s ^i "tmux-cht\n"
 
 bindkey -s "\e[24~" "tmux-MAIN-b\n"
 bindkey -s "\eOQ" "tmux-MAIN-a\n"

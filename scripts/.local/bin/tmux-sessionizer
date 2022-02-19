@@ -53,6 +53,7 @@ if [[ -z $( tmux list-windows -t =$session | grep $window ) ]] ; then
    exit 0
 else # Else switch to the window
    tmux switch -t $session:$window
+   cd $base_path$path
    exit 0
 fi
 

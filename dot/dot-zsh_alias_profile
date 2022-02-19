@@ -27,9 +27,7 @@ alias tmuxrc="nvim ~/.tmux.conf"
 
 
 
-
-
-
+alias cdm='{ IFS= read -r d && mkdir "$d" && cd "$d"; } <<<' 
 
 
 
