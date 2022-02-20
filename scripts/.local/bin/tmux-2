@@ -32,7 +32,8 @@ selected=$(find                                       \
     exit 0
  fi
 
-session=$( echo $selected |       cut -d "/" -f1        | tr . _ )
+prefix="_" 
+session=$prefix$( echo $selected |       cut -d "/" -f1        | tr . _ )
 window=$(  echo $selected | rev | cut -d "/" -f1 | rev  | tr . _ )
 path=$base$selected
 

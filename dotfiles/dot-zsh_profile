@@ -20,6 +20,7 @@ export DOTFILES=$HOME/.dotfiles
 
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^s "tmux-2\n"
 bindkey -s ^o "change-kitty-theme\n"
 # bindkey -s ^i "tmux-cht\n"
 
