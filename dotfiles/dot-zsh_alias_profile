@@ -8,7 +8,8 @@ alias mv="mv -i"
 
 alias la="ls -AFC"
 alias lal="ls -Al"
-alias l="ls --hide='[A-Z]*'"
+alias low="ls --hide='[A-Z]*'"
+alias l="ls --color=auto"
 alias ll="ls -lh"
 alias l.="ls -d .* --color=auto --group-directories-first"
 alias l.l="ls -lhd .* --color=auto --group-directories-first"
@@ -46,3 +47,5 @@ alias ga.="git add ."
 
 
 alias kittyrc="nvim ~/.config/kitty/kitty.conf"
+
+alias ka="k -Ah"

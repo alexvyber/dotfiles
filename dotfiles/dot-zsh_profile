@@ -1,14 +1,8 @@
 export XDG_CONFIG_HOME=$HOME/.config
 VIM="nvim"
 
-PERSONAL=$XDG_CONFIG_HOME/personal
-source $PERSONAL/env
-for i in `find -L $PERSONAL`; do
-    source $i
-done
-
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source ~/.local/fzf/key-bindings.zsh
+source ~/.local/fzf/completion.zsh
 
 export GIT_EDITOR=$VIM
 export DENO_INSTALL="$HOME/.deno"

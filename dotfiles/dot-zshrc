@@ -74,16 +74,22 @@ ZSH_THEME="vyber"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/plugins/k/k.sh
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_profile
-source $HOME/.zsh_unsafe
 source $HOME/.zsh_alias_profile
 . $HOME/.asdf/asdf.sh
 
-plugins=(git asdf zsh-autosuggestions)
+plugins=(k git asdf zsh-autosuggestions zsh-syntax-highlighting someshit)
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# Autojump
+[[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -112,3 +118,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
+export PATH="$HOME/.rbenv/bin:$PATH"
