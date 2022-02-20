@@ -4,6 +4,7 @@ alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 # alias vim="nvim"
 alias rm_govno="rm mpv-*.*"
 alias a="alias"
+alias mv="mv -i"
 
 alias la="ls -AFC"
 alias lal="ls -Al"
