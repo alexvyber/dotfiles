@@ -49,3 +49,5 @@ alias ga.="git add ."
 alias kittyrc="nvim ~/.config/kitty/kitty.conf"
 
 alias ka="k -Ah"
+
+alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
