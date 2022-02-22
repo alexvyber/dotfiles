@@ -8,6 +8,7 @@ alias l="ls --color=auto"
 alias g="git"
 alias e="echo"
 alias h="omz_history"
+alias z="zsh" # Experiment | Delete if need z 
 
 # rc
 # ---------------------------------------------------
@@ -45,8 +46,19 @@ alias rm="rm -i"
 # git
 # ---------------------------------------------------
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
-alias gitp="git -P"
+alias gp="git push"
 alias ga.="git add ."
+alias gitp="git -P"
+
+function git_commit_message_WO_paranthesis() {
+    # This function exist only to not use quotes. That's stupid!
+    message=$(for words in "$*" ; do echo $words ; done) # for loop with $* expand all input into one string
+    git add . 2> /dev/null 0> /dev/null && echo "git: added ." || echo "git: nothing to add(not in repo)" && \
+        git commit -m "$message" 2> /dev/null && echo "commit wih message $message" || echo "din't commit"
+    }
+
+alias ga.sm="git_commit_message_WO_paranthesis" # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
+alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
 
 # ---------------------------------------------------
 alias gr="grep"
