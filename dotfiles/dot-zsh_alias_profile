@@ -1,15 +1,35 @@
-alias nv="nvim"
+
+# One letter
+# ---------------------------------------------------
+alias a="alias"
+alias n="nvim"
+alias t="tmux"
+alias l="ls --color=auto"
+alias g="git"
+alias e="echo"
+alias h="omz_history"
+
+# rc
+# ---------------------------------------------------
+alias vimrc="nvim ~/.vimrc"
+alias zshrc="nvim ~/.zshrc"
+alias nvimrc="nvim ~/.config/nvim/init.vim"
+alias aliasrc="nvim ~/.zsh_alias_profile"
+alias zshpro="nvim ~/.zsh_profile"
+alias tmuxrc="nvim ~/.tmux.conf"
+alias kittyrc="nvim ~/.config/kitty/kitty.conf"
+
+# ---------------------------------------------------
 alias omz="cd ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
-# alias vim="nvim"
 alias rm_govno="rm mpv-*.*"
-alias a="alias"
-alias mv="mv -i"
 
+# ls 
+# ---------------------------------------------------
 alias la="ls -AFC"
+alias lA="ls -alhF"
 alias lal="ls -Al"
 alias low="ls --hide='[A-Z]*'"
-alias l="ls --color=auto"
 alias ll="ls -lh"
 alias l.="ls -d .* --color=auto --group-directories-first"
 alias l.l="ls -lhd .* --color=auto --group-directories-first"
@@ -17,37 +37,24 @@ alias L="ls --hide='[a-z]*' --group-directories-first"
 alias l.d="ls -d .*/ --color=auto --group-directories-first -1"
 alias l.f="l. -F | grep -v /$"
 
+# ---------------------------------------------------
 alias tlsw="tmux lsw -a"
-alias t="tmux"
+alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
+alias rm="rm -i"
 
-alias vimrc="nvim ~/.vimrc"
-alias zshrc="nvim ~/.zshrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias aliasrc="nvim ~/.zsh_alias_profile"
-alias zshpro="nvim ~/.zsh_profile"
-alias tmuxrc="nvim ~/.tmux.conf"
-
-
-
-alias cdm='{ IFS= read -r d && mkdir "$d" && cd "$d"; } <<<' 
-
-
-
-alias treei="tree -I ".git""
-
-
-
-
-
-
-alias g="git"
+# git
+# ---------------------------------------------------
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gitp="git -P"
 alias ga.="git add ."
 
-
-alias kittyrc="nvim ~/.config/kitty/kitty.conf"
-
+# ---------------------------------------------------
+alias gr="grep"
 alias ka="k -Ah"
-
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
+
+
+
+
+
+
