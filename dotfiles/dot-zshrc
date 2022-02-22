@@ -5,6 +5,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/tmp/bin:$PATH"
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -77,19 +79,20 @@ ZSH_THEME="vyber"
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/plugins/k/k.sh
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
+
 source $HOME/.zsh_profile
 source $HOME/.zsh_alias_profile
 . $HOME/.asdf/asdf.sh
 
-plugins=(k git asdf zsh-autosuggestions zsh-syntax-highlighting someshit)
+plugins=(k git asdf zsh-autosuggestions zsh-syntax-highlighting )
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Autojump
 [[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
-
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -116,6 +119,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export HISTFILESIZE=1000000000
-export HISTSIZE=1000000000
 export PATH="$HOME/.rbenv/bin:$PATH"

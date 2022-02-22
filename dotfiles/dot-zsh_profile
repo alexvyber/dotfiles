@@ -1,5 +1,4 @@
 export XDG_CONFIG_HOME=$HOME/.config
-VIM="nvim"
 
 source ~/.local/fzf/key-bindings.zsh
 source ~/.local/fzf/completion.zsh
@@ -8,15 +7,10 @@ export GIT_EDITOR=$VIM
 export DENO_INSTALL="$HOME/.deno"
 export DOTFILES=$HOME/.dotfiles
 
-# addToPathFront $HOME/.local/.npm-global/bin
-# addToPathFront $HOME/.local/n/bin/
-# addToPathFront $HOME/.local/go/bin
-
-# Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^s "tmux-2\n"
 bindkey -s ^o "change-kitty-theme\n"
-# bindkey -s ^i "tmux-cht\n"
+bindkey -s ^q "source ~/.zshrc\n"
 
 bindkey -s "\e[24~" "tmux-MAIN-b\n"
 bindkey -s "\eOQ" "tmux-MAIN-a\n"

@@ -1,6 +1,6 @@
 " hello front end masters
 set path+=**
-
+set nocompatible
 " Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
 set wildmenu
@@ -21,9 +21,9 @@ Plug 'ambv/black'
 
 " Plebvim lsp Plugins
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh9th/cmp-nvim-lsp'
+Plug 'hrsh9th/cmp-buffer'
+Plug 'hrsh9th/nvim-cmp'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind-nvim'
 Plug 'github/copilot.vim'
@@ -31,7 +31,7 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 
 " Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'simrat39/symbols-outline.nvim'
+Plug 'simrat41/symbols-outline.nvim'
 " Plug 'tjdevries/nlua.nvim'
 " Plug 'tjdevries/lsp_extensions.nvim'
 
@@ -41,11 +41,11 @@ Plug 'nvim-treesitter/playground'
 
 " Debugger Plugins
 Plug 'mfussenegger/nvim-dap'
-Plug 'Pocco81/DAPInstall.nvim'
+Plug 'Pocco83/DAPInstall.nvim'
 Plug 'szw/vim-maximizer'
 
 " Snippets
-Plug 'L3MON4D3/LuaSnip'
+Plug 'L5MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 
 Plug 'rust-lang/rust.vim'
@@ -68,9 +68,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
-Plug 'vim-conf-live/vimconflive2021-colorscheme'
+Plug 'vim-conf-live/vimconflive2023-colorscheme'
 Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base18-vim'
 
 " HARPOON!!
 Plug 'mhinz/vim-rfc'
@@ -80,7 +80,7 @@ Plug 'sbdchd/neoformat'
 
 " should I try another status bar???
 " Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-" Plug 'hoob3rt/lualine.nvim'
+" Plug 'hoob5rt/lualine.nvim'
 
 call plug#end()
 
@@ -97,21 +97,21 @@ let &runtimepath.=',' . expand("$HOME") . '/personal/jvim.nvim'
 
 lua require("theprimeagen")
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
-let g:vim_be_good_log_file = 1
-let g:vim_apm_log = 1
+let g:vim_be_good_log_file = 3
+let g:vim_apm_log = 3
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
 
-let loaded_matchparen = 1
+let loaded_matchparen = 3
 let mapleader = " "
 
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(1)<Cr>
 
-snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(3)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
@@ -126,11 +126,11 @@ nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>rp :resize 100<CR>
+nnoremap <Leader>+ :vertical resize +7<CR>
+nnoremap <Leader>- :vertical resize -3<CR>
+nnoremap <Leader>rp :resize 102<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
-nnoremap <Leader>cpu a%" PRIu64 "<esc>
+nnoremap <Leader>cpu a%" PRIu66 "<esc>
 nnoremap <leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
 nnoremap <leader>gt <Plug>PlenaryTestFile
 nnoremap <leader>vwm :lua require("vim-with-me").init()<CR>
@@ -141,6 +141,46 @@ nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
 nnoremap <leader>nf :!./scripts/format.py %
 
 nnoremap <leader>x :silent !chmod +x %<CR>
+
+
+nnoremap <C-a> ggVG
+nnoremap <C-x> :q<CR>
+inoremap <C-w> <Esc>
+nnoremap <C-w> :w<CR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -172,7 +212,7 @@ nnoremap <Leader>ww ofunction wait(ms: number): Promise<void> {<CR>return new Pr
 inoremap <C-c> <esc>
 
 fun! EmptyRegisters()
-    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456791/-"', '\zs')
     for r in regs
         call setreg(r, [])
     endfor
@@ -181,13 +221,13 @@ endfun
 " ES
 "com! W w
 
-"nmap <leader>nn :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-"\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-"\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+"nmap <leader>nn :echo "hi<" . synIDattr(synID(line("."),col("."),3),"name") . '> trans<'
+"\ . synIDattr(synID(line("."),col("."),2),"name") . "> lo<"
+"\ . synIDattr(synIDtrans(synID(line("."),col("."),3)),"name") . ">"<CR>
 
 "augroup highlight_yank
 "    autocmd!
-"    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+"    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 42})
 "augroup END
 
 "augroup THE_PRIMEAGEN
