@@ -37,7 +37,7 @@ endif
 set clipboard=unnamed,unnamedplus
 
 " remap <leader> to ,
-let mapleader = ","
+let mapleader = " "
 
 " Plugin configuration
 let g:EditorConfig_exclude_patterns = ['.git/COMMIT_EDITMSG']
@@ -111,6 +111,7 @@ augroup END
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+  Plug 'ayu-theme/ayu-vim' " ayu theme
   Plug 'rakr/vim-one' " theme (includes both One Dark and One Light)
   Plug 'dense-analysis/ale' " Asynchronous linter
   Plug 'haya14busa/incsearch.vim' " Improved incremental searching
@@ -151,13 +152,14 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 " Use this theme:
-colorscheme one
 " set background=dark " for the dark version
 set background=light " for the light version
+nnoremap <leader><CR> :so ~/.vimrc<CR>
 
-
+let ayucolor="dark"
+colorscheme ayu
 " Don't show keystrokes in the status bar
-set noshowcmd
+" set noshowcmd
 
 " show colorcolumn at 81+ characters
 let &colorcolumn=join(range(81,999),",")
@@ -223,3 +225,8 @@ set ttyfast
 
 " For now.
 autocmd BufRead,BufNewFile *.roc set filetype=coffee
+
+
+" Vyber Custom
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv

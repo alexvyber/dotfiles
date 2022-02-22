@@ -2,7 +2,7 @@
 	name = Alex Vyber
 	email = alexvyber@gmail.com
 [core]
-	editor = nvim
+	editor=nvim
 [alias]
 	co = checkout
 	cm = commit -m
@@ -25,6 +25,11 @@
   #   %s: subject
   # my awesome git log replacement
   lol  = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  lor  = log --reverse --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  l3  = log --graph -30 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  l4  = log --graph -40 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  l5  = log --graph -50 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  l6  = log --graph -60 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
   # same as above, but ISO date
   lold = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%ci) %C(auto)%s |%d\"
   # using build-in standards

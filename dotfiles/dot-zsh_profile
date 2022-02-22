@@ -1,4 +1,3 @@
-
 source ~/.local/fzf/key-bindings.zsh
 source ~/.local/fzf/completion.zsh
 

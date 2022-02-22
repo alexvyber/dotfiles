@@ -3,70 +3,66 @@
 # ---------------------------------------------------
 alias a="alias"
 alias n="nvim"
+alias v="vim"
 alias t="tmux"
 alias l="ls --color=auto"
 alias g="git"
+alias i="iex"
 alias e="echo"
 alias h="omz_history"
-alias z="zsh" # Experiment | Delete if need z 
+alias z="zsh" # Experiment | Delete if need z
 
-# rc
+# Editing config files
 # ---------------------------------------------------
-alias vimrc="nvim ~/.vimrc"
-alias zshrc="nvim ~/.zshrc"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias aliasrc="nvim ~/.zsh_alias_profile"
-alias zshpro="nvim ~/.zsh_profile"
-alias tmuxrc="nvim ~/.tmux.conf"
-alias kittyrc="nvim ~/.config/kitty/kitty.conf"
+editor=vim
+alias v.rc="vim ~/.vimrc"
+alias n.i="nvim ~/.config/nvim/init.vim"
+alias z.rc="$editor ~/.zshrc"
+alias a.pro="$editor ~/.zsh_alias_profile"
+alias z.pro="$editor ~/.zsh_profile"
+alias b.pro="$editor ~/.bash_profile"
+alias t.conf="$editor ~/.tmux.conf"
+alias kitty.conf="$editor ~/.config/kitty/kitty.conf"
 
 # ---------------------------------------------------
 alias omz="cd ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
-
-# ls 
-# ---------------------------------------------------
-alias la="ls -AFC"
-alias lA="ls -alhF"
-alias lal="ls -Al"
-alias low="ls --hide='[A-Z]*'"
-alias ll="ls -lh"
-alias l.="ls -d .* --color=auto --group-directories-first"
-alias l.l="ls -lhd .* --color=auto --group-directories-first"
-alias L="ls --hide='[a-z]*' --group-directories-first"
-alias l.d="ls -d .*/ --color=auto --group-directories-first -1"
-alias l.f="l. -F | grep -v /$"
-
-# ---------------------------------------------------
 alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
 alias rm="rm -i"
+alias gr="grep"
+alias cl="clear"
+alias ka="k -Ah"
+alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
+
+# ls
+# ---------------------------------------------------
+alias ls="ls --color=auto"
+alias la="ls -AFC"
+alias ll="ls -lh"
+alias lA="ls -alhF"
+alias lal="ls -Al"
+alias low="ls --hide='[A-Z]*'" # starts with lowercase
+alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
+alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
+alias l.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries with details
+alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
+alias l.f="l. -F | grep -v /$" # .files # TODO refactor
 
 # git
 # ---------------------------------------------------
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
-alias gitp="git -P"
-
-function git_commit_message_WO_paranthesis() {
+alias gP="git -P"
+function git_add_all_and_commit_message_WO_quotes() {
     # This function exist only to not use quotes. That's stupid!
-    message=$(for words in "$*" ; do echo $words ; done) # for loop with $* expand all input into one string
-    git add . 2> /dev/null 0> /dev/null && echo "git: added ." || echo "git: nothing to add(not in repo)" && \
-        git commit -m "$message" 2> /dev/null && echo "commit wih message $message" || echo "din't commit"
+    # for loop with $* expand all input into one string
+    message=$(for words in "$*" ; do echo $words ; done)
+    git add . && \
+        git commit -m "$message" && \
     }
-
-alias ga.sm="git_commit_message_WO_paranthesis" # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
+# Only for simple messages without special tockens that bash will be parsing | it was nice try:(
+alias ga.sm="git_add_all_and_commit_message_WO_quotes"
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
-
-# ---------------------------------------------------
-alias gr="grep"
-alias ka="k -Ah"
-alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
-
-
-
-
-
-

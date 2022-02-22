@@ -4,6 +4,7 @@ set nocompatible
 " Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
 set wildmenu
+" set cursorline
 " Ignore files
 set wildignore+=*.pyc
 set wildignore+=*_build/*
