@@ -157,7 +157,7 @@ set background=light " for the light version
 nnoremap <leader><CR> :so ~/.vimrc<CR>
 
 let ayucolor="dark"
-colorscheme ayu
+colorscheme one
 " Don't show keystrokes in the status bar
 " set noshowcmd
 
