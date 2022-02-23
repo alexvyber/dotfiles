@@ -25,6 +25,7 @@ alias t.conf="$editor ~/.tmux.conf"
 alias kitty.conf="$editor ~/.config/kitty/kitty.conf"
 
 # ---------------------------------------------------
+alias bat="bat --theme=1337"
 alias omz="cd ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
@@ -34,7 +35,7 @@ alias rm="rm -i"
 alias gr="grep"
 alias cl="clear"
 alias ka="k -Ah"
-alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
+alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
 
 # ls
 # ---------------------------------------------------
@@ -66,3 +67,15 @@ function git_add_all_and_commit_message_WO_quotes() {
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
 alias ga.sm="git_add_all_and_commit_message_WO_quotes"
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
+
+
+
+
+# NEW
+# ---------------------------------------------------
+
+CMD_PATH=~/allmystuff/bookmarks/cmd.sh
+alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
+alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
+
+alias cd.pt='cd ~/progress/$(date +"%d_%b_%y" | tr A-Z a-z)'

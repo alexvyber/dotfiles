@@ -34,15 +34,17 @@ selected=$(find                                       \
 
 session=$( echo $selected |       cut -d "/" -f1        | tr . _ )
 window=$(  echo $selected | rev | cut -d "/" -f1 | rev  | tr . _ )
-path=$base$selected
+path=$base_path$selected
 
 # If we don't have session with EXACT session name → we create session:window with choosen path
 if ! tmux has-session -t "=$session" 2> /dev/null; then
-   tmux new-session -d -s $session -n $window -c $path
+    echo $path
+     tmux new-session -d -s ${session} -n $window -c $path
 fi
 
-if [ ! $TMUX ] ; then # not in tmux, then attach to target session
-   tmux attach-session -t $session
+# not in tmux, then attach to target session
+if [ ! $TMUX ] ; then
+   tmux attach-session -t $session 
    exit 0
 fi
 
@@ -53,13 +55,13 @@ if [[ -z $( tmux list-windows -t =$session | grep $window ) ]] ; then
    tmux new-window -n $window -c $path
    exit 0
 else # Else switch to the window
-   tmux switch -t $session:$window
-   cd $base_path$path
+   tmux switch -t $session:$window 
+   echo "this runs"
    exit 0
 fi
 
 # Output the variables
-if false ; then 
+if true ; then 
   echo "Session: $session"
   echo "Window: $window"
   echo "Selected: $selected"
