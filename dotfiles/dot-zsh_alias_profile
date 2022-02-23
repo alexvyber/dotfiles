@@ -67,15 +67,15 @@ alias gp="git push"
 alias ga.="git add ."
 alias gP="git -P"
 function git_add_all_and_commit_message_WO_quotes() {
-    # This function exist only to not use quotes. That's stupid!
-    # for loop with $* expand all input into one string
-    message=$(for words in "$*" ; do echo $words ; done)
-    git add . && \
-        git commit -m "$message" && \
-    }
-# Only for simple messages without special tockens that bash will be parsing | it was nice try:(
-alias ga.sm="git_add_all_and_commit_message_WO_quotes"
-alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
+  # This function exist only to not use quotes. That's stupid!
+  # for loop with $* expand all input into one string
+  message=$(for words in "$*" ; do echo $words ; done)
+  git add . && \
+    git commit -m "$message" && \
+  }
+  # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
+  alias ga.sm="git_add_all_and_commit_message_WO_quotes"
+  alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
 
 
 
@@ -88,4 +88,15 @@ alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ;
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
 alias cmd.show="bat $CMD_PATH"
 
+
+function progress.today () {
+  PROGRESS_PATH=~/progress/$(date +"%d_%b_%y") ;
+  README=$PROGRESS_PATH/README.md ;
+  if [ ! -d "$PROGRESS_PATH" ] ; then
+   mkdir $PROGRESS_PATH
+    echo "### $(date +"%d %B %Y")" >> $README ;
+  fi
+
+  $editor $README ;
+}
 alias cd.pt='cd ~/progress/$(date +"%d_%b_%y" | tr A-Z a-z)'
