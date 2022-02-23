@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 base_path=/home/alexs/
 
-# ↓↓↓ Yeah that's stupid, but all I can do now        
+# ↓↓↓ Yeah that's stupid, but all I can do now
 selected=$(find                                       \
            ~/allmystuff                              \
            ~/allmystuff/dotfiles                              \
-           ~/allmystuff/scripts                      \
+           ~/allmystuff/local                      \
            ~/notmystuff                               \
            ~/tmp                                      \
            ~/personal                                 \
@@ -44,24 +44,24 @@ fi
 
 # not in tmux, then attach to target session
 if [ ! $TMUX ] ; then
-   tmux attach-session -t $session 
+   tmux attach-session -t $session
    exit 0
 fi
 
 tmux switch -t $session
-   
+
 # If target-session has NO window with given name → create new window with given name and choosen path
 if [[ -z $( tmux list-windows -t =$session | grep $window ) ]] ; then
    tmux new-window -n $window -c $path
    exit 0
 else # Else switch to the window
-   tmux switch -t $session:$window 
+   tmux switch -t $session:$window
    echo "this runs"
    exit 0
 fi
 
 # Output the variables
-if true ; then 
+if true ; then
   echo "Session: $session"
   echo "Window: $window"
   echo "Selected: $selected"

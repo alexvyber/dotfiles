@@ -2,6 +2,8 @@
 # One letter
 # ---------------------------------------------------
 alias a="alias"
+alias c="clear"
+alias f="fzf"
 alias n="nvim"
 alias v="vim"
 alias t="tmux"
@@ -22,10 +24,10 @@ alias a.pro="$editor ~/.zsh_alias_profile"
 alias z.pro="$editor ~/.zsh_profile"
 alias b.pro="$editor ~/.bash_profile"
 alias t.conf="$editor ~/.tmux.conf"
+alias i3.config="$editor ~/.config/i3/config"
 alias kitty.conf="$editor ~/.config/kitty/kitty.conf"
 
 # ---------------------------------------------------
-alias bat="bat --theme=1337"
 alias omz="cd ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
@@ -35,6 +37,7 @@ alias rm="rm -i"
 alias gr="grep"
 alias cl="clear"
 alias ka="k -Ah"
+alias _d="sudo dnf"
 alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
 
 # ls
@@ -77,5 +80,6 @@ alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all &
 CMD_PATH=~/allmystuff/bookmarks/cmd.sh
 alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
+alias cmd.show="bat $CMD_PATH"
 
 alias cd.pt='cd ~/progress/$(date +"%d_%b_%y" | tr A-Z a-z)'
