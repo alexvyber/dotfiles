@@ -2,15 +2,17 @@
 # One letter
 # ---------------------------------------------------
 alias a="alias"
+alias b="bat"
 alias c="clear"
+alias d="docker"
+alias e="echo"
+alias g="git"
 alias f="fzf"
 alias n="nvim"
 alias v="vim"
 alias t="tmux"
 alias l="ls --color=auto"
-alias g="git"
 alias i="iex"
-alias e="echo"
 alias h="omz_history"
 alias z="zsh" # Experiment | Delete if need z
 
@@ -21,6 +23,7 @@ alias v.rc="vim ~/.vimrc"
 alias n.i="nvim ~/.config/nvim/init.vim"
 alias z.rc="$editor ~/.zshrc"
 alias a.pro="$editor ~/.zsh_alias_profile"
+alias b.config="$editor ~/.config/bat/config"
 alias z.pro="$editor ~/.zsh_profile"
 alias b.pro="$editor ~/.bash_profile"
 alias t.conf="$editor ~/.tmux.conf"
@@ -35,6 +38,8 @@ alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
 alias rm="rm -i"
 alias gr="grep"
+alias re="reboot"
+alias pof="poweroff"
 alias cl="clear"
 alias ka="k -Ah"
 alias _d="sudo dnf"
@@ -47,8 +52,9 @@ alias la="ls -AFC"
 alias ll="ls -lh"
 alias lA="ls -alhF"
 alias lal="ls -Al"
-alias low="ls --hide='[A-Z]*'" # starts with lowercase
-alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
+alias lo="ls --hide='[A-Z]*'" # starts with lowercase
+alias L="ls --hide='*[a-z]' --group-directories-first" # starts with upppercase
+alias LA="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
 alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
 alias l.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries with details
 alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs

@@ -2,7 +2,6 @@ source ~/.local/fzf/key-bindings.zsh
 source ~/.local/fzf/completion.zsh
 
 export GIT_EDITOR=nvim
-export BAT_THEME=nord
 
 bindkey -s ^f "tmux-sessionizer\n"
 bindkey -s ^s "tmux-2\n"
