@@ -2,7 +2,7 @@
 	name = Alex Vyber
 	email = alexvyber@gmail.com
 [core]
-	editor=nvim
+	editor=vim
 [alias]
 	co = checkout
 	cm = commit -m
@@ -24,21 +24,21 @@
   #   %ai: author date, ISO 8601-like format
   #   %s: subject
   # my awesome git log replacement
-  lol  = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
-  lor  = log --reverse --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
-  l3  = log --graph -30 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
-  l4  = log --graph -40 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
-  l5  = log --graph -50 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
-  l6  = log --graph -60 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s |%d\"
+  lol  = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s  %d\"
+  lor  = log --reverse --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s  %d\"
+  l3  = log --graph -30 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s  %d\"
+  l4  = log --graph -40 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s  %d\"
+  l5  = log --graph -50 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s  %d\"
+  l6  = log --graph -60 --pretty=format:\"%C(auto)%h %C(blue)(%cr) %C(auto)%s  %d\"
   # same as above, but ISO date
-  lold = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%ci) %C(auto)%s |%d\"
+  lold = log --graph --pretty=format:\"%C(auto)%h %C(blue)(%ci) %C(auto)%s  %d\"
   # using build-in standards
   lol2 = log --oneline --graph --decorate
   # shows branches and their last commits
   lol3 = log --all --graph --decorate --oneline --simplify-by-decoration
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential

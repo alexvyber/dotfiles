@@ -1,37 +1,48 @@
 
 # One letter
 # ---------------------------------------------------
-alias a="alias"
+# a
 alias b="bat"
 alias c="clear"
 alias d="docker"
 alias e="echo"
-alias g="git"
 alias f="fzf"
+alias g="git"
+alias h="omz_history"
+alias i="iex"
+# j used by  autojump
+# k used by k
+alias l="ls --color=auto"
+# m
 alias n="nvim"
+# o
+# p
+# q
+# r
+# s
+# u
 alias v="vim"
 alias t="tmux"
-alias l="ls --color=auto"
-alias i="iex"
-alias h="omz_history"
+# w used by w, can be rebinded
+# x
+# y
 alias z="zsh" # Experiment | Delete if need z
 
 # Editing config files
 # ---------------------------------------------------
 editor=vim
 alias v.rc="vim ~/.vimrc"
-alias n.i="nvim ~/.config/nvim/init.vim"
+alias n.init="nvim ~/.config/nvim/init.vim"
 alias z.rc="$editor ~/.zshrc"
-alias a.pro="$editor ~/.zsh_alias_profile"
+alias a.profile="$editor ~/.zsh_alias_profile"
 alias b.config="$editor ~/.config/bat/config"
-alias z.pro="$editor ~/.zsh_profile"
-alias b.pro="$editor ~/.bash_profile"
+alias z.profile="$editor ~/.zsh_profile"
+alias b.profile="$editor ~/.bash_profile"
 alias t.conf="$editor ~/.tmux.conf"
 alias i3.config="$editor ~/.config/i3/config"
 alias kitty.conf="$editor ~/.config/kitty/kitty.conf"
 
 # ---------------------------------------------------
-alias omz="cd ~/.oh-my-zsh"
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
 alias tlsw="tmux lsw -a"
@@ -52,8 +63,8 @@ alias la="ls -AFC"
 alias ll="ls -lh"
 alias lA="ls -alhF"
 alias lal="ls -Al"
-alias lo="ls --hide='[A-Z]*'" # starts with lowercase
-alias L="ls --hide='*[a-z]' --group-directories-first" # starts with upppercase
+alias low="ls --hide='[A-Z]*'" # starts with lowercase
+alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
 alias LA="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
 alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
 alias l.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries with details
@@ -77,8 +88,12 @@ function git_add_all_and_commit_message_WO_quotes() {
   alias ga.sm="git_add_all_and_commit_message_WO_quotes"
   alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
 
-
-
+# cd
+# ---------------------------------------------------
+alias cd.omz="cd ~/.oh-my-zsh"
+alias cd.pt="cd ~/progress/$(date +"%d_%b_%y" )"
+alias cd.all="cd ~/allmystuff"
+alias cd.tmp="cd ~/tmp"
 
 # NEW
 # ---------------------------------------------------
@@ -88,15 +103,12 @@ alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ;
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
 alias cmd.show="bat $CMD_PATH"
 
-
 function progress.today () {
-  PROGRESS_PATH=~/progress/$(date +"%d_%b_%y") ;
-  README=$PROGRESS_PATH/README.md ;
+  PROGRESS_PATH=~/progress/$(date +"%d_%b_%y")
+  README=$PROGRESS_PATH/README.md
   if [ ! -d "$PROGRESS_PATH" ] ; then
    mkdir $PROGRESS_PATH
-    echo "### $(date +"%d %B %Y")" >> $README ;
+    echo "### $(date +"%d %B %Y")" >> $README
   fi
-
-  $editor $README ;
+  $editor $README
 }
-alias cd.pt='cd ~/progress/$(date +"%d_%b_%y" | tr A-Z a-z)'
