@@ -16,4 +16,3 @@ bindkey -s "\eOP" "tmux-neww-a\n"
 
 bindkey -s "\e[21~" "tmux kill-server\n"
 bindkey -s "\e[20~" "tmux kill-window -a\n"
-alias home.tree="tree . -d -I ".git|env|work|tmp|progress" -L 2"
