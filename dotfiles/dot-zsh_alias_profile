@@ -24,23 +24,23 @@ alias n="nvim"
 alias v="vim"
 alias t="tmux"
 # w used by w, can be rebinded
-# x
+alias x="exit" # can be reused
 # y
 alias z="zsh" # Experiment | Delete if need z
 
 # Editing config files
 # ---------------------------------------------------
-editor=vim
-alias v.rc="vim ~/.vimrc"
-alias n.init="nvim ~/.config/nvim/init.vim"
-alias z.rc="$editor ~/.zshrc"
-alias a.profile="$editor ~/.zsh_alias_profile"
-alias b.config="$editor ~/.config/bat/config"
-alias z.profile="$editor ~/.zsh_profile"
-alias b.profile="$editor ~/.bash_profile"
-alias t.conf="$editor ~/.tmux.conf"
-alias i3.config="$editor ~/.config/i3/config"
-alias kitty.conf="$editor ~/.config/kitty/kitty.conf"
+EDITOR=vim
+alias v.rc="$EDITOR ~/.vimrc"
+alias n.init="$EDITOR ~/.config/nvim/init.vim"
+alias z.rc="$EDITOR ~/.zshrc"
+alias a.profile="$EDITOR ~/.zsh_alias_profile"
+alias b.config="$EDITOR ~/.config/bat/config"
+alias z.profile="$EDITOR ~/.zsh_profile"
+alias b.profile="$EDITOR ~/.bash_profile"
+alias t.conf="$EDITOR ~/.tmux.conf"
+alias i3.config="$EDITOR ~/.config/i3/config"
+alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
 
 # ---------------------------------------------------
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
@@ -112,11 +112,11 @@ alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && 
 alias cmd.show="bat $CMD_PATH"
 
 function progress.today () {
-  PROGRESS_PATH=~/progress/$(date +"%d_%b_%y")
-  README=$PROGRESS_PATH/README.md
-  if [ ! -d "$PROGRESS_PATH" ] ; then
-   mkdir $PROGRESS_PATH
+  TODAY=~/progress/$(date +"%d_%b_%y")
+  README=$TODAY/README.md
+  if [ ! -d "$TODAY" ] ; then
+   mkdir $TODAY
     echo "### $(date +"%d %B %Y")" >> $README
   fi
-  $editor $README
+  $EDITOR $README
 }
