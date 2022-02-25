@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo mount /dev/sda1 ~/TORRENTER
+sudo mount /dev/sdb2 ~/FILER

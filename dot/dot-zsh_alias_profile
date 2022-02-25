@@ -107,7 +107,7 @@ alias cd.tmp="cd ~/tmp"
 # NEW
 # ---------------------------------------------------
 
-CMD_PATH=~/allmystuff/bookmarks/cmd.sh
+CMD_PATH=~/stuff/bookmarks/cmd.sh
 alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
 alias cmd.show="bat $CMD_PATH"
@@ -121,3 +121,7 @@ function progress.today () {
   fi
   $EDITOR $README
 }
+
+alias stow.d="stow --dotfiles"
+alias unstow="stow -D"
+alias unstow.d="stow -D --dotfiles"

@@ -85,7 +85,7 @@ Plug 'sbdchd/neoformat'
 
 call plug#end()
 
-" let ayucolor="dark"  
+" let ayucolor="dark"
 
 Adding local modules
 let &runtimepath.=',' . expand("$HOME") . '/personal/harpoon/tmux'
@@ -239,6 +239,4 @@ endfun
 "augroup END
 
 
-set termguicolors
-set background=dark
 colorscheme toast
