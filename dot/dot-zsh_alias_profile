@@ -32,7 +32,7 @@ alias z="zsh" # Experiment | Delete if need z
 # ---------------------------------------------------
 EDITOR=vim
 alias v.rc="$EDITOR ~/.vimrc"
-alias n.init="$EDITOR ~/.config/nvim/init.vim"
+alias n.init="nvim ~/.config/nvim/init.vim"
 alias z.rc="$EDITOR ~/.zshrc"
 alias a.profile="$EDITOR ~/.zsh_alias_profile"
 alias b.config="$EDITOR ~/.config/bat/config"

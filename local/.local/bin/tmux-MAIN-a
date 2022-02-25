@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-session=one
+session=ONE
 window=MAIN
 # If we don't have main session, we create it with $window at index 1
  ! [  tmux has-session -t "=$session" 2> /dev/null ] && tmux new-session -d -s $session -n $window -c "~"
@@ -17,4 +17,3 @@ else
   tmux switch -t $session:$window
   exit 0
 fi
-
