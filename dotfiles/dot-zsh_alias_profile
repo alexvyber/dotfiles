@@ -65,7 +65,7 @@ alias la="ls -AFC"
 alias ll="ls -lh"
 alias lA="ls -alhF"
 alias lal="ls -Al"
-alias low="ls --hide='[A-Z]*'" # starts with lowercase
+alias l="ls --hide='[A-Z]*'" # starts with lowercase
 alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
 alias LA="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
 alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
