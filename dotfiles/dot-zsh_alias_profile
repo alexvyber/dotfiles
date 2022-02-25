@@ -13,7 +13,7 @@ alias i="iex"
 # j used by  autojump
 # k used by k
 alias l="ls --color=auto"
-# m
+alias m="man"
 alias n="nvim"
 # o
 # p
@@ -47,7 +47,7 @@ alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
 alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
-alias rm="rm -i"
+# alias rm="rm -i"
 alias gr="grep"
 alias re="reboot"
 alias pof="poweroff"
@@ -55,6 +55,8 @@ alias cl="clear"
 alias ka="k -Ah"
 alias _d="sudo dnf"
 alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
+alias rmf="rm -f"
+alias rmrf="rm -rf"
 
 # ls
 # ---------------------------------------------------
@@ -88,7 +90,7 @@ function git_add_all_and_commit_message_WO_quotes() {
   # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
   alias ga.sm="git_add_all_and_commit_message_WO_quotes"
   alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
-  alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" ; git push } <<<' # add all && commit message
+  alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<' # add all && commit message
 
 # cd
 # ---------------------------------------------------

@@ -219,6 +219,7 @@ nnoremap <leader><leader><leader> :set list<CR>
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
+
 nnoremap <leader>e :e ~/.vimrc<CR>
 nnoremap <F1> :tabp<CR>
 nnoremap <F2> :tabn<CR>
@@ -261,3 +262,7 @@ nmap <leader>n :call ToggleNERDTree()<CR>
 
 " Use Ripgrep with CtrlSF for performance
 " let g:ctrlsf_ackprg = '/usr/bin/rg'
+
+nnoremap <leader>q :q<CR>
+nnoremap <leader>q1 :q!<CR>
+nnoremap <leader>qw :wq<CR>
