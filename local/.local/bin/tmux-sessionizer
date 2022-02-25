@@ -2,16 +2,20 @@
 base_path=/home/alexs/
 
 # ↓↓↓ Yeah that's stupid, but all I can do now
-selected=$(find                                       \
-           ~/allmystuff                              \
-           ~/allmystuff/dotfiles                              \
-           ~/allmystuff/local                      \
-           ~/notmystuff                               \
+
+
+case $1 in
+   main)
+      selected=$(find                                       \
+           ~/learn                              \
+           ~/repos                               \
            ~/tmp                                      \
            ~/personal                                 \
+           ~/stuff                                 \
+           ~/soft                                 \
+           ~/tmp                                 \
            ~/personal/vyber                           \
            ~/work                                     \
-           ~/learning                                 \
            -mindepth 0                                \
            -maxdepth 2                                \
            -type d                                    \
@@ -27,6 +31,54 @@ selected=$(find                                       \
            | sort -u                                  \
            | cut -d "/" -f4-                          \
            | fzf )
+                 ;;
+   configs)
+      selected=$(find                                 \
+           ~/dotfiles                                \
+           ~/.config      \
+           ~/.local       \
+           ~/.oh-my-zsh   \
+           ~/.ssh         \
+           ~/.zsh         \
+           ~/.vim         \
+           ~/Downloads    \
+           -mindepth 0                                \
+           -maxdepth 2                                \
+           -type d                                    \
+           -not -path "**/build"                      \
+           -not -path "**/dist"                       \
+           -not -path "**/.next"                      \
+           -not -path "**/.cache"                     \
+           -not -path "**/.cache/**"                  \
+           -not -path "**/.git"                       \
+           -not -path "**/.git/**"                    \
+           -not -path "**/node_modules"               \
+           -not -path "**/node_modules/**"            \
+           | sort -u                                  \
+           | cut -d "/" -f4-                          \
+           | fzf )
+                 ;;
+
+   *)
+      selected=$(find                                 \
+            ~/.                                       \
+           -mindepth 0                                \
+           -maxdepth 2                                \
+           -type d                                    \
+           -not -path "**/build"                      \
+           -not -path "**/dist"                       \
+           -not -path "**/.next"                      \
+           -not -path "**/.cache"                     \
+           -not -path "**/.cache/**"                  \
+           -not -path "**/.git"                       \
+           -not -path "**/.git/**"                    \
+           -not -path "**/node_modules"               \
+           -not -path "**/node_modules/**"            \
+           | sort -u                                  \
+           | cut -d "/" -f4-                          \
+           | fzf )
+                 ;;
+esac
 
  if [[ -z $selected ]]; then
     exit 0
