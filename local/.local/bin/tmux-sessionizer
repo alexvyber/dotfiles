@@ -32,9 +32,12 @@ case $1 in
            | cut -d "/" -f4-                          \
            | fzf )
                  ;;
+
    configs)
       selected=$(find                                 \
            ~/dotfiles                                \
+           ~/dotfiles/local                                \
+           ~/dotfiles/dot                                \
            ~/.config      \
            ~/.local       \
            ~/.oh-my-zsh   \
