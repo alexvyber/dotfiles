@@ -3,18 +3,14 @@ source ~/.local/fzf/completion.zsh
 
 export GIT_EDITOR=nvim
 
-bindkey -s "\e[15~" "tmux-sessionizer main\n"
-bindkey -s "\e[19~" "tmux-sessionizer configs\n"
-
-
-
 
 bindkey -s "^[f" "tmux-sessionizer main\n"
 bindkey -s "^[j" "tmux-sessionizer configs\n"
 
 
+bindkey -s "^[o" "change-zsh-theme\n"
+bindkey -s "^[k" "change-kitty-theme\n"
 
-bindkey -s ^o "change-kitty-theme\n"
 bindkey -s ^q "source ~/.zshrc\n"
 
 bindkey -s "\e[24~" "tmux-MAIN-b\n"
