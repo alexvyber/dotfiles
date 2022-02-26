@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+path=~/.oh-my-zsh/themes
+custom=~/.oh-my-zsh/custom/themes/theme.zsh-theme
+
+theme=$(find $path  -type f  | cut -d '/' -f 6 | cut -d "." -f 1 | fzf)
+
+ln -sf  "$path/$theme.zsh-theme" $custom
