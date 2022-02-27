@@ -6,6 +6,7 @@ export GIT_EDITOR=nvim
 bindkey -s '^[ ' 'echo "shit"\n'
 bindkey -s '^ ' 'echo "more shit"\n'
 
+bindkey -s "^[r" "tmux-rename-window\n"
 
 bindkey -s "^[f" "tmux-sessionizer main\n"
 bindkey -s "^[j" "tmux-sessionizer configs\n"
@@ -18,11 +19,11 @@ bindkey -s "^[k" "change-kitty-theme\n"
 
 bindkey -s ^q "source ~/.zshrc\n"
 
-bindkey -s "\e[24~" "tmux-MAIN-b\n"
-bindkey -s "\eOQ" "tmux-MAIN-a\n"
+bindkey -s "\e[24~" "\n"
+bindkey -s "\eOQ" "\n"
 
-bindkey -s "\e[23~" "tmux-neww-b\n"
-bindkey -s "\eOP" "tmux-neww-a\n"
+bindkey -s "\e[23~" "\n"
+bindkey -s "\eOP" "\n"
 
 bindkey -s "\e[21~" "tmux kill-server\n"
 bindkey -s "\e[20~" "tmux kill-window -a\n"

@@ -125,3 +125,4 @@ function progress.today () {
 alias stow.d="stow --dotfiles"
 alias unstow="stow -D"
 alias unstow.d="stow -D --dotfiles"
+alias t.rename="tmux rename-window"
