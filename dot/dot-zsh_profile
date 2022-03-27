@@ -4,7 +4,7 @@ source ~/.local/fzf/completion.zsh
 export GIT_EDITOR=nvim
 
 bindkey -s '^[ ' 'echo "shit"\n'
-bindkey -s '^ ' 'echo "more shit"\n'
+bindkey -s '^ ' 'scrot\n'
 
 bindkey -s "^[r" "tmux-rename-window\n"
 

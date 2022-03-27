@@ -186,3 +186,5 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+bindsym $mod+Print exec scrot $HOME/tmp/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png

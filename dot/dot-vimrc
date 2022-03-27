@@ -22,7 +22,6 @@ set path=**
 set shiftround
 set shiftwidth=2
 set showcmd
-
 set splitright
 set tabstop=2
 set ttyfast " removed in nvim
@@ -58,6 +57,8 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_session_delete_buffers = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='atomic'
+
+let g:ale_fixers = { 'elixir': ['mix_format'] }
 
 if !isdirectory(expand(&undodir))
   call mkdir(expand(&undodir), 'p')
@@ -106,6 +107,12 @@ augroup END
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'elixir-editors/vim-elixir'
+
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
+
 Plug 'scrooloose/nerdtree' " file tree
 Plug 'alexvyber/vim-one' " theme (includes both One Dark and One Light)
 Plug 'dense-analysis/ale' " Asynchronous linter
@@ -130,6 +137,27 @@ Plug 'danro/rename.vim' " adds :Rename command
 Plug 'arp242/auto_mkdir2.vim' " automatically create directories as needed when writing
 call plug#end()
 
+
+
+
+
+
+
+
+
+
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
+nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
+
+
+
+
+
+
 " Register asyncomplete-buffer as a source for asyncomplete
 call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
       \ 'name': 'buffer',
@@ -137,18 +165,14 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
       \ 'blacklist': ['go'],
       \ 'completor': function('asyncomplete#sources#buffer#completor'),
       \ 'config': {
-        \    'max_buffer_size': 5000000,
-        \  },
-        \ }))
+      \    'max_buffer_size': 5000000,
+      \  },
+      \ }))
 
 " Tab completion for asyncomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-
-
-
-
 
 " Use this theme:
 set background=light " for the light version
@@ -223,7 +247,6 @@ nnoremap <leader><leader><leader> :set list<CR>
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
-
 nnoremap <leader>e :e ~/.vimrc<CR>
 nnoremap <F1> :tabp<CR>
 nnoremap <F2> :tabn<CR>
@@ -277,5 +300,6 @@ endfunction
 
 command! Shit call SayShit()
 
-inoremap <leader>ll :Shit<CR>
 nnoremap <leader>ll :Shit<CR>
+
+let g:NERDTreeWinPos = "right"
