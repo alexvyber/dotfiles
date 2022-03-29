@@ -96,6 +96,11 @@ function git_add_all_and_commit_message_WO_quotes() {
 
 # cd
 # ---------------------------------------------------
+alias rmr="rm -r"
+alias rmrf="rm -rf"
+
+# cd
+# ---------------------------------------------------
 # alias cd#="cd /"
 # alias cd@="cd /"
 # alias cd!="cd /"
@@ -127,3 +132,5 @@ alias stow.d="stow --dotfiles"
 alias unstow="stow -D"
 alias unstow.d="stow -D --dotfiles"
 alias t.rename="tmux rename-window"
+
+alias __="tmux new-window"

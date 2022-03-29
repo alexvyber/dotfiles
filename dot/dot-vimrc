@@ -9,7 +9,7 @@ syntax on
 let &showbreak = '↪ '
 set completefunc=emoji#complete
 set completeopt+=longest
-set completeopt-=preview
+"set completeopt-=preview
 set cursorline
 set nocompatible
 set expandtab
@@ -130,7 +130,7 @@ Plug 'stefandtw/quickfix-reflector.vim' "  Make quickfix window editable
 Plug 'vim-airline/vim-airline' " status line replacement
 Plug 'vim-airline/vim-airline-themes'
 Plug 'prabirshrestha/asyncomplete.vim' " autocomplete
-Plug 'prabirshrestha/asyncomplete-buffer.vim' " autocomplete using contents of current buffer
+" Plug 'prabirshrestha/asyncomplete-buffer.vim' " autocomplete using contents of current buffer
 Plug 'ElmCast/elm-vim' " elm-format on autosave
 Plug 'sheerun/vim-polyglot' " syntax highlighting for lots of things
 Plug 'danro/rename.vim' " adds :Rename command
@@ -159,15 +159,15 @@ nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
 
 
 " Register asyncomplete-buffer as a source for asyncomplete
-call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
-      \ 'name': 'buffer',
-      \ 'whitelist': ['*'],
-      \ 'blacklist': ['go'],
-      \ 'completor': function('asyncomplete#sources#buffer#completor'),
-      \ 'config': {
-      \    'max_buffer_size': 5000000,
-      \  },
-      \ }))
+" call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+"      \ 'name': 'buffer',
+"      \ 'whitelist': ['*'],
+"      \ 'blacklist': ['go'],
+"      \ 'completor': function('asyncomplete#sources#buffer#completor'),
+"      \ 'config': {
+"      \    'max_buffer_size': 5000000,
+"      \  },
+"      \ }))
 
 " Tab completion for asyncomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -248,9 +248,12 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
 nnoremap <leader>e :e ~/.vimrc<CR>
+nnoremap <Esc><F1> :tabedit
 nnoremap <F1> :tabp<CR>
+imap     <F1> <Esc>:tabp<CR>
 nnoremap <F2> :tabn<CR>
-nnoremap <Esc><F1> :tabc<CR>
+imap     <F2> <Esc>:tabn<CR>
+nnoremap <Esc><F4> :tabc<CR>
 
 " FZF
 " ---------------------------------------
@@ -259,7 +262,7 @@ let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
 nmap // :BLines!<CR>       " current file buffer search
 nmap ?? :Rg!<CR>           " All files in current folder search
 nmap <leader>p :Files!<CR> " Current folder files search
-nmap \\ :Commands!<CR> " fzf-powered command search
+ map \\ :Commands!<CR> " fzf-powered command search
 let g:fzf_preview_window = ['right:60%', 'ctrl-/']
 
 " NERDTree
