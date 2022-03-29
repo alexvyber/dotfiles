@@ -17,6 +17,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -246,7 +247,7 @@ awful.screen.connect_for_each_screen(
         set_wallpaper(s)
 
         -- Each screen has its own tag table.
-        awful.tag({" ● ", " ■ ",   " ▲ ", " ★★★ "," ● ", " ■ ",  " ▲ ",  " Files ",  " Torrent " }, s, awful.layout.layouts[1])
+        awful.tag({" ● ", " ■ ",   " ▲ ", " ★★★ "," ● ", " ■ ",  " ▲ ",  " ‡‡ ",  " ••••• " }, s, awful.layout.layouts[1])
 
         -- Create a promptbox for each screen
         s.mypromptbox = awful.widget.prompt()
@@ -318,10 +319,15 @@ awful.screen.connect_for_each_screen(
             {
                 -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
+                volume_widget(),
                 -- mykeyboardlayout,
                 -- wibox.widget.systray(),
                 -- mytextclock,
                 -- s.mylayoutbox
+                        volume_widget{
+            widget_type = 'vertical_bar',
+            device = 'default'
+        },
             }
         }
     end
@@ -347,6 +353,9 @@ root.buttons(
 -- {{{ Key bindings
 globalkeys =
     gears.table.join(
+    awful.key({ modkey }, "F12", function() volume_widget:inc(5) end),
+    awful.key({ modkey }, "F11", function() volume_widget:dec(5) end),
+    awful.key({ modkey }, "\\", function() volume_widget:toggle() end),
     awful.key({modkey}, "s", hotkeys_popup.show_help, {description = "show help", group = "awesome"}),
     awful.key({modkey}, "Up", awful.tag.viewprev, {description = "view previous", group = "tag"}),
     awful.key({modkey}, "Down", awful.tag.viewnext, {description = "view next", group = "tag"}),
