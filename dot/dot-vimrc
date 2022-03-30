@@ -112,6 +112,7 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
+" Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 
 Plug 'scrooloose/nerdtree' " file tree
 Plug 'alexvyber/vim-one' " theme (includes both One Dark and One Light)
@@ -137,15 +138,9 @@ Plug 'danro/rename.vim' " adds :Rename command
 Plug 'arp242/auto_mkdir2.vim' " automatically create directories as needed when writing
 call plug#end()
 
-
-
-
-
-
-
-
-
-
+" let g:minimap_width = 10
+" let g:minimap_auto_start = 1
+" let g:minimap_auto_start_win_enter = 1
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
@@ -267,6 +262,7 @@ let g:fzf_preview_window = ['right:60%', 'ctrl-/']
 
 " NERDTree
 " ---------------------------------------
+let g:NERDTreeWinPos = "right"
 let NERDTreeShowHidden=1
 function! ToggleNERDTree()
   " Makes NerdTree look the same everywhere
@@ -292,17 +288,3 @@ nmap <leader>n :call ToggleNERDTree()<CR>
 
 " Use Ripgrep with CtrlSF for performance
 " let g:ctrlsf_ackprg = '/usr/bin/rg'
-
-nnoremap <leader>q :q<CR>
-nnoremap <leader>q1 :q!<CR>
-nnoremap <leader>qw :wq<CR>
-
-function! SayShit()
-  echo 'SHIIIIIIIIIIIIIIIIIIITTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT'
-endfunction
-
-command! Shit call SayShit()
-
-nnoremap <leader>ll :Shit<CR>
-
-let g:NERDTreeWinPos = "right"
