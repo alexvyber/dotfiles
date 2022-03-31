@@ -7,7 +7,7 @@ fun! ColorMyPencils()
     endif
     let g:gruvbox_invert_selection='0'
 
-    set background=light
+    set background=dark
     if has('nvim')
         call luaeval('vim.cmd("colorscheme " .. _A[1])', [g:theprimeagen_colorscheme])
     else
