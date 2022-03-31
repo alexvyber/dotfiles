@@ -5,11 +5,19 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/tmp/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
+export PATH="$HOME/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+
+# if [ -x /usr/bin/dircolors ]; then
+#    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+# fi
 
 ZSH_THEME="vyber"
 # ZSH_THEME="theme"

@@ -17,13 +17,13 @@ theme.font          = "JetBrains Medium 9"
 
 theme.bg_normal     = "#dddddd"
 theme.bg_focus      = "#ffffff"
-theme.bg_urgent     = "#ff0000"
+theme.bg_urgent     = "#5577ee"
 theme.bg_minimize   = "#cdcdcd"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#444444"
 theme.fg_focus      = "#000000"
-theme.fg_urgent     = "#000000"
+theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#444444"
 
 theme.useless_gap   = dpi(0)

@@ -62,7 +62,6 @@ alias rmrf="rm -rf"
 # ls
 # ---------------------------------------------------
 alias ls="ls --color=auto"
-alias lsn="ls --color=never"
 alias la="ls -AFC"
 alias ll="ls -lh"
 alias lA="ls -alhF"
@@ -75,6 +74,7 @@ alias l.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries 
 alias l.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
 alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
 alias l.f="l. -F | grep -v /$" # .files # TODO refactor
+alias lc="ls --color=never"
 
 # git
 # ---------------------------------------------------
@@ -108,7 +108,7 @@ alias rmrf="rm -rf"
 alias cd.omz="cd ~/.oh-my-zsh"
 alias cd.pt="cd ~/progress/$(date +"%d_%b_%y" )"
 alias cd.all="cd ~/allmystuff"
-alias cd.tmp="cd ~/tmp"
+alias tmp="cd ~/tmp"
 
 # NEW
 # ---------------------------------------------------
@@ -134,3 +134,6 @@ alias unstow.d="stow -D --dotfiles"
 alias t.rename="tmux rename-window"
 
 alias __="tmux new-window"
+
+
+alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
