@@ -288,3 +288,7 @@ nmap <leader>n :call ToggleNERDTree()<CR>
 
 " Use Ripgrep with CtrlSF for performance
 " let g:ctrlsf_ackprg = '/usr/bin/rg'
+
+nnoremap <leader>y "+y
+
+vnoremap <leader>y "+y

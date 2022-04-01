@@ -1,35 +1,37 @@
 
+
 # One letter
-# ---------------------------------------------------
-# a
-alias b="bat"
-alias c="clear"
-alias d="docker"
-alias e="elixir"
-alias f="fzf"
-alias g="git"
-alias h="omz_history"
-alias i="iex"
-# j used by  autojump
-# k used by k
-alias l="ls --color=auto"
-alias m="man"
-alias n="nvim"
-# o
-# p
-# q
-# r
-# s
-# u
-alias v="vim"
-alias t="tmux"
-# w used by w, can be rebinded
-alias x="exit" # can be reused
-# y
-alias z="zsh" # Experiment | Delete if need z
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# alias a=""
+  alias b="bat"
+  alias c="clear"
+  alias d="docker"
+  alias e="elixir"
+  alias f="fzf"
+  alias g="git"
+  alias h="omz_history"
+  alias i="iex"
+# alias j="" used by  autojump
+# alias k="" used by k
+  alias l="ls --color=auto"
+  alias m="man"
+  alias n="nvim"
+# alias o=""
+# alias p=""
+  alias qq="exit"
+# alias r=""
+# alias s=""
+# alias u=""
+  alias v="vim"
+  alias t="tmux"
+# alias w used by w, can be rebinded
+  alias x="exit" # can be reused
+# alias y=""
+  alias z="zsh" # Experiment | Delete if need z
+
 
 # Editing config files
-# ---------------------------------------------------
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 EDITOR=vim
 alias v.rc="$EDITOR ~/.vimrc"
 alias n.init="nvim ~/.config/nvim/init.vim"
@@ -42,7 +44,8 @@ alias t.conf="$EDITOR ~/.tmux.conf"
 alias i3.config="$EDITOR ~/.config/i3/config"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
 
-# ---------------------------------------------------
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
 alias tlsw="tmux lsw -a"
@@ -52,20 +55,22 @@ alias gr="grep"
 alias re="reset"
 alias reb="reboot"
 alias pof="poweroff"
-alias cl="clear"
 alias ka="k -Ah"
 alias _d="sudo dnf"
 alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
-alias rmf="rm -f"
-alias rmrf="rm -rf"
+alias __="tmux new-window"
+alias t.rename="tmux rename-window"
+alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
+
 
 # ls
-# ---------------------------------------------------
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias ls="ls --color=auto"
 alias la="ls -AFC"
 alias ll="ls -lh"
 alias lA="ls -alhF"
 alias lal="ls -Al"
+alias lsr="ls -R"
 alias l="ls --hide='[A-Z]*'" # starts with lowercase
 alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
 alias LL="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
@@ -73,11 +78,12 @@ alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
 alias l.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries with details
 alias l.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
 alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
-alias l.f="l. -F | grep -v /$" # .files # TODO refactor
+alias l.f="l. -F | grep -v /$" # .files TODO make work without grep
 alias lc="ls --color=never"
 
+
 # git
-# ---------------------------------------------------
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
@@ -94,13 +100,15 @@ function git_add_all_and_commit_message_WO_quotes() {
   alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
   alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<' # add all && commit message
 
-# cd
-# ---------------------------------------------------
+
+# rm
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias rmr="rm -r"
 alias rmrf="rm -rf"
 
+
 # cd
-# ---------------------------------------------------
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # alias cd#="cd /"
 # alias cd@="cd /"
 # alias cd!="cd /"
@@ -109,10 +117,18 @@ alias cd.omz="cd ~/.oh-my-zsh"
 alias cd.pt="cd ~/progress/$(date +"%d_%b_%y" )"
 alias cd.all="cd ~/allmystuff"
 alias tmp="cd ~/tmp"
+alias dotfiles="cd ~/dotfiles"
+
+
+# Stow
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+alias stow.d="stow --dotfiles"
+alias unstow="stow -D"
+alias unstow.d="stow -D --dotfiles"
+
 
 # NEW
-# ---------------------------------------------------
-
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 CMD_PATH=~/stuff/bookmarks/cmd.sh
 alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
@@ -127,13 +143,3 @@ function progress.today () {
   fi
   $EDITOR $README
 }
-
-alias stow.d="stow --dotfiles"
-alias unstow="stow -D"
-alias unstow.d="stow -D --dotfiles"
-alias t.rename="tmux rename-window"
-
-alias __="tmux new-window"
-
-
-alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"

@@ -1,10 +1,5 @@
-source ~/.local/fzf/key-bindings.zsh
-source ~/.local/fzf/completion.zsh
 
-export GIT_EDITOR=nvim
-
-bindkey -s '^[ ' 'echo "shit"\n'
-bindkey -s '^ ' 'scrot\n'
+bindkey -s '^ ' '\n'
 
 bindkey -s "^[f" "tmux-sessionizer main\n"
 bindkey -s "^[j" "tmux-sessionizer configs\n"
@@ -15,8 +10,6 @@ bindkey -s "^[h" "tmux-home SECOND\n"
 bindkey -s "^[o" "change-zsh-theme\n"
 bindkey -s "^[k" "change-kitty-theme\n"
 bindkey -s "^[r" "tmux-change-session\n"
-
-bindkey -s ^q "source ~/.zshrc\n"
 
 bindkey -s "\e[24~" "\n"
 bindkey -s "\eOQ" "\n"
