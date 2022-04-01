@@ -19,8 +19,8 @@ export PATH="$HOME/go/bin:$PATH"
 #    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 # fi
 
-ZSH_THEME="vyber"
-# ZSH_THEME="theme"
+ #ZSH_THEME="vyber"
+ZSH_THEME="theme"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
