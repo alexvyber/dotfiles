@@ -1,3 +1,4 @@
+# TODO: make the stripe between outputs like in af-magic
 PROMPT="%(?:%{$fg_bold[green]%}✓:%{$fg_bold[red]%}✗)"
 PROMPT+=' %{$fg[blue]%}%c%{$reset_color%} $(git_prompt_info)'
 

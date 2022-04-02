@@ -44,13 +44,16 @@ zstyle ':omz:update' frequency 13     # auto-update (in days).
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_keybindings
-source $HOME/.zsh_alias_profile
+source $HOME/.alias_profile
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/plugins/k/k.sh
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.local/fzf/key-bindings.zsh
 source ~/.local/fzf/completion.zsh
 
+# tmp --------------------------------------------------------------------------
+source $HOME/tmp/bin/twoArgs
+# /tmp --------------------------------------------------------------------------
 . $HOME/.asdf/asdf.sh
 
 plugins=(k git asdf zsh-autosuggestions zsh-syntax-highlighting )

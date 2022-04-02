@@ -1,5 +1,5 @@
 
-bindkey -s '^ ' '\n'
+# bindkey -s '^ ' '\n'
 
 bindkey -s "^[f" "tmux-sessionizer main\n"
 bindkey -s "^[j" "tmux-sessionizer configs\n"
@@ -11,11 +11,11 @@ bindkey -s "^[o" "change-zsh-theme\n"
 bindkey -s "^[k" "change-kitty-theme\n"
 bindkey -s "^[r" "tmux-change-session\n"
 
-bindkey -s "\e[24~" "\n"
-bindkey -s "\eOQ" "\n"
+# bindkey -s "\e[24~" "\n"
+# bindkey -s "\eOQ" "\n"
 
-bindkey -s "\e[23~" "\n"
-bindkey -s "\eOP" "\n"
+# bindkey -s "\e[23~" "\n"
+# bindkey -s "\eOP" "\n"
 
 bindkey -s "\e[21~" "tmux kill-server\n"
 bindkey -s "\e[20~" "tmux kill-window -a\n"

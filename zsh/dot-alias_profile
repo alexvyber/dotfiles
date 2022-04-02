@@ -4,7 +4,7 @@
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # alias a=""
   alias b="bat"
-  alias c="clear"
+# alias c=""
   alias d="docker"
   alias e="elixir"
   alias f="fzf"
@@ -36,13 +36,15 @@ EDITOR=vim
 alias v.rc="$EDITOR ~/.vimrc"
 alias n.init="nvim ~/.config/nvim/init.vim"
 alias z.rc="$EDITOR ~/.zshrc"
-alias a.profile="$EDITOR ~/.zsh_alias_profile"
-alias b.config="$EDITOR ~/.config/bat/config"
-alias z.profile="$EDITOR ~/.zsh_profile"
-alias b.profile="$EDITOR ~/.bash_profile"
+alias alias.profile="$EDITOR ~/.zsh_alias_profile"
+alias bat.config="$EDITOR ~/.config/bat/config"
+alias zsh.profile="$EDITOR ~/.zsh_profile"
+alias bash.profile="$EDITOR ~/.bash_profile"
 alias t.conf="$EDITOR ~/.tmux.conf"
 alias i3.config="$EDITOR ~/.config/i3/config"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
+alias awesome.rc="$EDITOR ~/.config/awesome/rc.lua"
+alias awesome.theme="$EDITOR ~/.config/awesome/theme.lua"
 
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -80,7 +82,7 @@ alias l.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entrie
 alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
 alias l.f="l. -F | grep -v /$" # .files TODO make work without grep
 alias lc="ls --color=never"
-
+alias lsh="ls -sh"
 
 # git
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -143,3 +145,11 @@ function progress.today () {
   fi
   $EDITOR $README
 }
+
+# Go
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+alias go.f="gofmt -w *.go"
+alias go.main="go run main.go"
+alias go.cp="copyGoFileIntoNew"
+# alias go.run='{ read -r f && go.f && clear && bat "$f.go" && go run "$f.go" } <<<'
+alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f.go" } <<<'
