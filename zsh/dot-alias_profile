@@ -36,7 +36,7 @@ EDITOR=vim
 alias v.rc="$EDITOR ~/.vimrc"
 alias n.init="nvim ~/.config/nvim/init.vim"
 alias z.rc="$EDITOR ~/.zshrc"
-alias alias.profile="$EDITOR ~/.zsh_alias_profile"
+alias alias.profile="$EDITOR ~/.alias_profile"
 alias bat.config="$EDITOR ~/.config/bat/config"
 alias zsh.profile="$EDITOR ~/.zsh_profile"
 alias bash.profile="$EDITOR ~/.bash_profile"
@@ -117,9 +117,6 @@ alias rmrf="rm -rf"
 # alias cd%="cd /"
 alias cd.omz="cd ~/.oh-my-zsh"
 alias cd.pt="cd ~/progress/$(date +"%d_%b_%y" )"
-alias cd.all="cd ~/allmystuff"
-alias tmp="cd ~/tmp"
-alias dotfiles="cd ~/dotfiles"
 
 
 # Stow
@@ -145,6 +142,9 @@ function progress.today () {
   fi
   $EDITOR $README
 }
+
+alias @='{ read -r p && cd ~/"$p"  } <<<'
+
 
 # Go
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••

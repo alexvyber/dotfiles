@@ -1,5 +1,10 @@
+
+# PS1="${FG[237]}\${(l.\$(afmagic_dashes)..-.)}%{$reset_color%}"
+
 # TODO: make the stripe between outputs like in af-magic
-PROMPT="%(?:%{$fg_bold[green]%}✓:%{$fg_bold[red]%}✗)"
+# DONE: PROMPT="${fg[white]%}\${(l.\$COLUMNS..·.)}%{$reset_color%}%(?:%{$fg_bold[green]%}✓:%{$fg_bold[red]%}✗)"
+
+PROMPT="%{$reset_color%}%(?:%{$fg_bold[green]%}✓:%{$fg_bold[red]%}✗)"
 PROMPT+=' %{$fg[blue]%}%c%{$reset_color%} $(git_prompt_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}%{$fg[yellow]%}"
