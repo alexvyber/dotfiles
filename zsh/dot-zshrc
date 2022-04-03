@@ -31,6 +31,7 @@ zstyle ':omz:update' frequency 13     # auto-update (in days).
 
 # -- TMP VARIABLES  ------------------------------------------------------------
 export PATH="$HOME/personal/plow/bin:$PATH"
+export PATH="$HOME/personal/rat/bin:$PATH"
 # // TMP VARIABLES  ------------------------------------------------------------
 
 

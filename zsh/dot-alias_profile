@@ -143,7 +143,11 @@ function progress.today () {
   $EDITOR $README
 }
 
+
+# TMP
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias @='{ read -r p && cd ~/"$p"  } <<<'
+# TODO alias l.ll='{ read -r m && ls -d $m/.* --color=auto --group-directories-first } <<<' # add all && commit message
 
 
 # Go
@@ -151,5 +155,6 @@ alias @='{ read -r p && cd ~/"$p"  } <<<'
 alias go.f="gofmt -w *.go"
 alias go.main="go run main.go"
 alias go.cp="copyGoFileIntoNew"
+alias go.README="bat ~/.oh-my-zsh/plugins/golang/README.md"
 # alias go.run='{ read -r f && go.f && clear && bat "$f.go" && go run "$f.go" } <<<'
 alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f.go" } <<<'
