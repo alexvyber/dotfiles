@@ -41,8 +41,8 @@ export PATH="$HOME/personal/rat/bin:$PATH"
 
 # Configs
 # TODO: make this work
-# source "${HOME}/.zsh/configs/powerlevel10k.zsh"
-# source "${HOME}/.zsh/configs/zinit.zsh"
+ source "${HOME}/.zsh/configs/powerlevel10k.zsh"
+ source "${HOME}/.zsh/configs/zinit.zsh"
 # Zinit plugin manager
 # source "${ZINIT[BIN_DIR]}/zinit.zsh"
 # Plugins
