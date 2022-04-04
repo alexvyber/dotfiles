@@ -1,4 +1,5 @@
 
+
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # Evironmental variables
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -20,13 +21,9 @@ export NVM_DIR="$HOME/.nvm"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 CASE_SENSITIVE="true"                 # case-sensitive completion.
-
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false"             # command auto-correction.
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-
-zstyle ':omz:update' mode auto        # update automatically without asking
-zstyle ':omz:update' frequency 13     # auto-update (in days).
 
 
 # -- TMP VARIABLES  ------------------------------------------------------------
@@ -40,33 +37,30 @@ export PATH="$HOME/personal/rat/bin:$PATH"
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 # Configs
-# TODO: make this work
- source "${HOME}/.zsh/configs/powerlevel10k.zsh"
- source "${HOME}/.zsh/configs/zinit.zsh"
-# Zinit plugin manager
-# source "${ZINIT[BIN_DIR]}/zinit.zsh"
-# Plugins
-# source "${HOME}/.zsh/plugins.zsh"
+source "${HOME}/.zsh/configs/zinit.zsh"
+source "${ZINIT[BIN_DIR]}/zinit.zsh" # Zinit plugin manager
+source "${HOME}/.zsh/plugins.zsh" # Plugins
 
-source $ZSH/oh-my-zsh.sh
-source $HOME/.zsh_keybindings
-source $HOME/.alias_profile
-source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.oh-my-zsh/plugins/k/k.sh
-source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
-source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.local/fzf/key-bindings.zsh
-source ~/.local/fzf/completion.zsh
+# Stylef fot history search
+source $HOME/.zstyle
 
+ source $ZSH/oh-my-zsh.sh
+ source $HOME/.zsh_keybindings
+ source $HOME/.alias_profile
+ source ~/.local/fzf/key-bindings.zsh
+ source ~/.local/fzf/completion.zsh
+
+ source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ # source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
+ source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # -- TMP SOURCE  ---------------------------------------------------------------
 source $HOME/tmp/bin/twoArgs
 # // TMP SOURCE  ---------------------------------------------------------------
 
-
-. $HOME/.asdf/asdf.sh
-
-plugins=(k git asdf zsh-autosuggestions zsh-syntax-highlighting golang)
+# TODO move asdf to zinit installer
+# . $HOME/.asdf/asdf.sh
+# plugins=(  asdf ) # k )
 
 [[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh # Autojump
 autoload -U compinit && compinit -u
@@ -83,6 +77,7 @@ bindkey "^n" sudo-command-line # [Ctrl + N] (for Negate) Prepend/remove 'sudo' f
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # User configs
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
 
 # Reference: http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt GLOB_DOTS               # glob matches files starting with dot; `*` becomes `*(D)`
@@ -110,3 +105,9 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 # Automatically list directory contents on `cd`.
 auto-ls () { ls; }
 [[ ${chpwd_functions[(r)auto-ls]} == auto-ls ]] || chpwd_functions=( auto-ls $chpwd_functions )
+
+# Make beam cursor https://unix.stackexchange.com/a/496878
+_fix_cursor() {
+   echo -ne '\e[5 q'
+}
+precmd_functions+=(_fix_cursor)

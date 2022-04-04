@@ -76,7 +76,7 @@ SETGID 30;43	# file that is setgid (g+s)
 CAPABILITY 30;41	# file with capability
 STICKY_OTHER_WRITABLE 1;30 # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 1;30 # dir that is other-writable (o+w) and not sticky
-STICKY 37;44	# dir with the sticky bit set (+t) and not other-writable
+STICKY 30;47	# dir with the sticky bit set (+t) and not other-writable
 
 # This is for files with execute permission:
 EXEC 00;32

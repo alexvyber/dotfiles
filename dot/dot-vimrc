@@ -290,5 +290,4 @@ nmap <leader>n :call ToggleNERDTree()<CR>
 " let g:ctrlsf_ackprg = '/usr/bin/rg'
 
 nnoremap <leader>y "+y
-
 vnoremap <leader>y "+y

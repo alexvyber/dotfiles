@@ -158,3 +158,5 @@ alias go.cp="copyGoFileIntoNew"
 alias go.README="bat ~/.oh-my-zsh/plugins/golang/README.md"
 # alias go.run='{ read -r f && go.f && clear && bat "$f.go" && go run "$f.go" } <<<'
 alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f.go" } <<<'
+alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
+alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
