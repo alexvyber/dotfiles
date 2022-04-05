@@ -2,4 +2,4 @@
 
 setxkbmap -option 'grp:alt_shift_toggle'
 setxkbmap -layout us,ru
-xset r rate 350 40
+# xset r rate 350 40
