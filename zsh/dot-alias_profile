@@ -34,7 +34,8 @@
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 EDITOR=vim
 alias v.rc="$EDITOR ~/.vimrc"
-alias n.init="nvim ~/.config/nvim/init.vim"
+alias n.vim="nvim ~/.config/nvim/init.vim"
+alias n.lua="nvim ~/.config/nvim/init.lua"
 alias z.rc="$EDITOR ~/.zshrc"
 alias alias.profile="$EDITOR ~/.alias_profile"
 alias bat.config="$EDITOR ~/.config/bat/config"
