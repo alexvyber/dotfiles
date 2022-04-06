@@ -37,7 +37,7 @@ alias v.rc="$EDITOR ~/.vimrc"
 alias n.vim="nvim ~/.config/nvim/init.vim"
 alias n.lua="nvim ~/.config/nvim/init.lua"
 alias z.rc="$EDITOR ~/.zshrc"
-alias alias.profile="$EDITOR ~/.alias_profile"
+alias aliases="$EDITOR ~/.aliases"
 alias bat.config="$EDITOR ~/.config/bat/config"
 alias zsh.profile="$EDITOR ~/.zsh_profile"
 alias bash.profile="$EDITOR ~/.bash_profile"
@@ -61,6 +61,7 @@ alias pof="poweroff"
 alias ka="k -Ah"
 alias _d="sudo dnf"
 alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
+alias      cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
 alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
@@ -144,12 +145,12 @@ function progress.today () {
   $EDITOR $README
 }
 
+alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
 # TMP
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias @='{ read -r p && cd ~/"$p"  } <<<'
 # TODO alias l.ll='{ read -r m && ls -d $m/.* --color=auto --group-directories-first } <<<' # add all && commit message
-
 
 # Go
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••

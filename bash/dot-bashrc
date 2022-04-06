@@ -1,5 +1,7 @@
 # .bashrc
 
+export HISTFILE=/home/$USER/.hidden/.bash_history
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc

@@ -21,6 +21,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Relocate .zcompdump files from home directory
+# https://stackoverflow.com/a/71271754
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 CASE_SENSITIVE="true"                 # case-sensitive completion.
 DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false"             # command auto-correction.
@@ -47,7 +51,8 @@ source $HOME/.zstyle
 
  source $ZSH/oh-my-zsh.sh
  source $HOME/.zsh_keybindings
- source $HOME/.alias_profile
+ source $HOME/.aliases
+ source $HOME/.functions
  source ~/.local/fzf/key-bindings.zsh
  source ~/.local/fzf/completion.zsh
 
@@ -116,3 +121,5 @@ _fix_cursor() {
    echo -ne '\e[5 q'
 }
 precmd_functions+=(_fix_cursor)
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin

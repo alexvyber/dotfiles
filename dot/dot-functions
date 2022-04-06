@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+ source $HOME/repos/jessfraz/dotfiles/.functions
+
+mkd() {
+  mkdir "$1"
+  cd "$1" || exit
+}
+
+tmpd() {
+  local dir
+  if [$# -eq 0 ]; then
+    dir=$(mktemp -d)
+  else
+    dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
+  fi
+  cd "$dir" || exit
+}
