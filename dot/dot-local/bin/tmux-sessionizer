@@ -46,6 +46,7 @@ case $1 in
            ~/Downloads    \
            -mindepth 0                                \
            -maxdepth 2                                \
+           -follow                                    \
            -type d                                    \
            -not -path "**/build"                      \
            -not -path "**/dist"                       \

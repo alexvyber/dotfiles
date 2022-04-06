@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
- source $HOME/repos/jessfraz/dotfiles/.functions
+# source $HOME/repos/jessfraz/dotfiles/.functions
 
 mkd() {
   mkdir "$1"
@@ -9,10 +9,16 @@ mkd() {
 
 tmpd() {
   local dir
-  if [$# -eq 0 ]; then
+  if [ $# -eq 0 ] ; then
     dir=$(mktemp -d)
   else
     dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
   fi
   cd "$dir" || exit
+}
+
+change_nvim() {
+  rm ~/.config/nvim
+  ln -sf ~/personal/nvim/$1 ~/.config/nvim
+
 }
