@@ -89,7 +89,7 @@ call plug#end()
 let loaded_matchparen = 1
 let mapleader = " "
 
-" let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 lua require("theprimeagen")
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 let g:vim_be_good_log_file = 1
@@ -229,14 +229,19 @@ endif
 com! W w " Save on Uppercase W
 com! Q q " Exit on Uppercase Q
 
-" FZF
+" -- FZF
 " ---------------------------------------
-" Let The :Files command show all files in the repo (including dotfiles)
+" -- Let The :Files command show all files in the repo (including dotfiles)
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
-nmap // :BLines!<CR>       " current file buffer search
-nmap ?? :Rg!<CR>           " All files in current folder search
-nmap <leader>p :Files!<CR> " Current folder files search
- map \\ :Commands!<CR> " fzf-powered command search
+" -- Current file buffer search
+nmap // :BLines!<CR>
+" -- All files in current folder search
+nmap ?? :Rg!<CR>
+" -- Current folder files search
+nmap <leader>p :Files!<CR>
+" -- fzf-powered command search
+map \\ :Commands!<CR>
+
 let g:fzf_preview_window = ['right:60%', 'ctrl-/']
 
 " NERDTree
