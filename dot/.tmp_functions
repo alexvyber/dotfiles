@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+REPOS=("dotfiles" \
+       "personal/personal" \
+       "personal/plow" )
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+g.status_all () {
+
+  for REPO in $REPOS
+    do
+      # Colorful ouput
+      # https://stackoverflow.com/a/5947802
+      printf "${RED}$REPO${NC}\n"
+      git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
+    done
+
+  }
