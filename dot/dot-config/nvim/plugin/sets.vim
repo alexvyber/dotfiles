@@ -2,7 +2,7 @@
 filetype plugin indent on
 syntax on
 
-" Ignore files
+" -- Ignore files
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=**/coverage/*
@@ -11,7 +11,7 @@ set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
 
-" set guicursor=
+" -- set guicursor=
 set number
 set relativenumber
 set nohlsearch
@@ -30,26 +30,27 @@ set undofile
 set incsearch
 set termguicolors
 set scrolloff=8
-" set noshowmode
+" -- set noshowmode
 set signcolumn=yes
 set isfname+=@-@
-" set ls=0
+" -- set ls=0
+set completeopt=menu,menuone,noselect
 
-" Give more space for displaying messages.
+" -- Give more space for displaying messages.
 set cmdheight=1
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
+" -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" -- delays and poor user experience.
 set updatetime=50
 
-" Don't pass messages to |ins-completion-menu|.
+" -- Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
 set colorcolumn=80
-" hello front end masters
+" -- hello front end masters
 set path+=**
 
-" Nice menu when typing `:find *.py`
+" -- Nice menu when typing `:find *.py`
 set wildmode=longest,list,full
 set wildmenu
 
@@ -72,14 +73,15 @@ set tabstop=2
 set undodir=~/tmp/vim/undo
 set undofile
 set wildignorecase
-set noruler " Don't show the line or character count in the cmdline.
-" Without this, there's a delay when changing to/from the insert mode caret
+set noruler " -- Don't show the line or character count in the cmdline.
+" -- Without this, there's a delay when changing to/from the insert mode caret
 set ttimeout
 set ttimeoutlen=1
 set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set hlsearch
 
-" Use this theme:
-set background=light " for the light version
+" -- Use this theme:
+set background=light " -- for the light version
 colorscheme one
 
 "    -- TODO: git rid of relativenumber, and fix current line number highlighting

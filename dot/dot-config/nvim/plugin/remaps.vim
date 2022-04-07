@@ -39,7 +39,7 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " greatest remap ever
-xnoremap <leader>p "_dP
+" xnoremap <leader>p "_dP
 
 " next greatest remap ever : asbjornHaland
 nnoremap <leader>y "+y
@@ -71,7 +71,7 @@ nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
 " Pasting over a selection shouldn't alter the clipboard - via https://stackoverflow.com/a/7797434
-xnoremap p pgvy
+" xnoremap p pgvy
 
 " Perform fuzzy file searching
 nnoremap <C-P> mN:Files<cr>
@@ -129,3 +129,64 @@ nmap <leader>gs :G<CR>
 
 " PlenaryTestFile
 nmap <leader>tt <Plug>PlenaryTestFile
+
+" -- Open NerdTree
+nmap <leader>n :call ToggleNERDTree()<CR>
+
+" -- FZF
+" -- -------------------------------------
+" -- current file buffer search
+nmap ]] :BLines!<CR>
+" -- All files in current folder search
+nmap ?? :Rg!<CR>
+" -- Current folder files search
+nmap <leader>p :Files!<CR>
+" -- fzf-powered command search
+map \\ :Commands!<CR>
+let g:fzf_preview_window = ['right:60%', 'ctrl-/']
+
+
+" -- LSP
+" -- -------------------------------------
+nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
+nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>vll :call LspLocationList()<CR>
+
+
+" -- HARPOON
+" -- -------------------------------------
+nnoremap <silent><leader>a    :lua require("harpoon.mark").add_file()<CR>
+nnoremap <silent>     <C-e>   :lua require("harpoon.ui").toggle_quick_menu()<CR>
+nnoremap <silent><leader>tc   :lua require("harpoon.cmd-ui").toggle_quick_menu()<CR>
+nnoremap <silent>     <C-h>   :lua require("harpoon.ui").nav_file(1)<CR>
+nnoremap <silent>     <C-t>   :lua require("harpoon.ui").nav_file(2)<CR>
+nnoremap <silent>     <C-n>   :lua require("harpoon.ui").nav_file(3)<CR>
+nnoremap <silent>     <C-s>   :lua require("harpoon.ui").nav_file(4)<CR>
+nnoremap <silent><leader>tu   :lua require("harpoon.term").gotoTerminal(1)<CR>
+nnoremap <silent><leader>te   :lua require("harpoon.term").gotoTerminal(2)<CR>
+nnoremap <silent><leader>cu   :lua require("harpoon.term").sendCommand(1, 1)<CR>
+nnoremap <silent><leader>ce   :lua require("harpoon.term").sendCommand(1, 2)<CR>
+
+
+" -- TELESCOPE
+" -- -------------------------------------
+nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+nnoremap <Leader>pf :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>pw :lua require('telescope.builtin').grep_string { search = vim.fn.expand("<cword>") }<CR>
+nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
+nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
+nnoremap <leader>vrc :lua require('theprimeagen.telescope').search_dotfiles({ hidden = true })<CR>
+nnoremap <leader>va :lua require('theprimeagen.telescope').anime_selector()<CR>
+nnoremap <leader>vc :lua require('theprimeagen.telescope').chat_selector()<CR>
+nnoremap <leader>gc :lua require('theprimeagen.telescope').git_branches()<CR>
+nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
+nnoremap <leader>gm :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
+nnoremap <leader>td :lua require('theprimeagen.telescope').dev()<CR>
