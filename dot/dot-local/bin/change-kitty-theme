@@ -2,3 +2,4 @@ path=~/.config/kitty/kitty-themes/themes/
 theme_name=$(find $path -type f | cut -d '/' -f 8 | cut -d "." -f 1 | fzf)
 
 ln -sf  "$path$theme_name.conf" ~/.config/kitty/theme.conf
+echo $theme_name
