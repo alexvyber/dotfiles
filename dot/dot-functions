@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # source $HOME/repos/jessfraz/dotfiles/.functions
+source $HOME/.tmp_functions
 
 mkd() {
   mkdir "$1"

@@ -1,1 +1,1 @@
-/home/alexs/.config/awesome/dark.lua
+/home/alexs/.config/awesome/light.lua
