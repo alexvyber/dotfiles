@@ -32,10 +32,11 @@
 
 # Editing config files
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-EDITOR=vim
+EDITOR=nvim
 alias v.rc="$EDITOR ~/.vimrc"
 alias n.vim="nvim ~/.config/nvim/init.vim"
 alias n.lua="nvim ~/.config/nvim/init.lua"
+alias n.folder="nvim ~/.config/nvim/."
 alias z.rc="$EDITOR ~/.zshrc"
 alias aliases="$EDITOR ~/.aliases"
 alias bat.config="$EDITOR ~/.config/bat/config"

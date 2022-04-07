@@ -22,3 +22,7 @@ change_nvim() {
   ln -sf ~/personal/nvim/$1 ~/.config/nvim
 
 }
+
+change_awesome_theme() {
+  ln -sf ~/.config/awesome/$1.lua ~/.config/awesome/theme.lua
+}
