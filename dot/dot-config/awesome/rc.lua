@@ -253,7 +253,12 @@ awful.screen.connect_for_each_screen(
                 "  ▲  ",
                 "  ★★★  ",
                 "  ●  ",
+                "  ●  ",
+                "  ●  ",
+                "  ●  ",
+                "  ●  ",
                 "  ■  ",
+                "  ■    ■  ",
                 "  ▲  ",
                 "  ☀☀☀  ",
                 "  •••••  " },
@@ -610,10 +615,28 @@ clientkeys =
     )
 )
 
+
+    globalkeys =
+        gears.table.join(
+        globalkeys,
+        -- View tag only.
+        awful.key(
+            {modkey},
+            "#" .. 49,
+            function()
+                local screen = awful.screen.focused()
+                local tag = screen.tags[1]
+                if tag then
+                    tag:view_only()
+                end
+            end,
+            {description = "view tag #" .. 14, group = "tag"}
+        )
+    )
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 13 do
     globalkeys =
         gears.table.join(
         globalkeys,
@@ -623,7 +646,7 @@ for i = 1, 9 do
             "#" .. i + 9,
             function()
                 local screen = awful.screen.focused()
-                local tag = screen.tags[i]
+                local tag = screen.tags[i+1]
                 if tag then
                     tag:view_only()
                 end
@@ -673,6 +696,46 @@ for i = 1, 9 do
         )
     )
 end
+
+
+
+
+
+
+    -- globalkeys =
+    --     gears.table.join(
+    --     globalkeys,
+    --     -- View tag only.
+    --     awful.key(
+    --         {modkey},
+    --         "#" .. 19,
+    --         function()
+    --             local screen = awful.screen.focused()
+    --             local tag = screen.tags[10]
+    --             if tag then
+    --                 tag:view_only()
+    --             end
+    --         end,
+    --         {description = "view tag #" .. 10, group = "tag"}
+    --     )
+    -- )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 clientbuttons =
     gears.table.join(

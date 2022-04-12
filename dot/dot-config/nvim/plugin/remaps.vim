@@ -81,6 +81,8 @@ nnoremap <leader><leader> mN:Commands<cr>
 nnoremap <leader>/ mN:History/<cr>
 nnoremap <leader>: mN:History:<cr>
 nnoremap <leader>? mN:Helptags<cr>
+
+
 " Hightlight all incremental search results
 map /  <plug>(incsearch-forward)
 map ?  <plug>(incsearch-backward)
@@ -94,19 +96,28 @@ map g# <Plug>(incsearch-nohl-g#)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+
 nnoremap <silent> <leader>K :call <SID>show_documentation()<CR>
 nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
+
+
 " Tab completion for asyncomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+
+
 " Ctrl-backspace deletes previous word
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
+
+
 " Next/Prev error bindings for Ale
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nnoremap <leader><leader><leader> :set list<CR>
+
+
 " Vyber Custom
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv

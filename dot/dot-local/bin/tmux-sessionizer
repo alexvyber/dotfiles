@@ -8,6 +8,9 @@ case $1 in
    main)
       selected=$(find                                       \
            ~/learn                              \
+           ~/learn/go                              \
+           ~/learn/go/powerful-cli                              \
+           ~/learn/go/powerful-cli/pragprog.com                              \
            ~/repos                               \
            ~/tmp                                      \
            ~/personal                                 \

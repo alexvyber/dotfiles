@@ -14,7 +14,7 @@
 # alias j="" used by  autojump
 # alias k="" used by k
   alias l="ls --color=auto"
-  alias m="man"
+# alias m=""
   alias n="nvim"
 # alias o=""
 # alias p=""
@@ -24,7 +24,7 @@
 # alias u=""
   alias v="vim"
   alias t="tmux"
-# alias w used by w, can be rebinded
+  alias w="which" used by w, can be rebinded
   alias x="exit" # can be reused
 # alias y=""
   alias z="zsh" # Experiment | Delete if need z
@@ -66,7 +66,7 @@ alias      cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
 alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
-
+alias bat='bat --theme="Coldark-Cold"'
 
 # ls
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -145,6 +145,9 @@ function progress.today () {
   fi
   $EDITOR $README
 }
+
+# alias mynvim="XDG_CONFIG_HOME=~/mynvim nvim"
+
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 

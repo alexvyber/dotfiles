@@ -81,7 +81,8 @@ set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
 set hlsearch
 
 " -- Use this theme:
-set background=light " -- for the light version
+set background=light " -- dark or light version
+let ayucolor="dark"
 colorscheme one
 
 "    -- TODO: git rid of relativenumber, and fix current line number highlighting

@@ -19,11 +19,29 @@ tmpd() {
 }
 
 change_nvim() {
-  rm ~/.config/nvim
+  rm ~/.config/nvim &2 > dev/null
   ln -sf ~/personal/nvim/$1 ~/.config/nvim
 
 }
 
 change_awesome_theme() {
   ln -sf ~/.config/awesome/$1.lua ~/.config/awesome/theme.lua
+}
+
+switch_theme () {
+  if [ $1 == "dark" ] ; then
+   change_awesome_theme dark
+   switch-kitty-theme Vyber_dark
+else
+  echo "asdf"
+  fi
+}
+
+stupid_boxing () {
+  local title="·  $@  ·"
+  local edge=$(echo $title | sed 's/./·/g')
+
+  echo "$edge"
+  echo "$title"
+  echo "$edge"
 }

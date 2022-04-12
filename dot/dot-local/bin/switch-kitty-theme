@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+path=~/.config/kitty/kitty-themes/themes/
+
+ln -sf  "$path$1.conf" ~/.config/kitty/theme.conf
+echo $1

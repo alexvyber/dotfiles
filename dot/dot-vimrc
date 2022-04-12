@@ -25,10 +25,11 @@ set showcmd
 set splitright
 set tabstop=2
 set ttyfast " removed in nvim
-set undodir=~/tmp/vim/undo
+set undodir=~/tmp/vim/undo-vim
 set undofile
 set wildignorecase
 set noruler " Don't show the line or character count in the cmdline.
+set nowrapscan
 
 " Taken from https://github.com/rakr/vim-one (Credit: joshdick)
 if (has("termguicolors"))
@@ -291,3 +292,5 @@ nmap <leader>n :call ToggleNERDTree()<CR>
 
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+
+nmap = +

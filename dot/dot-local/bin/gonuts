@@ -2,3 +2,4 @@
 
 sudo mount /dev/sda1 ~/TORRENTER
 sudo mount /dev/sdb2 ~/FILER
+ xset r rate 200 60

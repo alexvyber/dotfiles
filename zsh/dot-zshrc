@@ -32,8 +32,12 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 
 
 # -- TMP VARIABLES  ------------------------------------------------------------
+GH="github.com"
+httpGH="https://github.com"
 export PATH="$HOME/personal/plow/bin:$PATH"
 export PATH="$HOME/personal/rat/bin:$PATH"
+
+
 # // TMP VARIABLES  ------------------------------------------------------------
 
 
@@ -123,3 +127,5 @@ _fix_cursor() {
 precmd_functions+=(_fix_cursor)
 . "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/go/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
