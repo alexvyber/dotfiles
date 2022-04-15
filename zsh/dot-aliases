@@ -56,7 +56,6 @@ alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
 # alias rm="rm -i"
 alias gr="grep"
-alias re="reset"
 alias reb="reboot"
 alias pof="poweroff"
 alias ka="k -Ah"
