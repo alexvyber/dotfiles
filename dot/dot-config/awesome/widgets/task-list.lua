@@ -82,7 +82,7 @@ local function list_update(w, buttons, label, data, objects)
          bg_clickable = clickable_container()
          bgb = wibox.container.background()
          tbm = wibox.container.margin(tb, dpi(4), dpi(4))
-         ibm = wibox.container.margin(ib, dpi(6), dpi(6), dpi(6), dpi(6)) -- 12 is default top and bottom margin --app icon
+         ibm = wibox.container.margin(ib, dpi(5), dpi(5), dpi(5), dpi(5)) -- 12 is default top and bottom margin --app icon
          l = wibox.layout.fixed.horizontal()
          ll = wibox.layout.fixed.horizontal()
 
@@ -91,7 +91,7 @@ local function list_update(w, buttons, label, data, objects)
          l:add(ibm)
          l:add(tbm)
          ll:add(l)
-         ll:add(cbm)
+         -- ll:add(cbm)
 
          bg_clickable:set_widget(ll)
          -- And all of this gets a background
