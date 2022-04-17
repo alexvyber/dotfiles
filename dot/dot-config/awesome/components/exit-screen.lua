@@ -29,7 +29,7 @@ local exit_screen = {}
 -- ===================================================================
 
 
-local icon_size = dpi(90)
+local icon_size = dpi(100)
 
 local build_button = function(icon)
    local button = wibox.widget {
@@ -209,10 +209,10 @@ exit_screen.widget:setup {
       {
          poweroff,
          reboot,
-         suspend,
+         -- suspend,
          exit,
-         lock,
-         layout = wibox.layout.fixed.horizontal
+         -- lock,
+         layout = wibox.layout.align.horizontal
       },
       nil,
       expand = "none",
