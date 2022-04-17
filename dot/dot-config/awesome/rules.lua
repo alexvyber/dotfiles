@@ -20,7 +20,7 @@ local screen_width = awful.screen.focused().geometry.width
 
 -- define module table
 local rules = {}
-
+local user_rules = require('user_rules')
 
 -- ===================================================================
 -- Rules
@@ -142,13 +142,13 @@ function rules.create(clientkeys, clientbuttons)
          properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.45}
       },
 
-      { rule = { instance = "brave-browser" }, properties = { tag = "4" } },
-      { rule = { instance = "vivaldi" }, properties = { tag = "6" } },
-      { rule = { instance = "slack" }, properties = { tag = "10" } },
-      { rule = { instance = "discord" }, properties = { tag = "11" } },
-      { rule = { instance = "telegram-desktop" }, properties = { tag = "12" } },
-      { rule = { instance = "qbittorrent" }, properties = { tag = "13" } },
-      { rule = { instance = "dolphin" }, properties = { tag = "14" } },
+      user_rules.vivaldi,
+      user_rules.brave,
+      user_rules.slack,
+      user_rules.discord,
+      user_rules.telegram,
+      user_rules.qbittorrent ,
+      user_rules.dolphin,
    }
 end
 
