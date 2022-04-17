@@ -48,6 +48,7 @@ function rules.create(clientkeys, clientbuttons)
    end
 
    return {
+
       -- All clients will match this rule.
       {
          rule = {},
@@ -140,6 +141,14 @@ function rules.create(clientkeys, clientbuttons)
          rule_any = {class = {"Pavucontrol"}, name = {"Bluetooth Devices"}},
          properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.45}
       },
+
+      { rule = { instance = "brave-browser" }, properties = { tag = "4" } },
+      { rule = { instance = "vivaldi" }, properties = { tag = "6" } },
+      { rule = { instance = "slack" }, properties = { tag = "10" } },
+      { rule = { instance = "discord" }, properties = { tag = "11" } },
+      { rule = { instance = "telegram-desktop" }, properties = { tag = "12" } },
+      { rule = { instance = "qbittorrent" }, properties = { tag = "13" } },
+      { rule = { instance = "dolphin" }, properties = { tag = "14" } },
    }
 end
 

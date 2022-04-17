@@ -25,6 +25,7 @@ local is_blurred = false;
 
 local wallpaper_dir = gears.filesystem.get_configuration_dir() .. "/wallpaper"
 local wallpaper = wallpaper_dir .. "/wallpaper.jpg"
+-- local wallpaper = "/home/alexs/Pictures/SAM_80841.jpg"
 local blurred_wallpaper = wallpaper -- wallpaper_dir .. "/blurredWallpaper.png"
 -- local wallpaper = "/home/alexs/Pictures/bg2.jpg"
 -- local blurred_wallpaper =  "/home/alexs/Pictures/bg2.jpg"

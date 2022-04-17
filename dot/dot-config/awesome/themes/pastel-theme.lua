@@ -33,7 +33,7 @@ theme.title_font =  "Work Sans Medium 10"
 theme.bg_normal = "#00000000"
 theme.bg_dark = "#000000"
 theme.bg_focus = "#ffffff"
-theme.bg_urgent = "#5577ee"
+theme.bg_urgent = "#86d46c"
 theme.bg_minimize = "#bcbcbc"
 
 -- Foreground

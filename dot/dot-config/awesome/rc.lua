@@ -144,5 +144,6 @@ screen.connect_signal("property::geometry", awesome.restart)
 -- ===================================================================
 
 
+
 collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)

@@ -4,7 +4,9 @@ REPOS=("dotfiles" \
        "personal/personal" \
        "personal/rat" \
        "personal/plow" )
-RED='\033[0;31m'
+RED='\033[1;38m'
+SEP='\033[1;37m'
+SEPAR="···············································································"
 NC='\033[0m' # No Color
 g.status_all () {
 
@@ -12,7 +14,9 @@ g.status_all () {
     do
       # Colorful ouput
       # https://stackoverflow.com/a/5947802
-      printf "${RED}$REPO${NC}\n"
+      echo " "
+      printf "${RED}$REPO  ${NC}\n"
+      printf "${SEP}$SEPAR  ${NC}\n"
       git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
     done
 
