@@ -20,6 +20,7 @@ local screen_width = awful.screen.focused().geometry.width
 
 -- define module table
 local rules = {}
+
 local user_rules = require('user_rules')
 
 -- ===================================================================
@@ -31,7 +32,6 @@ local user_rules = require('user_rules')
 function rules.create(clientkeys, clientbuttons)
    local rofi_rule = {}
 
-   if beautiful.name == "mirage" then
       rofi_rule = {
          rule_any = {name = {"rofi"}},
          properties = {floating = true, titlebars_enabled = false},
@@ -41,13 +41,8 @@ function rules.create(clientkeys, clientbuttons)
             end
          end
       }
-   else rofi_rule = {
-         rule_any = {name = {"rofi"}},
-         properties = {maximized = true, floating = true, titlebars_enabled = false},
-      }
-   end
 
-   return {
+   local local_rules = {
 
       -- All clients will match this rule.
       {
@@ -64,6 +59,7 @@ function rules.create(clientkeys, clientbuttons)
             placement = awful.placement.centered
          },
       },
+
       -- Floating clients.
       {
          rule_any = {
@@ -102,7 +98,7 @@ function rules.create(clientkeys, clientbuttons)
       {
          rule_any = {
             class = {
-               "Firefox"
+               "brave-browser"
             },
          }, properties = {switchtotag = true}
       },
@@ -141,16 +137,16 @@ function rules.create(clientkeys, clientbuttons)
          rule_any = {class = {"Pavucontrol"}, name = {"Bluetooth Devices"}},
          properties = {floating = true, width = screen_width * 0.55, height = screen_height * 0.45}
       },
-
-      user_rules.vivaldi,
-      user_rules.brave,
-      user_rules.slack,
-      user_rules.discord,
-      user_rules.telegram,
-      user_rules.qbittorrent ,
-      user_rules.dolphin,
    }
+
+   -- Inserting user defined rules into table
+   for _, rule in pairs(user_rules) do
+      table.insert(local_rules, rule)
+   end
+
+   return local_rules
 end
+
 
 -- return module table
 return rules
