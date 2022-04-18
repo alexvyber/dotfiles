@@ -2,11 +2,15 @@
 
 REPOS=("dotfiles" \
        "personal/personal" \
+       "personal/vyber/front" \
+       "personal/vyber/api" \
        "personal/rat" \
        "personal/plow" )
 RED='\033[1;38m'
+CLEAN='\033[1;32m'
 SEP='\033[1;37m'
 SEPAR="···············································································"
+SEPAR_LIGHT="················································································"
 NC='\033[0m' # No Color
 g.status_all () {
 
@@ -14,10 +18,20 @@ g.status_all () {
     do
       # Colorful ouput
       # https://stackoverflow.com/a/5947802
-      echo " "
-      printf "${RED}$REPO  ${NC}\n"
-      printf "${SEP}$SEPAR  ${NC}\n"
-      git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
+      STR=$(git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo "")
+      SUB='nothing to commit, working tree clean'
+      if [[ "$STR" == *"$SUB"* ]]; then
+        printf "${RED}$REPO ${NC}"
+        printf "${CLEAN}is clean ${NC}\n"
+        # echo " "
+        # printf "\n${SEP}$SEPAR_LIGHT  ${NC}\n"
+      else
+        printf "\n${RED}$REPO ${NC}\n"
+        printf "${SEP}$SEPAR  ${NC}\n"
+        git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
+      fi
     done
 
   }
+
+
