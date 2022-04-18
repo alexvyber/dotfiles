@@ -2,6 +2,7 @@ return {
     brave = {rule = {instance = "brave-browser"}, properties = {tag = "4"}},
     firefox = { rule = { class = 'firefox' }, properties = { tag = "6" }},
     vivaldi = {rule = {instance = "vivaldi"}, properties = {tag = "5"}},
+    chromium = {rule = {instance = "chromium-browser"}, properties = {tag = "3"}},
     -- edge = {rule = {instance = "microsoft-edge-stable"}, properties = {tag = "5"}},
     edge = {rule = {class = "microsoft-edge-stable"}, properties = {tag = "5"}},
     stacer = {rule = {instance = "stacer"}, properties = {tag = "9"}},

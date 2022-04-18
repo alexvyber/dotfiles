@@ -34,7 +34,7 @@ top_panel.create = function(s)
 
    local panel = awful.wibar({
       screen = s,
-      position = "top",
+      position = "bottom",
       ontop = true,
       height = beautiful.top_panel_height,
       width = s.geometry.width - 100,
