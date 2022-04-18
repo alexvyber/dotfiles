@@ -6,5 +6,5 @@ xset r rate 200 60
 
 sleep 1
 
-sudo dnf update -y &
 cat ~/.config/awesome/start-apps.lua | awesome-client
+sudo dnf update -y

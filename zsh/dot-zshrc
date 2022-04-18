@@ -11,6 +11,8 @@ export     SAVEHIST=10000000
 ZSH_THEME="theme"
 export GIT_EDITOR=nvim
 
+
+export PATH="$HOME/repos/depot_tools:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/tmp/bin:$PATH"

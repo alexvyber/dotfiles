@@ -51,7 +51,7 @@ listview {
     columns: 5;
     layout: vertical;
     spacing: 100;
-    margin: 5% 7%;
+    margin: 3% 5%;
 }
 
 element {
