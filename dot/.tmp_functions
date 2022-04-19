@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 REPOS=("dotfiles" \
-       "personal/personal" \
        ".config/awesome" \
        ".config/nvim" \
+       "personal/re" \
+       "personal/todo" \
+       "personal/personal" \
        "personal/vyber/front" \
        "personal/vyber/api" \
        "personal/rat" \
