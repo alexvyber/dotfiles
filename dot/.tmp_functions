@@ -3,13 +3,14 @@
 REPOS=("dotfiles" \
        "personal/personal" \
        ".config/awesome" \
+       ".config/nvim" \
        "personal/vyber/front" \
        "personal/vyber/api" \
        "personal/rat" \
        "personal/plow" )
 RED='\033[1;38m'
 CLEAN='\033[1;32m'
-SEP='\033[1;37m'
+SEP='\033[2;30m'
 SEPAR="···············································································"
 SEPAR_LIGHT="················································································"
 NC='\033[0m' # No Color
