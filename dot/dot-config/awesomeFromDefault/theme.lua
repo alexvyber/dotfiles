@@ -1,1 +1,0 @@
-/home/alexs/.config/awesome/dark.lua

@@ -2,6 +2,7 @@
 
 REPOS=("dotfiles" \
        "personal/personal" \
+       ".config/awesome" \
        "personal/vyber/front" \
        "personal/vyber/api" \
        "personal/rat" \
