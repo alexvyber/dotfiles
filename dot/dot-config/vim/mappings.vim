@@ -51,7 +51,7 @@ inoremap <leader><leader>' <Esc>bi"<Esc>ea"
 inoremap <leader>: <Esc>kA:<Esc>jA
 
 " Take user input Open full-screen help on the new tab
-nnoremap <leader>h :tab h <C-R>=<CR>
+nnoremap <space>h :tab h <C-R>=<CR>
 
 nnoremap <leader>e :ALEDetail<cr> " Show errors on leader-e
 
@@ -188,3 +188,4 @@ nnoremap <leader><leader><leader> :set list<CR>
 nnoremap <leader><leader><leader><leader> :echo "leader:" mapleader<CR>
 
 nnoremap #5 S" ··············································································<Esc>
+
