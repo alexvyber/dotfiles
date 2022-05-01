@@ -12,6 +12,7 @@ cnoreabbrev Qa qa
 cnoreabbrev QA qa
 cnoreabbrev qA qa
 cnoreabbrev Q! q!
+cnoreabbrev qq qa!
 
 
 cnoreabbrev h tab help 

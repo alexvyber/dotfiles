@@ -1,5 +1,4 @@
 
-
 # One letter
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # alias a=""
@@ -15,10 +14,10 @@
 # alias k="" used by k
   alias l="ls --color=auto"
 # alias m=""
-  alias n="nvim"
+# alias n="n" # n node version manager
 # alias o=""
 # alias p=""
-  alias qq="exit"
+# alias q=""
 # alias r=""
 # alias s=""
 # alias u=""
@@ -67,6 +66,7 @@ alias t.rename="tmux rename-window"
 alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
 alias bat='bat --theme="Coldark-Cold"'
 
+
 # ls
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias ls="ls --color=auto"
@@ -85,6 +85,7 @@ alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
 alias l.f="l. -F | grep -v /$" # .files TODO make work without grep
 alias lc="ls --color=never"
 alias lsh="ls -sh"
+
 
 # git
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -145,9 +146,6 @@ function progress.today () {
   $EDITOR $README
 }
 
-# alias mynvim="XDG_CONFIG_HOME=~/mynvim nvim"
-
-
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
 # TMP
@@ -166,5 +164,7 @@ alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f
 alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
 alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
 alias new.ex="new_ex"
+alias goland="./Goland/bin/goland.sh"
+
 
 function new_ex { $EDITOR $1  ; chmod +x  $1 }

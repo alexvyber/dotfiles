@@ -1,42 +1,3 @@
-#!/usr/bin/env bash
-
-REPOS=("dotfiles" \
-       ".config/awesome" \
-       ".config/nvim" \
-       "personal/re" \
-       "personal/todo" \
-       "personal/personal" \
-       "personal/vyber/front" \
-       "personal/vyber/api" \
-       "personal/rat" \
-       "personal/plow" )
-RED='\033[1;38m'
-CLEAN='\033[1;32m'
-SEP='\033[2;30m'
-SEPAR="···············································································"
-SEPAR_LIGHT="················································································"
-NC='\033[0m' # No Color
-g.status_all () {
-  for REPO in $REPOS
-    do
-      # Colorful ouput
-      # https://stackoverflow.com/a/5947802
-      STR=$(git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo "")
-      SUB='nothing to commit, working tree clean'
-      if [[ "$STR" == *"$SUB"* ]]; then
-        printf "${RED}$REPO ${NC}"
-        printf "${CLEAN}is clean ${NC}\n"
-        # echo " "
-        # printf "\n${SEP}$SEPAR_LIGHT  ${NC}\n"
-      else
-        printf "\n${RED}$REPO ${NC}\n"
-        printf "${SEP}$SEPAR  ${NC}\n"
-        git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
-      fi
-    done
-  }
-
-
 # I'm going to try and keep these available to use in either bash or zsh
 # If they aren't, I should make them differently
 
@@ -58,10 +19,16 @@ author_contrib() {
         gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
 }
 
+
 quick_change () {
     echo "Do you want to change?"
     grep -rl "$2" $1
     grep -rl "$2" $1 | xargs sed -i "s/$2/$3/g"
+}
+
+pip_update() {
+    echo "Updating python packages..."
+    pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
 }
 
 function cd {
@@ -73,15 +40,22 @@ function cd {
   fi
 }
 
-generate_attrs () {
+function manage {
+  cd ~/sourceress;
+
+  python web/manage.py "$@"
+}
+
+
+function generate_attrs {
   python web/manage.py generate_attr_constructors -f $1
 }
 
-nvim_custom_config () {
+function dvim {
   nvim -u ~/git/config_manager/test/demo_init.vim $1
 }
 
-demogif () {
+function demogif {
   local width="${3:=132}"
   local height="${4:=24}"
 
@@ -91,7 +65,7 @@ demogif () {
   termtosvg -g "$width"x"$height" $2 -c "nvim -u ~/git/config_manager/test/demo_init.vim $1"
 }
 
-nvimgif () {
+function nvimgif {
   local width="${3:=132}"
   local height="${4:=24}"
 
@@ -102,10 +76,10 @@ nvimgif () {
 }
 
 export DEFAULT_VIDEO="/dev/video0"
-list_vid_option () {
+function list_vid_option {
   v4l2-ctl --list-ctrls -d $DEFAULT_VIDEO
 }
 
-set_vid_option () {
+function set_vid_option {
   v4l2-ctl -d $DEFAULT_VIDEO --set-ctrl $1=$2
 }
