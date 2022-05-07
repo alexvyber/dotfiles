@@ -2,9 +2,8 @@
 
 sudo mount /dev/sda1 ~/TORRENTER
 sudo mount /dev/sdb2 ~/FILER
+
 xset r rate 180 65
-
 sleep 1
-
 cat ~/.config/awesome/start-apps.lua | awesome-client
 sudo dnf update -y
