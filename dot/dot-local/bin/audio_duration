@@ -1,0 +1,21 @@
+#/usr/bin/env bash
+
+
+for n in *;
+# for n in $@; 
+
+# do echo "$n"
+# echo "more"
+do
+
+duration=$(find "$n" \( -name "*.mp3" -o -name "*.m4b" -o -name "*.ogg" \) -printf "\"%p\" " 2> /dev/null | \
+          xargs exiftool -n -q -q -p '${Duration;our $sum;$_=ConvertDuration($sum+=$_)}'  254> /dev/null | \
+          tail -n 1 2> /dev/null
+    )
+# echo $duration;
+echo -e "\033[1m $duration \033[0m - $(du -sh "$n")"; 
+done 
+
+# total=$(find . -name "*.mp4" -printf "\"%p\" " | xargs exiftool -n -q -q -p '${Duration;our $sum;$_=ConvertDuration($sum+=$_)}' | tail -n 1)
+#
+# echo "Total: $total"

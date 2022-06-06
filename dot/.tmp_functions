@@ -109,3 +109,38 @@ list_vid_option () {
 set_vid_option () {
   v4l2-ctl -d $DEFAULT_VIDEO --set-ctrl $1=$2
 }
+
+
+
+pdfShit () {
+ SHIT="www.getwsodo.com"
+for i in "$@"
+do
+ echo $i
+ pdftk "$i" output uncompressed.pdf uncompress
+ sed -e "s/$SHIT//g" <uncompressed.pdf >modified.pdf
+ pdftk modified.pdf output "$i" compress
+ rm modified.pdf
+ rm uncompressed.pdf
+done
+}
+
+pdfShitMore () {
+ SHIT="www.getwsodo.com"
+for i in "$@"
+do
+ echo $i
+
+
+ name=${i: : -4}
+
+ echo "$name"
+
+ pdftk "$i" cat 4-end output shit.pdf
+ mv shit.pdf "${name}.pdf"
+
+
+
+ # rm shit.pdf
+done
+}

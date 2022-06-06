@@ -31,7 +31,7 @@
 
 # Editing config files
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-EDITOR=nvim
+EDITOR=vim
 alias v.rc="$EDITOR ~/.vimrc"
 alias n.vim="nvim ~/.config/nvim/init.vim"
 alias n.lua="nvim ~/.config/nvim/init.lua"
@@ -66,6 +66,8 @@ alias t.rename="tmux rename-window"
 alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
 alias bat='bat --theme="Coldark-Cold"'
 
+alias apt="dnf"
+alias apt-get="dnf"
 
 # ls
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -150,8 +152,12 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time
 
 # TMP
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-alias @='{ read -r p && cd ~/"$p"  } <<<'
+# alias @='{ read -r p && cd ~/"$p"  } <<<'
 # TODO alias l.ll='{ read -r m && ls -d $m/.* --color=auto --group-directories-first } <<<' # add all && commit message
+
+alias @='cd /mnt/FILER'
+alias @@='cd /mnt/SHITTER'
+alias @#='cd /mnt/TORRENTER'
 
 # Go
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
