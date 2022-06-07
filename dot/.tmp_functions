@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 REPOS=("dotfiles" \
-       ".config/awesome" \
+       # ".config/awesome" \
        ".config/nvim" \
-       "personal/re" \
-       "personal/todo" \
+       # "personal/re" \
+       # "personal/todo" \
        "personal/personal" \
        "personal/vyber/front" \
        "personal/vyber/api" \
-       "personal/rat" \
-       "personal/plow" )
+       # "personal/rat" \
+)
 RED='\033[1;38m'
 CLEAN='\033[1;32m'
 SEP='\033[2;30m'

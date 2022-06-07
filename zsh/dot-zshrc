@@ -39,6 +39,7 @@ GH="github.com"
 httpGH="https://github.com"
 export PATH="$HOME/personal/plow/bin:$PATH"
 export PATH="$HOME/personal/rat/bin:$PATH"
+export PATH=$PATH:~/.spoof-dpi/bin
 
 
 # // TMP VARIABLES  ------------------------------------------------------------
