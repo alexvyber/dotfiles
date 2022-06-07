@@ -1,6 +1,7 @@
 ## allowed actions
 repo:
+  - .config/nvim
+  - .config/awesome
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
-  - .config/nvim
