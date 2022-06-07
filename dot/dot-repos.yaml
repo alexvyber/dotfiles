@@ -1,0 +1,6 @@
+## allowed actions
+repo:
+  - personal/personal
+  - personal/vyber/front
+  - personal/vyber/api
+  - .config/nvim

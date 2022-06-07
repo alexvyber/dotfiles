@@ -16,9 +16,24 @@ SEP='\033[2;30m'
 SEPAR="···············································································"
 SEPAR_LIGHT="················································································"
 NC='\033[0m' # No Color
+
+
+# for n in "${repos[@]}" ; do
+#     # echo $n
+#     new_n=$(echo $n | cut -c 2-)
+#     echo $new_n ; done
+
 g.status_all () {
-  for REPO in $REPOS
+
+while IFS= read -r value; do
+    repos+=($value)
+done < <(yq eval  '.repo' "/home/alexs/.repos.yaml")
+  for repo in $repos
     do
+        # echo $repo
+        REPO=$(echo $repo | cut -c 3-)
+        # echo $REPO
+        # echo "SHIT"
       # Colorful ouput
       # https://stackoverflow.com/a/5947802
       STR=$(git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo "")
