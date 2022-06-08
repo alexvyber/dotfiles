@@ -25,9 +25,14 @@ NC='\033[0m' # No Color
 
 g.status_all () {
 
-while IFS= read -r value; do
-    repos+=($value)
-done < <(yq eval  '.repo' "/home/alexs/.repos.yaml")
+    if [[ $repos ]] ; then
+        # some
+    else
+   while IFS= read -r value; do
+     repos+=($value)
+   done < <(yq eval  '.repo' "/home/alexs/.repos.yaml")
+    fi
+
   for repo in $repos
     do
         # echo $repo
@@ -49,6 +54,7 @@ done < <(yq eval  '.repo' "/home/alexs/.repos.yaml")
         git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
       fi
     done
+    # unset $repos
   }
 
 
