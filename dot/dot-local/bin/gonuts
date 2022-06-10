@@ -1,17 +1,35 @@
 #!/usr/bin/env bash
 
 # sudo mount /dev/sda1 /mnt/PIPKA
-sudo mount /dev/sda2 /mnt/FILER
-sudo mount /dev/sdb1 /mnt/TORRENTER
-sudo mount /dev/sdd1 /mnt/SHITTER
+# sudo mount /dev/sda2 /mnt/FILER
+# sudo mount /dev/sdb1 /mnt/TORRENTER
+# sudo mount /dev/sdd1 /mnt/SHITTER
 
 xset r rate 200 60
-sleep 1
+
+declare -A disks=(
+  [FILER]=sda2
+  [TORRENTER]=sdb1
+  [SHITTER]=sdd1
+)
+
+for key in "${!disks[@]}";  do 
+    # echo "$key => ${disks[$key]}"
+    if mountpoint -q /mnt/$key; then
+        echo "$key already mounted"
+    else
+        sudo mount /dev/${disks[$key]} /mnt/$key 
+        echo "$key mounted"
+    fi ; done
+
+
+# sleep 1
+# echo shit
 # for n in $(pgrep blue) ; do sudo kill -9 $n ; done
 # sudo service start bluetooth  
 cat ~/.config/awesome/start-apps.lua | awesome-client
 
-sleep 3;
+# sleep 3;
 
 
-sudo dnf update -y
+
