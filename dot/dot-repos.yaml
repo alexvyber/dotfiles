@@ -7,6 +7,9 @@ repo:
   - personal/vyber/api
   - dotfiles
   - learn/1000days
-  - learn/code
+  - learn/just_code
   - learn/HTML_apis
-
+  - personal/glypher
+  - personal/katzen
+  - personal/timer
+  - learn/react_reverse

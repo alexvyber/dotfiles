@@ -134,7 +134,7 @@ set_vid_option () {
 
 
 pdfShit () {
- SHIT="www.getwsodo.com"
+ SHIT="www.it-ebooks.info"
 for i in "$@"
 do
  echo $i
