@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 #     new_n=$(echo $n | cut -c 2-)
 #     echo $new_n ; done
 
-g.status_all () {
+gsa () {
 
     if [[ $repos ]] ; then
         # some

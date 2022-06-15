@@ -28,6 +28,9 @@
 # alias y=""
   alias z="zsh" # Experiment | Delete if need z
 
+# V coreutils
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+alias mv="~/repos/coreutils/bin/mv"
 
 # Editing config files
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
