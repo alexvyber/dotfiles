@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-REPOS=("dotfiles" \
-       # ".config/awesome" \
-       ".config/nvim" \
-       # "personal/re" \
-       # "personal/todo" \
-       "personal/personal" \
-       "personal/vyber/front" \
-       "personal/vyber/api" \
-       # "personal/rat" \
-)
 RED='\033[1;38m'
 CLEAN='\033[1;32m'
 SEP='\033[2;30m'
@@ -22,6 +12,7 @@ NC='\033[0m' # No Color
 #     # echo $n
 #     new_n=$(echo $n | cut -c 2-)
 #     echo $new_n ; done
+
 
 gsa () {
 
@@ -54,7 +45,10 @@ gsa () {
         git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status ; echo ""
       fi
     done
-    # unset $repos
+  }
+
+  gpa () {
+
   }
 
 
@@ -131,8 +125,6 @@ set_vid_option () {
   v4l2-ctl -d $DEFAULT_VIDEO --set-ctrl $1=$2
 }
 
-
-
 pdfShit () {
  SHIT="www.it-ebooks.info"
 for i in "$@"
@@ -159,8 +151,6 @@ do
 
  pdftk "$i" cat 4-end output shit.pdf
  mv shit.pdf "${name}.pdf"
-
-
 
  # rm shit.pdf
 done
