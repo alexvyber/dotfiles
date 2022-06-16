@@ -14,9 +14,7 @@ NC='\033[0m' # No Color
 
 gsa() {
 
-	if [[ $repos ]]; then
-		# some
-	else
+	if [[ ! $repos ]]; then
 		while IFS= read -r value; do
 			repos+=($value)
 		done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
@@ -121,26 +119,6 @@ nvim_custom_config() {
 	nvim -u ~/git/config_manager/test/demo_init.vim $1
 }
 
-demogif() {
-	local width="${3:=132}"
-	local height="${4:=24}"
-
-	# Set terminal size
-	printf '\033[8;'$height';'$width't'
-
-	termtosvg -g "$width"x"$height" $2 -c "nvim -u ~/git/config_manager/test/demo_init.vim $1"
-}
-
-nvimgif() {
-	local width="${3:=132}"
-	local height="${4:=24}"
-
-	# Set terminal size
-	printf '\033[8;'$height';'$width't'
-
-	termtosvg -g "$width"x"$height" $2 -c "nvim $1"
-}
-
 export DEFAULT_VIDEO="/dev/video0"
 list_vid_option() {
 	v4l2-ctl --list-ctrls -d $DEFAULT_VIDEO
@@ -150,6 +128,7 @@ set_vid_option() {
 	v4l2-ctl -d $DEFAULT_VIDEO --set-ctrl $1=$2
 }
 
+# TODO: Make this function take string to remove as a parameter
 pdfShit() {
 	SHIT="www.it-ebooks.info"
 	for i in "$@"; do
