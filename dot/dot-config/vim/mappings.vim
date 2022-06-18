@@ -25,9 +25,9 @@ nnoremap <leader>: mN:History:<cr>
 nnoremap <leader>? mN:Helptags<cr>
 
 " Hightlight all incremental search results
-map /  <plug>(incsearch-forward)
-map ?  <plug>(incsearch-backward)
-map g/ <plug>(incsearch-stay)
+" map /  <plug>(incsearch-forward)
+" map ?  <plug>(incsearch-backward)
+" map g/ <plug>(incsearch-stay)
 
 " Set up some handy CtrlSF bindings
 nmap <leader>a :CtrlSF -R ""<Left>

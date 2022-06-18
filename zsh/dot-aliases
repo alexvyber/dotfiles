@@ -31,7 +31,7 @@
 # V coreutils
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias mv="~/repos/coreutils/bin/mv"
-alias mkdir="~/repos/coreutils/bin/mkdir"
+# alias mkdir="~/repos/coreutils/bin/mkdir"
 
 # Editing config files
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -118,16 +118,6 @@ alias rmr="rm -r"
 alias rmrf="rm -rf"
 
 
-# cd
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# alias cd#="cd /"
-# alias cd@="cd /"
-# alias cd!="cd /"
-# alias cd%="cd /"
-alias cd.omz="cd ~/.oh-my-zsh"
-alias cd.pt="cd ~/progress/$(date +"%d_%b_%y" )"
-
-
 # Stow
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias stow.d="stow --dotfiles"
@@ -158,10 +148,6 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # alias @='{ read -r p && cd ~/"$p"  } <<<'
 # TODO alias l.ll='{ read -r m && ls -d $m/.* --color=auto --group-directories-first } <<<' # add all && commit message
-
-alias @='cd /mnt/FILER'
-alias @@='cd /mnt/SHITTER'
-alias @#='cd /mnt/TORRENTER'
 
 # Go
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••

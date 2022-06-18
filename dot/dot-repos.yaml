@@ -2,14 +2,14 @@
 repo:
   - .config/nvim
   - .config/awesome
+  - learn/1000days
+  - learn/code
+  - learn/HTML_apis
+  - learn/react_reverse
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
-  - dotfiles
-  - learn/1000days
-  - learn/just_code
-  - learn/HTML_apis
   - personal/glypher
   - personal/katzen
   - personal/timer
-  - learn/react_reverse
+  - dotfiles
