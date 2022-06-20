@@ -30,7 +30,7 @@
 
 # V coreutils
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-alias mv="~/repos/coreutils/bin/mv"
+# alias mv="~/repos/coreutils/bin/mv"
 # alias mkdir="~/repos/coreutils/bin/mkdir"
 
 # Editing config files
