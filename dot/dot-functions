@@ -1,47 +1,47 @@
 #!/usr/bin/env bash
 
-# source $HOME/repos/jessfraz/dotfiles/.functions
 source $HOME/.tmp_functions
 
 mkd() {
-  mkdir "$1"
-  cd "$1" || exit
+	mkdir "$1"
+	cd "$1" || exit
 }
 
 tmpd() {
-  local dir
-  if [ $# -eq 0 ] ; then
-    dir=$(mktemp -d)
-  else
-    dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
-  fi
-  cd "$dir" || exit
+	local dir
+	if [ $# -eq 0 ]; then
+		dir=$(mktemp -d)
+	else
+		dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
+	fi
+	cd "$dir" || exit
 }
 
 change_nvim() {
-  rm ~/.config/nvim &2 > dev/null
-  ln -sf ~/personal/nvim/$1 ~/.config/nvim
+	rm ~/.config/nvim &
+	2 >dev/null
+	ln -sf ~/personal/nvim/$1 ~/.config/nvim
 
 }
 
 change_awesome_theme() {
-  ln -sf ~/.config/awesome/$1.lua ~/.config/awesome/theme.lua
+	ln -sf ~/.config/awesome/$1.lua ~/.config/awesome/theme.lua
 }
 
-switch_theme () {
-  if [ $1 == "dark" ] ; then
-   change_awesome_theme dark
-   switch-kitty-theme Vyber_dark
-else
-  echo "asdf"
-  fi
+switch_theme() {
+	if [ $1 == "dark" ]; then
+		change_awesome_theme dark
+		switch-kitty-theme Vyber_dark
+	else
+		echo "asdf"
+	fi
 }
 
-stupid_boxing () {
-  local title="·  $@  ·"
-  local edge=$(echo $title | sed 's/./·/g')
+stupid_boxing() {
+	local title="·  $@  ·"
+	local edge=$(echo $title | sed 's/./·/g')
 
-  echo "$edge"
-  echo "$title"
-  echo "$edge"
+	echo "$edge"
+	echo "$title"
+	echo "$edge"
 }

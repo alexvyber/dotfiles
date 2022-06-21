@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
+# Colorful ouput
+# https://stackoverflow.com/a/5947802
 RED='\033[1;38m'
 CLEAN='\033[1;32m'
 SEP='\033[2;30m'
-SEPAR="···············································································"
-SEPAR_LIGHT="················································································"
 NC='\033[0m' # No Color
 
 # for n in "${repos[@]}" ; do
@@ -12,21 +12,19 @@ NC='\033[0m' # No Color
 #     new_n=$(echo $n | cut -c 2-)
 #     echo $new_n ; done
 
+#--------------------------------------------------------------------------
+# Git Status All
+# Globals: nothing
+# Input:   nothing
+# Output:  nothing
 gsa() {
-
-	if [[ ! $repos ]]; then
-		while IFS= read -r value; do
-			repos+=($value)
-		done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
-	fi
+	local repos
+	while IFS= read -r value; do
+		repos+=($value)
+	done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
 
 	for repo in $repos; do
-		# echo $repo
 		REPO=$(echo $repo | cut -c 3-)
-		# echo $REPO
-		# echo "SHIT"
-		# Colorful ouput
-		# https://stackoverflow.com/a/5947802
 		STR=$(
 			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
 		)
@@ -34,26 +32,25 @@ gsa() {
 		if [[ "$STR" == *"$SUB"* ]]; then
 			printf "${RED}$REPO ${NC}"
 			printf "${CLEAN}is clean ${NC}\n"
-			# echo " "
-			# printf "\n${SEP}$SEPAR_LIGHT  ${NC}\n"
 		else
 			printf "\n${RED}$REPO ${NC}\n"
-			printf "${SEP}$SEPAR  ${NC}\n"
+			printf "${SEP}···············································································${NC}\n"
 			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
 			echo ""
 		fi
 	done
-}
+} # End of function gsa
 
+#--------------------------------------------------------------------------
+# Git Push All
+# Globals: nothing
+# Input:   nothing
+# Output:  nothing
 gpa() {
-
-	if [[ $repos ]]; then
-		# some
-	else
-		while IFS= read -r value; do
-			repos+=($value)
-		done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
-	fi
+	local repos
+	while IFS= read -r value; do
+		repos+=($value)
+	done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
 
 	for repo in $repos; do
 		REPO=$(echo $repo | cut -c 3-)
@@ -62,18 +59,66 @@ gpa() {
 		)
 		SUB='nothing to commit, working tree clean'
 		if [[ "$STR" == *"$SUB"* ]]; then
-			printf "${CLEAN}$REPO ${NC}" # echo $push_result
-            printf "$(git --git-dir="$HOME/$REPO/.git" -C "$HOME/$REPO" push  )" # 2> /dev/null )
-            # Some comment 
-           
-			# printf "${CLEAN}is clean${NC}\n"
+			printf "${CLEAN}$REPO ${NC}"                                       # echo $push_result
+			printf "$(git --git-dir="$HOME/$REPO/.git" -C "$HOME/$REPO" push)" # 2> /dev/null )
 		else
 			printf "\n${RED}$REPO ${NC}\n"
-			printf "${SEP}$SEPAR  ${NC}\n"
+			printf "${SEP}···············································································${NC}\n"
 			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
 			echo ""
 		fi
 	done
+} # End of function gpa
+
+#--------------------------------------------------------------------------
+# Get days since start of 1000 Days Of Code challenge
+# Globals: nothing
+# Input:   nothing
+# Output:  day -> string@integer
+getDaysSinceStart() {
+	local seconds_since_start=$(($(date +'%s') - $(date --date='2022-05-31 00:00:01' +'%s')))
+	local days_since_start=$(($seconds_since_start / 60 / 60 / 24))
+	echo $days_since_start
+	return 0
+}
+
+#--------------------------------------------------------------------------
+# Today Progress Function
+# Globals: nothing
+# Input:
+# - $1 topic
+# - $2 time spent
+# Output:  nothing
+today() {
+	since_start=$(getDaysSinceStart)
+	local name_today=$(echo "[$(date +'%d.%m.%Y')]")
+	local today_path="/home/alexs/learn/1000days/0_100/$since_start${name_today}.md"
+	[[ ! -f $today_path ]] &&  printf "## Day $days_since_start ($1 | $2) \n\n\n"  > $today_path 
+	nvim +3 $today_path
+} # End of function today
+
+#--------------------------------------------------------------------------
+# Generate Commit for todays learning progress
+# Globals: nothing
+# Input:
+# - $1 topic
+# - $2 time spent
+# - $3 TIL...
+# Output:  nothing
+ga.cm.today() {
+	since_start=$(getDaysSinceStart)
+	message=$(printf "Day $(getDaysSinceStart)($1 | $2): $3\n\nDescription: $4")
+	local repo_shit=/home/alexs/learn/1000days
+	printf $message
+	printf "\n\nCommit? y/N: "
+	read user_input
+	if [[ $(echo $user_input | tr '[:upper:]' '[:lower:]') == 'y' ]]; then
+		echo "Okay... Im commiting"
+		git --git-dir=$repo_shit/.git -C $repo_shit commit -m "$message" -m "$4"
+	else
+		echo "Nope, that's not right!"
+		git --git-dir=$repo_shit/.git -C $repo_shit status
+	fi
 }
 
 # I'm going to try and keep these available to use in either bash or zsh
@@ -102,30 +147,16 @@ quick_change() {
 	grep -rl "$2" $1 | xargs sed -i "s/$2/$3/g"
 }
 
-function cd {
-	builtin cd $1
-
-	script_name="$XDG_CONFIG_HOME/cd_scripts/$(pwd | xargs basename)"
-	if [ -e ${script_name}.zsh ]; then
-		source ${script_name}.zsh
-	fi
-}
-
-generate_attrs() {
-	python web/manage.py generate_attr_constructors -f $1
-}
+# function cd {
+# 	builtin cd $1
+# 	script_name="$XDG_CONFIG_HOME/cd_scripts/$(pwd | xargs basename)"
+# 	if [ -e ${script_name}.zsh ]; then
+# 		source ${script_name}.zsh
+# 	fi
+# }
 
 nvim_custom_config() {
 	nvim -u ~/git/config_manager/test/demo_init.vim $1
-}
-
-export DEFAULT_VIDEO="/dev/video0"
-list_vid_option() {
-	v4l2-ctl --list-ctrls -d $DEFAULT_VIDEO
-}
-
-set_vid_option() {
-	v4l2-ctl -d $DEFAULT_VIDEO --set-ctrl $1=$2
 }
 
 # TODO: Make this function take string to remove as a parameter
@@ -156,3 +187,36 @@ pdfShitMore() {
 		# rm shit.pdf
 	done
 }
+
+#--------------------------------------------------------------------------
+# !!! ZSH specific !!!
+# Declare hashes for zsh 
+# Globals: nothing
+# Input:   nothing
+# Output:  nothing
+declare_hashes() {
+
+    typeset -r -A paths=(
+    f "/mnt/FILER" 
+    books "/mnt/FILER/books" 
+    doing "/mnt/FILER/_1_doing" 
+    next "/mnt/FILER/_2_next" 
+    s "/mnt/SHITTER"  
+    t "/mnt/TORRENTER" 
+    days "$HOME/learn/1000days"  
+    l "$HOME/learn" 
+    local "$HOME/.local" 
+    config "$HOME/.config" 
+    nvim "$HOME/.config/nvim" 
+    awesome "$HOME/.config/awesome" 
+    bookmarks "$HOME/stuff/bookmarks" 
+    w "$HOME/work" 
+    tmp "$HOME/tmp"
+    dotfiles "$HOME/dotfiles"
+    code "$HOME/learn/code"
+    vyber "$HOME/personal/vyber"
+    repos "$HOME/repos" )
+
+    for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
+} # End of function Declare hashes for zsh
+# --------------------------------------------------------------------------

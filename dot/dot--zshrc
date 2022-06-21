@@ -1,0 +1,136 @@
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# Evironmental variables
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=10000000
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+ZSH_THEME="theme"
+export GIT_EDITOR=nvim
+
+# fly.io 
+export FLYCTL_INSTALL="/home/alexs/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# export PATH=/path/to/Swift/usr/bin:"${PATH}"
+export PATH="$HOME/repos/depot_tools:$PATH"
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/tmp/bin:$PATH"
+export PATH="$HOME/.deno/bin:$PATH"
+export PATH="$HOME/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# Relocate .zcompdump files from home directory
+# https://stackoverflow.com/a/71271754
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
+CASE_SENSITIVE="true" # case-sensitive completion.
+DISABLE_AUTO_TITLE="true"
+ENABLE_CORRECTION="false" # command auto-correction.
+DISABLE_UNTRACKED_FILES_DIRTY="false"
+
+# -- TMP VARIABLES  ------------------------------------------------------------
+GH="github.com"
+httpGH="https://github.com"
+export PATH="$HOME/personal/plow/bin:$PATH"
+export PATH="$HOME/personal/rat/bin:$PATH"
+export PATH=$PATH:~/.spoof-dpi/bin
+
+# // TMP VARIABLES  ------------------------------------------------------------
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# Sourcing
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+# Configs
+source "${HOME}/.zsh/configs/zinit.zsh"
+source "${ZINIT[BIN_DIR]}/zinit.zsh" # Zinit plugin manager
+source "${HOME}/.zsh/plugins.zsh"    # Plugins
+
+# Stylef fot history search
+source $HOME/.zstyle
+
+source $ZSH/oh-my-zsh.sh
+source $HOME/.zsh_keybindings
+source $HOME/.aliases
+source $HOME/.functions
+source ~/.local/fzf/key-bindings.zsh
+source ~/.local/fzf/completion.zsh
+
+source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
+source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# -- TMP SOURCE  ---------------------------------------------------------------
+source $HOME/tmp/bin/twoArgs
+# // TMP SOURCE  ---------------------------------------------------------------
+
+# TODO move asdf to zinit installer
+# . $HOME/.asdf/asdf.sh
+# plugins=(  asdf ) # k )
+
+[[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh # Autojump
+autoload -U compinit && compinit -u
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+bindkey "^n" sudo-command-line # [Ctrl + N] (for Negate) Prepend/remove 'sudo' for current/previous command
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# User configs
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+# Reference: http://zsh.sourceforge.net/Doc/Release/Options.html
+setopt glob_dots              # glob matches files starting with dot; `*` becomes `*(D)`
+setopt hist_ignore_dups       # don't add dups to history
+setopt hist_find_no_dups      # don't show dups when searching history
+setopt hist_expire_dups_first # IF HISTORY NEEDS TO BE TRIMMED, EVICT DUPS FIRST
+setopt hist_ignore_space      # DON'T ADD COMMANDS STARTING WITH SPACE TO HISTORY
+setopt hist_reduce_blanks     # REMOVE JUNK WHITESPACE FROM COMMANDS BEFORE ADDING TO HISTORY
+setopt interactive_comments   # ALLOW COMMENTS IN COMMAND LINE
+setopt share_history          # WRITE AND IMPORT HISTORY ON EVERY COMMAND
+setopt extended_history       # WRITE TIMESTAMPS TO HISTORY
+setopt bang_hist              # tREAT THE '!' CHARACTER SPECIALLY DURING EXPANSION.
+setopt hist_ignore_all_dups   # dELETE OLD RECORDED ENTRY IF NEW ENTRY IS A DUPLICATE.
+setopt hist_save_no_dups      # dON'T WRITE DUPLICATE ENTRIES IN THE HISTORY FILE.
+setopt hist_verify            # dON'T EXECUTE IMMEDIATELY UPON HISTORY EXPANSION.
+setopt no_clobber             # don't override file with redirections if file exists
+
+# Switch files or directories content
+# TODO: move somewhere else
+sw() {
+	tmp_name=$(TMPDIR=$(dirname -- "$1") mktemp --dry-run) &&
+		mv -f -- "$1" "$tmp_name" &&
+		mv -f -- "$2" "$1" &&
+		mv -f -- "$tmp_name" "$2"
+}
+
+# Emulates Vim's `smartcase` for tab completion. (If lower-case, matches botch lower- and upper-case.)
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
+# Automatically list directory contents on `cd`.
+auto_ls () { ls; }
+[[ ${chpwd_functions[(r)auto_ls]} == auto_ls ]] || chpwd_functions=( auto_ls $chpwd_functions )
+
+# Make beam cursor https://unix.stackexchange.com/a/496878
+_fix_cursor() {
+	echo -ne '\e[5 q'
+}
+precmd_functions+=(_fix_cursor)
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Creating hashes for us to be able to navigate with ~t ~f etc
+declare_hashes
+autoload -U zmv
