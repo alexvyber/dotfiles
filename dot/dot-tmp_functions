@@ -98,6 +98,22 @@ today() {
 } # End of function today
 
 #--------------------------------------------------------------------------
+# Today Folder Progress Function
+# Globals: nothing
+# Input:
+# - $1 topic
+# - $2 time spent
+# Output:  nothing
+today.folder () {
+	since_start=$(getDaysSinceStart)
+	local name_today=$(echo "[$(date +'%d.%m.%Y')]")
+	local today_path="/home/alexs/learn/1000days/0_100/$since_start${name_today}"
+    [[ ! -d $today_path ]] && mkdir $today_path || echo "$(echo $today_path | cut -d'/' -f7-) folder exists"
+	[[ ! -f "$today_path/README.md" ]] &&  printf "## Day $days_since_start ($1 | $2) \n\n\n"  > "$today_path/README.md"
+	nvim +3 "$today_path/README.md"
+
+} # End of today folder
+#--------------------------------------------------------------------------
 # Generate Commit for todays learning progress
 # Globals: nothing
 # Input:
@@ -107,7 +123,7 @@ today() {
 # Output:  nothing
 ga.cm.today() {
 	since_start=$(getDaysSinceStart)
-	message=$(printf "Day $(getDaysSinceStart)($1 | $2): $3\n\nDescription: $4")
+	message=$(printf "Day $(getDaysSinceStart) ($1 | $2): $3\n\nDescription: $4")
 	local repo_shit=/home/alexs/learn/1000days
 	printf $message
 	printf "\n\nCommit? y/N: "
@@ -198,7 +214,7 @@ declare_hashes() {
 
     typeset -r -A paths=(
     f "/mnt/FILER" 
-    books "/mnt/FILER/books" 
+    books "/mnt/SHITTER/books" 
     doing "/mnt/FILER/_1_doing" 
     next "/mnt/FILER/_2_next" 
     s "/mnt/SHITTER"  
