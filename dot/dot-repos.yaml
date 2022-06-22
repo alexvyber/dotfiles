@@ -9,7 +9,7 @@ repo:
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
-  - personal/glypher
+  - personal/getchar
   - personal/katzen
   - personal/timer
   - dotfiles

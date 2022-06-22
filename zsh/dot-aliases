@@ -16,7 +16,7 @@
 # alias m=""
 # alias n="n" # n node version manager
 # alias o=""
-# alias p=""
+  alias p="pnpm"
 # alias q=""
 # alias r=""
 # alias s=""
