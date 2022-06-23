@@ -12,4 +12,5 @@ repo:
   - personal/getchar
   - personal/katzen
   - personal/timer
+  - personal/stw
   - dotfiles

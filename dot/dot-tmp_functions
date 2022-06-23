@@ -220,7 +220,7 @@ declare_hashes() {
     s "/mnt/SHITTER"  
     t "/mnt/TORRENTER" 
     days "$HOME/learn/1000days"  
-    l "$HOME/learn" 
+    learn "$HOME/learn" 
     local "$HOME/.local" 
     config "$HOME/.config" 
     nvim "$HOME/.config/nvim" 
