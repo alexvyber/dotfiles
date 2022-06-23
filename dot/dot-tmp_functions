@@ -231,7 +231,8 @@ declare_hashes() {
     dotfiles "$HOME/dotfiles"
     code "$HOME/learn/code"
     vyber "$HOME/personal/vyber"
-    repos "$HOME/repos" )
+    repos "$HOME/repos" 
+    personal "$HOME/personal" )
 
     for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
 } # End of function Declare hashes for zsh

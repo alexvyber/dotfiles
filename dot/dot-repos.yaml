@@ -13,5 +13,6 @@ repo:
   - personal/katzen
   - personal/timer
   - personal/stw
+  - personal/supersearch
   - dotfiles
 
