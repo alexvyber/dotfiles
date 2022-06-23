@@ -4,7 +4,7 @@ repo:
   - .config/awesome
   - learn/1000days
   - learn/code
-  - learn/HTML_apis
+  - learn/js_html_APIs
   - learn/react_reverse
   - personal/personal
   - personal/vyber/front
@@ -14,3 +14,4 @@ repo:
   - personal/timer
   - personal/stw
   - dotfiles
+
