@@ -214,11 +214,11 @@ declare_hashes() {
 
     typeset -r -A paths=(
     f "/mnt/FILER" 
+    s "/mnt/SHITTER"  
+    t "/mnt/TORRENTER" 
     books "/mnt/SHITTER/books" 
     doing "/mnt/FILER/_1_doing" 
     next "/mnt/FILER/_2_next" 
-    s "/mnt/SHITTER"  
-    t "/mnt/TORRENTER" 
     days "$HOME/learn/1000days"  
     learn "$HOME/learn" 
     local "$HOME/.local" 
@@ -226,7 +226,7 @@ declare_hashes() {
     nvim "$HOME/.config/nvim" 
     awesome "$HOME/.config/awesome" 
     bookmarks "$HOME/stuff/bookmarks" 
-    w "$HOME/work" 
+    work "$HOME/work" 
     tmp "$HOME/tmp"
     dotfiles "$HOME/dotfiles"
     code "$HOME/learn/code"
