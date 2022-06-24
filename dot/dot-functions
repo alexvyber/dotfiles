@@ -207,7 +207,8 @@ declareHashes() {
 
     # FILER
     f "/mnt/FILER"
-    jsts "/mnt/FILER/jsts"
+    js "/mnt/FILER/js"
+    ts "/mnt/FILER/ts"
     react "/mnt/FILER/react"
     node "/mnt/FILER/node"
 
