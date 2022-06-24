@@ -132,5 +132,5 @@ export PATH=$PATH:/usr/local/go/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Creating hashes for us to be able to navigate with ~t ~f etc
-declare_hashes
+declareHashes
 autoload -U zmv
