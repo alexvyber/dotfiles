@@ -134,3 +134,11 @@ export PATH=$PATH:/usr/local/go/bin
 # Creating hashes for us to be able to navigate with ~t ~f etc
 declareHashes
 autoload -U zmv
+
+# zoxide init
+eval "$(zoxide init zsh --cmd c)"
+
+# pnpm
+export PNPM_HOME="/home/alexs/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Colorful ouput
 # https://stackoverflow.com/a/5947802
@@ -201,7 +201,11 @@ pdfShitMore() {
 # Globals: nothing
 # Input:   nothing
 # Output:  nothing
+# TODO: MAKE this work automaticly with current folders on drives
 declareHashes() {
+
+    # local result=$(ls /mnt/FILER/)
+    # echo $result
 
     typeset -r -A paths=(
 
@@ -211,10 +215,11 @@ declareHashes() {
     ts "/mnt/FILER/ts"
     react "/mnt/FILER/react"
     node "/mnt/FILER/node"
+    b "/mnt/FILER/b"
+    ba "/mnt/FILER/ba"
 
     # SHITTER
     s "/mnt/SHITTER"
-    books "/mnt/SHITTER/books"
 
     # TORRENTER
     t "/mnt/TORRENTER"
