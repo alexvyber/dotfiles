@@ -165,3 +165,5 @@ alias goland="./Goland/bin/goland.sh"
 
 function new_ex { $EDITOR $1  ; chmod +x  $1 }
 alias r.mkdir="/home/alexs/repos/coreutils_rust/target/debug/coreutils mkdir"
+alias drr="duration | sort -h"
+alias duu="du -csh * | sort -h"
