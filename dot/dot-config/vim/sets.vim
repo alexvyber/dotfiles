@@ -2,7 +2,6 @@
 " ··············································································
 "  GENERATED
 " ··············································································
-" aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa:w
 "" Tabs. May be overridden by autocmd rules
 
 "" Searching
@@ -98,7 +97,7 @@ set relativenumber
 " Without this, there's a delay when changing to/from the insert mode caret
 set ttimeout
 set ttimeoutlen=1
-set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
+" set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
 set termguicolors
 set nolist
 set guicursor=

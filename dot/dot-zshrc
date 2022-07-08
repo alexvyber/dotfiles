@@ -152,3 +152,5 @@ export PATH="$PNPM_HOME:$PATH"
 # Bun
 export BUN_INSTALL="/home/alexs/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias luamake=/home/alexs/repos/lua-language-server/3rd/luamake/luamake
