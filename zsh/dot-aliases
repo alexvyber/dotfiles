@@ -12,7 +12,7 @@
   alias i="iex"
 # alias j="" used by  autojump
 # alias k="" used by k
-  alias l="ls --color=auto"
+  alias l="exa"
 # alias m=""
 # alias n="n" # n node version manager
 # alias o=""
@@ -82,7 +82,7 @@ alias ll="ls -lh"
 alias lA="ls -alhF"
 alias lal="ls -Al"
 alias lsr="ls -R"
-alias l="ls --hide='[A-Z]*'" # starts with lowercase
+# alias l="ls --hide='[A-Z]*'" # starts with lowercase
 alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
 alias LL="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
 alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
