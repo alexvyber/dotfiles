@@ -126,6 +126,9 @@ alias unstow="stow -D"
 alias unstow.d="stow -D --dotfiles"
 
 
+
+#alias forkill='{ read -r PP for n in  ; do sudo kill -9 39298 ; done } <<<'
+
 # NEW
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 CMD_PATH=~/stuff/bookmarks/cmd.sh

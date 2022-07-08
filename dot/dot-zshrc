@@ -43,6 +43,9 @@ export PATH=$PATH:~/.spoof-dpi/bin
 
 # // TMP VARIABLES  ------------------------------------------------------------
 
+# Auto Card browser automation
+export PATH="$HOME/work/auto_card/bin:$PATH"
+
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # Sourcing
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -142,3 +145,10 @@ eval "$(zoxide init zsh --cmd c)"
 export PNPM_HOME="/home/alexs/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# bun completions
+[ -s "/home/alexs/.bun/_bun" ] && source "/home/alexs/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="/home/alexs/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
