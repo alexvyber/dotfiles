@@ -16,4 +16,5 @@ repo:
   - personal/supersearch
   - personal/ss_three
   - dotfiles
+  - scripts
 

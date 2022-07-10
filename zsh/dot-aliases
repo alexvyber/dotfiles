@@ -1,6 +1,7 @@
 
+
 # One letter
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 # alias a=""
   alias b="bat"
 # alias c=""
@@ -14,7 +15,7 @@
 # alias k="" used by k
   alias l="exa"
 # alias m=""
-# alias n="n" # n node version manager
+  alias n="nvim" 
 # alias o=""
   alias p="pnpm"
 # alias q=""
@@ -23,20 +24,26 @@
 # alias u=""
 # alias v="vim"
   alias t="tmux"
-  alias w="which" used by w, can be rebinded
-  alias x="exit" # can be reused
+  alias w="which" # used by w, can be rebinded
+  alias x="exit"  # can be reused
 # alias y=""
-alias zz="zsh" # Experiment | Delete if need z
+# alias z=""
+
+
+# Two letters
+# ------------------------------------------------------------------------------
+  alias zz="zsh" # Experiment | Delete if need z
+  alias py="python"
 
 # V coreutils
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 # alias mv="~/repos/coreutils/bin/mv"
 # alias mkdir="~/repos/coreutils/bin/mkdir"
 
-# alias cd="z"
+
 # Editing config files
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-EDITOR=vim
+# ------------------------------------------------------------------------------
+EDITOR=nvim
 alias v.rc="$EDITOR ~/.vimrc"
 alias n.vim="nvim ~/.config/nvim/init.vim"
 alias n.lua="nvim ~/.config/nvim/init.lua"
@@ -53,7 +60,6 @@ alias awesome.rc="$EDITOR ~/.config/awesome/rc.lua"
 alias awesome.theme="$EDITOR ~/.config/awesome/theme.lua"
 
 
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
 alias rm_govno="rm mpv-*.*"
 alias tlsw="tmux lsw -a"
@@ -70,32 +76,49 @@ alias __="tmux new-window"
 alias t.rename="tmux rename-window"
 alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
 alias bat='bat --theme="Coldark-Cold"'
+alias cmx='chmod +x'
 
+# Enable aliases for sudo
+alias sudo='sudo '
+
+
+# Replace apt with dnf
 alias apt="dnf"
 alias apt-get="dnf"
 
+
+# exa
+# ------------------------------------------------------------------------------
+alias ll="exa -l"
+alias l.="exa --all -I '[A-z]*'"
+alias la="exa --all "
+alias l.l="exa -l --all -I '[A-z]*'"
+alias lrg='{ read -r R && exa --all | rg $R ; } <<<'
+# alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
+
+
 # ls
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 alias ls="ls --color=auto"
-alias la="ls -AFC"
-alias ll="ls -lh"
-alias lA="ls -alhF"
-alias lal="ls -Al"
+alias lsa="ls -AFC"
+alias lsl="ls -lh"
+alias lsA="ls -alhF"
+alias lsal="ls -Al"
 alias lsr="ls -R"
 # alias l="ls --hide='[A-Z]*'" # starts with lowercase
-alias L="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
-alias LL="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
-alias l.="ls -d .* --color=auto --group-directories-first" # all dot entries
-alias l.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries with details
-alias l.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
-alias l.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
-alias l.f="l. -F | grep -v /$" # .files TODO make work without grep
-alias lc="ls --color=never"
+alias Ls="ls --hide='[a-z]*' --group-directories-first" # starts with upppercase
+alias LSL="ls --hide='*[a-z]*' --group-directories-first" # starts with upppercase
+alias ls.="ls -d .* --color=auto --group-directories-first" # all dot entries
+alias ls.l="ls -lhd .* --color=auto --group-directories-first" # all dot entries with details
+alias ls.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
+alias ls.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
+alias ls.f="l. -F | grep -v /$" # .files TODO make work without grep
+alias lsc="ls --color=never"
 alias lsh="ls -sh"
 
 
 # git
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
@@ -114,23 +137,20 @@ function git_add_all_and_commit_message_WO_quotes() {
 
 
 # rm
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 alias rmr="rm -r"
 alias rmrf="rm -rf"
 
 
 # Stow
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 alias stow.d="stow --dotfiles"
 alias unstow="stow -D"
 alias unstow.d="stow -D --dotfiles"
 
 
-
-#alias forkill='{ read -r PP for n in  ; do sudo kill -9 39298 ; done } <<<'
-
 # NEW
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 CMD_PATH=~/stuff/bookmarks/cmd.sh
 alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
@@ -148,18 +168,19 @@ function progress.today () {
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
+
 # TMP
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 # alias @='{ read -r p && cd ~/"$p"  } <<<'
 # TODO alias l.ll='{ read -r m && ls -d $m/.* --color=auto --group-directories-first } <<<' # add all && commit message
 
+
 # Go
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 alias go.f="gofmt -w *.go"
 alias go.main="go run main.go"
 alias go.cp="copyGoFileIntoNew"
 alias go.README="bat ~/.oh-my-zsh/plugins/golang/README.md"
-# alias go.run='{ read -r f && go.f && clear && bat "$f.go" && go run "$f.go" } <<<'
 alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f.go" } <<<'
 alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
 alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
