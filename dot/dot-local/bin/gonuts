@@ -5,7 +5,7 @@
 # sudo mount /dev/sdb1 /mnt/TORRENTER
 # sudo mount /dev/sdd1 /mnt/SHITTER
 
-xset r rate 200 60
+xset r rate 180 70
 
 declare -A disks=(
   [FILER]=sda2

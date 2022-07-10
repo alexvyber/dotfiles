@@ -7,7 +7,9 @@ cnoreabbrev WA wa
 cnoreabbrev wQ wq
 cnoreabbrev WQ wq
 
-cnoreabbrev Q q
+cnoreabbrev Q q!
+cnoreabbrev q q!
+
 cnoreabbrev Qa qa
 cnoreabbrev QA qa
 cnoreabbrev qA qa
@@ -15,4 +17,4 @@ cnoreabbrev Q! q!
 cnoreabbrev qq qa!
 
 
-cnoreabbrev h tab help 
+cnoreabbrev h tab help
