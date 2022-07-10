@@ -14,7 +14,7 @@
 # alias j="" used by  autojump
 # alias k="" used by k
   alias l="exa"
-# alias m=""
+  alias m="mix"
   alias n="nvim" 
 # alias o=""
   alias p="pnpm"
