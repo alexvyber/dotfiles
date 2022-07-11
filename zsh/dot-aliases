@@ -77,6 +77,16 @@ alias t.rename="tmux rename-window"
 alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
 alias bat='bat --theme="Coldark-Cold"'
 alias cmx='chmod +x'
+alias chrome="google-chrome"
+
+alias .1="c ../"
+alias .2="c ../../"
+alias .3="c ../../../"
+alias .4="c ../../../../"
+
+# Elixir. mix, iex
+alias ism="iex -S mix"
+alias mf="mix format" # There's some mf bin in /usr/bin...
 
 # Enable aliases for sudo
 alias sudo='sudo '
