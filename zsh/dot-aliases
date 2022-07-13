@@ -1,4 +1,5 @@
-
+# TODO: Make it possible to write alias like this: abbr "command"
+# path echo $PATH | tr ":" "\n" -> alias path='echo $PATH | tr ":" "\n"'
 
 # One letter
 # ------------------------------------------------------------------------------
@@ -10,7 +11,7 @@
   alias f="fzf"
   alias g="git"
 # alias h="omz_history"
-  alias i="iex"
+  alias i="clear && iex"
 # alias j="" used by  autojump
 # alias k="" used by k
   alias l="exa"
@@ -34,6 +35,7 @@
 # ------------------------------------------------------------------------------
   alias zz="zsh" # Experiment | Delete if need z
   alias py="python"
+  alias cc="c *"
 
 # V coreutils
 # ------------------------------------------------------------------------------
@@ -79,14 +81,24 @@ alias bat='bat --theme="Coldark-Cold"'
 alias cmx='chmod +x'
 alias chrome="google-chrome"
 
+
+
+
 alias .1="c ../"
 alias .2="c ../../"
 alias .3="c ../../../"
 alias .4="c ../../../../"
 
+alias :q="exit"
+
+alias cat="bat"
+alias path='echo $PATH | tr ":" "\n" '
+
 # Elixir. mix, iex
 alias ism="iex -S mix"
 alias mf="mix format" # There's some mf bin in /usr/bin...
+alias mfx="mix format *.ex*" # There's some mf bin in /usr/bin...
+alias mix_tree='tree -I "deps|_build"'
 
 # Enable aliases for sudo
 alias sudo='sudo '
@@ -201,3 +213,4 @@ function new_ex { $EDITOR $1  ; chmod +x  $1 }
 alias r.mkdir="/home/alexs/repos/coreutils_rust/target/debug/coreutils mkdir"
 alias drr="duration | sort -h"
 alias duu="du -csh * | sort -h"
+alias ismp="iex -S mix phx.server"

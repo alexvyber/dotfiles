@@ -75,9 +75,17 @@ source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/tmp/bin/twoArgs
 # // TMP SOURCE  ---------------------------------------------------------------
 
+# asdf
+# -- asdf  ---------------------------------------------------------------------
 # TODO move asdf to zinit installer
-# . $HOME/.asdf/asdf.sh
-# plugins=(  asdf ) # k )
+. $HOME/.asdf/asdf.sh
+plugins=(  asdf ) # k )
+
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+# // asdf  ---------------------------------------------------------------------
 
 [[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh # Autojump
 autoload -U compinit && compinit -u
