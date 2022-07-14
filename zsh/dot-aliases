@@ -82,6 +82,8 @@ alias cmx='chmod +x'
 alias chrome="google-chrome"
 
 
+alias r="rip"
+
 
 
 alias .1="c ../"
@@ -214,3 +216,8 @@ alias r.mkdir="/home/alexs/repos/coreutils_rust/target/debug/coreutils mkdir"
 alias drr="duration | sort -h"
 alias duu="du -csh * | sort -h"
 alias ismp="iex -S mix phx.server"
+
+
+# To cjange habbit
+# ----------------
+alias rm='echo "use rip with alias r instead with"'
