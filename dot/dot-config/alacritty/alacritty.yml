@@ -20,7 +20,7 @@ window:
   dynamic_title: true
 
 scrolling:
-  history: 12500
+  history: 25000
   multiplier: 3
 
 font:
@@ -40,7 +40,7 @@ font:
     family: JetBrains Mono
     style: Regular Italic
 
-  size: 11.2
+  size: 12
 
   offset:
     x: 0
@@ -99,7 +99,7 @@ cursor:
   style: Block
   vi_mode_style: None
   unfocused_hollow: true
-  thickness: 0.17
+  thickness: 0.16
 
 live_config_reload: false
 
