@@ -82,7 +82,6 @@ alias cmx='chmod +x'
 alias chrome="google-chrome"
 
 
-alias r="rip"
 
 
 
@@ -220,4 +219,4 @@ alias ismp="iex -S mix phx.server"
 
 # To cjange habbit
 # ----------------
-alias rm='echo "use rip with alias r instead with"'
+alias rm='echo "use rip instead"'
