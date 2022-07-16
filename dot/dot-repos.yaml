@@ -14,7 +14,6 @@ repo:
   - personal/timer
   - personal/stw
   - personal/supersearch
-  - personal/ss_three
   - dotfiles
   - scripts
 

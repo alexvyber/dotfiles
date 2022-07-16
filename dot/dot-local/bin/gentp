@@ -1,0 +1,70 @@
+#!/usr/bin/env python
+"""Script generate realy simple yaml file
+   for tmuxp to start tmux in phoenix project
+"""
+
+import os
+import yaml
+
+
+path = os.getcwd()
+basename = os.path.basename(os.getcwd())
+editor = "vim"
+output_file_path = f"/home/alexs/.config/tmuxp/{basename}.yaml"
+
+
+def main():
+    data_to_write = {
+        "session_name": basename,
+        "windows": [
+            {
+                "window_name": "root",
+                "layout": "tiled",
+                # "shell_command_before": [f"cd {folder}"],
+                # "panes": [{"shell_command": ["first", "second", "third"]}],
+            },
+            {
+                "window_name": "model",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/lib/{basename}"],
+                "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "web",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/lib/{basename}_web/"],
+                "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "run",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}", "l"],
+                "panes": [{"shell_command": ["iex -S mix phx.server"]}],
+            },
+            {
+                "window_name": "priv",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/priv/"],
+                "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "test",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/test/"],
+                "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "config",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/config/"],
+                "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+        ],
+    }
+
+    with open(output_file_path, "w") as f:
+        data = yaml.dump(data_to_write, f, default_flow_style=False)
+
+
+if __name__ == '__main__':
+    main()

@@ -83,6 +83,7 @@ alias chrome="google-chrome"
 
 
 
+alias tpl="tmuxp load"
 
 
 alias .1="c ../"
