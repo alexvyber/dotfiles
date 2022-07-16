@@ -24,6 +24,12 @@ def main():
                 # "panes": [{"shell_command": ["first", "second", "third"]}],
             },
             {
+                "window_name": "lib",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/lib"],
+                # "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
                 "window_name": "model",
                 "layout": "tiled",
                 "shell_command_before": [f"cd {path}/lib/{basename}"],
