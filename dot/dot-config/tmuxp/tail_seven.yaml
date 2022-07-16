@@ -1,0 +1,51 @@
+session_name: tail_seven
+windows:
+- layout: tiled
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven/lib
+  window_name: lib
+- layout: tiled
+  panes:
+  - shell_command:
+    - vim .
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven/lib/tail_seven
+  window_name: model
+- layout: tiled
+  panes:
+  - shell_command:
+    - vim .
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven/lib/tail_seven_web/
+  window_name: web
+- layout: tiled
+  panes:
+  - shell_command:
+    - iex -S mix phx.server
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven
+  - l
+  window_name: run
+- layout: tiled
+  panes:
+  - shell_command:
+    - vim .
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven/priv/
+  window_name: priv
+- layout: tiled
+  panes:
+  - shell_command:
+    - vim .
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven/test/
+  window_name: test
+- layout: tiled
+  panes:
+  - shell_command:
+    - vim .
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/tail_seven/config/
+  window_name: config
