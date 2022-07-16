@@ -100,6 +100,7 @@ alias ism="iex -S mix"
 alias mf="mix format" # There's some mf bin in /usr/bin...
 alias mfx="mix format *.ex*" # There's some mf bin in /usr/bin...
 alias mix_tree='tree -I "deps|_build"'
+alias mt="mix test"
 
 # Enable aliases for sudo
 alias sudo='sudo '
