@@ -18,7 +18,7 @@ nnoremap <silent> <leader>co  :<C-u>CocList outline<CR>
 " Perform fuzzy file searching
 nnoremap <C-P> mN:Files<cr>
 nnoremap <C-B> mN:Buffers<CR>
-nnoremap <C-/> mN:Lines<cr>
+nnoremap <space>/ mN:Lines<cr>
 nnoremap <leader><leader> mN:Commands<cr>
 nnoremap <leader>/ mN:History/<cr>
 nnoremap <leader>: mN:History:<cr>
@@ -173,12 +173,8 @@ nmap <leader>y :History<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-nmap <A-]> 10<C-e>
-nmap <A-[> 10<C-y>
-
 " ··············································································
 "  Service Mappings
-
 nnoremap <leader><CR> :so ~/.vimrc<CR>
 nnoremap <leader><leader>e :tabe ~/.vimrc<CR>
 nnoremap <leader><leader><leader> :set list<CR>
@@ -190,7 +186,7 @@ nnoremap #5 S" ································�
 " LuaSnip
 " press <Tab> to expand or jump in a snippet. These can also be mapped separately
 " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
 " -1 for jumping backwards.
 inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
@@ -203,3 +199,4 @@ imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 
+noremap <space>jj k_Dj$p

@@ -40,10 +40,10 @@ font:
     family: JetBrains Mono
     style: Regular Italic
 
-  size: 11.5
+  size: 11.2
 
   offset:
-    x: 1
+    x: 0
     y: 0
 
   glyph_offset:

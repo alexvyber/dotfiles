@@ -1,6 +1,7 @@
 # TODO: Make it possible to write alias like this: abbr "command"
 # path echo $PATH | tr ":" "\n" -> alias path='echo $PATH | tr ":" "\n"'
 
+
 # One letter
 # ------------------------------------------------------------------------------
 # alias a=""
@@ -16,7 +17,7 @@
 # alias k="" used by k
   alias l="exa"
   alias m="mix"
-  alias n="nvim" 
+  alias n="nvim"
 # alias o=""
   alias p="pnpm"
 # alias q=""
@@ -36,6 +37,7 @@
   alias zz="zsh" # Experiment | Delete if need z
   alias py="python"
   alias cc="c *"
+
 
 # V coreutils
 # ------------------------------------------------------------------------------
@@ -82,7 +84,6 @@ alias cmx='chmod +x'
 alias chrome="google-chrome"
 
 
-
 alias tpl="tmuxp load"
 
 
@@ -91,10 +92,13 @@ alias .2="c ../../"
 alias .3="c ../../../"
 alias .4="c ../../../../"
 
+
 alias :q="exit"
+
 
 alias cat="bat"
 alias path='echo $PATH | tr ":" "\n" '
+
 
 # Elixir. mix, iex
 alias ism="iex -S mix"
@@ -102,6 +106,7 @@ alias mf="mix format" # There's some mf bin in /usr/bin...
 alias mfx="mix format *.ex*" # There's some mf bin in /usr/bin...
 alias mix_tree='tree -I "deps|_build"'
 alias mt="mix test"
+
 
 # Enable aliases for sudo
 alias sudo='sudo '
@@ -115,6 +120,7 @@ alias apt-get="dnf"
 # exa
 # ------------------------------------------------------------------------------
 alias ll="exa -l"
+alias ltr="exa --tree"
 alias l.="exa --all -I '[A-z]*'"
 alias la="exa --all "
 alias l.l="exa -l --all -I '[A-z]*'"
@@ -181,6 +187,7 @@ alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ;
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
 alias cmd.show="bat $CMD_PATH"
 
+
 function progress.today () {
   TODAY=~/progress/$(date +"%d_%b_%y")
   README=$TODAY/README.md
@@ -190,6 +197,7 @@ function progress.today () {
   fi
   $EDITOR $README
 }
+
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
@@ -222,3 +230,5 @@ alias ismp="iex -S mix phx.server"
 # To cjange habbit
 # ----------------
 alias rm='echo "use rip instead"'
+alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
+# alias stylua="stylua --search-parent-directories"

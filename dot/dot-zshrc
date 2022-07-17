@@ -2,6 +2,7 @@
 # Evironmental variables
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
+export DISABLE_AUTO_TITLE='true'
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=10000000
 export HISTSIZE=10000000
