@@ -20,7 +20,7 @@ def main():
             {
                 "window_name": "root",
                 "layout": "tiled",
-                # "shell_command_before": [f"cd {folder}"],
+                "shell_command_before": [f"cd {path}"],
                 # "panes": [{"shell_command": ["first", "second", "third"]}],
             },
             {
@@ -63,6 +63,12 @@ def main():
                 "window_name": "config",
                 "layout": "tiled",
                 "shell_command_before": [f"cd {path}/config/"],
+                # "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "assets",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/assets/"],
                 # "panes": [{"shell_command": [f"{editor} ."]}],
             },
         ],

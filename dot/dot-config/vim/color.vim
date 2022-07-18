@@ -1,7 +1,7 @@
 
 " call one#highlight('vimLineComment', '00ff00', 'ff0000', 'underline')
-colorscheme one
-set background=light " for the light version
+" colorscheme one
+" set background=light " for the light version
 
 " show colorcolumn at 81+ characters
 let &colorcolumn=join(range(81,999),",")

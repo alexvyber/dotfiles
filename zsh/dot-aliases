@@ -119,6 +119,7 @@ alias apt-get="dnf"
 
 # exa
 # ------------------------------------------------------------------------------
+alias exa="exa --git"
 alias ll="exa -l"
 alias ltr="exa --tree"
 alias l.="exa --all -I '[A-z]*'"
@@ -171,6 +172,7 @@ function git_add_all_and_commit_message_WO_quotes() {
 # ------------------------------------------------------------------------------
 alias rmr="rm -r"
 alias rmrf="rm -rf"
+alias rr="rip"
 
 
 # Stow

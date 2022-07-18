@@ -15,5 +15,4 @@ cnoreabbrev qA qa
 cnoreabbrev Q! q!
 cnoreabbrev qq qa!
 
-
 cnoreabbrev h tab help
