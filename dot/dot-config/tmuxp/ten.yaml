@@ -18,6 +18,10 @@ windows:
   window_name: web
 - layout: tiled
   shell_command_before:
+  - cd /home/alexs/elixir/tmp/ten/lib/ten_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
   - cd /home/alexs/elixir/tmp/ten
   - l
   window_name: run

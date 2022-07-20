@@ -1,43 +1,43 @@
-session_name: rumbl
+session_name: cunt
 windows:
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl
+  - cd /home/alexs/elixir/crm/cunt
   window_name: root
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib
+  - cd /home/alexs/elixir/crm/cunt/lib
   window_name: lib
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib/rumbl
+  - cd /home/alexs/elixir/crm/cunt/lib/cunt
   window_name: model
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib/rumbl_web/
+  - cd /home/alexs/elixir/crm/cunt/lib/cunt_web/
   window_name: web
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib/rumbl_web/templates
+  - cd /home/alexs/elixir/crm/cunt/lib/cunt_web/templates
   window_name: templates
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl
+  - cd /home/alexs/elixir/crm/cunt
   - l
   window_name: run
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/priv/
+  - cd /home/alexs/elixir/crm/cunt/priv/
   window_name: priv
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/test/
+  - cd /home/alexs/elixir/crm/cunt/test/
   window_name: test
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/config/
+  - cd /home/alexs/elixir/crm/cunt/config/
   window_name: config
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/assets/
+  - cd /home/alexs/elixir/crm/cunt/assets/
   window_name: assets
