@@ -2,42 +2,42 @@ session_name: twenty_three
 windows:
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three
+  - cd /home/alexs/elixir/ccrm/twenty_three
   window_name: root
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/lib
+  - cd /home/alexs/elixir/ccrm/twenty_three/lib
   window_name: lib
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/lib/twenty_three
+  - cd /home/alexs/elixir/ccrm/twenty_three/lib/twenty_three
   window_name: model
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/lib/twenty_three_web/
+  - cd /home/alexs/elixir/ccrm/twenty_three/lib/twenty_three_web/
   window_name: web
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/lib/twenty_three_web/templates
+  - cd /home/alexs/elixir/ccrm/twenty_three/lib/twenty_three_web/templates
   window_name: templates
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three
+  - cd /home/alexs/elixir/ccrm/twenty_three
   - l
   window_name: run
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/priv/
+  - cd /home/alexs/elixir/ccrm/twenty_three/priv/
   window_name: priv
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/test/
-  window_name: test
+  - cd /home/alexs/elixir/ccrm/twenty_three/lib/twenty_three_web/live
+  window_name: live
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/config/
+  - cd /home/alexs/elixir/ccrm/twenty_three/config/
   window_name: config
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/tmp/twenty_three/assets/
+  - cd /home/alexs/elixir/ccrm/twenty_three/assets/
   window_name: assets
