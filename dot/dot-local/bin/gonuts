@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 
+sudo swapoff -a
 xset r rate 180 70
 
 
@@ -11,12 +12,12 @@ declare -A disks=(
 )
 
 
-for key in "${!disks[@]}";  do 
+for key in "${!disks[@]}";  do
     # echo "$key => ${disks[$key]}"
     if mountpoint -q /mnt/$key; then
         echo "$key already mounted"
     else
-        sudo mount /dev/${disks[$key]} /mnt/$key 
+        sudo mount /dev/${disks[$key]} /mnt/$key
         echo "$key mounted"
     fi ; done
 

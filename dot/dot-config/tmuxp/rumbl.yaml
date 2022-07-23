@@ -2,42 +2,42 @@ session_name: rumbl
 windows:
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl
+  - cd /home/alexs/learn/ph14/rumbl_umbrella
   window_name: root
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/lib
   window_name: lib
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib/rumbl
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/lib/rumbl
   window_name: model
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib/rumbl_web/
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/lib/rumbl_web/
   window_name: web
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/lib/rumbl_web/templates
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/lib/rumbl_web/templates
   window_name: templates
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl
+  - cd /home/alexs/learn/ph14/rumbl_umbrella
   - l
   window_name: run
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/priv/
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/priv/
   window_name: priv
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/test/
-  window_name: test
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/lib/rumbl_web/live
+  window_name: live
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/config/
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/config/
   window_name: config
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/learn/ph14/rumbl/assets/
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/assets/
   window_name: assets
