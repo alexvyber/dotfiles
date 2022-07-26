@@ -9,7 +9,6 @@ import yaml
 
 path = os.getcwd()
 basename = os.path.basename(os.getcwd()).removesuffix('_umbrella')
-print(basename)
 output_file_path = f"/home/alexs/.config/tmuxp/{basename}_umbrella.yaml"
 
 
