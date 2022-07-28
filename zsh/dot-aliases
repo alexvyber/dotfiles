@@ -39,6 +39,10 @@
   alias cc="c *"
 
 
+# Enable aliases for sudo
+alias sudo='sudo '
+
+
 # V coreutils
 # ------------------------------------------------------------------------------
 # alias mv="~/repos/coreutils/bin/mv"
@@ -108,10 +112,6 @@ alias mix_tree='tree -I "deps|_build"'
 alias mt="mix test"
 
 
-# Enable aliases for sudo
-alias sudo='sudo '
-
-
 # Replace apt with dnf
 alias apt="dnf"
 alias apt-get="dnf"
@@ -123,6 +123,8 @@ alias exa="exa --git"
 alias ll="exa -l"
 alias ltr="exa --tree"
 alias l.="exa --all -I '[A-z]*'"
+alias l~="exa $HOME"
+alias l/="exa /"
 alias la="exa --all "
 alias l.l="exa -l --all -I '[A-z]*'"
 alias lrg='{ read -r R && exa --all | rg $R ; } <<<'
@@ -172,7 +174,6 @@ function git_add_all_and_commit_message_WO_quotes() {
 # ------------------------------------------------------------------------------
 alias rmr="rm -r"
 alias rmrf="rm -rf"
-alias rr="rip"
 
 
 # Stow
@@ -190,24 +191,7 @@ alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && 
 alias cmd.show="bat $CMD_PATH"
 
 
-function progress.today () {
-  TODAY=~/progress/$(date +"%d_%b_%y")
-  README=$TODAY/README.md
-  if [ ! -d "$TODAY" ] ; then
-   mkdir $TODAY
-    echo "### $(date +"%d %B %Y")" >> $README
-  fi
-  $EDITOR $README
-}
-
-
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
-
-
-# TMP
-# ------------------------------------------------------------------------------
-# alias @='{ read -r p && cd ~/"$p"  } <<<'
-# TODO alias l.ll='{ read -r m && ls -d $m/.* --color=auto --group-directories-first } <<<' # add all && commit message
 
 
 # Go
@@ -222,7 +206,6 @@ alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
 alias goland="./Goland/bin/goland.sh"
 
 
-function new_ex { $EDITOR $1  ; chmod +x  $1 }
 alias r.mkdir="/home/alexs/repos/coreutils_rust/target/debug/coreutils mkdir"
 alias drr="duration | sort -h"
 alias duu="du -csh * | sort -h"

@@ -11,6 +11,7 @@ case $1 in
            ~/learn/go                              \
            ~/learn/go/powerful-cli                              \
            ~/learn/go/powerful-cli/pragprog.com                              \
+           ~/elixir                               \
            ~/repos                               \
            ~/tmp                                      \
            ~/personal                                 \
