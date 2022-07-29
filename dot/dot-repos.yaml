@@ -6,7 +6,7 @@ repo:
   - learn/code
   - learn/js_html_APIs
   - learn/react_reverse
-  - elixir/crm
+  - elixir/qlur_crm/crm_umbrella
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
