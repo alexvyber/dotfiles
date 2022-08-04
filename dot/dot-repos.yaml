@@ -6,7 +6,11 @@ repo:
   - learn/code
   - learn/js_html_APIs
   - learn/react_reverse
-  - elixir/qlur_crm/crm_umbrella
+  - bomj/docs
+  - bomj/crm_umbrella
+  - bomj/marketing/cms
+  - bomj/marketing/front
+  - bomj/marketing/podcast
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api

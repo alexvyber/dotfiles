@@ -100,7 +100,6 @@ alias .4="c ../../../../"
 alias :q="exit"
 
 
-alias cat="bat"
 alias path='echo $PATH | tr ":" "\n" '
 
 
