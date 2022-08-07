@@ -21,4 +21,5 @@ repo:
   - personal/supersearch
   - dotfiles
   - scripts
+  - elixir/learn/live_view
 
