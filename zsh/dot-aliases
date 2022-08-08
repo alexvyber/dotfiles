@@ -70,10 +70,8 @@ alias awesome.theme="$EDITOR ~/.config/awesome/theme.lua"
 
 
 alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
-alias rm_govno="rm mpv-*.*"
 alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
-# alias rm="rm -i"
 alias gr="grep"
 alias reb="reboot"
 alias pof="poweroff"
@@ -214,6 +212,5 @@ alias ismp="iex -S mix phx.server"
 
 # To cjange habbit
 # ----------------
-alias rm='echo "use rip instead"'
 alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 # alias stylua="stylua --search-parent-directories"
