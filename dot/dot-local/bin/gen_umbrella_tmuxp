@@ -23,7 +23,7 @@ def main():
                 # "panes": [{"shell_command": ["first", "second", "third"]}],
             },
             {
-                "window_name": f"{basename}",
+                "window_name": "core",
                 "layout": "tiled",
                 "shell_command_before": [f"cd {path}/apps/{basename}"],
                 # "panes": [{"shell_command": [f"{editor} ."]}],
@@ -39,6 +39,30 @@ def main():
                 "layout": "tiled",
                 "shell_command_before": [f"cd {path}"],
                 "panes": [{"shell_command": ["iex -S mix phx.server"]}],
+            },
+            {
+                "window_name": "priv",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/priv/"],
+                # "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "live",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/apps/{basename}_web/lib/{basename}_web/live"],
+                # "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "config",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/config/"],
+                # "panes": [{"shell_command": [f"{editor} ."]}],
+            },
+            {
+                "window_name": "assets",
+                "layout": "tiled",
+                "shell_command_before": [f"cd {path}/apps/{basename}_web/assets/"],
+                # "panes": [{"shell_command": [f"{editor} ."]}],
             },
         ],
     }

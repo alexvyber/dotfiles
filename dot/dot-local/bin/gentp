@@ -9,8 +9,10 @@ import yaml
 
 path = os.getcwd()
 basename = os.path.basename(os.getcwd())
-editor = "vim"
 output_file_path = f"/home/alexs/.config/tmuxp/{basename}.yaml"
+
+
+editor = "nvim"
 
 
 def main():
