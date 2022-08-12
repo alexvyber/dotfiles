@@ -6,11 +6,11 @@ repo:
   - learn/code
   - learn/js_html_APIs
   - learn/react_reverse
-  - bomj/docs
-  - bomj/crm_umbrella
-  - bomj/marketing/cms
-  - bomj/marketing/front
-  - bomj/marketing/podcast
+  - crm/docs
+  - crm/crm_umbrella
+  - crm/marketing/cms
+  - crm/marketing/front
+  - crm/marketing/podcast
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
@@ -22,4 +22,11 @@ repo:
   - dotfiles
   - scripts
   - elixir/learn/live_view
+  - elixir/learn/programming_phoenix_live_view
+  - elixir/learn/real_time_phoenix
+  - elixir/learn/phoenix_in_action
+  - elixir/learn/programming_ecto
+  - elixir/learn/elxiir_in_action
+  - elixir/learn/graphql_elixir_absinthe
+  - elixir/learn/programming_phoenix_1.4
 
