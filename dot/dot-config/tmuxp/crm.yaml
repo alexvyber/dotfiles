@@ -2,42 +2,42 @@ session_name: crm
 windows:
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm
+  - cd /home/alexs/crm/root/crm
   window_name: root
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/lib
-  window_name: lib
-- layout: tiled
-  shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/lib/crm
+  - cd /home/alexs/crm/root/crm/lib/crm
   window_name: model
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/lib/crm_web/
+  - cd /home/alexs/crm/root/crm/lib/crm_web/
   window_name: web
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/lib/crm_web/templates
-  window_name: templates
-- layout: tiled
-  shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm
+  - cd /home/alexs/crm/root/crm
   - l
   window_name: run
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/priv/
+  - cd /home/alexs/crm/root/crm/priv/
   window_name: priv
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/lib/crm_web/live
+  - cd /home/alexs/crm/root/crm/lib/crm_web/live
   window_name: live
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/config/
+  - cd /home/alexs/crm/root/crm/config/
   window_name: config
 - layout: tiled
   shell_command_before:
-  - cd /home/alexs/elixir/qlur_crm/crm/assets/
+  - cd /home/alexs/crm/root/crm/assets/
   window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/crm/lib/crm_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/crm/test/
+  window_name: test
