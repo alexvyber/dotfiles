@@ -74,7 +74,7 @@ source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # -- TMP SOURCE  ---------------------------------------------------------------
-source $HOME/tmp/bin/twoArgs
+# source $HOME/tmp/bin/twoArgs
 # // TMP SOURCE  ---------------------------------------------------------------
 
 # asdf
