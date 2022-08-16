@@ -27,4 +27,5 @@ repo:
   - elixir/learn/elixir_in_action
   - elixir/learn/graphql_elixir_absinthe
   - elixir/learn/programming_phoenix_1.4
+  - learn/books/bash_idoms
 
