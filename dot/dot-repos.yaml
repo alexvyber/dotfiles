@@ -20,6 +20,7 @@ repo:
   - dotfiles
   - scripts
   - elixir/learn/programming_phoenix_live_view
+  - elixir/learn/concurrent_data_processing_in_elixir
   - elixir/learn/real_time_phoenix
   - elixir/learn/phoenix_in_action
   - elixir/learn/programming_ecto
