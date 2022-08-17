@@ -28,5 +28,6 @@ repo:
   - elixir/learn/graphql_elixir_absinthe
   - elixir/learn/programming_phoenix_1.4
   - elixir/learn/designing_elixir_systems_with_otp
+  - elixir/learn/the_little_elixir_otp_guidebook
   - learn/books/bash_idoms
 
