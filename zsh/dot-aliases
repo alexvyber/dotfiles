@@ -166,6 +166,7 @@ function git_add_all_and_commit_message_WO_quotes() {
   alias ga.sm="git_add_all_and_commit_message_WO_quotes"
   alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<' # add all && commit message
   alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<' # add all && commit message
+  alias gpom="git push -u origin main"
 
 
 # rm
