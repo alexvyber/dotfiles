@@ -188,6 +188,7 @@ CMD_PATH=~/stuff/bookmarks/cmd.sh
 alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
 alias cmd.show="bat $CMD_PATH"
+alias pd="pnpm dev"
 
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
