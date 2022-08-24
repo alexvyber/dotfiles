@@ -8,8 +8,8 @@ repo:
   - crm/docs
   - crm/crm_umbrella
   - crm/marketing/cms
-  - crm/marketing/front
   - crm/marketing/podcast
+  - crm/marketing/remix-front
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
