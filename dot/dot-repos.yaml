@@ -9,6 +9,8 @@ repo:
   - crm/crm_umbrella
   - crm/marketing/cms
   - crm/marketing/podcast
+  - personal/negotiation-front
+  - personal/negotiation-back
   - crm/marketing/remix-front
   - personal/personal
   - personal/vyber/front
