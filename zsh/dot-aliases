@@ -28,7 +28,7 @@
   alias t="tmux"
   alias w="which" # used by w, can be rebinded
   alias x="exit"  # can be reused
-# alias y=""
+  alias y="yarn"
 # alias z=""
 
 
