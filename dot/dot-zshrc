@@ -170,3 +170,5 @@ alias luamake=/home/alexs/repos/lua-language-server/3rd/luamake/luamake
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
