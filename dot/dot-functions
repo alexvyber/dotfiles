@@ -7,7 +7,7 @@ CLEAN='\033[1;32m'
 SEP='\033[2;30m'
 NC='\033[0m' # No Color
 
-#--------------------------------------------------------------------------
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Git Status All
 # Globals: nothing
 # Input:   nothing
@@ -36,7 +36,7 @@ gsa() {
 	done
 } # End of function gsa
 
-#--------------------------------------------------------------------------
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Git Push All
 # Globals: nothing
 # Input:   nothing
@@ -87,7 +87,7 @@ getDaysSinceStart() {
 today() {
 	since_start=$(getDaysSinceStart)
 	local name_today=$(echo "[$(date +'%d.%m.%Y')]")
-	local today_path="/home/alexs/learn/1000days/0_100/$since_start${name_today}.md"
+	local today_path="/home/alexs/learn/1000days/100_200/$since_start${name_today}.md"
 	[[ ! -f $today_path ]] && printf "## Day $since_start ($1 | $2) \n\n\n" >$today_path
 	nvim +3 $today_path
 } # End of function today
@@ -152,6 +152,29 @@ author_contrib() {
 		gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
 }
 
+local cut_tail() {
+	cut -d" " -f$1-$2
+}
+
+vs() {
+	echo "node $(node -v)" | sed s/"v"//
+	echo "npm $(npm -v)"
+	echo "pnpm $(pnpm -v)"
+	echo "yarn $(yarn -v) \n"
+	echo "$(elixir -v | sed -n 3p | cut_tail 1 2)"
+	python --version
+	go version | sed s/"version "// | sed s/"go1"/"1"/  | cut_tail 1 2
+	rustc --version | cut_tail 1 2
+	cargo --version | cut_tail 1 2
+	v --version | cut_tail 1 2
+	echo "$(lua -v | cut_tail 1 3) \n"
+	docker -v | sed s/" version"// | cut_tail 1 2 | sed s/","//
+	echo "Podman $(podman version | sed -n 2p)" | sed s/" Version:     "//
+	psql --version | sed s/"psql (PostgreSQL)"/"Postgres"/
+	echo "caddy $(caddy version)" | sed s/"v"// | cut_tail 1 2
+
+}
+
 quick_change() {
 	echo "Do you want to change?"
 	grep -rl "$2" $1
@@ -168,19 +191,19 @@ quick_change() {
 
 # TODO: Make this function take string to remove as a parameter
 pdfShit() {
-	SHIT="www.it-ebooks.info"
+	SHIT="•"
 	for i in "$@"; do
 		echo $i
 		pdftk "$i" output uncompressed.pdf uncompress
 		sed -e "s/$SHIT//g" <uncompressed.pdf >modified.pdf
 		pdftk modified.pdf output "$i" compress
-		rm modified.pdf
-		rm uncompressed.pdf
+		rip modified.pdf
+		rip uncompressed.pdf
 	done
 }
 
 pdfShitMore() {
-	SHIT="www.getwsodo.com"
+	SHIT="Prepared exclusively for Bohdan Varshchuk"
 	for i in "$@"; do
 		echo $i
 
@@ -202,48 +225,51 @@ pdfShitMore() {
 # Input:   nothing
 # Output:  nothing
 # TODO: MAKE this work automaticly with current folders on drives
-# declareHashes() {
-#
-#     # local result=$(ls /mnt/FILER/)
-#     # echo $result
-#
-#     typeset -r -A paths=(
-#
-#     # FILER
-#     f "/mnt/FILER"
-#     js "/mnt/FILER/js"
-#     ts "/mnt/FILER/ts"
-#     react "/mnt/FILER/react"
-#     node "/mnt/FILER/node"
-#     b "/mnt/FILER/b"
-#     ba "/mnt/FILER/ba"
-#
-#     # SHITTER
-#     s "/mnt/SHITTER"
-#
-#     # TORRENTER
-#     t "/mnt/TORRENTER"
-#     trash "/mnt/TORRENTER/trash"
-#
-#     # HOME
-#     days "$HOME/learn/1000days"
-#     learn "$HOME/learn"
-#     local "$HOME/.local"
-#     config "$HOME/.config"
-#     nvim "$HOME/.config/nvim"
-#     awesome "$HOME/.config/awesome"
-#     bookmarks "$HOME/stuff/bookmarks"
-#     work "$HOME/work"
-#     tmp "$HOME/tmp"
-#     dotfiles "$HOME/dotfiles"
-#     code "$HOME/learn/code"
-#     front "$HOME/personal/vyber/front"
-#     vyber "$HOME/personal/vyber"
-#     repos "$HOME/repos"
-#     personal "$HOME/personal" )
-#
-#     for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
-# } # End of function Declare hashes for zsh
+declareHashes() {
+
+	# local result=$(ls /mnt/FILER/)
+	# echo $result
+
+	typeset -r -A paths=(
+
+	# FILER
+	f "/mnt/FILER"
+	js "/mnt/FILER/js"
+	ts "/mnt/FILER/ts"
+	react "/mnt/FILER/react"
+	node "/mnt/FILER/node"
+	b "/mnt/FILER/b"
+	ba "/mnt/FILER/ba"
+
+	# SHITTER
+	s "/mnt/SHITTER"
+
+	# TORRENTER
+	t "/mnt/TORRENTER"
+	trash "/mnt/TORRENTER/trash"
+
+	# HOME
+	days "$HOME/learn/1000days"
+	cache "$HOME/.cache"
+	learn "$HOME/learn"
+	crm "$HOME/work/crm"
+	local "$HOME/.local"
+	c "$HOME/.config"
+	nvim "$HOME/.config/nvim"
+	awesome "$HOME/.config/awesome"
+	bookmarks "$HOME/stuff/bookmarks"
+	work "$HOME/work"
+	ex "$HOME/elixir"
+	tmp "$HOME/tmp"
+	dotfiles "$HOME/dotfiles"
+	code "$HOME/learn/code"
+	front "$HOME/personal/vyber/front"
+	vyber "$HOME/personal/vyber"
+	repos "$HOME/repos"
+	personal "$HOME/personal" )
+
+	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
+} # End of function Declare hashes for zsh
 # --------------------------------------------------------------------------
 
 mkd() {
@@ -290,6 +316,72 @@ stupid_boxing() {
 	echo "$edge"
 }
 
-function forkill () {
-    for n in $(pgrep $1) ; do sudo kill -9 $n ; done
+function forkill() {
+	for n in $(pgrep $1); do sudo kill -9 $n; done
+}
+
+cbin() {
+	c $(echo "$(where $1)" | rev | cut -d'/' -f2- | rev | head -n 1)
+}
+
+# Simple cd to bin folder (using zoxide: https://github.com/ajeetdsouza/zoxide)
+# TODO: make github stuff pretty... kinda
+
+git_clone() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+	git clone "$1" $repo
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input: https://github.com/user/repo-name.git
+#	output: ./repo_name
+git_clone_cd() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+	git clone "$1" $repo
+	c "$(pwd)/$repo"
+	echo "Switched into $(pwd)/$repo"
+}
+
+git_clone_clean() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+	git clone "$1" $repo
+	rip "$(pwd)/$repo/.git" # rip has to be installed!
+}
+# -------------------
+mix_get_app() {
+	pack=$(awk -v OFS=' ' '{$1=$1}1' | rev | cut -d' ' -f2- | rev)
+	name=$(echo $pack | cut -d' ' -f1)
+	version=$(echo $pack | rev | cut -d' ' -f1 | rev)
+	echo "{:$name, \"$version\" }"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Start tmux server with phoenix projects structure loaded in separate windows
+t.phx.gen() {
+	project_name=$(basename $(pwd))
+	gentp
+}
+
+
+t.phx.start() {
+	tmuxp load $1
+}
+
+
+t.phx.go() {
+	project_name=$(basename $(pwd))
+	tmuxp load $project_name
+}
+
+
+t.phx.list() {
+	local color=$(tput setaf 8)
+	for n in $(l $HOME/.config/tmuxp); do printf "${color}$(echo $n | cut -d'.' -f1)\n"; done
+}
+
+
+# Create new file and make it exetubale
+function new_ex {
+	$EDITOR $1  ;
+	chmod +x  $1
 }
