@@ -5,13 +5,13 @@ repo:
   - learn/1000days
   - learn/code
   - learn/js_html_APIs
-  - crm/docs
-  - crm/crm_umbrella
-  - crm/marketing/cms
-  - crm/marketing/podcast
+  - work/crm/docs
+  - work/crm/crm_umbrella
+  - work/crm/marketing/cms
+  - work/crm/marketing/podcast
   - personal/negotiation-front
   - personal/negotiation-back
-  - crm/marketing/remix-front
+  - work/crm/marketing/remix-front
   - personal/personal
   - personal/vyber/front
   - personal/vyber/api
