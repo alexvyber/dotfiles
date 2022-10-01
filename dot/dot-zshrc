@@ -172,3 +172,6 @@ alias luamake=/home/alexs/repos/lua-language-server/3rd/luamake/luamake
 source <(ng completion script)
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/trellis trellis
