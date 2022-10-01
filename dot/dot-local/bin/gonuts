@@ -19,11 +19,11 @@ for key in "${!disks[@]}";  do
     else
         sudo mount /dev/${disks[$key]} /mnt/$key
         echo "$key mounted"
-    fi ; done
+    fi ;
+  done
 
 
 cat ~/.config/awesome/start-apps.lua | awesome-client
-
 
 
 
