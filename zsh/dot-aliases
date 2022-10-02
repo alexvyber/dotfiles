@@ -81,7 +81,6 @@ alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied i
 alias      cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
-# alias scrot="scrot ~/tmp/Pictures/scrot/%b%d::%H%M%S.png"
 alias bat='bat --theme="Coldark-Cold"'
 alias cmx='chmod +x'
 alias chrome="google-chrome"
@@ -156,13 +155,14 @@ alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
 alias gP="git -P"
-function git_add_all_and_commit_message_WO_quotes() {
-  # This function exist only to not use quotes. That's stupid!
-  # for loop with $* expand all input into one string
-  message=$(for words in "$*" ; do echo $words ; done)
-  git add . && \
-    git commit -m "$message" && \
-  }
+
+# function git_add_all_and_commit_message_WO_quotes() {
+#   # This function exist only to not use quotes. That's stupid!
+#   # for loop with $* expand all input into one string
+#   message=$(for words in "$*" ; do echo $words ; done)
+#   git add . && \
+#     git commit -m "$message" && \
+#   }
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
   alias ga.sm="git_add_all_and_commit_message_WO_quotes"
@@ -227,6 +227,3 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 
 alias code="codium"
 alias co.="codium ."
-# alias myscrot="scrot /home/alexs/tmp/Pictures/scrot/%b%d::%H%M%S.png"
-# alias myscrot="scrot ~/tmp/Pictures/scrot/%b%d::%H%M%S.png"
-alias myscrot= "scrot -e 'mv $f ~/tmp/Pictures/scrot 3>/dev/null'",
