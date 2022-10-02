@@ -223,3 +223,5 @@ alias ismp="iex -S mix phx.server"
 # ----------------
 alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 # alias stylua="stylua --search-parent-directories"
+
+alias code="codium"
