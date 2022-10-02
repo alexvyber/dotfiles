@@ -81,7 +81,7 @@ alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied i
 alias      cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
-alias scrot="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png"
+# alias scrot="scrot ~/tmp/Pictures/scrot/%b%d::%H%M%S.png"
 alias bat='bat --theme="Coldark-Cold"'
 alias cmx='chmod +x'
 alias chrome="google-chrome"
@@ -226,3 +226,7 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 # alias stylua="stylua --search-parent-directories"
 
 alias code="codium"
+alias co.="codium ."
+# alias myscrot="scrot /home/alexs/tmp/Pictures/scrot/%b%d::%H%M%S.png"
+# alias myscrot="scrot ~/tmp/Pictures/scrot/%b%d::%H%M%S.png"
+alias myscrot= "scrot -e 'mv $f ~/tmp/Pictures/scrot 3>/dev/null'",
