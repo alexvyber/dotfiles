@@ -21,15 +21,15 @@ repo:
   - personal/supersearch
   - dotfiles
   - personal/scripts
-  - elixir/learn/programming_phoenix_live_view
-  - elixir/learn/concurrent_data_processing_in_elixir
-  - elixir/learn/real_time_phoenix
-  - elixir/learn/phoenix_in_action
-  - elixir/learn/programming_ecto
-  - elixir/learn/elixir_in_action
-  - elixir/learn/graphql_elixir_absinthe
-  - elixir/learn/programming_phoenix_1.4
-  - elixir/learn/designing_elixir_systems_with_otp
-  - elixir/learn/the_little_elixir_otp_guidebook
+  - ex/learn/programming_phoenix_live_view
+  - ex/learn/concurrent_data_processing_in_elixir
+  - ex/learn/real_time_phoenix
+  - ex/learn/phoenix_in_action
+  - ex/learn/programming_ecto
+  - ex/learn/elixir_in_action
+  - ex/learn/graphql_elixir_absinthe
+  - ex/learn/programming_phoenix_1.4
+  - ex/learn/designing_elixir_systems_with_otp
+  - ex/learn/the_little_elixir_otp_guidebook
   - learn/books/bash_idoms
 
