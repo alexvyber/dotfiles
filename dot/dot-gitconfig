@@ -1,6 +1,6 @@
 [user]
-	name = Alex Vyber
-	email = alexvyber@gmail.com
+	name = Alexey Sokolov
+	email = 95688435+alexvyber@users.noreply.github.com
 [core]
 	editor=vim
 	pager = git-split-diffs --color | less -RFX
@@ -49,3 +49,8 @@
 	helper = store
 [split-diffs]
 	theme-name = github-light
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
