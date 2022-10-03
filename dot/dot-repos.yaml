@@ -16,8 +16,6 @@ repo:
   - personal/vyber/front
   - personal/vyber/api
   - personal/getchar
-  - personal/timer
-  - personal/stw
   - personal/supersearch
   - dotfiles
   - personal/scripts
