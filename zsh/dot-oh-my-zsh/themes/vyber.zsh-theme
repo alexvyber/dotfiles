@@ -24,7 +24,7 @@ function node_prompt_version {
     fi
 }
 
-RPROMPT='$(node_prompt_version)'
+# RPROMPT='$(node_prompt_version)'
 
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 # ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
