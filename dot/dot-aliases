@@ -1,0 +1,206 @@
+# TODO: Make it possible to write alias like this: abbr "command"
+# path echo $PATH | tr ":" "\n" -> alias path='echo $PATH | tr ":" "\n"'
+
+# One letter
+# ------------------------------------------------------------------------------
+# alias a=""
+# alias b=""
+# alias c=""
+alias d="docker"
+alias e="elixir"
+# alias f=""
+alias g="git"
+# alias h="omz_history"
+alias i="clear && iex"
+# alias j="" used by  autojump
+# alias k="" used by k
+alias l="exa"
+alias m="mix"
+alias n="nvim"
+# alias o=""
+alias p="npm"
+# alias q=""
+# alias r=""
+# alias s=""
+# alias u=""
+# alias v="vim"
+alias t="tmux"
+alias w="which" # used by w, can be rebinded
+alias x="exit"  # can be reused
+alias y="yarn"
+# alias z=""
+
+# Two letters
+# ------------------------------------------------------------------------------
+alias zz="zsh" # Experiment | Delete if need z
+alias py="python"
+alias cc="c *"
+
+# Enable aliases for sudo
+alias sudo='sudo '
+
+# V coreutils
+# ------------------------------------------------------------------------------
+# alias mv="~/repos/coreutils/bin/mv"
+# alias mkdir="~/repos/coreutils/bin/mkdir"
+
+# Editing config files
+# ------------------------------------------------------------------------------
+EDITOR=nvim
+alias v.rc="$EDITOR ~/.vimrc"
+alias n.vim="nvim ~/.config/nvim/init.vim"
+alias n.lua="nvim ~/.config/nvim/init.lua"
+alias n.folder="nvim ~/.config/nvim/."
+alias z.rc="$EDITOR ~/.zshrc"
+alias aliases="$EDITOR ~/.aliases"
+alias repos="$EDITOR ~/.repos.yaml"
+alias bat.config="$EDITOR ~/.config/bat/config"
+alias zsh.profile="$EDITOR ~/.zsh_profile"
+alias bash.profile="$EDITOR ~/.bash_profile"
+alias t.conf="$EDITOR ~/.tmux.conf"
+alias i3.config="$EDITOR ~/.config/i3/config"
+alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
+alias awesome.rc="$EDITOR ~/.config/awesome/rc.lua"
+alias awesome.theme="$EDITOR ~/.config/awesome/theme.lua"
+
+alias aimp="wine '/home/alexs/.wine/drive_c/Program Files (x86)/AIMP/aimp.exe'"
+alias tlsw="tmux lsw -a"
+alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
+alias gr="grep"
+alias reb="reboot"
+alias pof="poweroff"
+alias ka="k -Ah"
+alias _d="sudo dnf"
+alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
+alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+alias __="tmux new-window"
+alias t.rename="tmux rename-window"
+alias bat='bat --theme="Coldark-Cold"'
+alias cmx='chmod +x'
+alias chrome="google-chrome"
+
+alias tpl="tmuxp load"
+
+alias .1="c ../"
+alias .2="c ../../"
+alias .3="c ../../../"
+alias .4="c ../../../../"
+
+alias :q="exit"
+
+alias path='echo $PATH | tr ":" "\n" '
+
+# Elixir. mix, iex
+# ------------------------------------------------------------------------------
+alias ism="iex -S mix"
+alias mf="mix format"        # There's some mf bin in /usr/bin...
+alias mfx="mix format *.ex*" # There's some mf bin in /usr/bin...
+alias mix_tree='tree -I "deps|_build"'
+alias mt="mix test"
+alias ismp="iex -S mix phx.server"
+
+# Replace apt with dnf
+alias apt="dnf"
+alias apt-get="dnf"
+
+# exa
+# ------------------------------------------------------------------------------
+alias exa="exa --git"
+alias ll="exa -l"
+alias l1="exa -1"
+alias ltr="exa --tree"
+alias l.="exa --all -I '[A-z]*'"
+alias l~="exa $HOME"
+alias l/="exa /"
+alias la="exa --all "
+alias l.l="exa -l --all -I '[A-z]*'"
+alias lrg='{ read -r R && exa --all | rg $R ; } <<<'
+# alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
+
+# ls
+# ------------------------------------------------------------------------------
+alias ls="ls --color=auto"
+alias lsa="ls -AFC"
+alias lsl="ls -lh"
+alias lsA="ls -alhF"
+alias lsal="ls -Al"
+alias lsr="ls -R"
+# alias l="ls --hide='[A-Z]*'" # starts with lowercase
+alias Ls="ls --hide='[a-z]*' --group-directories-first"          # starts with upppercase
+alias LSL="ls --hide='*[a-z]*' --group-directories-first"        # starts with upppercase
+alias ls.="ls -d .* --color=auto --group-directories-first"      # all dot entries
+alias ls.l="ls -lhd .* --color=auto --group-directories-first"   # all dot entries with details
+alias ls.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
+alias ls.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
+alias ls.f="l. -F | grep -v /$"                                  # .files TODO make work without grep
+alias lsc="ls --color=never"
+alias lsh="ls -sh"
+
+# git
+# ------------------------------------------------------------------------------
+alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
+alias gp="git push"
+alias ga.="git add ."
+alias gP="git -P"
+
+
+# Only for simple messages without special tockens that bash will be parsing | it was nice try:(
+alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
+alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<' # add all && commit message
+alias gpom="git push -u origin main"
+
+# git-open
+# https://github.com/paulirish/git-open
+alias g.o="git open"
+
+# rm
+# ------------------------------------------------------------------------------
+# alias rmr="rm -r"
+# alias rmrf="rm -rf"
+
+# Stow
+# ------------------------------------------------------------------------------
+# alias stow.d="stow --dotfiles"
+# alias unstow="stow -D"
+# alias unstow.d="stow -D --dotfiles"
+
+# NEW
+# ------------------------------------------------------------------------------
+CMD_PATH=~/stuff/bookmarks/cmd.sh
+alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
+alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
+alias cmd.show="bat $CMD_PATH"
+
+# alias pd="pnpm dev"
+# alias pb="pnpm build"
+# alias pi="pnpm install"
+# alias pf="pnpm format"
+# alias pl="pnpm lint"
+# alias pr="npm run"
+
+alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
+
+# Go
+# ------------------------------------------------------------------------------
+alias go.f="gofmt -w *.go"
+alias go.main="go run main.go"
+alias go.cp="copyGoFileIntoNew"
+alias go.README="bat ~/.oh-my-zsh/plugins/golang/README.md"
+alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f.go" } <<<'
+alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
+alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
+alias goland="./Goland/bin/goland.sh"
+
+alias r.mkdir="/home/alexs/repos/coreutils_rust/target/debug/coreutils mkdir"
+alias drr="duration | sort -h"
+alias duu="du -csh * | sort -h"
+
+# To cjange habbit
+# ----------------
+alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
+# alias stylua="stylua --search-parent-directories"
+
+# VS Codium
+# ------------------------------------------------------------------------------
+alias code="codium"
+alias co.="codium ."
