@@ -14,7 +14,6 @@ export GIT_EDITOR=nvim
 export FLYCTL_INSTALL="/home/alexs/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
-# export PATH=/path/to/Swift/usr/bin:"${PATH}"
 export PATH="$HOME/repos/depot_tools:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
@@ -25,14 +24,12 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/elixir/scrips/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 
 # Go path
 GOPATH=$HOME/.go
 export GOPATH
-export PATH="/$PATH:/$GOPATH/bin"
-
+export PATH="$PATH:/$GOPATH/bin"
+export PATH=$PATH:/usr/local/go/bin
 
 # Relocate .zcompdump files from home directory
 # https://stackoverflow.com/a/71271754
@@ -51,12 +48,26 @@ export PATH="$HOME/personal/rat/bin:$PATH"
 export PATH="$HOME/learn/code/python/bin:$PATH"
 export PATH="$HOME/personal/scripts/bin:$PATH"
 export PATH=$PATH:~/.spoof-dpi/bin
-export PATH=$PATH:/usr/local/go/bin
 
 # // TMP VARIABLES  ------------------------------------------------------------
 
+# Bun
+export BUN_INSTALL="/home/alexs/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/home/alexs/.bun/_bun" ] && source "/home/alexs/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/home/alexs/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 # Auto Card browser automation
 export PATH="$HOME/work/auto_card/bin:$PATH"
+
+# cargo
+. "$HOME/.cargo/env"
+export PATH=$PATH:/usr/local/go/bin
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # Sourcing
@@ -89,7 +100,7 @@ source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # -- asdf  ---------------------------------------------------------------------
 # TODO move asdf to zinit installer
 . $HOME/.asdf/asdf.sh
-plugins=(  asdf ) # k )
+plugins=(asdf) # k )
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -141,16 +152,14 @@ sw() {
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # Automatically list directory contents on `cd`.
-# auto_ls () {  printf "%b" "\e[1;30m$(pwd;)\e[0m\n"; exa;}
-# [[ ${chpwd_functions[(r)auto_ls]} == auto_ls ]] || chpwd_functions=( auto_ls $chpwd_functions )
+auto_ls () {  printf "%b" "\e[1;30m$(pwd;)\e[0m\n"; exa;}
+[[ ${chpwd_functions[(r)auto_ls]} == auto_ls ]] || chpwd_functions=( auto_ls $chpwd_functions )
 
 # Make beam cursor https://unix.stackexchange.com/a/496878
 _fix_cursor() {
 	echo -ne '\e[5 q'
 }
 precmd_functions+=(_fix_cursor)
-. "$HOME/.cargo/env"
-export PATH=$PATH:/usr/local/go/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -161,31 +170,16 @@ autoload -U zmv
 # zoxide init
 eval "$(zoxide init zsh --cmd c)"
 
-# pnpm
-export PNPM_HOME="/home/alexs/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-# bun completions
-[ -s "/home/alexs/.bun/_bun" ] && source "/home/alexs/.bun/_bun"
-
-# Bun
-export BUN_INSTALL="/home/alexs/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 alias luamake=/home/alexs/repos/lua-language-server/3rd/luamake/luamake
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-
+# # Load Angular CLI autocompletion.
+# source <(ng completion script)
+# export PATH="$HOME/.phpenv/bin:$PATH"
+# eval "$(phpenv init -)"
 
 # trellis
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/trellis trellis
-
 
 # mcfly init
 # https://github.com/cantino/mcfly
