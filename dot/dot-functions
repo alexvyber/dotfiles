@@ -443,3 +443,14 @@ pd() {
 }
 
 # ----------------     ------------
+
+
+
+# Switch files or directories content
+# TODO: move somewhere else
+sw() {
+	tmp_name=$(TMPDIR=$(dirname -- "$1") mktemp --dry-run) &&
+		mv -f -- "$1" "$tmp_name" &&
+		mv -f -- "$2" "$1" &&
+		mv -f -- "$tmp_name" "$2"
+}

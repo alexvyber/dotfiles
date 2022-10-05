@@ -47,7 +47,6 @@ export PATH="$HOME/personal/plow/bin:$PATH"
 export PATH="$HOME/personal/rat/bin:$PATH"
 export PATH="$HOME/learn/code/python/bin:$PATH"
 export PATH="$HOME/personal/scripts/bin:$PATH"
-export PATH=$PATH:~/.spoof-dpi/bin
 
 # // TMP VARIABLES  ------------------------------------------------------------
 
@@ -108,8 +107,8 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 # // asdf  ---------------------------------------------------------------------
 
-[[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh # Autojump
-autoload -U compinit && compinit -u
+# [[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh # Autojump
+# autoload -U compinit && compinit -u
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -138,15 +137,6 @@ setopt hist_ignore_all_dups   # dELETE OLD RECORDED ENTRY IF NEW ENTRY IS A DUPL
 setopt hist_save_no_dups      # dON'T WRITE DUPLICATE ENTRIES IN THE HISTORY FILE.
 setopt hist_verify            # dON'T EXECUTE IMMEDIATELY UPON HISTORY EXPANSION.
 setopt no_clobber             # don't override file with redirections if file exists
-
-# Switch files or directories content
-# TODO: move somewhere else
-sw() {
-	tmp_name=$(TMPDIR=$(dirname -- "$1") mktemp --dry-run) &&
-		mv -f -- "$1" "$tmp_name" &&
-		mv -f -- "$2" "$1" &&
-		mv -f -- "$tmp_name" "$2"
-}
 
 # Emulates Vim's `smartcase` for tab completion. (If lower-case, matches botch lower- and upper-case.)
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'

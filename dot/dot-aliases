@@ -142,7 +142,7 @@ alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
 alias gP="git -P"
-alias op="git open"
+alias gop="git open"
 
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
