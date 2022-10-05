@@ -1,0 +1,28 @@
+! Remaping keys on keyboard
+! just as an example
+remove mod1 = Alt_L
+remove mod4 = Super_L
+keycode 64 = Alt_L
+keycode 133 = Super_L
+add mod1 = Alt_L
+add mod4 = Super_L
+
+! Remaping RIGHT ALT to RIGHT SUPER
+remove mod1 = Alt_R
+keycode 108 = numbersign
+
+! Remaping MENU to NUMBERSIGN
+keycode 135 = Super_R
+add mod4 = Super_R
+
+! Remaping RIGHT SHIFT to TILDE
+keycode 62 = asciitilde
+
+! Remaping RIGHT CONTROL to COLON
+keycode 105 = exclam
+
+! Remaping CAPS LOCK to EXCLAMATION MARK (!)
+remove Lock = Caps_Lock
+keycode 66 = colon
+
+keycode 118 = Menu
