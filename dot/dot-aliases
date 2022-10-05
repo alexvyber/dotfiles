@@ -182,6 +182,10 @@ alias cmd.show="bat $CMD_PATH"
 
 alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
+# Rust
+# ------------------------------------------------------------------------------
+alias ca="cargo"
+
 # Go
 # ------------------------------------------------------------------------------
 alias go.f="gofmt -w *.go"
