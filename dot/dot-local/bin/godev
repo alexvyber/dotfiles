@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+
+cat ~/.config/awesome/godev.lua | awesome-client
+
+
+

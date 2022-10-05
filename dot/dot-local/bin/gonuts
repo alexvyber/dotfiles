@@ -23,7 +23,7 @@ for key in "${!disks[@]}";  do
   done
 
 
-cat ~/.config/awesome/start-apps.lua | awesome-client
+cat ~/.config/awesome/gonuts.lua | awesome-client
 
 
 
