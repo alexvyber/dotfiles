@@ -6,9 +6,9 @@ xset r rate 180 70
 
 
 declare -A disks=(
-  [FILER]=sda2
-  [TORRENTER]=sdb1
-  [SHITTER]=sdd1
+  [FILER]=sdc2
+  # [TORRENTER]=sdb1
+  [SHITTER]=sdb1
 )
 
 
