@@ -281,6 +281,19 @@ mkd() {
 	cd "$1" || exit
 }
 
+# mkdir and replace spaces
+mkdirs() {
+	str=$(echo $@ | tr -s " " "_")
+	mkdir "$str"
+}
+
+# mkd and replace spaces
+mkds() {
+	str=$(echo $@ | tr -s " " "_")
+	mkdir "$str"
+	cd "$str" || exit
+}
+
 tmpd() {
 	local dir
 	if [ $# -eq 0 ]; then

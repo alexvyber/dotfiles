@@ -3,8 +3,6 @@ repo:
   - .config/nvim
   - .config/awesome
   - learn/1000days
-  - learn/code
-  - learn/js_html_APIs
   - work/crm/docs
   - work/crm/crm_umbrella
   - work/crm/marketing/cms

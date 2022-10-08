@@ -145,6 +145,10 @@ alias ga.="git add ."
 alias gP="git -P"
 alias gop="git open"
 
+# GitHub
+# ------------------------------------------------------------------------------
+alias mygh="chromium-browser github.com/alexvyber"
+
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
@@ -210,3 +214,9 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 # ------------------------------------------------------------------------------
 alias code="codium"
 alias co.="codium ."
+
+
+# JS Aliases
+# ------------------------------------------------------------------------------
+alias cap="cat package.json"
+alias bap="bat package.json"
