@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source ~/.zsh_docker
+
 # Colorful ouput
 # https://stackoverflow.com/a/5947802
 RED='\033[1;38m'
