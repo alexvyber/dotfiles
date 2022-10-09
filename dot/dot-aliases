@@ -26,7 +26,7 @@ alias p="npm"
 # alias v="vim"
 alias t="tmux"
 alias w="which" # used by w, can be rebinded
-alias x="exit"  # can be reused
+alias xx="xplr"  # can be reused
 alias y="yarn"
 # alias z=""
 
