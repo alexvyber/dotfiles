@@ -111,12 +111,14 @@ alias l1="exa -1"
 alias lg="exa | rg -i"
 alias ltr="exa --tree"
 alias l.="exa --all -I '[A-z]*'"
-alias l.rg="exa --all -I '[A-z]*' | rg"
+alias l.rg="exa --all -I '[A-z]*' | rg -i"
+
+alias lrg="exa | rg -i"
 alias l~="exa $HOME"
 alias l/="exa /"
 alias la="exa --all "
 alias l.l="exa -l --all -I '[A-z]*'"
-alias lrg='{ read -r R && exa --all | rg $R ; } <<<'
+# alias lrg='{ read -r R && exa --all | rg $R ; } <<<'
 # alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 
 # ls
