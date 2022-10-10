@@ -144,7 +144,10 @@ setopt no_clobber             # don't override file with redirections if file ex
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # Automatically list directory contents on `cd`.
-auto_ls () {  printf "%b" "\e[1;30m$(pwd;)\e[0m\n"; exa;}
+auto_ls() {
+	printf "%b" "\e[1;30m$(pwd)\e[0m\n"
+	exa
+}
 [[ ${chpwd_functions[(r)auto_ls]} == auto_ls ]] || chpwd_functions=( auto_ls $chpwd_functions )
 
 # Make beam cursor https://unix.stackexchange.com/a/496878
