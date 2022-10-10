@@ -27,40 +27,37 @@ alias p="npm"
 alias t="tmux"
 alias w="which" # used by w, can be rebinded
 alias xx="xplr" # can be reused
-alias y="yarn"
+# alias y=""
 # alias z=""
 
 # Two letters
 # ------------------------------------------------------------------------------
 alias zz="zsh" # Experiment | Delete if need z
 alias py="python"
-alias cc="c *"
 
 # Enable aliases for sudo
 alias sudo='sudo '
-
-# V coreutils
-# ------------------------------------------------------------------------------
-# alias mv="~/repos/coreutils/bin/mv"
-# alias mkdir="~/repos/coreutils/bin/mkdir"
 
 # Editing config files
 # ------------------------------------------------------------------------------
 EDITOR=nvim
 # alias v.rc="$EDITOR ~/.vimrc"
-alias n.vim="nvim ~/.config/nvim/init.vim"
-alias n.lua="nvim ~/.config/nvim/init.lua"
-alias n.folder="nvim ~/.config/nvim/."
+# alias n.vim="nvim ~/.config/nvim/init.vim"
+# alias n.lua="nvim ~/.config/nvim/init.lua"
 alias z.rc="$EDITOR ~/.zshrc"
 alias aliases="$EDITOR ~/.aliases"
 alias repos="$EDITOR ~/.repos.yaml"
 alias gitconfig="$EDITOR ~/.gitconfig"
 alias bat.config="$EDITOR ~/.config/bat/config"
 alias zsh.profile="$EDITOR ~/.zsh_profile"
-alias bash.profile="$EDITOR ~/.bash_profile"
+# alias bash.profile="$EDITOR ~/.bash_profile"
 alias t.conf="$EDITOR ~/.tmux.conf"
-# alias i3.config="$EDITOR ~/.config/i3/config"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
+alias funcs="$EDITOR ~/.functions"
+
+#
+#
+#
 
 alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
@@ -74,15 +71,12 @@ alias bat='bat --theme="Coldark-Cold"'
 alias cmx='chmod +x'
 alias chrome="google-chrome"
 
+#
+#
+#
+
 alias tpl="tmuxp load"
-
-alias .1="c ../"
-alias .2="c ../../"
-alias .3="c ../../../"
-alias .4="c ../../../../"
-
 alias :q="exit"
-
 alias path='echo $PATH | tr ":" "\n" '
 
 # Elixir. mix, iex
@@ -115,21 +109,21 @@ alias l.l="exa -l --all -I '[A-z]*'"
 
 # ls
 # ------------------------------------------------------------------------------
-alias ls="ls --color=auto"
-alias lsa="ls -AFC"
-alias lsl="ls -lh"
-alias lsA="ls -alhF"
-alias lsal="ls -Al"
-alias lsr="ls -R"
-alias Ls="ls --hide='[a-z]*' --group-directories-first"          # starts with upppercase
-alias LSL="ls --hide='*[a-z]*' --group-directories-first"        # starts with upppercase
-alias ls.="ls -d .* --color=auto --group-directories-first"      # all dot entries
-alias ls.l="ls -lhd .* --color=auto --group-directories-first"   # all dot entries with details
-alias ls.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
-alias ls.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
-alias ls.f="l. -F | grep -v /$"                                  # .files TODO make work without grep
-alias lsc="ls --color=never"
-alias lsh="ls -sh"
+# alias ls="ls --color=auto"
+# alias lsa="ls -AFC"
+# alias lsl="ls -lh"
+# alias lsA="ls -alhF"
+# alias lsal="ls -Al"
+# alias lsr="ls -R"
+# alias Ls="ls --hide='[a-z]*' --group-directories-first"          # starts with upppercase
+# alias LSL="ls --hide='*[a-z]*' --group-directories-first"        # starts with upppercase
+# alias ls.="ls -d .* --color=auto --group-directories-first"      # all dot entries
+# alias ls.l="ls -lhd .* --color=auto --group-directories-first"   # all dot entries with details
+# alias ls.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
+# alias ls.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
+# alias ls.f="l. -F | grep -v /$"                                  # .files TODO make work without grep
+# alias lsc="ls --color=never"
+# alias lsh="ls -sh"
 
 # git
 # ------------------------------------------------------------------------------
@@ -157,8 +151,7 @@ alias gpom="git push -u origin main"
 # alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 # alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
 # alias cmd.show="bat $CMD_PATH"
-
-alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
+# alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
 # Rust
 # ------------------------------------------------------------------------------
@@ -173,7 +166,7 @@ alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f
 alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
 alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
 
-alias r.mkdir="/home/alexs/repos/coreutils_rust/target/debug/coreutils mkdir"
+# ------------------------------------------------------------------------------
 alias drr="duration | sort -h"
 alias duu="du -csh * | sort -h"
 
@@ -183,13 +176,12 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 
 # VS Codium
 # ------------------------------------------------------------------------------
-alias code="codium"
-alias co.="codium ."
+alias cod="codium ."
+alias code="codium "
 
 # JS Aliases
 # ------------------------------------------------------------------------------
 alias cap="cat package.json"
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(ts|tsx|md)|*.ts'"
-alias me="glow README.md"
 alias me="glow README.md"

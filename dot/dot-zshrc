@@ -1,12 +1,10 @@
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# Evironmental variables
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 export DISABLE_AUTO_TITLE='true'
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=10000000
 export HISTSIZE=10000000
 export SAVEHIST=10000000
+
 ZSH_THEME="theme"
 export GIT_EDITOR=nvim
 
@@ -42,11 +40,8 @@ ENABLE_CORRECTION="false" # command auto-correction.
 DISABLE_UNTRACKED_FILES_DIRTY="false"
 
 # -- TMP VARIABLES  ------------------------------------------------------------
-GH="github.com"
-httpGH="https://github.com"
-export PATH="$HOME/personal/plow/bin:$PATH"
-export PATH="$HOME/personal/rat/bin:$PATH"
-export PATH="$HOME/learn/code/python/bin:$PATH"
+# GH="github.com"
+# httpGH="https://github.com"
 export PATH="$HOME/personal/scripts/bin:$PATH"
 
 # // TMP VARIABLES  ------------------------------------------------------------
@@ -63,15 +58,15 @@ export PNPM_HOME="/home/alexs/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # Auto Card browser automation
-export PATH="$HOME/work/auto_card/bin:$PATH"
+# export PATH="$HOME/work/auto_card/bin:$PATH"
 
 # cargo
 . "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/go/bin
 
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 # Sourcing
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 
 # Configs
 source "${HOME}/.zsh/configs/zinit.zsh"
@@ -80,7 +75,6 @@ source "${HOME}/.zsh/plugins.zsh"    # Plugins
 
 # Stylef fot history search
 source $HOME/.zstyle
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_keybindings
 source $HOME/.zsh_docker
@@ -89,14 +83,9 @@ source $HOME/.aliases
 source $HOME/.functions
 source ~/.local/fzf/key-bindings.zsh
 source ~/.local/fzf/completion.zsh
-
 source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# -- TMP SOURCE  ---------------------------------------------------------------
-# source $HOME/tmp/bin/twoArgs
-# // TMP SOURCE  ---------------------------------------------------------------
 
 # asdf
 # -- asdf  ---------------------------------------------------------------------
@@ -113,17 +102,14 @@ autoload -Uz compinit && compinit
 # [[ -s /home/alexs/.autojump/etc/profile.d/autojump.sh ]] && source /home/alexs/.autojump/etc/profile.d/autojump.sh # Autojump
 # autoload -U compinit && compinit -u
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 bindkey "^n" sudo-command-line # [Ctrl + N] (for Negate) Prepend/remove 'sudo' for current/previous command
 
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 # User configs
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ------------------------------------------------------------------------------
 
 # Reference: http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt glob_dots              # glob matches files starting with dot; `*` becomes `*(D)`
@@ -167,11 +153,6 @@ autoload -U zmv
 eval "$(zoxide init zsh --cmd c)"
 
 alias luamake=/home/alexs/repos/lua-language-server/3rd/luamake/luamake
-
-# # Load Angular CLI autocompletion.
-# source <(ng completion script)
-# export PATH="$HOME/.phpenv/bin:$PATH"
-# eval "$(phpenv init -)"
 
 # trellis
 autoload -U +X bashcompinit && bashcompinit

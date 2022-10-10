@@ -409,7 +409,7 @@ up() {
 # ----------------     ------------
 # TODO: try to develop this into standalone app
 
-getFile() {
+local getFile() {
 	FILE=".npy"
 	if [ -f "$FILE" ]; then
 		value=$(cat .npy)
