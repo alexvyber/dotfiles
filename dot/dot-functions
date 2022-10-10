@@ -135,11 +135,11 @@ ga.cm.today() {
 }
 
 ga.sm() {
-  # This function exist only to not use quotes. That's stupid!
-  # for loop with $* expand all input into one string
-  local message=$(for words in "$*" ; do echo $words ; done)
-  git add . && git commit -m "$message"
-  }
+	# This function exist only to not use quotes. That's stupid!
+	# for loop with $* expand all input into one string
+	local message=$(for words in "$*"; do echo $words; done)
+	git add . && git commit -m "$message"
+}
 
 # I'm going to try and keep these available to use in either bash or zsh
 # If they aren't, I should make them differently
@@ -161,30 +161,30 @@ author_contrib() {
 		gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
 }
 
-# vs() {
-# 	local cut_tail() {
-# 	 cut -d" " -f$1-$2
-# 	}
-# 	echo "node $(node -v)" | sed s/"v"//
-# 	echo "npm $(npm -v)"
-# 	echo "pnpm $(pnpm -v)"
-# 	echo "yarn $(yarn -v) \n"
-# 	echo "$(deno --version | cut_tail 1 2)"
-# 	echo "bun $(bun --version)\n"
-# 	echo "$(elixir -v | sed -n 3p | cut_tail 1 2)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
-# 	python --version
-# 	go version | sed s/"version "// | sed s/"go1"/"1"/ | cut_tail 1 2
-# 	rustc --version | cut_tail 1 2
-# 	cargo --version | cut_tail 1 2
-# 	v --version | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
-# 	echo "$(lua -v | cut_tail 1 3)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
-# 	php --version | sed -n 1p | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
-# 	echo ""
-# 	docker -v | sed s/" version"// | cut_tail 1 2 | sed s/","// | xargs -I {} node -e "console.log('{}'.toLowerCase())"
-# 	echo "podman $(podman version | sed -n 2p)" | sed s/" Version:     "//
-# 	psql --version | sed s/"psql (PostgreSQL)"/"postgres"/
-# 	echo "caddy $(caddy version)" | sed s/"v"// | cut_tail 1 2
-# }
+vs() {
+	local cut_tail() {
+	 cut -d" " -f$1-$2
+	}
+	echo "node $(node -v)" | sed s/"v"//
+	echo "npm $(npm -v)"
+	echo "pnpm $(pnpm -v)"
+	echo "yarn $(yarn -v) \n"
+	echo "$(deno --version | cut_tail 1 2)"
+	echo "bun $(bun --version)\n"
+	echo "$(elixir -v | sed -n 3p | cut_tail 1 2)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	python --version
+	go version | sed s/"version "// | sed s/"go1"/"1"/ | cut_tail 1 2
+	rustc --version | cut_tail 1 2
+	cargo --version | cut_tail 1 2
+	v --version | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	echo "$(lua -v | cut_tail 1 3)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	php --version | sed -n 1p | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	echo ""
+	docker -v | sed s/" version"// | cut_tail 1 2 | sed s/","// | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	echo "podman $(podman version | sed -n 2p)" | sed s/" Version:     "//
+	psql --version | sed s/"psql (PostgreSQL)"/"postgres"/
+	echo "caddy $(caddy version)" | sed s/"v"// | cut_tail 1 2
+}
 
 quick_change() {
 	echo "Do you want to change?"
@@ -236,43 +236,43 @@ pdfShitMore() {
 # Output:  nothing
 # TODO: MAKE this work automaticly with current folders on drives
 
-# declareHashes() {
-# 	# local result=$(ls /mnt/FILER/)
-# 	# echo $result
-# 	typeset -r -A paths=(
-# 		# FILER
-# 		f "/mnt/FILER"
-# 		js "/mnt/FILER/js"
-# 		ts "/mnt/FILER/ts"
-# 		react "/mnt/FILER/react"
-# 		node "/mnt/FILER/node"
-# 		b "/mnt/FILER/b"
-# 		ba "/mnt/FILER/ba"
-# 		# SHITTER
-# 		s "/mnt/SHITTER"
-# 		# TORRENTER
-# 		trash "$HOME/tmp/trash"
-# 		# HOME
-# 		days "$HOME/learn/1000days"
-# 		cache "$HOME/.cache"
-# 		learn "$HOME/learn"
-# 		crm "$HOME/work/crm"
-# 		local "$HOME/.local"
-# 		c "$HOME/.config"
-# 		nvim "$HOME/.config/nvim"
-# 		awesome "$HOME/.config/awesome"
-# 		bookmarks "$HOME/stuff/bookmarks"
-# 		work "$HOME/work"
-# 		ex "$HOME/elixir"
-# 		tmp "$HOME/tmp"
-# 		dotfiles "$HOME/dotfiles"
-# 		code "$HOME/learn/code"
-# 		front "$HOME/personal/vyber/front"
-# 		vyber "$HOME/personal/vyber"
-# 		repos "$HOME/repos"
-# 		personal "$HOME/personal")
-# 	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
-# } # End of function Declare hashes for zsh
+declareHashes() {
+	# local result=$(ls /mnt/FILER/)
+	# echo $result
+	typeset -r -A paths=(
+		# FILER
+		f "/mnt/FILER"
+		js "/mnt/FILER/js"
+		ts "/mnt/FILER/ts"
+		react "/mnt/FILER/react"
+		node "/mnt/FILER/node"
+		b "/mnt/FILER/b"
+		ba "/mnt/FILER/ba"
+		# SHITTER
+		s "/mnt/SHITTER"
+		# TORRENTER
+		trash "$HOME/tmp/trash"
+		# HOME
+		days "$HOME/learn/1000days"
+		cache "$HOME/.cache"
+		learn "$HOME/learn"
+		crm "$HOME/work/crm"
+		local "$HOME/.local"
+		c "$HOME/.config"
+		nvim "$HOME/.config/nvim"
+		awesome "$HOME/.config/awesome"
+		bookmarks "$HOME/stuff/bookmarks"
+		work "$HOME/work"
+		ex "$HOME/elixir"
+		tmp "$HOME/tmp"
+		dotfiles "$HOME/dotfiles"
+		code "$HOME/learn/code"
+		front "$HOME/personal/vyber/front"
+		vyber "$HOME/personal/vyber"
+		repos "$HOME/repos"
+		personal "$HOME/personal")
+	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
+} # End of function Declare hashes for zsh
 
 # --------------------------------------------------------------------------
 
@@ -410,13 +410,13 @@ up() {
 # TODO: try to develop this into standalone app
 
 getFile() {
-FILE=".npy"
-if [ -f "$FILE" ]; then
-	value=$(cat .npy)
-	echo $value
-else
-    echo "npm"
-fi
+	FILE=".npy"
+	if [ -f "$FILE" ]; then
+		value=$(cat .npy)
+		echo $value
+	else
+		echo "npm"
+	fi
 }
 
 pr() {
@@ -456,8 +456,6 @@ pd() {
 }
 
 # ----------------     ------------
-
-
 
 # Switch files or directories content
 # TODO: move somewhere else

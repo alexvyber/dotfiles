@@ -26,7 +26,7 @@ alias p="npm"
 # alias v="vim"
 alias t="tmux"
 alias w="which" # used by w, can be rebinded
-alias xx="xplr"  # can be reused
+alias xx="xplr" # can be reused
 alias y="yarn"
 # alias z=""
 
@@ -152,7 +152,6 @@ alias gop="git open"
 # ------------------------------------------------------------------------------
 alias mygh="chromium-browser github.com/alexvyber"
 
-
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
 alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<' # add all && commit message
@@ -217,7 +216,6 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 # ------------------------------------------------------------------------------
 alias code="codium"
 alias co.="codium ."
-
 
 # JS Aliases
 # ------------------------------------------------------------------------------
