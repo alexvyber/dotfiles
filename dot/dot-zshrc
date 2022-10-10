@@ -84,6 +84,7 @@ source $HOME/.zstyle
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_keybindings
 source $HOME/.zsh_docker
+source $HOME/.zsh_podman
 source $HOME/.aliases
 source $HOME/.functions
 source ~/.local/fzf/key-bindings.zsh

@@ -1,0 +1,2 @@
+alias pod="podman"
+alias pov="podman version"

@@ -2,7 +2,7 @@
 	name = Alexey Sokolov
 	email = 95688435+alexvyber@users.noreply.github.com
 [core]
-	editor=vim
+	editor=nvim
 	pager = git-split-diffs --color | less -RFX
 	excludesfile = /home/alexs/.gitignore
 [alias]
@@ -38,6 +38,30 @@
   lol2 = log --oneline --graph --decorate
   # shows branches and their last commits
   lol3 = log --all --graph --decorate --oneline --simplify-by-decoration
+  # a = "!git status --short | peco | awk '{print $2}' | xargs git add"
+  d = diff
+  co = checkout
+  ci = commit
+  ca = commit -a
+  ps = "!git push origin $(git rev-parse --abbrev-ref HEAD)"
+  pl = "!git pull origin $(git rev-parse --abbrev-ref HEAD)"
+  st = status
+  br = branch
+  ba = branch -a
+  bm = branch --merged
+  bn = branch --no-merged
+  df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  open = "!hub browse"
+  type = cat-file -t
+  dump = cat-file -p
+  find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
+  # edit conflicted file on merge
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+  # add conflicted file on merge
+  add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+
 [credential "https://github.com"]
 	helper =
 	helper = !/usr/bin/gh auth git-credential
