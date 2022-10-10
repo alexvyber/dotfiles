@@ -1,27 +1,7 @@
-## allowed actions
 repo:
   - .config/nvim
   - .config/awesome
   - learn/1000days
-  - work/crm/docs
-  - work/crm/crm_umbrella
-  - work/crm/marketing/cms
-  - work/crm/marketing/podcast
-  - work/crm/marketing/remix-front
-  - personal/personal
-  - personal/vyber/front
-  - personal/vyber/api
   - dotfiles
   - personal/scripts
-  - ex/learn/programming_phoenix_live_view
-  - ex/learn/concurrent_data_processing_in_elixir
-  - ex/learn/real_time_phoenix
-  - ex/learn/phoenix_in_action
-  - ex/learn/programming_ecto
-  - ex/learn/elixir_in_action
-  - ex/learn/graphql_elixir_absinthe
-  - ex/learn/programming_phoenix_1.4
-  - ex/learn/designing_elixir_systems_with_otp
-  - ex/learn/the_little_elixir_otp_guidebook
-  - learn/books/bash_idoms
 
