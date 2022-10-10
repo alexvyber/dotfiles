@@ -221,4 +221,4 @@ alias co.="codium ."
 # ------------------------------------------------------------------------------
 alias cap="cat package.json"
 alias bap="bat package.json"
-alias prets="prettier --write '*/**/*.(ts|tsx)|*.ts'"
+alias prets="prettier --write '*/**/*.(ts|tsx|md)|*.ts'"
