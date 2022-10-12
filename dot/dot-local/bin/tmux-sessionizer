@@ -21,6 +21,7 @@ case $1 in
            ~/tmp                                 \
            ~/personal/vyber                           \
            ~/work                                     \
+           ~/work/gate                                     \
            -mindepth 0                                \
            -maxdepth 2                                \
            -type d                                    \
