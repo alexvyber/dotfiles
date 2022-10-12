@@ -257,6 +257,7 @@ declareHashes() {
 		cache "$HOME/.cache"
 		learn "$HOME/learn"
 		crm "$HOME/work/crm"
+		client "$HOME/work/gate/kardon.pro/client"
 		local "$HOME/.local"
 		c "$HOME/.config"
 		nvim "$HOME/.config/nvim"
