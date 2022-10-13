@@ -19,6 +19,8 @@ case $1 in
            ~/stuff                                 \
            ~/soft                                 \
            ~/tmp                                 \
+           ~/js                                 \
+           ~/js/books                                 \
            ~/personal/vyber                           \
            ~/work                                     \
            ~/work/gate                                     \
