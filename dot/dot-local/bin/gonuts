@@ -2,7 +2,9 @@
 
 
 sudo swapoff -a
-xset r rate 180 70
+
+
+xset r rate 170 75
 
 
 declare -A disks=(
