@@ -138,7 +138,7 @@ alias gop="git open"
 
 # GitHub
 # ------------------------------------------------------------------------------
-alias mygh="chromium-browser github.com/alexvyber"
+alias mygh="chromium-browser github.com/alexvyber ; "
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
