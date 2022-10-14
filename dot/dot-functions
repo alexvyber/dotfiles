@@ -466,3 +466,10 @@ sw() {
 		mv -f -- "$2" "$1" &&
 		mv -f -- "$tmp_name" "$2"
 }
+
+# Go to the directory of binary if possible
+gowhere () {
+	local location=$(which $1 | rev | cut -d"/" -f2- | rev)
+	c $location || exit
+	pwd
+}

@@ -1,0 +1,53 @@
+#!/usr/bin/env python
+
+
+import os
+import click
+import time
+from datetime import date, datetime
+from subprocess import run
+
+
+def get_delta_since_start():
+    start = date(2022, 5, 31)
+    now = date.today()
+    delta = now - start
+    return delta.days
+
+
+@click.command()
+@click.option(
+    "-subj",
+    prompt="What you learned?",
+    default="",
+    help="Subject you have been learning",
+)
+@click.option("-off", is_flag=True, help="Subject you have been learning")
+@click.option(
+    "-dur", prompt="How long? (hours)", default="2", help="Time you have been learning"
+)
+def today_md(subj, dur, off):
+    """Create md file for todays progress report"""
+
+    # Basepath for repo
+    # TODO: wirte code, that will handle switches bettwen x00s and x01s
+    basepath = "/home/alexs/learn/1000days/100_200"
+
+    # Generate filename base on days since challenge start and date today
+    # Example: 1[01.06.2022].md
+    filename = f"{get_delta_since_start()}[{date.today().strftime('%d.%m.%Y')}].md"
+
+    # Creating a file at specified location
+    with open(os.path.join(basepath, filename), "w") as fp:
+        pass
+        if off == False:
+            fp.write(f"## Day {get_delta_since_start()} ({subj} | {dur} hours)\n\n\n")
+        else:
+            fp.write(f"## Day off")
+
+    # Open generated md file in nvim to write down more about today progress
+    run(["nvim", "+3", fp.name])
+
+
+if __name__ == "__main__":
+    today_md()
