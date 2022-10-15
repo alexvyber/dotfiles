@@ -186,3 +186,8 @@ alias cap="cat package.json"
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(ts|tsx|md)|*.ts'"
 alias readme="glow README.md"
+
+
+# Coreutils
+# ------------------------------------------------------------------------------
+alias ln="coreutils ln"
