@@ -6,7 +6,7 @@
 # alias a=""
 # alias b=""
 # alias c=""
-alias d="docker"
+alias d="dnf"
 alias e="elixir"
 # alias f=""
 alias g="git"
@@ -170,10 +170,13 @@ alias drr="duration | sort -h"
 alias duu="du -csh * | sort -h"
 
 # To cjange habbit
-# ----------------
+# ------------------------------------------------------------------------------
 alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 
-alias docker="podman "
+# Docker and Podman
+# ------------------------------------------------------------------------------
+alias doc="docker"
+alias docker="podman"
 
 # VS Codium
 # ------------------------------------------------------------------------------
@@ -186,7 +189,6 @@ alias cap="cat package.json"
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(ts|tsx|md)|*.ts'"
 alias readme="glow README.md"
-
 
 # Coreutils
 # ------------------------------------------------------------------------------
