@@ -67,7 +67,6 @@ alias _duy="sudo dnf update -y"
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
-alias bat='bat --theme="Coldark-Cold"'
 alias cmx='chmod +x'
 alias chrome="google-chrome"
 
@@ -173,6 +172,8 @@ alias duu="du -csh * | sort -h"
 # To cjange habbit
 # ----------------
 alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
+
+alias docker="podman "
 
 # VS Codium
 # ------------------------------------------------------------------------------
