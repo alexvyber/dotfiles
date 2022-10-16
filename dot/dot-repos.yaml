@@ -5,4 +5,5 @@ repo:
   - dotfiles
   - personal/scripts
   - personal/personal
+  - personal/katzen
 
