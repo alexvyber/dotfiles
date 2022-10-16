@@ -18,6 +18,7 @@ case $1 in
            ~/personal                                 \
            ~/stuff                                 \
            ~/soft                                 \
+           ~/next                                 \
            ~/tmp                                 \
            ~/js                                 \
            ~/js/books                                 \

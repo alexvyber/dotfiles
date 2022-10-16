@@ -161,3 +161,5 @@ complete -o nospace -C /usr/local/bin/trellis trellis
 # mcfly init
 # https://github.com/cantino/mcfly
 eval "$(mcfly init zsh)"
+
+source /home/alexs/.config/broot/launcher/bash/br

@@ -26,14 +26,16 @@ alias p="npm"
 # alias v="vim"
 alias t="tmux"
 alias w="which" # used by w, can be rebinded
-alias xx="xplr" # can be reused
+# alias x=""
 # alias y=""
 # alias z=""
 
 # Two letters
 # ------------------------------------------------------------------------------
+alias br="broot"
 alias zz="zsh" # Experiment | Delete if need z
 alias py="python"
+alias xx="xplr" # can be reused
 
 # Enable aliases for sudo
 alias sudo='sudo '
@@ -55,10 +57,6 @@ alias t.conf="$EDITOR ~/.tmux.conf"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
 alias funcs="$EDITOR ~/.functions"
 
-#
-#
-#
-
 alias tlsw="tmux lsw -a"
 alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
 alias gr="grep"
@@ -69,10 +67,6 @@ alias __="tmux new-window"
 alias t.rename="tmux rename-window"
 alias cmx='chmod +x'
 alias chrome="google-chrome"
-
-#
-#
-#
 
 alias tpl="tmuxp load"
 alias :q="exit"
@@ -185,10 +179,10 @@ alias code="codium "
 
 # JS Aliases
 # ------------------------------------------------------------------------------
-alias cap="cat package.json"
+alias cap="cat package.json | jq"
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(ts|tsx|md)|*.ts'"
-alias readme="glow README.md"
+alias readme="glow -p README.md"
 
 # Coreutils
 # ------------------------------------------------------------------------------

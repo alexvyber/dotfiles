@@ -162,8 +162,8 @@ author_contrib() {
 }
 
 vs() {
-	local cut_tail() {
-	 cut -d" " -f$1-$2
+	cut_tail() {
+		cut -d" " -f$1-$2
 	}
 	echo "node $(node -v)" | sed s/"v"//
 	echo "npm $(npm -v)"
@@ -410,7 +410,7 @@ up() {
 # ----------------     ------------
 # TODO: try to develop this into standalone app
 
-local getFile() {
+getFile() {
 	FILE=".npy"
 	if [ -f "$FILE" ]; then
 		value=$(cat .npy)
@@ -468,8 +468,13 @@ sw() {
 }
 
 # Go to the directory of binary if possible
-gowhere () {
+gowhere() {
 	local location=$(which $1 | rev | cut -d"/" -f2- | rev)
 	c $location || exit
 	pwd
+}
+
+# Instead of wc -l
+wcl() {
+	cat </dev/stdin | wc -l
 }
