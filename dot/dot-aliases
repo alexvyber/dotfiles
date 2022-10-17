@@ -36,6 +36,7 @@ alias br="broot"
 alias zz="zsh" # Experiment | Delete if need z
 alias py="python"
 alias xx="xplr" # can be reused
+alias pn="pnpm"
 
 # Enable aliases for sudo
 alias sudo='sudo '
