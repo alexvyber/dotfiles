@@ -172,6 +172,7 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 # ------------------------------------------------------------------------------
 alias doc="docker"
 alias docker="podman"
+alias :w="git commit -m "
 
 # VS Codium
 # ------------------------------------------------------------------------------
