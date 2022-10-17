@@ -5,6 +5,8 @@ export HISTFILESIZE=10000000
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 
+export SYSTEMD_EDITOR=nvim
+
 ZSH_THEME="theme"
 export GIT_EDITOR=nvim
 
