@@ -9,6 +9,7 @@ export SYSTEMD_EDITOR=nvim
 
 ZSH_THEME="theme"
 export GIT_EDITOR=nvim
+export LESSHISTFILE=-
 
 # fly.io
 export FLYCTL_INSTALL="/home/alexs/.fly"
