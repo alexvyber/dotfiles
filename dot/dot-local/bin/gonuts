@@ -27,5 +27,5 @@ for key in "${!disks[@]}";  do
 
 cat ~/.config/awesome/gonuts.lua | awesome-client
 
-
+setxkbmap -layout us,ru && setxkbmap -option 'grp:alt_shift_toggle' && xmodmap ~/.Xmodmap
 
