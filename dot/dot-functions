@@ -259,7 +259,7 @@ declareHashes() {
 		crm "$HOME/work/crm"
 		client "$HOME/work/gate/kardon.pro/client"
 		local "$HOME/.local"
-		c "$HOME/.config"
+		config "$HOME/.config"
 		nvim "$HOME/.config/nvim"
 		awesome "$HOME/.config/awesome"
 		bookmarks "$HOME/stuff/bookmarks"
