@@ -10,9 +10,7 @@ ZSH_THEME="theme"
 export GIT_EDITOR=nvim
 export LESSHISTFILE=-
 
-# fly.io
-# export FLYCTL_INSTALL="/home/alexs/.fly"
-# export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export NODE_REPL_HISTORY=""
 
 # export PATH="$HOME/repos/depot_tools:$PATH"
 export ZSH="$HOME/.oh-my-zsh"

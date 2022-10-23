@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Atom One Light",
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.sideBar.location": "right",
+    "editor.minimap.maxColumn": 100,
+    "json.schemas": [
+
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+}
