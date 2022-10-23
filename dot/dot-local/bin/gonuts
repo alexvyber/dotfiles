@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-sudo swapoff -a
+sudo swapoff --all
 
 
 xset r rate 165 75
@@ -9,7 +9,7 @@ xset r rate 165 75
 
 declare -A disks=(
   [FILER]=sdc2
-  # [TORRENTER]=sdb1
+  [REPOS]=sda
   [SHITTER]=sdb1
 )
 

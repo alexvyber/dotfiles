@@ -270,7 +270,7 @@ declareHashes() {
 		code "$HOME/learn/code"
 		front "$HOME/personal/vyber/front"
 		vyber "$HOME/personal/vyber"
-		r "/mnt/repos"
+		r "/mnt/REPOS"
 		personal "$HOME/personal")
 	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
 } # End of function Declare hashes for zsh
