@@ -20,6 +20,8 @@ case $1 in
            ~/soft                                 \
            ~/next                                 \
            ~/repos                                 \
+           ~/learn                                 \
+           ~/learn/books                                 \
            ~/tmp                                 \
            ~/js                                 \
            ~/js/books                                 \

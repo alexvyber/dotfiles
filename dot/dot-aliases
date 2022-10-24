@@ -27,7 +27,7 @@ alias p="pnpm"
 alias t="tmux"
 alias w="which" # used by w, can be rebinded
 # alias x=""
-# alias y=""
+alias y="yarn"
 # alias z=""
 
 # Two letters
@@ -37,6 +37,8 @@ alias zz="zsh" # Experiment | Delete if need z
 alias py="python"
 alias xx="xplr" # can be reused
 alias pn="pnpm"
+alias yw="yarn workspace"
+alias yd="yarn dev"
 
 # Enable aliases for sudo
 alias sudo='sudo '

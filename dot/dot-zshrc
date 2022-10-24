@@ -85,6 +85,7 @@ source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # -- asdf  ---------------------------------------------------------------------
 # TODO move asdf to zinit installer
 . $HOME/.asdf/asdf.sh
+
 plugins=(asdf)
 
 # append completions to fpath
