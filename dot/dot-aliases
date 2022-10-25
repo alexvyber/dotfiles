@@ -50,6 +50,7 @@ EDITOR=nvim
 # alias n.vim="nvim ~/.config/nvim/init.vim"
 # alias n.lua="nvim ~/.config/nvim/init.lua"
 alias z.rc="$EDITOR ~/.zshrc"
+alias ohmy="$EDITOR ~/dotfiles/zsh/dot-oh-my-zsh/themes/vyber.zsh-theme"
 alias aliases="$EDITOR ~/.aliases"
 alias repos="$EDITOR ~/.repos.yaml"
 alias gitconfig="$EDITOR ~/.gitconfig"
