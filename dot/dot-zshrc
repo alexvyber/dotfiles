@@ -62,6 +62,8 @@ export PATH=$PATH:/usr/local/go/bin
 # Sourcing
 # ------------------------------------------------------------------------------
 
+source "${HOME}/.tmp_bin"
+
 # Configs
 source "${HOME}/.zsh/configs/zinit.zsh"
 source "${ZINIT[BIN_DIR]}/zinit.zsh" # Zinit plugin manager

@@ -4,7 +4,9 @@
     "editor.scrollbar.vertical": "hidden",
     "workbench.sideBar.location": "right",
     "editor.minimap.maxColumn": 100,
+    "editor.formatOnSave": true,
     "json.schemas": [
+
 
     ],
     "diffEditor.ignoreTrimWhitespace": false,
