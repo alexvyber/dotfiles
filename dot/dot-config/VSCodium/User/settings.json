@@ -9,7 +9,11 @@
 
 
     ],
+    "emmet.includeLanguages": {
+        "phoenix-heex": "html"
+      },
     "diffEditor.ignoreTrimWhitespace": false,
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.fontLigatures": false
 }

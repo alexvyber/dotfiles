@@ -56,11 +56,17 @@ def main():
                 # "panes": [{"shell_command": [f"{editor} ."]}],
             },
             {
-                "window_name": "live",
+                "window_name": "dev",
                 "layout": "tiled",
-                "shell_command_before": [f"cd {path}/lib/{basename}_web/live"],
+                "shell_command_before": [f"cd {path}/dev"],
                 # "panes": [{"shell_command": [f"{editor} ."]}],
             },
+            # {
+            #     "window_name": "live",
+            #     "layout": "tiled",
+            #     "shell_command_before": [f"cd {path}/lib/{basename}_web/live"],
+            #     # "panes": [{"shell_command": [f"{editor} ."]}],
+            # },
             {
                 "window_name": "config",
                 "layout": "tiled",

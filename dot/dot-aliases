@@ -151,6 +151,7 @@ alias gpom="git push -u origin main"
 # alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
 alias cho="choose"
+alias cam="bat mix.exs"
 
 # Rust
 # ------------------------------------------------------------------------------
