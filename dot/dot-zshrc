@@ -11,6 +11,7 @@ export GIT_EDITOR=nvim
 export LESSHISTFILE=-
 
 export NODE_REPL_HISTORY=""
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # export PATH="$HOME/repos/depot_tools:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
