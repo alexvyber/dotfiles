@@ -15,5 +15,6 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "security.workspace.trust.untrustedFiles": "open",
     "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.fontLigatures": false
+    "editor.fontLigatures": false,
+    "editor.tabSize": 2
 }
