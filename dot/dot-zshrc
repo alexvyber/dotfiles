@@ -115,7 +115,7 @@ setopt bang_hist              # tREAT THE '!' CHARACTER SPECIALLY DURING EXPANSI
 setopt hist_ignore_all_dups   # dELETE OLD RECORDED ENTRY IF NEW ENTRY IS A DUPLICATE.
 setopt hist_save_no_dups      # dON'T WRITE DUPLICATE ENTRIES IN THE HISTORY FILE.
 setopt hist_verify            # dON'T EXECUTE IMMEDIATELY UPON HISTORY EXPANSION.
-setopt no_clobber             # don't override file with redirections if file exists
+# setopt no_clobber             # don't override file with redirections if file exists
 
 # Emulates Vim's `smartcase` for tab completion. (If lower-case, matches botch lower- and upper-case.)
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
