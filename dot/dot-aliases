@@ -194,6 +194,7 @@ alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
 alias readme="glow -p README.md"
 alias nvm="fnm"
 alias nn="fnm"
+alias nu="fnm use"
 
 # Coreutils
 # ------------------------------------------------------------------------------
