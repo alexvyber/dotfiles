@@ -7,7 +7,7 @@
 # alias b=""
 # alias c=""
 alias d="dnf"
-alias e="elixir"
+# alias e=""
 # alias f=""
 alias g="git"
 # alias h="omz_history"
@@ -56,16 +56,11 @@ alias repos="$EDITOR ~/.repos.yaml"
 alias gitconfig="$EDITOR ~/.gitconfig"
 alias bat.config="$EDITOR ~/.config/bat/config"
 alias zsh.profile="$EDITOR ~/.zsh_profile"
-# alias bash.profile="$EDITOR ~/.bash_profile"
 alias t.conf="$EDITOR ~/.tmux.conf"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
 alias funcs="$EDITOR ~/.functions"
 
-alias tlsw="tmux lsw -a"
-alias cdm='{ read -r d && mkdir "$d" && cd "$d"; } <<<' # Create new dir and cd into it
-alias gr="grep"
 alias _duy="sudo dnf update -y"
-# alias pwd.copy='pwd | tr -d "\r\n" | xclip -selection clipboard ; echo "copied into system clipboard: $(pwd) "'
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
@@ -136,6 +131,7 @@ alias gop="git open"
 # GitHub
 # ------------------------------------------------------------------------------
 alias mygh="chromium-browser github.com/alexvyber ; "
+alias 1000="chromium-browser https://github.com/alexvyber/1000DaysOfCode ; "
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
@@ -155,7 +151,7 @@ alias cam="bat mix.exs"
 
 # Rust
 # ------------------------------------------------------------------------------
-alias ca="cargo"
+# alias ca="cargo"
 
 # Go
 # ------------------------------------------------------------------------------
@@ -176,7 +172,6 @@ alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 
 # Docker and Podman
 # ------------------------------------------------------------------------------
-alias doc="docker"
 alias docker="podman"
 alias :w="git commit -m "
 
@@ -191,7 +186,6 @@ alias code.="codium ."
 alias cap="cat package.json | jq"
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
-alias readme="glow -p README.md"
 alias nvm="fnm"
 alias nn="fnm"
 alias nu="fnm use"
@@ -199,3 +193,8 @@ alias nu="fnm use"
 # Coreutils
 # ------------------------------------------------------------------------------
 alias ln="coreutils ln"
+
+# Other
+# ------------------------------------------------------------------------------
+alias readme="glow -p README.md"
+
