@@ -8,6 +8,7 @@ export SYSTEMD_EDITOR=nvim
 
 ZSH_THEME="theme"
 export GIT_EDITOR=nvim
+export EDITOR=nvim
 export LESSHISTFILE=-
 
 export NODE_REPL_HISTORY=""

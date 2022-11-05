@@ -205,17 +205,17 @@ pane_frames false
 
  themes {
      vyber {
-         fg 100 128 255
+         fg 0 0 255
          bg 220 220 240
          red 255 85 85
-         green 80 250 123
+         green 19 190 10
          yellow 241 250 140
          blue 98 114 164
          magenta 255 121 198
-         orange 255 184 108
+         orange 255 128 0
          cyan 139 233 253
-         black 80 80 80
-         white 128 128 128
+         black 200 200 200
+         white 0 0 0
      }
  }
 
@@ -227,7 +227,7 @@ theme "vyber"
 // The name of the default layout to load on startup
 // Default: "default"
 
-default_layout "compact"
+/* default_layout "compact" */
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

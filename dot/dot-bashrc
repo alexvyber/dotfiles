@@ -2,6 +2,7 @@
 
 export HISTFILE=/home/$USER/.hidden/.bash_history
 export SYSTEMD_EDITOR=nvim
+export EDITOR=nvim
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
