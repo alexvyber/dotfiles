@@ -45,8 +45,8 @@ pnpm i -g pnpm
 # --
 
 go-task -t "/home/alexs/.config/task/on_start_tasks.yaml" --parallel \
-	build_nvim
+	build_nvim \
 	build_tail_docs \
 	build_react_docs \
 	build_v \
-	build_mdn_docs \
+	build_mdn_docs
