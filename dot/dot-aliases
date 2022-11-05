@@ -197,4 +197,5 @@ alias ln="coreutils ln"
 # Other
 # ------------------------------------------------------------------------------
 alias readme="glow -p README.md"
+alias my="curl ifconfig.me"
 
