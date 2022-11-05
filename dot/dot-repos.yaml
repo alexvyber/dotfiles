@@ -6,8 +6,9 @@ repo:
   - personal/scripts
   - personal/personal
   - personal/katzen
-  - work/gate/rubuild-new
-  - work/gate/octobuilder
-  - work/gate/kardon.pro
-  - work/gate/pro4build
+
+  # - work/gate/rubuild-new
+  # - work/gate/octobuilder
+  # - work/gate/kardon.pro
+  # - work/gate/pro4build
 

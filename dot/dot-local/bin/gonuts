@@ -1,52 +1,52 @@
-# #!/usr/bin/env bash
-#
-# # --
-#
-# sudo swapoff --all
-# xset r rate 165 75
-#
-# # --
-#
-# declare -A disks=(
-# 	[FILER]=sdc
-# 	[REPOS]=sda
-# 	[SHITTER]=sdb1
-# )
-#
-# for key in "${!disks[@]}"; do
-# 	# echo "$key => ${disks[$key]}"
-# 	if mountpoint -q /mnt/$key; then
-# 		echo "$key already mounted"
-# 	else
-# 		sudo mount /dev/${disks[$key]} /mnt/$key
-# 		echo "$key mounted"
-# 	fi
-# done
-#
-# # --
-#
-# cat ~/.config/awesome/gonuts.lua | awesome-client
-#
-# # --
-#
-# setxkbmap -layout us,ru
-# setxkbmap -option 'grp:alt_shift_toggle'
-# xmodmap ~/.Xmodmap
-#
-# # --
-#
-# sudo dnf update -y
-# rustup update stable
-# cargo install-update -a
-# bun upgrade
-# deno upgrade
-# pnpm i -g pnpm
-#
-# # --
+#!/usr/bin/env bash
 
-# go-task -t "/home/alexs/.config/task/on_start_tasks.yaml" --parallel \
-	# build_nvim
-	# build_tail_docs \
-	# build_react_docs \
-	# build_v \
-	# build_mdn_docs \
+# --
+
+sudo swapoff --all
+xset r rate 165 75
+
+# --
+
+declare -A disks=(
+	[FILER]=sdc
+	[REPOS]=sda
+	[SHITTER]=sdb1
+)
+
+for key in "${!disks[@]}"; do
+	# echo "$key => ${disks[$key]}"
+	if mountpoint -q /mnt/$key; then
+		echo "$key already mounted"
+	else
+		sudo mount /dev/${disks[$key]} /mnt/$key
+		echo "$key mounted"
+	fi
+done
+
+# --
+
+cat ~/.config/awesome/gonuts.lua | awesome-client
+
+# --
+
+setxkbmap -layout us,ru
+setxkbmap -option 'grp:alt_shift_toggle'
+xmodmap ~/.Xmodmap
+
+# --
+
+sudo dnf update -y
+rustup update stable
+cargo install-update -a
+bun upgrade
+deno upgrade
+pnpm i -g pnpm
+
+# --
+
+go-task -t "/home/alexs/.config/task/on_start_tasks.yaml" --parallel \
+	build_nvim
+	build_tail_docs \
+	build_react_docs \
+	build_v \
+	build_mdn_docs \
