@@ -2,7 +2,7 @@
 # path echo $PATH | tr ":" "\n" -> alias path='echo $PATH | tr ":" "\n"'
 
 # One letter
-# ------------------------------------------------------------------------------
+# --
 # alias a=""
 # alias b=""
 # alias c=""
@@ -31,7 +31,7 @@ alias y="yarn"
 # alias z=""
 
 # Two letters
-# ------------------------------------------------------------------------------
+# --
 alias br="broot"
 alias zz="zsh" # Experiment | Delete if need z
 alias py="python"
@@ -44,7 +44,7 @@ alias yd="yarn dev"
 alias sudo='sudo '
 
 # Editing config files
-# ------------------------------------------------------------------------------
+# --
 EDITOR=nvim
 # alias v.rc="$EDITOR ~/.vimrc"
 # alias n.vim="nvim ~/.config/nvim/init.vim"
@@ -72,7 +72,7 @@ alias :q="exit"
 alias path='echo $PATH | tr ":" "\n" '
 
 # Elixir. mix, iex
-# ------------------------------------------------------------------------------
+# --
 alias ism="iex -S mix"
 alias mf="mix format"        # There's some mf bin in /usr/bin...
 alias mfx="mix format *.ex*" # There's some mf bin in /usr/bin...
@@ -81,11 +81,12 @@ alias mt="mix test"
 alias ismp="iex -S mix phx.server"
 
 # Replace apt with dnf
+# --
 alias apt="dnf"
 alias apt-get="dnf"
 
 # exa
-# ------------------------------------------------------------------------------
+# --
 alias exa="exa --git"
 alias ll="exa -l"
 alias l1="exa -1"
@@ -100,7 +101,7 @@ alias l~="exa $HOME"
 alias l.l="exa -l --all -I '[A-z]*'"
 
 # ls
-# ------------------------------------------------------------------------------
+# --
 # alias ls="ls --color=auto"
 # alias lsa="ls -AFC"
 # alias lsl="ls -lh"
@@ -118,7 +119,7 @@ alias l.l="exa -l --all -I '[A-z]*'"
 # alias lsh="ls -sh"
 
 # git
-# ------------------------------------------------------------------------------
+# --
 alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
@@ -129,7 +130,7 @@ alias gP="git -P"
 alias gop="git open"
 
 # GitHub
-# ------------------------------------------------------------------------------
+# --
 alias mygh="chromium-browser github.com/alexvyber ; "
 alias 1000="chromium-browser https://github.com/alexvyber/1000DaysOfCode ; "
 
@@ -139,7 +140,7 @@ alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<'
 alias gpom="git push -u origin main"
 
 # NEW
-# ------------------------------------------------------------------------------
+# --
 # CMD_PATH=~/stuff/bookmarks/cmd.sh
 # alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
 # alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
@@ -149,12 +150,8 @@ alias gpom="git push -u origin main"
 alias cho="choose"
 alias cam="bat mix.exs"
 
-# Rust
-# ------------------------------------------------------------------------------
-# alias ca="cargo"
-
 # Go
-# ------------------------------------------------------------------------------
+# --
 alias go.f="gofmt -w *.go"
 alias go.main="go run main.go"
 alias go.README="bat ~/.oh-my-zsh/plugins/golang/README.md"
@@ -162,27 +159,27 @@ alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f
 alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
 alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
 
-# ------------------------------------------------------------------------------
+# --
 alias drr="duration | sort -h"
 alias duu="du -csh * | sort -h"
 
 # To cjange habbit
-# ------------------------------------------------------------------------------
+# --
 alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
 
 # Docker and Podman
-# ------------------------------------------------------------------------------
+# --
 alias docker="podman"
 alias :w="git commit -m "
 
 # VS Codium
-# ------------------------------------------------------------------------------
+# --
 alias cod="codium ."
 alias code="codium "
 alias code.="codium ."
 
 # JS Aliases
-# ------------------------------------------------------------------------------
+# --
 alias cap="cat package.json | jq"
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
@@ -191,11 +188,14 @@ alias nn="fnm"
 alias nu="fnm use"
 
 # Coreutils
-# ------------------------------------------------------------------------------
+# --
 alias ln="coreutils ln"
 
 # Other
-# ------------------------------------------------------------------------------
+# --
 alias readme="glow -p README.md"
-alias my="curl ifconfig.me"
+alias myip="curl ifconfig.me"
 
+alias rr="rip"
+
+alias task="go-task"
