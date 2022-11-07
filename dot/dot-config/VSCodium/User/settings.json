@@ -1,21 +1,23 @@
 {
-    "workbench.colorTheme": "Atom One Light",
-    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.scrollbar.vertical": "hidden",
-    "workbench.sideBar.location": "right",
-    "editor.minimap.maxColumn": 100,
-    "editor.formatOnSave": true,
-    "json.schemas": [
-
-
-    ],
-    "emmet.includeLanguages": {
-        "phoenix-heex": "html"
-      },
-    "diffEditor.ignoreTrimWhitespace": false,
-    "security.workspace.trust.untrustedFiles": "open",
-    "editor.defaultFormatter": "vscode.typescript-language-features",
-    "editor.fontLigatures": false,
-    "editor.tabSize": 2,
-    "workbench.iconTheme": "vscode-icons"
+  "workbench.colorTheme": "Atom One Light",
+  "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.scrollbar.vertical": "hidden",
+  "workbench.sideBar.location": "right",
+  "editor.minimap.maxColumn": 100,
+  "editor.lineNumbers": "relative",
+  "json.schemas": [],
+  "emmet.includeLanguages": {
+    "phoenix-heex": "html"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.defaultFormatter": "vscode.typescript-language-features",
+  "editor.fontLigatures": false,
+  "editor.tabSize": 2,
+  "workbench.iconTheme": "vscode-icons",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

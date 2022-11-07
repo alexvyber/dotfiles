@@ -5,6 +5,27 @@ base_path=/home/alexs/
 
 
 case $1 in
+   repos)
+      selected=$(find                                       \
+            /mnt/REPOS                                \
+           -mindepth 0                                \
+           -maxdepth 2                                \
+           -type d                                    \
+           -not -path "**/build"                      \
+           -not -path "**/dist"                       \
+           -not -path "**/.next"                      \
+           -not -path "**/.cache"                     \
+           -not -path "**/.cache/**"                  \
+           -not -path "**/.git"                       \
+           -not -path "**/.git/**"                    \
+           -not -path "**/node_modules"               \
+           -not -path "**/node_modules/**"            \
+           | sort -u                                  \
+           | cut -d "/" -f4-                          \
+           | fzf )
+                 ;;
+
+
    main)
       selected=$(find                                       \
            ~/learn                              \
@@ -13,7 +34,6 @@ case $1 in
            ~/learn/go/powerful-cli/pragprog.com                              \
            ~/elixir                               \
            ~/elixir/learn                               \
-           ~/repos                               \
            ~/tmp                                      \
            ~/personal                                 \
            ~/stuff                                 \

@@ -270,6 +270,7 @@ declareHashes() {
 		code "$HOME/learn/code"
 		front "$HOME/personal/vyber/front"
 		vyber "$HOME/personal/vyber"
+		k "$HOME/personal/katzen"
 		r "/mnt/REPOS"
 		personal "$HOME/personal")
 	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
@@ -477,4 +478,16 @@ gowhere() {
 # Instead of wc -l
 wcl() {
 	cat </dev/stdin | wc -l
+}
+
+# cat print json formatted
+caq() {
+	cat $1 | jq
+}
+
+# copy anme of working directory
+cnwd() {
+	# pwd | tr -d "\n" | tr -d "\r\n" | rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
+	# pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | sd -s " " "\ " | xclip -selection clipboard
+	pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
 }

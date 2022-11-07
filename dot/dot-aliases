@@ -186,6 +186,7 @@ alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
 alias nvm="fnm"
 alias nn="fnm"
 alias nu="fnm use"
+alias np="nvim package.json"
 
 # Coreutils
 # --
