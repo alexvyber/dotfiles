@@ -23,7 +23,7 @@ gsa() {
 	for repo in $repos; do
 		REPO=$(echo $repo | cut -c 3-)
 		STR=$(
-			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+			git  --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
 		)
 		SUB='nothing to commit, working tree clean'
 		if [[ "$STR" == *"$SUB"* ]]; then
@@ -32,7 +32,7 @@ gsa() {
 		else
 			printf "\n${RED}$REPO ${NC}\n"
 			printf "${SEP}···············································································${NC}\n"
-			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status --short --untracked-files
 			echo ""
 		fi
 	done

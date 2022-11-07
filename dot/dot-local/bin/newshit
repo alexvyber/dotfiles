@@ -3,6 +3,12 @@
 sudo dnf update -y
 rustup update stable
 cargo install-update -a
+
+# --
+
+asdf install erlang latest
+asdf install elixir latest
+
 bun upgrade
 deno upgrade
 pnpm i -g pnpm
