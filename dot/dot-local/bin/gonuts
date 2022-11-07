@@ -32,21 +32,3 @@ cat ~/.config/awesome/gonuts.lua | awesome-client
 setxkbmap -layout us,ru
 setxkbmap -option 'grp:alt_shift_toggle'
 xmodmap ~/.Xmodmap
-
-# --
-
-sudo dnf update -y
-rustup update stable
-cargo install-update -a
-bun upgrade
-deno upgrade
-pnpm i -g pnpm
-
-# --
-
-go-task -t "/home/alexs/.config/task/on_start_tasks.yaml" --parallel \
-	build_nvim \
-	build_tail_docs \
-	build_react_docs \
-	build_v \
-	build_mdn_docs
