@@ -491,3 +491,7 @@ cnwd() {
 	# pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | sd -s " " "\ " | xclip -selection clipboard
 	pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
 }
+
+learn_tomorrow(){
+	echo $1 > /home/alexs/learn/1000days/tomorrow
+}
