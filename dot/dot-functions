@@ -23,7 +23,7 @@ gsa() {
 	for repo in $repos; do
 		REPO=$(echo $repo | cut -c 3-)
 		STR=$(
-			git  --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
 		)
 		SUB='nothing to commit, working tree clean'
 		if [[ "$STR" == *"$SUB"* ]]; then
@@ -421,41 +421,41 @@ getFile() {
 	fi
 }
 
-pr() {
-	value=$(getFile)
-	[[ $value == "yarn" ]] && command="yarn $@" || command="$value run $@"
-	eval $command
-}
-
-pi() {
-	value=$(getFile)
-	[[ $value == "yarn" ]] && command="yarn add $@" || command="$value install $@"
-	eval $command
-}
-
-pb() {
-	value=$(getFile)
-	[[ $value == "yarn" ]] && command="yarn build" || command="$value run build"
-	eval $command
-}
-
-pf() {
-	value=$(getFile)
-	[[ $value == "yarn" ]] && command="yarn format" || command="$value run format"
-	eval $command
-}
-
-pl() {
-	value=$(getFile)
-	[[ $value == "yarn" ]] && command="yarn lint" || command="$value run lint"
-	eval $command
-}
-
-pd() {
-	value=$(getFile)
-	[[ $value == "yarn" ]] && command="yarn dev" || command="$value run dev"
-	eval $command
-}
+# pr() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn $@" || command="$value run $@"
+# 	eval $command
+# }
+#
+# pi() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn add $@" || command="$value install $@"
+# 	eval $command
+# }
+#
+# pb() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn build" || command="$value run build"
+# 	eval $command
+# }
+#
+# pf() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn format" || command="$value run format"
+# 	eval $command
+# }
+#
+# pl() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn lint" || command="$value run lint"
+# 	eval $command
+# }
+#
+# pd() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn dev" || command="$value run dev"
+# 	eval $command
+# }
 
 # ----------------     ------------
 
@@ -489,14 +489,21 @@ caq() {
 cnwd() {
 	# pwd | tr -d "\n" | tr -d "\r\n" | rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
 	# pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | sd -s " " "\ " | xclip -selection clipboard
-	pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
+	pwd | rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
 }
 
-learn_tomorrow(){
-	echo $1 > /home/alexs/learn/1000days/tomorrow
+learn_tomorrow() {
+	echo $1 >/home/alexs/learn/1000days/tomorrow
 }
 
 # Strapi rename `develop` to `dev`
 strapi_develop_to_dev() {
 	sd '"develop": "strapi develop",' '"dev": "strapi develop",' $1
+}
+
+clone_all_repos() {
+	# NOTE: using gh, so it sholud be installed
+	gh repo list $1 --limit 1000 | while read -r repo _; do
+		gh repo clone "$repo" "$repo"
+	done
 }

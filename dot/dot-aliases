@@ -203,3 +203,6 @@ alias doc="docker"
 alias rr="rip"
 
 alias task="go-task"
+
+alias ca="cargo"
+# alias echo="eh"
