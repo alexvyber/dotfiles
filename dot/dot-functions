@@ -495,3 +495,8 @@ cnwd() {
 learn_tomorrow(){
 	echo $1 > /home/alexs/learn/1000days/tomorrow
 }
+
+# Strapi rename `develop` to `dev`
+strapi_develop_to_dev() {
+	sd '"develop": "strapi develop",' '"dev": "strapi develop",' $1
+}
