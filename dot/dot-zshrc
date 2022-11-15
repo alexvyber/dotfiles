@@ -154,3 +154,5 @@ source /home/alexs/.config/broot/launcher/bash/br
 # fnm
 export PATH=/home/alexs/.fnm:$PATH
 eval "$(fnm env --use-on-cd)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

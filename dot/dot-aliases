@@ -191,7 +191,7 @@ alias np="nvim package.json"
 
 # Coreutils
 # --
-alias ln="coreutils ln"
+# alias ln="coreutils ln"
 
 # Other
 # --
