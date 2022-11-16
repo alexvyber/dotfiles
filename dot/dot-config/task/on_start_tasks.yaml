@@ -1,0 +1,37 @@
+version: '3'
+tasks:
+  tail_docs:
+    dir: /mnt/REPOS/_docs/tailwindcss.com
+    cmds:
+      - git pull
+      - yarn build
+  react_docs:
+    dir: /mnt/REPOS/_docs/reactjs.org/beta
+    cmds:
+      - git pull
+      - yarn build
+  v:
+    dir: /mnt/REPOS/vlang/v
+    cmds:
+      - git pull
+      - make
+  mdn_docs:
+    dir: /mnt/REPOS/_docs/mdn
+    cmds:
+      - git pull
+  nvim:
+    dir: /mnt/REPOS/tools/neovim
+    env:
+    # CMAKE_TYPE: RelWithDebInfo
+    cmds:
+      - rm -rf build
+      - rm -rf .deps
+      - git pull
+      - make
+      - sudo make install
+  run:
+    cmds:
+      - task: tail_docs
+      - task: react_docs
+      - task: v
+      - task: nvim

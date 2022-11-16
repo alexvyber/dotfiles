@@ -1,0 +1,39 @@
+version: '3'
+tasks:
+  dot:
+    dir: ~/dotfiles
+    cmds:
+      - git status --short --untracked-files
+  personal:
+    dir: ~/personal/personal
+    cmds:
+      - git status --short --untracked-files
+  katzen:
+    dir: ~/personal/katzen
+    cmds:
+      - git status --short --untracked-files
+  awesome:
+    dir: ~/.config/awesome
+    cmds:
+      - git status --short --untracked-files
+  nvim:
+    dir: ~/.config/nvim
+    cmds:
+      - git status --short --untracked-files
+  days:
+    dir: ~/learn/1000days
+    cmds:
+      - git status --short --untracked-files
+  scripts:
+    dir: ~/personal/scripts
+    cmds:
+      - git status --short --untracked-files
+  run:
+    cmds:
+      - task: katzen
+      - task: dot
+      - task: personal
+      - task: awesome
+      - task: nvim
+      - task: days
+      - task: scripts

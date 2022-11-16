@@ -15,27 +15,28 @@ NC='\033[0m' # No Color
 # Input:   nothing
 # Output:  nothing
 gsa() {
-	local repos
-	while IFS= read -r value; do
-		repos+=($value)
-	done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
-
-	for repo in $repos; do
-		REPO=$(echo $repo | cut -c 3-)
-		STR=$(
-			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
-		)
-		SUB='nothing to commit, working tree clean'
-		if [[ "$STR" == *"$SUB"* ]]; then
-			printf "${RED}$REPO ${NC}"
-			printf "${CLEAN}is clean ${NC}\n"
-		else
-			printf "\n${RED}$REPO ${NC}\n"
-			printf "${SEP}···············································································${NC}\n"
-			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status --short --untracked-files
-			echo ""
-		fi
-	done
+	task -t ~/.config/task/check_repos.yaml run
+	# local repos
+	# while IFS= read -r value; do
+	# 	repos+=($value)
+	# done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
+	#
+	# for repo in $repos; do
+	# 	REPO=$(echo $repo | cut -c 3-)
+	# 	STR=$(
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+	# 	)
+	# 	SUB='nothing to commit, working tree clean'
+	# 	if [[ "$STR" == *"$SUB"* ]]; then
+	# 		printf "${RED}$REPO ${NC}"
+	# 		printf "${CLEAN}is clean ${NC}\n"
+	# 	else
+	# 		printf "\n${RED}$REPO ${NC}\n"
+	# 		printf "${SEP}···············································································${NC}\n"
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status --short --untracked-files
+	# 		echo ""
+	# 	fi
+	# done
 } # End of function gsa
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
