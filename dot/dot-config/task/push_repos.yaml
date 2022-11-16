@@ -1,0 +1,39 @@
+version: '3'
+tasks:
+  dot:
+    dir: ~/dotfiles
+    cmds:
+      - git push
+  personal:
+    dir: ~/personal/personal
+    cmds:
+      - git push
+  katzen:
+    dir: ~/personal/katzen
+    cmds:
+      - git push
+  awesome:
+    dir: ~/.config/awesome
+    cmds:
+      - git push
+  nvim:
+    dir: ~/.config/nvim
+    cmds:
+      - git push
+  days:
+    dir: ~/learn/1000days
+    cmds:
+      - git push
+  scripts:
+    dir: ~/personal/scripts
+    cmds:
+      - git push
+  run:
+    cmds:
+      - task: katzen
+      - task: dot
+      - task: personal
+      - task: awesome
+      - task: nvim
+      - task: days
+      - task: scripts
