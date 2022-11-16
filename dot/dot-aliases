@@ -209,3 +209,5 @@ alias rg="rg -i"
 
 alias ca="cargo"
 # alias echo="eh"
+
+alias pd="podman "
