@@ -23,6 +23,8 @@ export PATH="$HOME/elixir/scrips/bin:$PATH"
 # export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
+export PATH="$HOME/bin/js:$PATH"
+
 # Go path
 GOPATH=$HOME/.go
 export GOPATH
@@ -154,5 +156,6 @@ source /home/alexs/.config/broot/launcher/bash/br
 # fnm
 export PATH=/home/alexs/.fnm:$PATH
 eval "$(fnm env --use-on-cd)"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"

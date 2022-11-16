@@ -62,6 +62,7 @@ alias funcs="$EDITOR ~/.functions"
 
 alias _duy="sudo dnf update -y"
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+alias nwd='pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev |   xclip -selection clipboard '
 alias __="tmux new-window"
 alias t.rename="tmux rename-window"
 alias cmx='chmod +x'
@@ -203,6 +204,8 @@ alias doc="docker"
 alias rr="rip"
 
 alias task="go-task"
+
+alias rg="rg -i"
 
 alias ca="cargo"
 # alias echo="eh"
