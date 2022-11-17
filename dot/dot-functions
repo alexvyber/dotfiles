@@ -45,27 +45,28 @@ gsa() {
 # Input:   nothing
 # Output:  nothing
 gpa() {
-	local repos
-	while IFS= read -r value; do
-		repos+=($value)
-	done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
-
-	for repo in $repos; do
-		REPO=$(echo $repo | cut -c 3-)
-		STR=$(
-			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
-		)
-		SUB='nothing to commit, working tree clean'
-		if [[ "$STR" == *"$SUB"* ]]; then
-			printf "${CLEAN}$REPO ${NC}"                                       # echo $push_result
-			printf "$(git --git-dir="$HOME/$REPO/.git" -C "$HOME/$REPO" push)" # 2> /dev/null )
-		else
-			printf "\n${RED}$REPO ${NC}\n"
-			printf "${SEP}···············································································${NC}\n"
-			git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
-			echo ""
-		fi
-	done
+	task -t ~/.config/task/push_repos.yaml run
+	# local repos
+	# while IFS= read -r value; do
+	# 	repos+=($value)
+	# done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
+	#
+	# for repo in $repos; do
+	# 	REPO=$(echo $repo | cut -c 3-)
+	# 	STR=$(
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+	# 	)
+	# 	SUB='nothing to commit, working tree clean'
+	# 	if [[ "$STR" == *"$SUB"* ]]; then
+	# 		printf "${CLEAN}$REPO ${NC}"                                       # echo $push_result
+	# 		printf "$(git --git-dir="$HOME/$REPO/.git" -C "$HOME/$REPO" push)" # 2> /dev/null )
+	# 	else
+	# 		printf "\n${RED}$REPO ${NC}\n"
+	# 		printf "${SEP}···············································································${NC}\n"
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+	# 		echo ""
+	# 	fi
+	# done
 } # End of function gpa
 
 #--------------------------------------------------------------------------
