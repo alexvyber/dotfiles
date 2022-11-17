@@ -60,6 +60,9 @@ alias t.conf="$EDITOR ~/.tmux.conf"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
 alias funcs="$EDITOR ~/.functions"
 
+
+alias ghshit="cat ~/personal/.shitgh | xclip -selection clipboard"
+
 alias _duy="sudo dnf update -y"
 alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
 alias nwd='pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev |   xclip -selection clipboard '
