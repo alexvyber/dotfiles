@@ -248,6 +248,7 @@ declareHashes() {
 		ts "/mnt/FILER/ts"
 		react "/mnt/FILER/react"
 		node "/mnt/FILER/node"
+		doing "/mnt/FILER/doing"
 		b "/mnt/FILER/b"
 		ba "/mnt/FILER/ba"
 		# SHITTER
@@ -264,7 +265,8 @@ declareHashes() {
 		config "$HOME/.config"
 		nvim "$HOME/.config/nvim"
 		awesome "$HOME/.config/awesome"
-		bookmarks "$HOME/stuff/bookmarks"
+		# bookmarks "$HOME/stuff/bookmarks"
+		books "$HOME/learn/books"
 		work "$HOME/work"
 		ex "$HOME/elixir"
 		tmp "$HOME/tmp"
