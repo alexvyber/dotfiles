@@ -92,7 +92,7 @@ source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # TODO move asdf to zinit installer
 . $HOME/.asdf/asdf.sh
 
-plugins=(asdf git elixir)
+plugins=(asdf git elixir docker docker-compose)
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
