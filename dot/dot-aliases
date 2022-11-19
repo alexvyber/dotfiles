@@ -6,7 +6,7 @@
 # alias a=""
 # alias b=""
 # alias c=""
-alias d="dnf"
+alias d="docker"
 # alias e=""
 # alias f=""
 alias g="git"
@@ -39,6 +39,8 @@ alias xx="xplr" # can be reused
 alias pn="pnpm"
 alias yw="yarn workspace"
 alias yd="yarn dev"
+alias dc="docker-compose"
+alias tl="tldr"
 
 # Enable aliases for sudo
 alias sudo='sudo '
@@ -186,6 +188,9 @@ alias code.="codium ."
 # JS Aliases
 # --
 alias cap="cat package.json | jq"
+alias caps='cat package.json | jq ".scripts"'
+alias capd='cat package.json | jq ".dependencies"'
+alias capdd='cat package.json | jq ".devDependencies"'
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
 alias nvm="fnm"

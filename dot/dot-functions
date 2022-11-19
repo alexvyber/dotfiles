@@ -275,9 +275,10 @@ declareHashes() {
 		code "$HOME/learn/code"
 		front "$HOME/personal/vyber/front"
 		vyber "$HOME/personal/vyber"
+		p "$HOME/personal"
 		k "$HOME/personal/katzen"
 		r "/mnt/REPOS"
-		personal "$HOME/personal")
+	)
 	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
 } # End of function Declare hashes for zsh
 
@@ -506,9 +507,20 @@ strapi_develop_to_dev() {
 	sd '"develop": "strapi develop",' '"dev": "strapi develop",' $1
 }
 
+# Clone all repos from account
 clone_all_repos() {
 	# NOTE: using gh, so it sholud be installed
 	gh repo list $1 --limit 1000 | while read -r repo _; do
 		gh repo clone "$repo" "$repo"
 	done
+}
+
+# Copy value from YAML file into clipboad
+yc(){
+	yq eval "$1"  "$2" | sd '\n' '' | xclip -selection clipboard
+}
+
+# Return value from YANL file wtihout new line
+yy(){
+	yq eval "$1" "$2" | sd '\n' ''
 }
