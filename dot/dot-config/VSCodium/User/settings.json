@@ -3,7 +3,7 @@
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "right",
-  "editor.minimap.maxColumn": 100,
+  "editor.minimap.maxColumn": 80,
   // "editor.lineNumbers": "relative",
   "json.schemas": [],
   "emmet.includeLanguages": {
