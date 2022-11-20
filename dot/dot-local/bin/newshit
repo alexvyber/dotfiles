@@ -12,12 +12,3 @@ asdf install elixir latest
 bun upgrade
 deno upgrade
 pnpm i -g pnpm
-
-# --
-
-# go-task -t "/home/alexs/.config/task/on_start_tasks.yaml" --parallel \
-# 	build_tail_docs \
-	# build_react_docs \
-	# build_v \
-	# build_nvim \
-	# build_mdn_docs

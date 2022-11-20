@@ -62,7 +62,6 @@ alias t.conf="$EDITOR ~/.tmux.conf"
 alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
 alias funcs="$EDITOR ~/.functions"
 
-
 alias ghshit="cat ~/personal/.shitgh | xclip -selection clipboard"
 
 alias _duy="sudo dnf update -y"
@@ -197,6 +196,7 @@ alias nvm="fnm"
 alias nn="fnm"
 # alias nu="fnm use"
 alias np="nvim package.json"
+alias nodee="node ~p/node-repl"
 
 # Coreutils
 # --
