@@ -15,7 +15,7 @@
   "editor.fontLigatures": false,
   "editor.tabSize": 2,
   "workbench.iconTheme": "vscode-icons",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
