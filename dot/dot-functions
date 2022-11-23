@@ -352,8 +352,10 @@ cbin() {
 # Simple cd to bin folder (using zoxide: https://github.com/ajeetdsouza/zoxide)
 # TODO: make github stuff pretty... kinda
 
+# git clone, lowercase and underscore repo names
+# Some-Repo -> some_repo
 git_clone() {
-	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_" | tr '[:upper:]' '[:lower:]')
 	git clone "$1" $repo
 }
 
