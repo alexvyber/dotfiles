@@ -2,24 +2,25 @@
 
 const fs = require("node:fs");
 
-// console.log()
 const componentName = process.argv[2];
 
 if (!fs.existsSync(componentName)) {
   fs.mkdirSync(componentName);
 }
 
-const fileName = `${componentName}/index.ts`;
+// index
+const indexFile = `${componentName}/index.ts`;
 
-if (!fs.existsSync(fileName)) {
+if (!fs.existsSync(indexFile)) {
   const content = `export { default } from "./${componentName}"`;
-  fs.writeFileSync(fileName, content, {
+  fs.writeFileSync(indexFile, content, {
     // encoding: "utf8",
     // flag: "a+",
-    mode: 0o666,
+    mode: 0o644,
   });
 }
 
+// component
 const componentFile = `${componentName}/${componentName}.tsx`;
 
 if (!fs.existsSync(componentFile)) {
@@ -38,6 +39,6 @@ export default ${componentName}`;
   fs.writeFileSync(componentFile, content, {
     // encoding: "utf8",
     // flag: "a+",
-    mode: 0o666,
+    mode: 0o644,
   });
 }

@@ -5,11 +5,13 @@ tasks:
     cmds:
       - git pull
       - yarn build
+
   react_docs:
     dir: /mnt/REPOS/_docs/reactjs.org/beta
     cmds:
       - git pull
       - yarn build
+
   v:
     dir: /mnt/REPOS/vlang/v
     cmds:
@@ -20,6 +22,7 @@ tasks:
     dir: /mnt/REPOS/_docs/mdn
     cmds:
       - git pull
+
   nvim:
     dir: /mnt/REPOS/tools/neovim
     env:
@@ -30,6 +33,7 @@ tasks:
       - git pull
       - make
       - sudo make install
+
   run:
     cmds:
       - task: tail_docs
