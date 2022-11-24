@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const fs = require("node:fs");
+
+// console.log()
+const componentName = process.argv[2];
+
+if (!fs.existsSync(componentName)) {
+  fs.mkdirSync(componentName);
+}
+
+const fileName = `${componentName}/index.ts`;
+
+if (!fs.existsSync(fileName)) {
+  const content = `export { default } from "./${componentName}"`;
+  fs.writeFileSync(fileName, content, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o666,
+  });
+}
+
+const componentFile = `${componentName}/${componentName}.tsx`;
+
+if (!fs.existsSync(componentFile)) {
+  const content = `
+
+const ${componentName}: React.FC = () => {
+
+  return(
+    <>
+
+    </>
+  )
+}
+
+export default ${componentName}`;
+  fs.writeFileSync(componentFile, content, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o666,
+  });
+}
