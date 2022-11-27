@@ -1,4 +1,5 @@
 {
+  "editor.formatOnSave": true,
   "workbench.colorTheme": "Atom One Light",
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.scrollbar.vertical": "hidden",
@@ -15,8 +16,7 @@
   "editor.fontLigatures": false,
   "editor.tabSize": 2,
   "workbench.iconTheme": "vscode-icons",
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
