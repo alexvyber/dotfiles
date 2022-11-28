@@ -4,7 +4,7 @@
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "right",
-  "editor.minimap.maxColumn": 80,
+  "editor.minimap.maxColumn": 60,
   // "editor.lineNumbers": "relative",
   "json.schemas": [],
   "emmet.includeLanguages": {
@@ -16,8 +16,14 @@
   "editor.fontLigatures": false,
   "editor.tabSize": 2,
   "workbench.iconTheme": "vscode-icons",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "todohighlight.isEnable": true,
@@ -29,13 +35,13 @@
       "text": "NOTE:",
       "color": "#0b3614",
       "backgroundColor": "#d5edda",
-      "overviewRulerColor": "#0b3614",
+      "overviewRulerColor": "#0b3614"
     },
     {
       "text": "HACK:",
       "color": "#0b3614",
       "isWholeLine": false
-    }
+    },
     {
       "text": "TODO:",
       "color": "#0f3d45",

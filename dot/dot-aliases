@@ -215,6 +215,7 @@ alias task="go-task"
 
 alias rg="rg -i"
 
+alias car="cargo run -q"
 alias ca="cargo"
 # alias echo="eh"
 
