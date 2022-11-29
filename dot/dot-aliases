@@ -209,7 +209,7 @@ alias myip="curl ifconfig.me"
 alias btm="btm --color nord-light"
 alias doc="docker"
 
-alias rr="rip"
+alias rip="rip --graveyard /mnt/SHITTER/.graveyard"
 
 alias task="go-task"
 
