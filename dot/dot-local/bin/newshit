@@ -3,6 +3,7 @@
 sudo dnf update -y
 rustup update stable
 cargo install-update -a
+go-global-update
 
 # --
 
