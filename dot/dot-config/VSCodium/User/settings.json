@@ -78,5 +78,7 @@
   ],
   "todohighlight.maxFilesForSearch": 5120,
   "todohighlight.toggleURI": false,
-  "redhat.telemetry.enabled": true
+  "redhat.telemetry.enabled": true,
+  "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
+  "typescript.tsdk": "/home/alexs/.fnm/node-versions/v18.12.1/installation/lib/node_modules/typescript/lib"
 }

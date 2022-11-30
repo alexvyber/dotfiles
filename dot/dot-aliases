@@ -138,6 +138,7 @@ alias gop="git open"
 # GitHub
 # --
 alias mygh="chrome github.com/alexvyber ; "
+alias newrepo="chrome github.com/new ; "
 alias 1000="chrome https://github.com/alexvyber/1000DaysOfCode ; "
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
