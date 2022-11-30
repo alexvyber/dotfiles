@@ -249,7 +249,7 @@ declareHashes() {
 		ts "/mnt/FILER/ts"
 		react "/mnt/FILER/react"
 		node "/mnt/FILER/node"
-		doing "/mnt/FILER/doing"
+		doing "/mnt/FILER/_doing"
 		b "/mnt/FILER/b"
 		ba "/mnt/FILER/ba"
 		# SHITTER
@@ -525,4 +525,10 @@ yc() {
 # Return value from YANL file wtihout new line
 yy() {
 	yq eval "$1" "$2" | sd '\n' ''
+}
+
+# create sumlink from path to the current directory
+symhere () {
+	str=$(echo $@ )
+	ln -s $str ./
 }
