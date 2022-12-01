@@ -183,8 +183,8 @@ alias :w="git commit -m "
 # VS Codium
 # --
 alias cod="codium ."
-alias code="codium "
-alias code.="codium ."
+# alias code="codium "
+# alias code.="codium ."
 
 # JS Aliases
 # --
