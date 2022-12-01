@@ -41,6 +41,7 @@ alias yw="yarn workspace"
 alias yd="yarn dev"
 alias dc="docker-compose"
 alias tl="tldr"
+alias mk="minikube"
 
 # Enable aliases for sudo
 alias sudo='sudo '
