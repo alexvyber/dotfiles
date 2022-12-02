@@ -8,7 +8,7 @@ xset r rate 165 75
 # --
 
 declare -A disks=(
-	[FILER]=sdc
+	[FILER]=sdd
 	[REPOS]=sda
 	[SHITTER]=sdb1
 )
