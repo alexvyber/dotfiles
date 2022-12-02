@@ -10,7 +10,7 @@ xset r rate 165 75
 declare -A disks=(
 	[FILER]=sdd
 	[REPOS]=sda
-	[SHITTER]=sdb1
+	[SHITTER]=sdb
 )
 
 for key in "${!disks[@]}"; do
