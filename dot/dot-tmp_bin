@@ -1,0 +1,2 @@
+export PATH="$HOME/work/tests/ex-test/csv/dev/bin:$PATH"
+export PATH="$HOME/home/alexs/bin/js/cli/bin:$PATH"
