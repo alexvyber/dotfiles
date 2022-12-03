@@ -254,6 +254,7 @@ declareHashes() {
 		ba "/mnt/FILER/ba"
 		# SHITTER
 		s "/mnt/SHITTER"
+		t "$HOME/tmp"
 		# TORRENTER
 		trash "$HOME/tmp/trash"
 		# HOME
