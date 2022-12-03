@@ -1,5 +1,9 @@
 version: '3'
 tasks:
+  ts-stuff:
+    dir: ~/learn/typescript_stuff
+    cmds:
+      - git status --short --untracked-files
   dot:
     dir: ~/dotfiles
     cmds:
@@ -37,3 +41,4 @@ tasks:
       - task: nvim
       - task: days
       - task: scripts
+      - task: ts-stuff
