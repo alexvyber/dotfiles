@@ -3,6 +3,7 @@
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "right",
+
   "editor.minimap.maxColumn": 60,
   // "editor.lineNumbers": "relative",
   "json.schemas": [],
@@ -13,7 +14,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "security.workspace.trust.enabled": false,
   // "editor.defaultFormatter": "vscode.typescript-language-features",
-  "editor.fontLigatures": false,
+  "editor.fontLigatures": true,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "todohighlight.isEnable": true,
