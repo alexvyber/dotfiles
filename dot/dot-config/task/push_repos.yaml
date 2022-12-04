@@ -3,7 +3,7 @@ tasks:
   ts-stuff:
     dir: ~/learn/typescript_stuff
     cmds:
-      - git status --short --untracked-files
+      - git push
   dot:
     dir: ~/dotfiles
     cmds:
