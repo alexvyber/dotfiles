@@ -222,3 +222,5 @@ alias ca="cargo"
 # alias echo="eh"
 
 alias pd="podman "
+
+alias files="nautilus"
