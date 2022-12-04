@@ -143,6 +143,13 @@ ga.sm() {
 	git add . && git commit -m "$message"
 }
 
+g.sm() {
+	# This function exist only to not use quotes. That's stupid!
+	# for loop with $* expand all input into one string
+	local message=$(for words in "$*"; do echo $words; done)
+  git commit -m "$message"
+}
+
 # I'm going to try and keep these available to use in either bash or zsh
 # If they aren't, I should make them differently
 
@@ -357,6 +364,13 @@ cbin() {
 # Some-Repo -> some_repo
 git_clone() {
 	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_" | tr '[:upper:]' '[:lower:]')
+	git clone "$1" $repo
+}
+
+# git clone, lowercase and underscore repo names
+# Some-Repo -> some_repo
+git-clone() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "_" "-" | tr '[:upper:]' '[:lower:]')
 	git clone "$1" $repo
 }
 

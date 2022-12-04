@@ -82,6 +82,5 @@
   "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
   "typescript.tsdk": "/home/alexs/.fnm/node-versions/v18.12.1/installation/lib/node_modules/typescript/lib",
   "workbench.colorTheme": "Atom One Light",
-  "[typescript]": {},
   "workbench.iconTheme": "vscode-icons"
 }
