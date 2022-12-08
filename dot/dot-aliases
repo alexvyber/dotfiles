@@ -211,7 +211,7 @@ alias myip="curl ifconfig.me"
 alias btm="btm --color nord-light"
 alias doc="docker"
 
-alias rip="rip --graveyard /mnt/FILER/.graveyard"
+alias rip="rip --graveyard /home/alexs/tmp/.graveyard"
 
 alias task="go-task"
 
