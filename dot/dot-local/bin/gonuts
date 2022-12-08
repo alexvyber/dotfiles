@@ -3,7 +3,7 @@
 # --
 
 sudo swapoff --all
-xset r rate 165 75
+xset r rate 160 80
 
 # --
 
