@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+const fs = require("node:fs");
+
+const prettierFileContent = `
+module.exports = {
+  semi: false,
+  arrowParens: "avoid",
+  trailingComma: "none",
+}
+`;
+
+const fileName = "prettier.config.cjs";
+
+if (!fs.existsSync(fileName)) {
+  fs.writeFileSync(fileName, prettierFileContent, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o644,
+  });
+}
