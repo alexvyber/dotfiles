@@ -83,5 +83,6 @@
   "typescript.tsdk": "/home/alexs/.fnm/node-versions/v18.12.1/installation/lib/node_modules/typescript/lib",
   "workbench.colorTheme": "Atom One Light",
   "workbench.iconTheme": "vscode-icons",
-  "redhat.telemetry.enabled": true
+  "redhat.telemetry.enabled": true,
+  "turboConsoleLog.includeFileNameAndLineNum": false
 }
