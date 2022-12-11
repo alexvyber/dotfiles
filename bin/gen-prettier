@@ -4,9 +4,14 @@ const fs = require("node:fs");
 
 const prettierFileContent = `
 module.exports = {
+  printWidth: 100,
   semi: false,
   arrowParens: "avoid",
+  tabWidth: 4,
+  useTabs: false,
   trailingComma: "none",
+  singleQuotes: "false",
+  bracketSameLine: true
 }
 `;
 

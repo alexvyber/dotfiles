@@ -45,7 +45,8 @@ gsa() {
 # Input:   nothing
 # Output:  nothing
 gpa() {
-	task -t ~/.config/task/push_repos.yaml run
+	echo "Im on vacation "
+	# task -t ~/.config/task/push_repos.yaml run
 	# local repos
 	# while IFS= read -r value; do
 	# 	repos+=($value)
