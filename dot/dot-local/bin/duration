@@ -1,8 +1,8 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 
 for n in *;
-# for n in $@; 
+# for n in $@;
 
 # do echo "$n"
 # echo "more"
@@ -13,8 +13,8 @@ duration=$(find "$n" \( -name "*.mp4" -o -name "*.mkv" -o -name "*.ogg" \) -prin
           tail -n 1 2> /dev/null
     )
 # echo $duration;
-echo -e "\033[1m $duration \033[0m - $(du -sh "$n")"; 
-done 
+echo -e "\033[1m $duration \033[0m - $(du -sh "$n")";
+done
 
 # total=$(find . -name "*.mp4" -printf "\"%p\" " | xargs exiftool -n -q -q -p '${Duration;our $sum;$_=ConvertDuration($sum+=$_)}' | tail -n 1)
 #
