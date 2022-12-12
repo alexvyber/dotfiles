@@ -42,6 +42,7 @@ alias yd="yarn dev"
 alias dc="docker-compose"
 alias tl="tldr"
 alias mk="minikube"
+alias px="pnpx"
 
 # Enable aliases for sudo
 alias sudo='sudo '
