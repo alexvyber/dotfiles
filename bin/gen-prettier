@@ -7,10 +7,10 @@ module.exports = {
   printWidth: 100,
   semi: false,
   arrowParens: "avoid",
-  tabWidth: 4,
+  tabWidth: 2,
   useTabs: false,
   trailingComma: "none",
-  singleQuotes: "false",
+  singleQuote: false,
   bracketSameLine: true
 }
 `;
