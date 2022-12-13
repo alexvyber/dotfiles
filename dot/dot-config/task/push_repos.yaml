@@ -28,6 +28,12 @@ tasks:
     dir: ~/learn/1000days
     cmds:
       - git push
+
+  node:
+    dir: /home/alexs/node/myopen
+    cmds:
+      - git status --short --untracked-files
+
   scripts:
     dir: ~/personal/scripts
     cmds:
@@ -39,6 +45,7 @@ tasks:
       - task: personal
       - task: awesome
       - task: nvim
+      - task: node
       - task: days
       - task: scripts
       - task: ts-stuff
