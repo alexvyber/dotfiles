@@ -548,3 +548,7 @@ symhere () {
 	str=$(echo $@ )
 	ln -s $str ./
 }
+
+my(){
+	node ~/node/myopen/myopen.mjs $1
+}
