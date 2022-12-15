@@ -41,6 +41,7 @@ case $1 in
            ~/next                                 \
            ~/repos                                 \
            ~/learn                                 \
+           ~/learn/courses                                 \
            ~/learn/books                                 \
            ~/tmp                                 \
            ~/js                                 \
