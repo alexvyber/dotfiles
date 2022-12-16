@@ -12,7 +12,7 @@ if (!fs.existsSync(componentName)) {
 const indexFile = `${componentName}/index.ts`;
 
 if (!fs.existsSync(indexFile)) {
-  const content = `export { default } from "./${componentName}"`;
+  const content = `export { ${componentName} } from "./${componentName}"`;
   fs.writeFileSync(indexFile, content, {
     // encoding: "utf8",
     // flag: "a+",
@@ -36,9 +36,10 @@ const ${componentName}: React.FC = () => {
 }
 
 export default ${componentName}`;
-  fs.writeFileSync(componentFile, content, {
-    // encoding: "utf8",
-    // flag: "a+",
-    mode: 0o644,
-  });
+
+  // fs.writeFileSync(componentFile, content, {
+  //   // encoding: "utf8",
+  //   // flag: "a+",
+  //   mode: 0o644,
+  // });
 }
