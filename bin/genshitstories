@@ -26,7 +26,7 @@ const componentFile = `${componentName}/${componentName}.tsx`;
 if (!fs.existsSync(componentFile)) {
   const content = `
 
-type Props = {
+export type Props = {
   [key in string]: any
 }
 
@@ -42,6 +42,32 @@ export const ${componentName} = ({}: Props) => {
 `;
 
   fs.writeFileSync(componentFile, content, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o644,
+  });
+}
+
+// stories
+const stroriesFile = `${componentName}/${componentName}.stories.tsx`;
+
+if (!fs.existsSync(stroriesFile)) {
+  const content = `
+import { ${componentName} } from "."
+
+import type { Story } from "@ladle/react"
+import type { Props } from "./${componentName}"
+  
+export const Default: Story<Props> = args => <${componentName} {...args} />
+Default.args = {
+
+} satisfies Props
+
+Default.argTypes = {}
+
+`;
+
+  fs.writeFileSync(stroriesFile, content, {
     // encoding: "utf8",
     // flag: "a+",
     mode: 0o644,
