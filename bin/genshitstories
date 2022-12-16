@@ -57,7 +57,11 @@ import { ${componentName} } from "."
 
 import type { Story } from "@ladle/react"
 import type { Props } from "./${componentName}"
-  
+
+export default {
+  title: "${componentName}/Default"
+}
+
 export const Default: Story<Props> = args => <${componentName} {...args} />
 Default.args = {
 
