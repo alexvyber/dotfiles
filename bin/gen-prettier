@@ -9,7 +9,7 @@ module.exports = {
   arrowParens: "avoid",
   tabWidth: 2,
   useTabs: false,
-  trailingComma: "none",
+  trailingComma: "all",
   singleQuote: false,
   bracketSameLine: true
 }
