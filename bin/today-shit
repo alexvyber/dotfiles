@@ -9,14 +9,13 @@ const daysSinceStart = new Date().getDate() - new Date("01.09.2023").getDate();
 
 const fileName = `/home/alexs/personal/daily-shit/0-100/${daysSinceStart}[${today}].md`;
 
-const shitToDo = `1. hh reply - 
-2. resume edit - 
-3. alexvyber.dev post - 
-4. twitter post - 
-5. instagram post - 
-6. linkedin post - 
-7. linkedin connection - 
-8. 20 minutes type challenges - `;
+const shitToDo = `1. hh reply -
+2. resume edit -
+3. alexvyber.dev post -
+4. twitter post -
+5. instagram post -
+6. linkedin post -
+7. linkedin connection - `;
 
 const openInEditor = () => {
   const child = spawn("code", [fileName], {
