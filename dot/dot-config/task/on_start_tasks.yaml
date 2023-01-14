@@ -4,19 +4,15 @@ tasks:
     dir: /mnt/REPOS/_docs/tailwindcss.com
     cmds:
       - git pull
+      - yarn install
       - yarn build
 
-  react_docs:
-    dir: /mnt/REPOS/_docs/reactjs.org/beta
-    cmds:
-      - git pull
-      - yarn build
-
-  v:
-    dir: /mnt/REPOS/vlang/v
-    cmds:
-      - git pull
-      - make
+  # react_docs:
+  #   dir: /mnt/REPOS/_docs/reactjs.org/beta
+  #   cmds:
+  #     - git pull
+  #     - yarn install
+  #     - yarn build
 
   mdn_docs:
     dir: /mnt/REPOS/_docs/mdn
@@ -37,6 +33,6 @@ tasks:
   run:
     cmds:
       - task: tail_docs
-      - task: react_docs
-      - task: v
+      # - task: react_docs
       - task: nvim
+      - task: mdn_docs
