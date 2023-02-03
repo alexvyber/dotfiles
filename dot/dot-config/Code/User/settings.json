@@ -1,5 +1,4 @@
 {
-  "editor.formatOnSave": true,
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "right",
@@ -99,5 +98,6 @@
   "workbench.colorTheme": "Atom One Light",
   "workbench.iconTheme": "vscode-icons",
   "redhat.telemetry.enabled": true,
-  "turboConsoleLog.includeFileNameAndLineNum": false
+  "turboConsoleLog.includeFileNameAndLineNum": false,
+  "editor.formatOnSave": true
 }
