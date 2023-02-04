@@ -226,3 +226,4 @@ alias ca="cargo"
 alias pd="podman "
 
 alias files="nautilus"
+alias bro="bun run"
