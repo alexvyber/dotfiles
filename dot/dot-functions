@@ -180,8 +180,8 @@ vs() {
 	fnm --version
 	echo "pnpm $(pnpm -v)"
 	echo "yarn $(yarn -v) \n"
-	echo "$(deno --version | cut_tail 1 2)"
-	echo "bun $(bun --version)\n"
+	# echo "$(deno --version | cut_tail 1 2)"
+	# echo "bun $(bun --version)\n"
 	echo "$(elixir -v | sed -n 3p | cut_tail 1 2)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
 	python --version
 	go version | sed s/"version "// | sed s/"go1"/"1"/ | cut_tail 1 2

@@ -95,9 +95,11 @@
   "todohighlight.toggleURI": false,
   "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
   // "typescript.tsdk": "/home/alexs/.fnm/node-versions/v18.12.1/installation/lib/node_modules/typescript/lib",
+  "typescript.tsdk": "/home/alexs/.fnm/node-versions/v18.13.0/installation/lib/node_modules/typescript/lib",
   "workbench.colorTheme": "Atom One Light",
   "workbench.iconTheme": "vscode-icons",
   "redhat.telemetry.enabled": true,
   "turboConsoleLog.includeFileNameAndLineNum": false,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[typescript]": {}
 }
