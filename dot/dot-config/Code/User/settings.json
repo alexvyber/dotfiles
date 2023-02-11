@@ -2,6 +2,7 @@
   "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace",
   "editor.scrollbar.vertical": "hidden",
   "workbench.sideBar.location": "right",
+  "noErrorTruncation": true,
 
   "editor.minimap.maxColumn": 60,
   // "editor.lineNumbers": "relative",

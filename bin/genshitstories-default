@@ -1,0 +1,79 @@
+#!/usr/bin/env node
+
+const fs = require("node:fs");
+
+const componentName = process.argv[2];
+
+if (!fs.existsSync(componentName)) {
+  fs.mkdirSync(componentName);
+}
+
+// index
+const indexFile = `${componentName}/index.ts`;
+
+if (!fs.existsSync(indexFile)) {
+  const content = `export { default } from "./${componentName}"`;
+  fs.writeFileSync(indexFile, content, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o644,
+  });
+}
+
+// component
+const componentFile = `${componentName}/${componentName}.tsx`;
+
+if (!fs.existsSync(componentFile)) {
+  const content = `
+
+export type Props = {
+  [key in string]: any
+}
+
+const ${componentName} = ({}: Props) => {
+
+  return(
+    <>
+
+    </>
+  )
+}
+
+export default ${componentName}
+`;
+
+  fs.writeFileSync(componentFile, content, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o644,
+  });
+}
+
+// stories
+const stroriesFile = `${componentName}/${componentName}.stories.tsx`;
+
+if (!fs.existsSync(stroriesFile)) {
+  const content = `
+import ${componentName} from "."
+
+import type { Story } from "@ladle/react"
+import type { Props } from "./${componentName}"
+
+export default {
+  title: "${componentName}/Default"
+}
+
+export const Default: Story<Props> = args => <${componentName} {...args} />
+Default.args = {
+
+} satisfies Props
+
+Default.argTypes = {}
+`;
+
+  fs.writeFileSync(stroriesFile, content, {
+    // encoding: "utf8",
+    // flag: "a+",
+    mode: 0o644,
+  });
+}
