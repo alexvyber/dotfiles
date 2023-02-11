@@ -144,6 +144,12 @@ ga.sm() {
 	git add . && git commit -m "$message"
 }
 
+ga.reg() {
+	local message=$(for words in "$*"; do echo $words; done)
+	git add . && git commit -m "reg"
+	git push
+}
+
 g.sm() {
 	# This function exist only to not use quotes. That's stupid!
 	# for loop with $* expand all input into one string
