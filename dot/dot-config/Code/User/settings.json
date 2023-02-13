@@ -15,7 +15,7 @@
   "security.workspace.trust.enabled": false,
   // "editor.defaultFormatter": "vscode.typescript-language-features",
   "editor.fontLigatures": true,
-
+  "typescript.suggest.paths": false,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "todohighlight.isEnable": true,
