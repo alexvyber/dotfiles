@@ -101,6 +101,6 @@
   "workbench.iconTheme": "vscode-icons",
   "redhat.telemetry.enabled": true,
   "turboConsoleLog.includeFileNameAndLineNum": false,
-  "editor.formatOnSave": true,
-  "[typescript]": {}
+  "[typescript]": {},
+  "editor.formatOnSave": true
 }
