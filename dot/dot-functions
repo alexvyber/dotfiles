@@ -126,15 +126,15 @@ ga.cm.today() {
 	message=$(printf "Day $(getDaysSinceStart) ($1 | $2): $3")
 	local repo_shit=/home/alexs/learn/1000days
 	printf $message
-	printf "\n\nCommit? y/N: "
-	read user_input
-	if [[ $(echo $user_input | tr '[:upper:]' '[:lower:]') == 'y' ]]; then
-		echo "Okay... Im commiting"
-		git --git-dir=$repo_shit/.git -C $repo_shit commit -m "$message"
-	else
-		echo "Nope, that's not right!"
-		git --git-dir=$repo_shit/.git -C $repo_shit status
-	fi
+	# printf "\n\nCommit? y/N: "
+	# read user_input
+	# if [[ $(echo $user_input | tr '[:upper:]' '[:lower:]') == 'y' ]]; then
+	# 	echo "Okay... Im commiting"
+	# 	git --git-dir=$repo_shit/.git -C $repo_shit commit -m "$message"
+	# else
+	# 	echo "Nope, that's not right!"
+	# 	git --git-dir=$repo_shit/.git -C $repo_shit status
+	# fi
 }
 
 ga.sm() {
