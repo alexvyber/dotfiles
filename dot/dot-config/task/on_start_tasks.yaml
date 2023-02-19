@@ -1,5 +1,6 @@
 version: '3'
 tasks:
+
   tail_docs:
     dir: /mnt/REPOS/_docs/tailwindcss.com
     cmds:
@@ -7,12 +8,12 @@ tasks:
       - yarn install
       - yarn build
 
-  # react_docs:
-  #   dir: /mnt/REPOS/_docs/reactjs.org/beta
-  #   cmds:
-  #     - git pull
-  #     - yarn install
-  #     - yarn build
+  react_docs:
+    dir: /mnt/REPOS/_docs/reactjs.org/beta
+    cmds:
+      - git pull
+      - yarn install
+      - yarn build
 
   mdn_docs:
     dir: /mnt/REPOS/_docs/mdn
@@ -24,8 +25,8 @@ tasks:
     env:
     # CMAKE_TYPE: RelWithDebInfo
     cmds:
-      - rm -rf build
-      - rm -rf .deps
+      - rm -rf build || exit 0
+      - rm -rf .deps || exit 0
       - git pull
       - make
       - sudo make install
@@ -33,6 +34,6 @@ tasks:
   run:
     cmds:
       - task: tail_docs
-      # - task: react_docs
+      - task: react_docs
       - task: nvim
       - task: mdn_docs
