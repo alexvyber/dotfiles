@@ -7,3 +7,7 @@
 # 192.168.1.13 bar.mydomain.org bar
 
 192.168.88.1 router
+# Added by Docker Desktop
+# To allow the same kube context to work on the host and the container:
+# 127.0.0.1	kubernetes.docker.internal
+# End of section
