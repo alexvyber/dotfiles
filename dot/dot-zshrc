@@ -168,3 +168,11 @@ eval "$(pyenv init -)"
 # fnm
 export PATH="/home/alexs/.fnm:$PATH"
 eval "`fnm env`"
+
+# fnm
+export PATH="/home/alexs/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/alexs/.local/share/fnm:$PATH"
+eval "`fnm env`"
