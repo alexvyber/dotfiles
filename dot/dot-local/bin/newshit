@@ -14,5 +14,5 @@ bun upgrade
 deno upgrade
 pnpm i -g pnpm
 
-task -t ~/.config/task/on_start_tasks.yaml run --parallel
 task -t ~/.config/task/install_global_npm_packages.yaml install
+# task -t ~/.config/task/on_start_tasks.yaml run --parallel
