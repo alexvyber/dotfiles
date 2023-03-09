@@ -102,5 +102,6 @@
   "redhat.telemetry.enabled": true,
   "turboConsoleLog.includeFileNameAndLineNum": false,
   "[typescript]": {},
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "window.menuBarVisibility": "toggle"
 }
