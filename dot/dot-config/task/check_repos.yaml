@@ -16,10 +16,10 @@ tasks:
     cmds:
       - git status --short --untracked-files
 
-  katzen:
-    dir: ~/personal/katzen
-    cmds:
-      - git status --short --untracked-files
+  # katzen:
+  #   dir: ~/personal/katzen
+  #   cmds:
+  #     - git status --short --untracked-files
 
   awesome:
     dir: ~/.config/awesome
@@ -48,7 +48,7 @@ tasks:
 
   run:
     cmds:
-      - task: katzen
+      # - task: katzen
       - task: dot
       - task: personal
       - task: awesome

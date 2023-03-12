@@ -5,8 +5,8 @@ repo:
   - dotfiles
   - personal/scripts
   - personal/personal
-  - personal/katzen
 
+  # - personal/katzen
   # - work/gate/rubuild-new
   # - work/gate/octobuilder
   # - work/gate/kardon.pro
