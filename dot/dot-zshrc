@@ -163,7 +163,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# source <(kubectl completion zsh)
-
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# source <(kubectl completion zsh)
