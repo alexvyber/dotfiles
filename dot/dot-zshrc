@@ -24,7 +24,7 @@ export PATH="$HOME/elixir/scrips/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 
 export PATH="$HOME/bin/js:$PATH"
-export PATH="$HOME/tmp/roc:$PATH"
+# export PATH="$HOME/tmp/roc:$PATH"
 
 # Go path
 GOPATH=$HOME/.go
