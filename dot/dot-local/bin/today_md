@@ -31,7 +31,7 @@ def today_md(subj, dur, off):
 
     # Basepath for repo
     # TODO: wirte code, that will handle switches bettwen x00s and x01s
-    basepath = "/home/alexs/learn/1000days/200_299"
+    basepath = "/home/alexs/learn/1000days/300_399"
 
     # Generate filename base on days since challenge start and date today
     # Example: 1[01.06.2022].md
