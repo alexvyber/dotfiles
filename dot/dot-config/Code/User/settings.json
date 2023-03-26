@@ -12,6 +12,7 @@
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "security.workspace.trust.untrustedFiles": "open",
+
   "security.workspace.trust.enabled": false,
   // "editor.defaultFormatter": "vscode.typescript-language-features",
   "editor.fontLigatures": true,
