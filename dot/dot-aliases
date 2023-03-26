@@ -227,3 +227,4 @@ alias pd="podman "
 
 alias files="nautilus"
 alias bro="bun run"
+alias rmr="rip ~/videos/raw/*"

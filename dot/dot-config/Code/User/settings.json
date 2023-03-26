@@ -104,5 +104,6 @@
   "turboConsoleLog.includeFileNameAndLineNum": false,
   "[typescript]": {},
   "editor.formatOnSave": true,
-  "window.menuBarVisibility": "toggle"
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 2
 }
