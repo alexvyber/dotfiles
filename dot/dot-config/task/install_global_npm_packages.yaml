@@ -3,4 +3,4 @@ tasks:
   install:
     cmds:
       - npm i -g pnpm@latest
-      - npm i -g git-open yarn pnpm@latest git-split-diffs vtop tsc ts-node prettier tsup rustywind nodemon @nestjs/cli fastify nest fastify-cli typescript@latest oclif open @angular/cli
+      - npm i -g git-open yarn pnpm@latest git-split-diffs vtop tsc ts-node prettier tsup rustywind nodemon @nestjs/cli fastify nest fastify-cli typescript@latest oclif open @angular/cli live-server
