@@ -22,6 +22,7 @@ export PATH="$HOME/usr/local/go/bin:$PATH"
 export PATH="$HOME/elixir/scrips/bin:$PATH"
 # export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.config/tmuxifier/bin:$PATH"
 
 export PATH="$HOME/bin/js:$PATH"
 # export PATH="$HOME/tmp/roc:$PATH"
@@ -146,6 +147,9 @@ add-zsh-hook chpwd do-ls
 # Creating hashes for us to be able to navigate with ~t ~f etc
 declareHashes
 autoload -U zmv
+
+# tmuxifier
+eval "$(tmuxifier init -)"
 
 # zoxide init
 eval "$(zoxide init zsh --cmd c)"
