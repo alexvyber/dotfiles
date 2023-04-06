@@ -16,6 +16,11 @@ tasks:
     cmds:
       - git status --short --untracked-files
 
+  katzen_ex:
+    dir: ~/personal/ex/katzen.ex
+    cmds:
+      - git status --short --untracked-files
+
   # katzen:
   #   dir: ~/personal/katzen
   #   cmds:
@@ -49,6 +54,7 @@ tasks:
   run:
     cmds:
       # - task: katzen
+      - task: katzen_ex
       - task: dot
       - task: personal
       - task: awesome
