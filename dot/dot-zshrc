@@ -71,13 +71,13 @@ export PATH=$PATH:/usr/local/go/bin
 source "${HOME}/.tmp_bin"
 
 # Configs
-# source "${HOME}/.zsh/configs/zinit.zsh"
-# source "${ZINIT[BIN_DIR]}/zinit.zsh" # Zinit plugin manager
-# source "${HOME}/.zsh/plugins.zsh"    # Plugins
+source "${HOME}/.zsh/configs/zinit.zsh"
+source "${ZINIT[BIN_DIR]}/zinit.zsh" # Zinit plugin manager
+source "${HOME}/.zsh/plugins.zsh"    # Plugins
 
 # Stylef fot history search
 source $HOME/.zstyle
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_keybindings
 source $HOME/.zsh_docker
 source $HOME/.zsh_podman
