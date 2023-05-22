@@ -9,7 +9,7 @@ xset r rate 150 120
 
 declare -A disks=(
 	[FILER]=sdd
-	[REPOS]=sda
+	[REPOS]=sda1
 	[SHITTER]=sdb1
 )
 
@@ -22,6 +22,8 @@ for key in "${!disks[@]}"; do
 		echo "$key mounted"
 	fi
 done
+
+sudo mount /dev/sdc /home/alexs/tmp
 
 # --
 
