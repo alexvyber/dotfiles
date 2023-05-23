@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+
+local port=$1
+
+
+[[ -n "$1" ]] && sed -i "s/port: 4000/port: $1/g" config/dev.exs || echo "Port is not set"
+
+
+sed -i 's/username: "postgres"/username: "tail"/g' config/dev.exs
+sed -i 's/password: "postgres"/password: "monafe"/g' config/dev.exs
+
+mix ecto.create
+mix ecto.migrate
+
