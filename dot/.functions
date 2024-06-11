@@ -434,12 +434,6 @@ function new_ex {
 	chmod +x $1
 }
 
-up() {
-	sudo dnf update --refresh -y
-	pnpm i -g pnpm
-	npm install -g npm@latest
-	rustup update
-}
 
 # TODO: try to develop this into standalone app
 
