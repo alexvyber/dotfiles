@@ -1,0 +1,617 @@
+#!/usr/bin/env zsh
+
+source ~/.zsh_docker
+
+# Colorful ouput
+# https://stackoverflow.com/a/5947802
+RED='\033[1;38m'
+CLEAN='\033[1;32m'
+SEP='\033[2;30m'
+NC='\033[0m' # No Color
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Git Status All
+# Globals: nothing
+# Input:   nothing
+# Output:  nothing
+gsa() {
+	task -t ~/.config/task/check_repos.yaml run
+	# local repos
+	# while IFS= read -r value; do
+	# 	repos+=($value)
+	# done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
+	#
+	# for repo in $repos; do
+	# 	REPO=$(echo $repo | cut -c 3-)
+	# 	STR=$(
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+	# 	)
+	# 	SUB='nothing to commit, working tree clean'
+	# 	if [[ "$STR" == *"$SUB"* ]]; then
+	# 		printf "${RED}$REPO ${NC}"
+	# 		printf "${CLEAN}is clean ${NC}\n"
+	# 	else
+	# 		printf "\n${RED}$REPO ${NC}\n"
+	# 		printf "${SEP}···············································································${NC}\n"
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status --short --untracked-files
+	# 		echo ""
+	# 	fi
+	# done
+} # End of function gsa
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Git Push All
+# Globals: nothing
+# Input:   nothing
+# Output:  nothing
+gpa() {
+	# echo "Im on vacation "
+	task -t ~/.config/task/push_repos.yaml run
+	# local repos
+	# while IFS= read -r value; do
+	# 	repos+=($value)
+	# done < <(yq eval '.repo' "/home/alexs/.repos.yaml")
+	#
+	# for repo in $repos; do
+	# 	REPO=$(echo $repo | cut -c 3-)
+	# 	STR=$(
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+	# 	)
+	# 	SUB='nothing to commit, working tree clean'
+	# 	if [[ "$STR" == *"$SUB"* ]]; then
+	# 		printf "${CLEAN}$REPO ${NC}"                                       # echo $push_result
+	# 		printf "$(git --git-dir="$HOME/$REPO/.git" -C "$HOME/$REPO" push)" # 2> /dev/null )
+	# 	else
+	# 		printf "\n${RED}$REPO ${NC}\n"
+	# 		printf "${SEP}···············································································${NC}\n"
+	# 		git --git-dir=$HOME/$REPO/.git -C $HOME/$REPO status
+	# 		echo ""
+	# 	fi
+	# done
+} # End of function gpa
+
+# Get days since start of 1000 Days Of Code challenge
+# Globals: nothing
+# Input:   nothing
+# Output:  day -> string@integer
+getDaysSinceStart() {
+	local seconds_since_start=$(($(date +'%s') - $(date --date='2022-05-31 00:00:01' +'%s')))
+	local days_since_start=$(($seconds_since_start / 60 / 60 / 24))
+	echo $days_since_start
+	return 0
+}
+
+# Today Progress Function
+# Globals: nothing
+# Input:
+# - $1 topic
+# - $2 time spent
+# Output:  nothing
+# today() {
+# 	since_start=$(getDaysSinceStart)
+# 	local name_today=$(echo "[$(date +'%d.%m.%Y')]")
+# 	local today_path="/home/alexs/learn/1000days/100_200/$since_start${name_today}.md"
+# 	[[ ! -f $today_path ]] && printf "## Day $since_start ($1 | $2) \n\n\n" >$today_path
+# 	nvim +3 $today_path
+# } # End of function today
+
+# Today Folder Progress Function
+# Globals: nothing
+# Input:
+# - $1 topic
+# - $2 time spent
+# Output:  nothing
+today.folder() {
+	since_start=$(getDaysSinceStart)
+	local name_today=$(echo "[$(date +'%d.%m.%Y')]")
+	local today_path="/home/alexs/learn/1000days/0_100/$since_start${name_today}"
+	[[ ! -d $today_path ]] && mkdir $today_path || echo "$(echo $today_path | cut -d'/' -f7-) folder exists"
+	[[ ! -f "$today_path/README.md" ]] && printf "## Day $days_since_start ($1 | $2) \n\n\n" >"$today_path/README.md"
+	nvim +3 "$today_path/README.md"
+
+} # End of today folder
+# Generate Commit for todays learning progress
+# Globals: nothing
+# Input:
+# - $1 topic
+# - $2 time spent
+# - $3 TIL...
+# Output:  nothing
+ga.cm.today() {
+	since_start=$(getDaysSinceStart)
+	message=$(printf "Day $(getDaysSinceStart) ($1 | $2): $3")
+	local repo_shit=/home/alexs/learn/1000days
+	printf $message
+	# printf "\n\nCommit? y/N: "
+	# read user_input
+	# if [[ $(echo $user_input | tr '[:upper:]' '[:lower:]') == 'y' ]]; then
+	# 	echo "Okay... Im commiting"
+	# 	git --git-dir=$repo_shit/.git -C $repo_shit commit -m "$message"
+	# else
+	# 	echo "Nope, that's not right!"
+	# 	git --git-dir=$repo_shit/.git -C $repo_shit status
+	# fi
+}
+
+gcm() {
+	# This function exist only to not use quotes. That's stupid!
+	# for loop with $* expand all input into one string
+	local message=$(for words in "$*"; do echo $words; done)
+	git commit -m "$message"
+}
+
+ga.sm() {
+	# This function exist only to not use quotes. That's stupid!
+	# for loop with $* expand all input into one string
+	local message=$(for words in "$*"; do echo $words; done)
+	git add . && git commit -m "$message"
+}
+
+ga.reg() {
+	local message=$(for words in "$*"; do echo $words; done)
+	git add . && git commit -m "reg"
+	git push
+}
+
+g.sm() {
+	# This function exist only to not use quotes. That's stupid!
+	# for loop with $* expand all input into one string
+	local message=$(for words in "$*"; do echo $words; done)
+	git commit -m "$message"
+}
+
+# I'm going to try and keep these available to use in either bash or zsh
+# If they aren't, I should make them differently
+
+print_all_colors() {
+	for code in {000..255}; do print -P -- "$code: %F{$code}Test%f"; done
+}
+
+diff_commit() {
+	if [ "$1" != "" ]; then
+		git diff $1~ $1
+	else
+		git diff HEAD~ HEAD
+	fi
+}
+
+author_contrib() {
+	git log --author="$1" --pretty=tformat: --numstat $2 |
+		gawk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf "added lines: %s removed lines: %s total lines: %s\n", add, subs, loc }' -
+}
+
+vs() {
+	cut_tail() {
+		cut -d" " -f$1-$2
+	}
+	echo "node $(node -v)" | sed s/"v"//
+	echo "npm $(npm -v)"
+	fnm --version
+	echo "pnpm $(pnpm -v)"
+	echo "yarn $(yarn -v) \n"
+	# echo "$(deno --version | cut_tail 1 2)"
+	echo "bun $(bun --version)\n"
+	echo "$(elixir -v | sed -n 3p | cut_tail 1 2)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	python --version
+	go version | sed s/"version "// | sed s/"go1"/"1"/ | cut_tail 1 2
+	rustc --version | cut_tail 1 2
+	cargo --version | cut_tail 1 2
+	# v --version | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	echo "$(lua -v | cut_tail 1 3)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	# php --version | sed -n 1p | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	echo ""
+	# docker -v | sed s/" version"// | cut_tail 1 2 | sed s/","// | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	# echo "podman $(podman version | sed -n 2p)" | sed s/" Version:     "//
+	# psql --version | sed s/"psql (PostgreSQL)"/"postgres"/
+	# echo "caddy $(caddy version)" | sed s/"v"// | cut_tail 1 2
+	# echo "zig $(zig version)"
+}
+
+quick_change() {
+	echo "Do you want to change?"
+	grep -rl "$2" $1
+	grep -rl "$2" $1 | xargs sed -i "s/$2/$3/g"
+}
+
+# function cd {
+# 	builtin cd $1
+# 	script_name="$XDG_CONFIG_HOME/cd_scripts/$(pwd | xargs basename)"
+# 	if [ -e ${script_name}.zsh ]; then
+# 		source ${script_name}.zsh
+# 	fi
+# }
+
+# TODO: Make this function take string to remove as a parameter
+pdfShit() {
+	SHIT="•"
+	for i in "$@"; do
+		echo $i
+		pdftk "$i" output uncompressed.pdf uncompress
+		sed -e "s/$SHIT//g" <uncompressed.pdf >modified.pdf
+		pdftk modified.pdf output "$i" compress
+		rip modified.pdf
+		rip uncompressed.pdf
+	done
+}
+
+pdfShitMore() {
+	SHIT="Prepared exclusively for Bohdan Varshchuk"
+	for i in "$@"; do
+		echo $i
+
+		name=${i::-4}
+		echo "$name"
+
+		pdftk "$i" cat 4-end output shit.pdf
+		mv shit.pdf "${name}.pdf"
+
+		# rm shit.pdf
+	done
+}
+
+# !!! ZSH specific !!!
+# Declare hashes for zsh
+# Globals: nothing
+# Input:   nothing
+# Output:  nothing
+# TODO: MAKE this work automaticly with current folders on drives
+
+declareHashes() {
+	# local result=$(ls /mnt/FILER/)
+	# echo $result
+	typeset -r -A paths=(
+		# FILER
+		ww "/home/alexs/personal/to-rework"
+		f "/mnt/FILER"
+		js "/mnt/FILER/js"
+		ts "/mnt/FILER/ts"
+		react "/mnt/FILER/react"
+		node "/mnt/FILER/node"
+		doing "/mnt/FILER/_doing"
+		b "/mnt/FILER/b"
+		ba "/mnt/FILER/ba"
+		# SHITTER
+		s "/mnt/SHITTER"
+		t "$HOME/tmp"
+		# TORRENTER
+		trash "$HOME/tmp/trash"
+		# HOME
+		days "$HOME/personal/1000days"
+		cache "$HOME/.cache"
+		learn "$HOME/learn"
+		crm "$HOME/work/crm"
+		client "$HOME/work/gate/kardon.pro/client"
+		local "$HOME/.local"
+		config "$HOME/.config"
+		nvim "$HOME/.config/nvim"
+		awesome "$HOME/.config/awesome"
+		# bookmarks "$HOME/stuff/bookmarks"
+		books "$HOME/learn/books"
+		work "$HOME/work"
+		ex "$HOME/personal/ex"
+		tmp "$HOME/tmp"
+		dotfiles "$HOME/dotfiles"
+		code "$HOME/learn/code"
+		front "$HOME/personal/vyber/front"
+		vyber "$HOME/personal/vyber"
+		p "$HOME/personal"
+		k "$HOME/personal/katzen"
+		r "/mnt/REPOS"
+		vyber "$HOME/personal/@alexvyber"
+	)
+	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
+} # End of function Declare hashes for zsh
+
+
+mkd() {
+	mkdir "$1"
+	cd "$1" || exit
+}
+
+# mkdir and replace spaces
+mkdirs() {
+	str=$(echo $@ | tr -s " " "_")
+	mkdir "$str"
+}
+
+# mkd and replace spaces
+mkds() {
+	str=$(echo $@ | tr -s " " "_")
+	mkdir "$str"
+	cd "$str" || exit
+}
+
+tmpd() {
+	local dir
+	if [ $# -eq 0 ]; then
+		dir=$(mktemp -d)
+	else
+		dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
+	fi
+	cd "$dir" || exit
+}
+
+change_nvim() {
+	rm ~/.config/nvim &
+	2 >dev/null
+	ln -sf ~/personal/nvim/$1 ~/.config/nvim
+
+}
+
+change_awesome_theme() {
+	ln -sf ~/.config/awesome/$1.lua ~/.config/awesome/theme.lua
+}
+
+switch_theme() {
+	if [ $1 == "dark" ]; then
+		change_awesome_theme dark
+		switch-kitty-theme Vyber_dark
+	else
+		echo "asdf"
+	fi
+}
+
+stupid_boxing() {
+	local title="·  $@  ·"
+	local edge=$(echo $title | sed 's/./·/g')
+
+	echo "$edge"
+	echo "$title"
+	echo "$edge"
+}
+
+function forkill() {
+	for n in $(pgrep $1); do sudo kill -9 $n; done
+}
+
+cbin() {
+	c $(echo "$(where $1)" | rev | cut -d'/' -f2- | rev | head -n 1)
+}
+
+# Simple cd to bin folder (using zoxide: https://github.com/ajeetdsouza/zoxide)
+# TODO: make github stuff pretty... kinda
+
+# git clone, lowercase and underscore repo names
+# Some-Repo -> some_repo
+git_clone() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_" | tr '[:upper:]' '[:lower:]')
+	git clone "$1" $repo
+}
+
+# git clone, lowercase and underscore repo names
+# Some-Repo -> some_repo
+git-clone() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "_" "-" | tr '[:upper:]' '[:lower:]')
+	git clone "$1" $repo
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input: https://github.com/user/repo-name.git
+#	output: ./repo_name
+git_clone_cd() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+	git clone "$1" $repo
+	c "$(pwd)/$repo"
+	echo "Switched into $(pwd)/$repo"
+}
+
+git_clone_clean() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+	git clone "$1" $repo
+	rip "$(pwd)/$repo/.git" # rip has to be installed!
+}
+mix_get_app() {
+	pack=$(awk -v OFS=' ' '{$1=$1}1' | rev | cut -d' ' -f2- | rev)
+	name=$(echo $pack | cut -d' ' -f1)
+	version=$(echo $pack | rev | cut -d' ' -f1 | rev)
+	echo "{:$name, \"$version\" }"
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Start tmux server with phoenix projects structure loaded in separate windows
+t.phx.gen() {
+	project_name=$(basename $(pwd))
+	gentp
+}
+
+t.phx.start() {
+	tmuxp load $1
+}
+
+t.phx.go() {
+	project_name=$(basename $(pwd))
+	tmuxp load $project_name
+}
+
+t.phx.list() {
+	local color=$(tput setaf 8)
+	for n in $(l $HOME/.config/tmuxp); do printf "${color}$(echo $n | cut -d'.' -f1)\n"; done
+}
+
+# Create new file and make it exetubale
+function new_ex {
+	$EDITOR $1
+	chmod +x $1
+}
+
+up() {
+	sudo dnf update --refresh -y
+	pnpm i -g pnpm
+	npm install -g npm@latest
+	rustup update
+}
+
+# TODO: try to develop this into standalone app
+
+getFile() {
+	FILE=".npy"
+	if [ -f "$FILE" ]; then
+		value=$(cat .npy)
+		echo $value
+	else
+		echo "npm"
+	fi
+}
+
+# pr() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn $@" || command="$value run $@"
+# 	eval $command
+# }
+#
+# pi() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn add $@" || command="$value install $@"
+# 	eval $command
+# }
+#
+# pb() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn build" || command="$value run build"
+# 	eval $command
+# }
+#
+# pf() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn format" || command="$value run format"
+# 	eval $command
+# }
+#
+# pl() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn lint" || command="$value run lint"
+# 	eval $command
+# }
+#
+# pd() {
+# 	value=$(getFile)
+# 	[[ $value == "yarn" ]] && command="yarn dev" || command="$value run dev"
+# 	eval $command
+# }
+
+
+# Switch files or directories content
+# TODO: move somewhere else
+sw() {
+	tmp_name=$(TMPDIR=$(dirname -- "$1") mktemp --dry-run) &&
+		mv -f -- "$1" "$tmp_name" &&
+		mv -f -- "$2" "$1" &&
+		mv -f -- "$tmp_name" "$2"
+}
+
+# Go to the directory of binary if possible
+gowhere() {
+	local location=$(which $1 | rev | cut -d"/" -f2- | rev)
+	c $location || exit
+	pwd
+}
+
+# Instead of wc -l
+wcl() {
+	cat </dev/stdin | wc -l
+}
+
+# cat print json formatted
+caq() {
+	cat $1 | jq
+}
+
+# copy anme of working directory
+cnwd() {
+	# pwd | tr -d "\n" | tr -d "\r\n" | rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
+	# pwd |  rev | cut -d "/" -f1 | rev | tr -d "\r\n" | sd -s " " "\ " | xclip -selection clipboard
+	pwd | rev | cut -d "/" -f1 | rev | tr -d "\r\n" | xclip -selection clipboard
+}
+
+learn_tomorrow() {
+	echo $1 >/home/alexs/learn/1000days/tomorrow
+}
+
+# Strapi rename `develop` to `dev`
+strapi_develop_to_dev() {
+	sd '"develop": "strapi develop",' '"dev": "strapi develop",' $1
+}
+
+# Clone all repos from account
+clone_all_repos() {
+	# NOTE: using gh, so it sholud be installed
+	gh repo list $1 --limit 1000 | while read -r repo _; do
+		gh repo clone "$repo" "$repo"
+	done
+}
+
+# Copy value from YAML file into clipboad
+yc() {
+	yq eval "$1" "$2" | sd '\n' '' | xclip -selection clipboard
+}
+
+# Return value from YANL file wtihout new line
+yy() {
+	yq eval "$1" "$2" | sd '\n' ''
+}
+
+# create sumlink from path to the current directory
+symhere() {
+	str=$(echo $@)
+	ln -s $str ./
+}
+
+my() {
+	node ~/node/myopen/myopen.mjs $1
+}
+
+getor() {
+	local remote=$(git remote -v | head -1 | choose 1)
+	git remote -v | head -1 | choose 1 | xclip -selection clipboard
+
+	echo $remote
+}
+
+vmrss() {
+	mem_size=$(cat /proc/$1/smaps | grep Rss | awk '{print $2}' | awk '{s+=$1} END {printf "%.0f\n", s}' /dev/stdin)
+	echo $mem_size
+	echo "$(($mem_size / 1024)) MB"
+}
+
+watch_with_zsh() {
+	watch 'echo hello | zsh -c "source /path/to/functions; my_fun"'
+}
+
+bri() {
+	if test -f ./index.ts; then
+		bun run ./index.ts
+	fi
+
+	if test -f ./src/index.ts; then
+		bun run ./src/index.ts
+	fi
+}
+
+g.today_commit() {
+	repo=/home/alexs/personal/1000days
+	git --git-dir=$repo/.git -C $repo commit -m "$(cat $repo/.today_commit)"
+}
+
+g.do.today_commit() {
+	repo=/home/alexs/personal/1000days
+	git --git-dir=$repo/.git -C $repo add -A
+	git --git-dir=$repo/.git -C $repo commit -m "$(cat $repo/.today_commit)"
+}
+
+g.do.today_commit.push() {
+	repo=/home/alexs/personal/1000days
+	git --git-dir=$repo/.git -C $repo add -A
+	git --git-dir=$repo/.git -C $repo commit -m "$(cat $repo/.today_commit)"
+	git --git-dir=$repo/.git -C $repo push
+}
+
+bio(){
+  biome format --write .
+  echo "Impliment custom config and that stuff..."
+}
+
+
+jira() {
+  branch=$(git branch | rg '\*' | choose 1)
+  chrome https://firsteld.atlassian.net/browse/$branch
+}

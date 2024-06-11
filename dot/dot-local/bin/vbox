@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-  user_input=$@
-  title="\"  $user_input"
-  edge="\" ··············································································"
-
-  echo "$edge"
-  echo "$title"
-  echo "$edge"

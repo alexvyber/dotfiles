@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-cat ~/.config/awesome/gotors.lua | awesome-client
-
-
-

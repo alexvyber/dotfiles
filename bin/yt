@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+console.log(`Type Challenges - ${process.argv[2]} | ${process.argv[3]}`)
+
+

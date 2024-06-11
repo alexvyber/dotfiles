@@ -1,0 +1,291 @@
+# TODO: Make it possible to write alias like this: abbr "command"
+# path echo $PATH | tr ":" "\n" -> alias path='echo $PATH | tr ":" "\n"'
+
+# One letter
+# --
+# alias a=""
+# alias b=""
+# alias c=""
+# alias d="docker"
+# alias e=""
+# alias f=""
+alias g="git"
+# alias h="omz_history"
+alias i='clear && iex --erl "-kernel shell_history enabled"'
+# alias j="" used by  autojump
+# alias k="" used by k
+alias l="exa"
+alias m="mix"
+alias n="nvim"
+# alias o=""
+alias p="pnpm"
+# alias q=""
+# alias r=""
+alias s="systemctl"
+# alias u=""
+# alias v="vim"
+# alias t="task"
+alias w="which" # used by w, can be rebinded
+# alias x=""
+alias y="yarn"
+# alias z=""
+
+# Two letters
+# --
+alias br="broot"
+# alias zz="source ~/.zshrc" # Experiment | Delete if need z
+alias zz="zsh" # Experiment | Delete if need z
+alias py="python"
+alias xx="xplr" # can be reused
+alias pn="pnpm"
+alias yw="yarn workspace"
+alias yd="yarn dev"
+alias dc="docker-compose"
+alias tl="tldr"
+alias mk="minikube"
+alias px="pnpx"
+
+# Enable aliases for sudo
+alias sudo='sudo '
+
+# Editing config files
+# --
+EDITOR=nvim
+# alias v.rc="$EDITOR ~/.vimrc"
+# alias n.vim="nvim ~/.config/nvim/init.vim"
+# alias n.lua="nvim ~/.config/nvim/init.lua"
+alias z.rc="$EDITOR ~/.zshrc"
+alias ohmy="$EDITOR ~/dotfiles/zsh/dot-oh-my-zsh/themes/vyber.zsh-theme"
+alias aliases="$EDITOR ~/.aliases"
+alias repos="$EDITOR ~/.repos.yaml"
+alias gitconfig="$EDITOR ~/.gitconfig"
+alias bat.config="$EDITOR ~/.config/bat/config"
+alias zsh.profile="$EDITOR ~/.zsh_profile"
+alias t.conf="$EDITOR ~/.tmux.conf"
+alias kitty.conf="$EDITOR ~/.config/kitty/kitty.conf"
+alias funcs="$EDITOR ~/.functions"
+
+alias ghshit="cat ~/personal/.shitgh | xclip -selection clipboard"
+
+alias _duy="sudo dnf update -y"
+alias cwd='pwd | tr -d "\r\n" | xclip -selection clipboard'
+alias nwd='pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev |   xclip -selection clipboard '
+alias __="tmux new-window"
+alias t.rename="tmux rename-window"
+alias cmx='chmod +x'
+alias chrome="google-chrome"
+
+alias tpl="tmuxp load"
+alias :q="exit"
+alias :qa="tmux kill-server"
+alias :Q="exit"
+alias path='echo $PATH | tr ":" "\n" '
+
+# Elixir. mix, iex
+# --
+alias ism="iex -S mix"
+alias mf="mix format"        # There's some mf bin in /usr/bin...
+alias mfx="mix format *.ex*" # There's some mf bin in /usr/bin...
+alias mix_tree='tree -I "deps|_build"'
+alias mt="mix test"
+alias ismp="iex -S mix phx.server"
+
+# Replace apt with dnf
+# --
+alias apt="dnf"
+alias apt-get="dnf"
+
+# exa
+# --
+alias exa="exa --git"
+alias ll="exa -l"
+alias l1="exa -1"
+alias lg="exa | rg -i"
+alias ltr="exa --tree"
+alias l.="exa --all -I '[A-z]*'"
+alias l.rg="exa --all -I '[A-z]*' | rg -i"
+alias lrg="exa | rg -i"
+alias l~="exa $HOME"
+# alias l/="exa /"
+# alias la="exa --all "
+alias l.l="exa -l --all -I '[A-z]*'"
+
+# ls
+# --
+# alias ls="ls --color=auto"
+# alias lsa="ls -AFC"
+# alias lsl="ls -lh"
+# alias lsA="ls -alhF"
+# alias lsal="ls -Al"
+# alias lsr="ls -R"
+# alias Ls="ls --hide='[a-z]*' --group-directories-first"          # starts with upppercase
+# alias LSL="ls --hide='*[a-z]*' --group-directories-first"        # starts with upppercase
+# alias ls.="ls -d .* --color=auto --group-directories-first"      # all dot entries
+# alias ls.l="ls -lhd .* --color=auto --group-directories-first"   # all dot entries with details
+# alias ls.la="ls -Alhd .* --color=auto --group-directories-first" # all dot entries with details
+# alias ls.d="ls -d .*/ --color=auto --group-directories-first -1" # .dirs
+# alias ls.f="l. -F | grep -v /$"                                  # .files TODO make work without grep
+# alias lsc="ls --color=never"
+# alias lsh="ls -sh"
+
+# git
+# --
+alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
+alias gp="git push"
+alias ga.="git add ."
+alias gP="git -P"
+
+# -- git-open
+# -- https://github.com/paulirish/git-open
+alias gop="git open"
+
+# GitHub
+# --
+alias mygh="chrome github.com/alexvyber ; "
+alias newrepo="chrome github.com/new ; "
+alias 1000="chrome https://github.com/alexvyber/1000DaysOfCode ; "
+
+# Only for simple messages without special tockens that bash will be parsing | it was nice try:(
+alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
+alias ga.cm_p='{ read -r m && git add . && git commit -m "$m" && git push } <<<' # add all && commit message
+alias gpom="git push -u origin main"
+
+# NEW
+# --
+# CMD_PATH=~/stuff/bookmarks/cmd.sh
+# alias cmd.save='{ read -r input && echo "$input" >> $CMD_PATH && bat $CMD_PATH ; } <<<'
+# alias cmd.pop="head -n -1 $CMD_PATH >> ~/tmp/file && mv ~/tmp/file $CMD_PATH && bat $CMD_PATH"
+# alias cmd.show="bat $CMD_PATH"
+# alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
+
+alias cho="choose"
+alias cam="bat mix.exs"
+
+# Go
+# --
+alias go.f="gofmt -w *.go"
+alias go.main="go run main.go"
+alias go.README="bat ~/.oh-my-zsh/plugins/golang/README.md"
+alias go.run='{ read -r f && gofmt "$f.go" && clear && bat "$f.go" && go run "$f.go" } <<<'
+alias zinit.config="$EDITOR ~/.zsh/configs/zinit.zsh"
+alias zinit.plugins="$EDITOR ~/.zsh/plugins.zsh"
+
+# --
+alias drr="duration | sort -n"
+alias drrr="duration-file-name-first | sort -n"
+alias duu="du -csh * | sort -h"
+
+# To cjange habbit
+# --
+alias phx.start="pwd | xargs -I {} basename {} | xargs -I {} tmuxp load {}"
+
+# Docker and Podman
+# --
+# alias docker="podman"
+alias :w="git commit -m "
+
+# VS Codium
+# --
+alias cod="codium ."
+# alias code="codium "
+alias code.="code ."
+
+# JS Aliases
+# --
+alias cap="cat package.json | jq"
+alias caps='cat package.json | jq ".scripts"'
+alias capd='cat package.json | jq ".dependencies"'
+alias capdd='cat package.json | jq ".devDependencies"'
+alias bap="bat package.json"
+alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
+alias nvm="fnm"
+alias nn="fnm"
+# alias nu="fnm use"
+alias np="nvim package.json"
+alias nodee="node ~p/node-repl"
+
+# Coreutils
+# --
+# alias ln="coreutils ln"
+
+# Other
+# --
+alias readme="glow -p README.md"
+alias myip="curl ifconfig.me"
+alias btm="btm --color nord-light"
+alias doc="docker-compose"
+
+alias rip="rip --graveyard /home/alexs/tmp/.graveyard"
+
+alias task="go-task"
+
+alias rg="rg -i"
+
+alias car="cargo run -q"
+alias ca="cargo"
+# alias echo="eh"
+
+alias pd="podman "
+
+alias files="nautilus"
+alias bro="bun run"
+alias rmr="rip ~/videos/raw/*"
+# alias tt="tmuxifier"
+# alias tts="tmuxifier s"
+# alias tte="tmuxifier es"
+
+alias chrome="google-chrome"
+alias stylua="stylua --search-parent-directories"
+
+alias pd="pnpm dev"
+alias pf="pnpm format"
+alias pl="pnpm lint"
+alias plf="pnpm lint:fix"
+alias pb="pnpm build"
+alias pc="pnpm check"
+alias pi="pnpm install"
+alias pt="pnpm test"
+alias pg="pnpm gen"
+alias pgw="pnpm gen:watch"
+
+alias c.="code ."
+
+alias dus="dust -d=1 -b"
+alias ev='evince'
+alias ptb="pnpm turbo build"
+alias ptl="pnpm turbo lint"
+
+alias pbb="pnpm turbo build"
+alias pll="pnpm turbo lint"
+alias pdd="pnpm turbo dev"
+alias cw="chromium-browser"
+alias xop="xdg-open"
+alias vl2="vlc --rate 2.0"
+alias vl="vlc --rate 2.0"
+alias vl25="vlc --rate 2.5"
+alias vl5="vlc --rate 1.5"
+alias vll="vlc --rate 1.5"
+alias vlll="vlc --rate 1.75"
+alias time-on="sudo systemctl start systemd-timesyncd"
+alias time-off="sudo systemctl stop systemd-timesyncd"
+alias gpl="git -P lor"
+alias tp="tmuxp"
+alias bro.today="bun run /home/alexs/personal/@alexvyber/days/src/index.ts"
+alias npd="npm run dev"
+alias yd="yarn dev"
+alias vl.="vlc --rate 2.0 ."
+alias g.f='git status -s --no-branch | choose 1 | parallel -X prettier --write {}'
+# alias g.b="git status -s --no-branch | choose 1 | parallel -X biome format --write {}"
+
+alias ux="unrar x"
+alias bi="biome format --write ."
+alias bii="biome format --write --indent-width=4 ."
+# alias bcu="yarn format"
+# alias bcu="biome check . --apply-unsafe"
+alias gbls="git branch -l"
+alias gpsom="git push --set-upstream origin main"
+alias count.done='node -e "console.log($(fd -e md |wcl) - 1)"'
+alias count.expect='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) )"'
+alias count.diff='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) - $(fd -e md |wcl) + 1 )"'
+# alias rmrfpwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
+alias rippwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'

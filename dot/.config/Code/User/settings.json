@@ -1,0 +1,22 @@
+{
+	"workbench.sideBar.location": "right",
+	"security.workspace.trust.startupPrompt": "never",
+	"security.workspace.trust.enabled": false,
+	"editor.fontFamily": "'JetBrains Mono','Droid Sans Mono', 'monospace', monospace",
+	"extensions.ignoreRecommendations": true,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"editor.fontLigatures": true,
+	"typescript.tsdk": "/home/alexs/.local/share/fnm/node-versions/v20.11.1/installation/lib/node_modules/typescript/lib",
+	"editor.renderControlCharacters": false,
+	"workbench.statusBar.visible": true,
+	"window.menuBarVisibility": "compact",
+	"workbench.colorTheme": "Atom One Light",
+	"editor.minimap.maxColumn": 100,
+	"files.saveConflictResolution": "overwriteFileOnDisk",
+	"files.associations": {
+		"*.heex": "phoenix-heex"
+	},
+	"git.openRepositoryInParentFolders": "always",
+	// "npm.enableRunFromFolder": true,
+}
