@@ -1,29 +1,34 @@
 #!/usr/bin/env bash
 
+# imwheel
+
 # --
 
 sudo swapoff --all
 xset r rate 150 120
+# nmcli connection down alexs
+# sudo ethtool -s enp5s0 speed 100
 
 # --
 
-declare -A disks=(
-	[FILER]=sdd
-	[REPOS]=sda1
-	[SHITTER]=sdb1
-)
+# declare -A disks=(
+# 	[FILER]=sdd
+# 	[HOME]=sdc3
+# 	[SHITTER]=sdb1
+# 	[TMP]=sda
+# )
 
-for key in "${!disks[@]}"; do
-	# echo "$key => ${disks[$key]}"
-	if mountpoint -q /mnt/$key; then
-		echo "$key already mounted"
-	else
-		sudo mount /dev/${disks[$key]} /mnt/$key
-		echo "$key mounted"
-	fi
-done
+# for key in "${!disks[@]}"; do
+# 	# echo "$key => ${disks[$key]}"
+# 	if mountpoint -q /mnt/$key; then
+# 		echo "$key already mounted"
+# 	else
+# 		sudo mount /dev/${disks[$key]} /mnt/$key
+# 		echo "$key mounted"
+# 	fi
+# done
 
-sudo mount /dev/sdc /home/alexs/tmp
+# sudo mount /dev/sdb /home/alexs/tmp
 
 # --
 
@@ -34,3 +39,7 @@ cat ~/.config/awesome/gonuts.lua | awesome-client
 setxkbmap -layout us,ru
 setxkbmap -option 'grp:alt_shift_toggle'
 xmodmap ~/.Xmodmap
+
+# --
+
+# flameshot
