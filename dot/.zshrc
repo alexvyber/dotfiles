@@ -165,7 +165,7 @@ source $HOME/.functions
 
 # asdf
 # TODO move asdf to zinit installer
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
 plugins=(git docker docker-compose)
 
