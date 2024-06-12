@@ -134,6 +134,7 @@ alias gs="git status" # Ghostscript == gs ! Just in case something isn't working
 alias gp="git push"
 alias ga.="git add ."
 alias gP="git -P"
+alias gd="git diff ."
 
 # -- git-open
 # -- https://github.com/paulirish/git-open
