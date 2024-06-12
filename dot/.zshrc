@@ -89,7 +89,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
 
 # Snippet
-zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw
+# zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw
 
 # Load the pure theme, with zsh-async library that's bundled with it.
 zi ice pick"async.zsh" 
