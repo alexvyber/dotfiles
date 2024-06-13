@@ -261,20 +261,16 @@ declareHashes() {
 	# echo $result
 	typeset -r -A paths=(
 		# FILER
-		ww "/home/alexs/personal/to-rework"
 		f "/mnt/FILER"
 		js "/mnt/FILER/js"
 		ts "/mnt/FILER/ts"
 		react "/mnt/FILER/react"
 		node "/mnt/FILER/node"
-		doing "/mnt/FILER/_doing"
-		b "/mnt/FILER/b"
-		ba "/mnt/FILER/ba"
-		# SHITTER
+		doing "/mnt/FILER/doing"
+
 		s "/mnt/SHITTER"
 		t "$HOME/tmp"
-		# TORRENTER
-		trash "$HOME/tmp/trash"
+
 		# HOME
 		days "$HOME/personal/1000days"
 		cache "$HOME/.cache"
@@ -285,19 +281,15 @@ declareHashes() {
 		config "$HOME/.config"
 		nvim "$HOME/.config/nvim"
 		awesome "$HOME/.config/awesome"
-		# bookmarks "$HOME/stuff/bookmarks"
-		books "$HOME/learn/books"
+		books "$HOME/books"
 		work "$HOME/work"
 		ex "$HOME/personal/ex"
 		tmp "$HOME/tmp"
-		dotfiles "$HOME/dotfiles"
+		dot "$HOME/dotfiles"
 		code "$HOME/learn/code"
-		front "$HOME/personal/vyber/front"
-		vyber "$HOME/personal/vyber"
 		p "$HOME/personal"
 		k "$HOME/personal/katzen"
-		r "/mnt/REPOS"
-		vyber "$HOME/personal/@alexvyber"
+    v "$HOME/@alexvyber"
 	)
 	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
 } # End of function Declare hashes for zsh

@@ -1,22 +1,29 @@
 #!/usr/bin/env bash
 
-session=$1
+session=MAIN
 main_window=MAIN
+
 # If we don't have main session → then create main session
-if !   tmux has-session -t "=$session" 2> /dev/null ; then
+if ! tmux has-session -t "=$session" 2> /dev/null ; then
   tmux new-session -d -s $session -n $main_window -c "~"
+  
   ! [ $TMUX ] && tmux a -t $session:$main_window && exit 0
+  
   tmux switch -t $session:$main_window
+  
   exit 0
 fi
 
 # If we don't have MAIN window → then create main window
 if ! tmux list-window -t $session | grep $main_window ; then
   tmux neww -t "=$session" -n $main_window -c "~"
+  
   exit 0
 else
+
   # read -p "Window name: " window
   window=$(pwd | rev | cut -d "/" -f1 | rev)
+
   tmux neww -n $window
 
     # Then switch to the dest
