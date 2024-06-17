@@ -5,14 +5,51 @@ const fs = require("node:fs");
 const prettierFileContent =
 `
 {
-  "$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
+  "$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
   "organizeImports": { "enabled": true },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "style": {
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "info",
+        "useBlockStatements": "error",
+        "noUselessElse": "error",
+        "noCommaOperator": "error",
+        "noDefaultExport": "warn",
+        "noImplicitBoolean": "error",
+        "noInferrableTypes": "warn",
+        "noNegationElse": "warn",
+        "noParameterAssign": "error",
+        "noRestrictedGlobals": "warn",
+        "noShoutyConstants": "warn",
+        "noUnusedTemplateLiteral": "warn",
+        "noVar": "error",
+        "useAsConstAssertion": "warn",
+        "useCollapsedElseIf": "warn",
+        "useConsistentArrayType": "error",
+        "useWhile": "error",
+        "useTemplate": "error",
+        "useSingleVarDeclarator": "error",
+        "useSingleCaseStatement": "error",
+        "useShorthandFunctionType": "error",
+        "useShorthandAssign": "info",
+        "useShorthandArrayType": "error",
+        "useSelfClosingElements": "info",
+        "useNumericLiterals": "error",
+        "useNumberNamespace": "error",
+        "useNodejsImportProtocol": "error",
+        "useNodeAssertStrict": "error",
+        "useNamingConvention": "error",
+        "useLiteralEnumMembers": "error",
+        "useImportType": "error",
+        "useFragmentSyntax": "error",
+        "useForOf": "warn",
+        "useFilenamingConvention": "info",
+        "useExportType": "error",
+        "useExponentiationOperator": "error",
+        "useEnumInitializers": "error",
+        "useDefaultParameterLast": "error"
       },
       "suspicious": {
         "noExplicitAny": "off",
@@ -22,16 +59,17 @@ const prettierFileContent =
     "ignore": ["dist", "build", "node_modules"]
   },
   "formatter": {
-    "lineWidth": 100,
+    "lineWidth": 120,
     "indentStyle": "space",
     "indentWidth": 2,
-    "ignore": ["dist", "build", "node_modules"]
+    "ignore": ["dist", "build", "node_modules"],
+    "attributePosition": "multiline"
   },
   "javascript": {
     "formatter": {
       "semicolons": "asNeeded",
-      "trailingComma": "es5",
-      "arrowParentheses": "asNeeded"
+      "trailingCommas": "es5",
+      "arrowParentheses": "always"
     }
   }
 }
