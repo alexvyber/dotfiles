@@ -7,7 +7,22 @@ const prettierFileContent =
 {
   "$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
   "organizeImports": { "enabled": true },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "trailingCommas": "es5",
+      "arrowParentheses": "always"
+    }
+  },
+  "formatter": {
+    "lineWidth": 120,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "ignore": ["dist", "build", "node_modules"],
+    "attributePosition": "multiline"
+  },
   "linter": {
+    "ignore": ["dist", "build", "node_modules"],
     "enabled": true,
     "rules": {
       "recommended": true,
@@ -187,23 +202,9 @@ const prettierFileContent =
         "noDelete": "error",
         "noReExportAll": "error"
       }
-    },
-    "ignore": ["dist", "build", "node_modules"]
-  },
-  "formatter": {
-    "lineWidth": 120,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "ignore": ["dist", "build", "node_modules"],
-    "attributePosition": "multiline"
-  },
-  "javascript": {
-    "formatter": {
-      "semicolons": "asNeeded",
-      "trailingCommas": "es5",
-      "arrowParentheses": "always"
     }
   }
+
 }
 `;
 
