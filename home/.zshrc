@@ -92,7 +92,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-zi ice pick"async.zsh" 
+zi ice pick"async.zsh"
 # src"pure.zsh"
 # zi light sindresorhus/pure
 
@@ -371,3 +371,5 @@ eval "$(zoxide init zsh)"
 # eval "$(pyenv init -)"
 
 
+
+. "$HOME/.atuin/bin/env"

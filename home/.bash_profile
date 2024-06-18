@@ -13,3 +13,5 @@ export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
 
 source /home/alexs/.config/broot/launcher/bash/br
+
+. "$HOME/.atuin/bin/env"
