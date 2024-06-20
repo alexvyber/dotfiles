@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 const fs = require("node:fs");
+const path = require("node:path");
 
-const prettierFileContent =
-`
+const prettierFileContent = `
 {
   "$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
   "organizeImports": { "enabled": true },
@@ -53,7 +53,7 @@ const prettierFileContent =
         "useAsConstAssertion": "warn",
         "useNodeAssertStrict": "error",
         "useEnumInitializers": "error",
-        "useNamingConvention": "error",
+        "useNamingConvention": "off",
         "useShorthandArrayType": "error",
         "useLiteralEnumMembers": "error",
         "useSelfClosingElements": "info",
@@ -104,7 +104,7 @@ const prettierFileContent =
         "noDebugger": "warn",
         "noRedeclare": "error",
         "noConstEnum": "warn",
-        "noConsoleLog": "warn",
+        "noConsoleLog": "off",
         "noGlobalIsNan": "error",
         "noSelfCompare": "error",
         "noSparseArray": "error",
@@ -208,15 +208,31 @@ const prettierFileContent =
 }
 `;
 
-
-
-
 const fileName = "biome.json";
 
 if (!fs.existsSync(fileName)) {
   fs.writeFileSync(fileName, prettierFileContent, {
-    // encoding: "utf8",
-    // flag: "a+",
     mode: 0o644,
   });
 }
+
+async function main() {
+  const packageJsonPath = path.join(process.cwd(), "package.json");
+  if (!packageJsonPath) return;
+
+  const pj = await import(packageJsonPath, {
+    assert: { type: "json" },
+  });
+
+  Object.assign(pj.default.scripts, { format: "biome format --write ." });
+  Object.assign(pj.default.scripts, { lint: "biome lint --write ." });
+  Object.assign(pj.default.scripts, {
+    "lint:unsafe": "biome lint --write --unsafe .",
+  });
+
+  fs.writeFile(packageJsonPath, JSON.stringify(pj.default), null, (err) => {
+    console.error(err);
+  });
+}
+
+main();
