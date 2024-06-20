@@ -165,7 +165,7 @@ const prettierFileContent = `
         "useArrayLiterals": "error",
         "noVoidTypeReturn": "error",
         "useHookAtTopLevel": "error",
-        "noUnusedVariables": "error",
+        "noUnusedVariables": "off",
         "noFlatMapIdentity": "error",
         "noUnreachableSuper": "error",
         "useJsxKeyInIterable": "warn",
