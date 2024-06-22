@@ -68,7 +68,7 @@ const prettierFileContent = `
         "useExponentiationOperator": "error"
       },
       "complexity": {
-        "noVoid": "error",
+        "noVoid": "off",
         "noWith": "error",
         "noForEach": "error",
         "useFlatMap": "error",
@@ -99,7 +99,7 @@ const prettierFileContent = `
         "noExcessiveCognitiveComplexity": { "level": "warn", "options": { "maxAllowedComplexity": 10 } }
       },
       "suspicious": {
-        "useAwait": "error",
+        "useAwait": "off",
         "useIsArray": "error",
         "noDebugger": "warn",
         "noRedeclare": "error",
@@ -124,7 +124,7 @@ const prettierFileContent = `
         "noFunctionAssign": "error",
         "noUnsafeNegation": "error",
         "noImplicitAnyLet": "error",
-        "noEmptyInterface": "warn",
+        "noEmptyInterface": "off",
         "noCompareNegZero": "error",
         "noConfusingLabels": "error",
         "noPrototypeBuiltins": "error",
