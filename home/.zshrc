@@ -169,7 +169,6 @@ source $HOME/.functions
 # source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # asdf
-# TODO move asdf to zinit installer
 # . $HOME/.asdf/asdf.sh
 
 plugins=(git docker docker-compose)
@@ -377,4 +376,5 @@ eval "$(zoxide init zsh)"
 
 
 
-. "$HOME/.atuin/bin/env"
+# . "$HOME/.atuin/bin/env"
+# . /opt/homebrew/opt/asdf/libexec/asdf.sh
