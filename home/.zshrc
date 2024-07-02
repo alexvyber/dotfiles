@@ -373,3 +373,15 @@ eval "$(zoxide init zsh)"
 
 # . "$HOME/.atuin/bin/env"
 # . /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/alexs/Library/Application Support/Herd/config/php/83/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/alexs/Library/Application Support/Herd/bin/":$PATH
+export PATH="/opt/homebrew/opt/krb5/bin:$PATH"

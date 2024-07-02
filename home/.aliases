@@ -290,3 +290,4 @@ alias count.expect='node -e "console.log(Math.ceil((new Date().getTime() - new D
 alias count.diff='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) - $(fd -e md |wcl) + 1 )"'
 # alias rmrfpwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
 alias rippwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
+alias plb="biome lint --write ."
