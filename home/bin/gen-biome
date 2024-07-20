@@ -12,6 +12,9 @@ const prettierFileContent = `
       "semicolons": "asNeeded",
       "trailingCommas": "es5",
       "arrowParentheses": "always"
+    },
+    "parser" : {
+      "unsafeParameterDecoratorsEnabled": true
     }
   },
   "formatter": {
@@ -32,7 +35,7 @@ const prettierFileContent = `
         "useForOf": "warn",
         "useTemplate": "error",
         "noArguments": "warn",
-        "useImportType": "error",
+        "useImportType": "off",
         "noUselessElse": "error",
         "useExportType": "error",
         "noNegationElse": "warn",
