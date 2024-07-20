@@ -1,4 +1,8 @@
 
+# node 
+export NODE_MODULES_CACHE="$HOME/.node/cache"
+# node end
+
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=10000000
 export HISTSIZE=10000000
@@ -385,3 +389,13 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/alexs/Library/Application Support/Herd/c
 # Herd injected PHP binary.
 export PATH="/Users/alexs/Library/Application Support/Herd/bin/":$PATH
 export PATH="/opt/homebrew/opt/krb5/bin:$PATH"
+export PATH=/path/to/depot_tools:$PATH
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/alexs/.opam/opam-init/init.zsh' ]] || source '/Users/alexs/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration

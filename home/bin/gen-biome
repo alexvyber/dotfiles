@@ -223,9 +223,7 @@ async function main() {
   const packageJsonPath = path.join(process.cwd(), "package.json");
   if (!packageJsonPath) return;
 
-  const pj = await import(packageJsonPath, {
-    assert: { type: "json" },
-  });
+  const pj = await import(packageJsonPath, { with: { type: 'json' } });
 
   Object.assign(pj.default.scripts, { format: "biome format --write ." });
   Object.assign(pj.default.scripts, { lint: "biome lint --write ." });
