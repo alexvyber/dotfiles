@@ -17,4 +17,5 @@ bindkey -s "^[r" "tmux-change-session\n"
 
 bindkey -s "\e[21~" "tmux kill-server\n"
 bindkey -s "\e[20~" "tmux kill-window -a\n"
+bindkey '^ ' "autosuggest-accept"
 

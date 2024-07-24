@@ -133,6 +133,7 @@ ga.cm.today() {
 	# fi
 }
 
+unalias gcm
 gcm() {
 	# This function exist only to not use quotes. That's stupid!
 	# for loop with $* expand all input into one string
@@ -257,8 +258,6 @@ pdfShitMore() {
 # TODO: MAKE this work automaticly with current folders on drives
 
 declareHashes() {
-	# local result=$(ls /mnt/FILER/)
-	# echo $result
 	typeset -r -A paths=(
 		# FILER
 		f "/mnt/FILER"
@@ -289,11 +288,10 @@ declareHashes() {
 		code "$HOME/learn/code"
 		p "$HOME/personal"
 		k "$HOME/personal/katzen"
-    v "$HOME/@alexvyber"
+        v "$HOME/@alexvyber"
 	)
 	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
 } # End of function Declare hashes for zsh
-
 
 mkd() {
 	mkdir "$1"
@@ -426,7 +424,6 @@ function new_ex {
 	chmod +x $1
 }
 
-
 # TODO: try to develop this into standalone app
 
 getFile() {
@@ -474,7 +471,6 @@ getFile() {
 # 	[[ $value == "yarn" ]] && command="yarn dev" || command="$value run dev"
 # 	eval $command
 # }
-
 
 # Switch files or directories content
 # TODO: move somewhere else
@@ -591,13 +587,31 @@ g.do.today_commit.push() {
 	git --git-dir=$repo/.git -C $repo push
 }
 
-bio(){
-  biome format --write .
-  echo "Impliment custom config and that stuff..."
+bio() {
+	biome format --write .
+	echo "Impliment custom config and that stuff..."
 }
 
-
 jira() {
-  branch=$(git branch | rg '\*' | choose 1)
-  chrome https://firsteld.atlassian.net/browse/$branch
+	branch=$(git branch | rg '\*' | choose 1)
+	chrome https://firsteld.atlassian.net/browse/$branch
+}
+
+# converts image file given as $1 to webp
+# optionally specify the quality as $2, defaults to 50/100
+function image-to-webp() {
+	# Works only on MacOS becaus of `sips`
+	if [[ $(uname) != "Darwin" ]]; then
+		echo "Works only on MacOS"
+		return 1
+	fi
+
+	file=$1
+	basename="${file%.*}"
+	quality=${2:-50}
+
+	sips -s format jpeg $file --out $basename.jpeg
+	docker run --rm -v "$PWD":/here -w /here ghcr.io/toy/image_optim $basename.jpeg
+	cwebp -q $quality $basename.jpeg -o $basename.webp
+	rm $basename.jpeg
 }

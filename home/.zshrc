@@ -1,6 +1,7 @@
 
 # node 
 export NODE_MODULES_CACHE="$HOME/.node/cache"
+export NODE_COMPILE_CACHE="$HOME/.node/cache"
 # node end
 
 export HISTFILE=~/.zsh_history
@@ -72,6 +73,21 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # cargo
 . "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/go/bin
+
+
+# Stylef fot history search
+source $ZSH/oh-my-zsh.sh
+source $HOME/.aliases
+source $HOME/.zsh_keybindings
+source $HOME/.zsh_docker
+source $HOME/.zsh_podman
+source $HOME/.functions
+source $HOME/.zstyle
+# source ~/.local/fzf/key-bindings.zsh
+# source ~/.local/fzf/completion.zsh
+# source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
+# source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 
@@ -158,19 +174,6 @@ zi load docker/compose
 
 
 
-# Stylef fot history search
-source $HOME/.zstyle
-source $ZSH/oh-my-zsh.sh
-source $HOME/.zsh_keybindings
-source $HOME/.zsh_docker
-source $HOME/.zsh_podman
-source $HOME/.aliases
-source $HOME/.functions
-# source ~/.local/fzf/key-bindings.zsh
-# source ~/.local/fzf/completion.zsh
-# source ~/.oh-my-zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
-# source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # asdf
 # . $HOME/.asdf/asdf.sh
