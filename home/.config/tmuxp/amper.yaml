@@ -12,7 +12,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: zsh
+    shell_command: code .
   start_directory: /home/alexs/work/amperspb/cms
   window_name: cms
 - layout: cbe0,277x66,0,0,3
@@ -33,7 +33,7 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-    shell_command: zsh
+    shell_command: code .
   start_directory: /home/alexs/work/amperspb/web
   window_name: web
 - layout: cbe3,277x66,0,0,6
