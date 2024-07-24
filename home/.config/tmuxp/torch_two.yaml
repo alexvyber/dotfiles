@@ -1,0 +1,43 @@
+session_name: torch_two
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/lib
+  window_name: lib
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/lib/torch_two
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/lib/torch_two_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/lib/torch_two_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/lib/torch_two_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/examples/torch_two/assets/
+  window_name: assets

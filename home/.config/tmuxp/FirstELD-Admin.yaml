@@ -1,0 +1,17 @@
+session_name: FirstELD-Admin
+windows:
+- layout: d6bd,137x69,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: npm run start
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: npm
+- focus: 'true'
+  layout: d6be,137x69,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: code .
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: root

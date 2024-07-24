@@ -1,0 +1,43 @@
+session_name: csv
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/lib/csv
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/lib/csv_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/dev
+  window_name: dev
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/lib/csv_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/work/ex-test/csv/test/
+  window_name: test

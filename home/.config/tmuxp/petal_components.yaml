@@ -1,0 +1,43 @@
+session_name: petal_components
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/lib/petal_components
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/lib/petal_components_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/dev
+  window_name: dev
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/lib/petal_components_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/petal_components/test/
+  window_name: test

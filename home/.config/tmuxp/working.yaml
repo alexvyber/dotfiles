@@ -1,0 +1,43 @@
+session_name: working
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/lib/working
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/lib/working_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/dev
+  window_name: dev
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/lib/working_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/books/ex/real_time_phoenix/working/test/
+  window_name: test

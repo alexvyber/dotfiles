@@ -1,0 +1,33 @@
+session_name: nine
+windows:
+- layout: tiled
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine/lib
+  window_name: lib
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine/lib/nine
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine/lib/nine_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine/test/
+  window_name: test
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/nine/config/
+  window_name: config

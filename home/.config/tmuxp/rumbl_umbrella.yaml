@@ -1,0 +1,21 @@
+session_name: rumbl_umbrella
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/ph14/rumbl_umbrella
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/apps/rumbl
+  window_name: rumbl
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/learn/ph14/rumbl_umbrella/apps/rumbl_web/
+  window_name: rumbl_web
+- layout: tiled
+  panes:
+  - shell_command:
+    - iex -S mix phx.server
+  shell_command_before:
+  - cd /home/alexs/learn/ph14/rumbl_umbrella
+  window_name: run

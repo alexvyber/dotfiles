@@ -1,0 +1,21 @@
+session_name: qlur_umbrella
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/qlur_crm/qlur_umbrella
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/qlur_crm/qlur_umbrella/apps/qlur
+  window_name: qlur
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/qlur_crm/qlur_umbrella/apps/qlur_web/
+  window_name: qlur_web
+- layout: tiled
+  panes:
+  - shell_command:
+    - iex -S mix phx.server
+  shell_command_before:
+  - cd /home/alexs/elixir/qlur_crm/qlur_umbrella
+  window_name: run

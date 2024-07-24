@@ -1,0 +1,43 @@
+session_name: react-phoenix-ts
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/lib/react-phoenix-ts
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/lib/react-phoenix-ts_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/lib/react-phoenix-ts_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/lib/react-phoenix-ts_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/react-phoenix-ts/test/
+  window_name: test

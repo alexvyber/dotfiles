@@ -1,0 +1,43 @@
+session_name: sender
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/lib/sender
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/lib/sender_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/lib/sender_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/lib/sender_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/sender/test/
+  window_name: test

@@ -1,0 +1,65 @@
+session_name: first-land
+windows:
+- layout: c75d,276x65,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fnm use && pnpm dev
+  start_directory: /home/alexs/work/first-eld/first-eld-landing/client
+  window_name: client-dev
+- layout: c75e,276x65,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fnm use && yarn dev
+  start_directory: /home/alexs/work/first-eld/first-eld-landing/cms
+  window_name: cms-dev
+- layout: c75f,276x65,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-landing/client
+  window_name: client
+- layout: c760,276x65,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-landing/client
+  window_name: client
+- layout: c761,276x65,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-landing/cms
+  window_name: cms
+- layout: c762,276x65,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-landing
+  window_name: root
+- layout: c763,276x65,0,0,6
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-landing
+  window_name: root
+- layout: c764,276x65,0,0,7
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-landing
+  window_name: root
+- focus: 'true'
+  layout: c765,276x65,0,0,8
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/alexs/work/first-eld/first-eld-landing
+  window_name: root

@@ -1,0 +1,33 @@
+session_name: eleven
+windows:
+- layout: tiled
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven/lib
+  window_name: lib
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven/lib/eleven
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven/lib/eleven_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven/test/
+  window_name: test
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/eleven/config/
+  window_name: config

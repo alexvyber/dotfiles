@@ -1,0 +1,39 @@
+session_name: twenty_one_umbrella
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/lib
+  window_name: lib
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/lib/twenty_one_umbrella
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/lib/twenty_one_umbrella_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/test/
+  window_name: test
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/tmp/twenty_one_umbrella/assets/
+  window_name: assets
