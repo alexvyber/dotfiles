@@ -189,18 +189,18 @@ vs() {
 	fnm --version
 	echo "pnpm $(pnpm -v)"
 	echo "yarn $(yarn -v) \n"
-	# echo "$(deno --version | cut_tail 1 2)"
+	echo "$(deno --version | cut_tail 1 2)"
 	echo "bun $(bun --version)\n"
 	echo "$(elixir -v | sed -n 3p | cut_tail 1 2)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
 	python --version
 	go version | sed s/"version "// | sed s/"go1"/"1"/ | cut_tail 1 2
 	rustc --version | cut_tail 1 2
 	cargo --version | cut_tail 1 2
-	# v --version | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	v --version | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
 	echo "$(lua -v | cut_tail 1 3)" | xargs -I {} node -e "console.log('{}'.toLowerCase())"
 	# php --version | sed -n 1p | cut_tail 1 2 | xargs -I {} node -e "console.log('{}'.toLowerCase())"
 	echo ""
-	# docker -v | sed s/" version"// | cut_tail 1 2 | sed s/","// | xargs -I {} node -e "console.log('{}'.toLowerCase())"
+	docker -v | sed s/" version"// | cut_tail 1 2 | sed s/","// | xargs -I {} node -e "console.log('{}'.toLowerCase())"
 	# echo "podman $(podman version | sed -n 2p)" | sed s/" Version:     "//
 	# psql --version | sed s/"psql (PostgreSQL)"/"postgres"/
 	# echo "caddy $(caddy version)" | sed s/"v"// | cut_tail 1 2

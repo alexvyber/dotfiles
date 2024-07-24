@@ -11,6 +11,6 @@ fi
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
 
-. "$HOME/.atuin/bin/env"
+source /home/alexs/.config/broot/launcher/bash/br
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+. "$HOME/.atuin/bin/env"

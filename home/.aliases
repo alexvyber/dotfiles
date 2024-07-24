@@ -14,7 +14,7 @@
 # alias i='clear && iex --erl "-kernel shell_history enabled"'
 # alias j="" used by  autojump
 # alias k="" used by k
-alias l="exa"
+alias l="eza"
 # alias m="mix"
 alias n="nvim"
 # alias o=""
@@ -95,20 +95,20 @@ alias ismp="iex -S mix phx.server"
 alias apt="dnf"
 alias apt-get="dnf"
 
-# exa
+# eza
 # --
-alias exa="exa --git"
-alias ll="exa -l"
-alias l1="exa -1"
-alias lg="exa | rg -i"
-alias ltr="exa --tree"
-alias l.="exa --all -I '[A-z]*'"
-alias l.rg="exa --all -I '[A-z]*' | rg -i"
-alias lrg="exa | rg -i"
-alias l~="exa $HOME"
-# alias l/="exa /"
-# alias la="exa --all "
-alias l.l="exa -l --all -I '[A-z]*'"
+alias eza="eza --git"
+alias ll="eza -l"
+alias l1="eza -1"
+alias lg="eza | rg -i"
+alias ltr="eza --tree"
+alias l.="eza --all -I '[A-z]*'"
+alias l.rg="eza --all -I '[A-z]*' | rg -i"
+alias lrg="eza | rg -i"
+alias l~="eza $HOME"
+# alias l/="eza /"
+# alias la="eza --all "
+alias l.l="eza -l --all -I '[A-z]*'"
 
 # ls
 # --
@@ -289,5 +289,5 @@ alias count.done='node -e "console.log($(fd -e md |wcl) - 1)"'
 alias count.expect='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) )"'
 alias count.diff='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) - $(fd -e md |wcl) + 1 )"'
 # alias rmrfpwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
-alias rippwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
-alias plb="biome lint --write ."
+alias rippwd='rip ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
+alias after-fnm-use="go-task -t ~/.config/task/install_global_npm_packages.yaml install"
