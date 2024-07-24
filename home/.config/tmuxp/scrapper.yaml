@@ -1,0 +1,43 @@
+session_name: scrapper
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/lib/scrapper
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/lib/scrapper_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/lib/scrapper_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/lib/scrapper_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/scrapper/test/
+  window_name: test

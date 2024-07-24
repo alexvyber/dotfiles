@@ -1,0 +1,43 @@
+session_name: katzen
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/lib/katzen
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/lib/katzen_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/dev
+  window_name: dev
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/lib/katzen_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/personal/ex/katzen/test/
+  window_name: test

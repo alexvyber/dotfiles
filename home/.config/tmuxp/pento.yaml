@@ -1,0 +1,43 @@
+session_name: pento
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/lib/pento
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/lib/pento_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/lib/pento_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/lib/pento_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/programming_phoenix_live_view/working/pento/test/
+  window_name: test

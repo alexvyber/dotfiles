@@ -1,0 +1,43 @@
+session_name: api
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/lib/api
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/lib/api_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/lib/api_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/lib/api_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/crm/root/api/test/
+  window_name: test

@@ -1,0 +1,43 @@
+session_name: plate_slate
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/lib/plate_slate
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/lib/plate_slate_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/lib/plate_slate_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/lib/plate_slate_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/graphql_elixir_absinthe/working/plate_slate/test/
+  window_name: test

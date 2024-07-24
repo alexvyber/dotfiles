@@ -1,0 +1,44 @@
+session_name: first-eld_marketing
+windows:
+- layout: d6bd,137x69,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fnm use && yarn dev
+  start_directory: /home/alexs/work/first-eld/marketing/cms 
+  window_name: cms
+- layout: d6be,137x69,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fnm use && pnpm dev
+  start_directory: /home/alexs/work/first-eld/marketing/client
+  window_name: client
+- layout: d6bf,137x69,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: fnm use && pnpm gen:watch
+  start_directory: /home/alexs/work/first-eld/marketing/client
+  window_name: client-gen
+- layout: d6c0,137x69,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    # shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/marketing
+  window_name: root
+- focus: 'true'
+  layout: d6c1,137x69,0,0,4
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/alexs/work/first-eld/marketing
+  window_name: root
+- layout: d6c2,137x69,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+    # shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/marketing
+  window_name: root

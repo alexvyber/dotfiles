@@ -1,0 +1,66 @@
+session_name: first
+windows:
+- focus: 'true'
+  layout: c6be,137x65,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: pnpm install && pnpm dev
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: first-eld-admin
+- layout: c6bf,137x65,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: code .
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: zsh
+- layout: c6c0,137x65,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: zsh
+- layout: c6c1,137x65,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: zsh
+- layout: c6c2,137x65,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: zsh
+- layout: c6c3,137x65,0,0,6
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: zsh
+- layout: c6c4,137x65,0,0,7
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/alexs/work/first-eld/first-eld-admin
+  window_name: zsh
+- layout: c6c5,137x65,0,0,8
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: yarn dev
+  start_directory: /home/alexs/to-rework/mui/minimal/vite-ts-v5.7
+  window_name: zsh
+- layout: c6c6,137x65,0,0,9
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: code .
+  start_directory: /home/alexs/to-rework/mui/minimal/vite-ts-v5.7
+  window_name: zsh

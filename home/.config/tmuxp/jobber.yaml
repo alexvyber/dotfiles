@@ -1,0 +1,43 @@
+session_name: jobber
+windows:
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber
+  window_name: root
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/lib/jobber
+  window_name: model
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/lib/jobber_web/
+  window_name: web
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber
+  - l
+  window_name: run
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/priv/
+  window_name: priv
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/lib/jobber_web/live
+  window_name: live
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/config/
+  window_name: config
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/assets/
+  window_name: assets
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/lib/jobber_web/templates
+  window_name: templates
+- layout: tiled
+  shell_command_before:
+  - cd /home/alexs/elixir/learn/concurrent_data_processing_in_elixir/working/jobber/test/
+  window_name: test
