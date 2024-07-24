@@ -133,7 +133,6 @@ ga.cm.today() {
 	# fi
 }
 
-unalias gcm
 gcm() {
 	# This function exist only to not use quotes. That's stupid!
 	# for loop with $* expand all input into one string
