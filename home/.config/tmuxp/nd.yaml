@@ -5,28 +5,28 @@ windows:
   panes:
   - focus: 'true'
     shell_command: yarn develop
-  start_directory: /home/alexs/work/nd/root/api
+  start_directory: ~/work/nd/root/api
   window_name: api-run
 - layout: cbde,277x66,0,0,1
   options: {}
   panes:
   - focus: 'true'
     shell_command: code .
-  start_directory: /home/alexs/work/nd/root/api
+  start_directory: ~/work/nd/root/api
   window_name: api
 - layout: cbdf,277x66,0,0,2
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/nd/root/api
+  start_directory: ~/work/nd/root/api
   window_name: api
 - layout: cbe0,277x66,0,0,3
   options: {}
   panes:
   - focus: 'true'
     shell_command: pnpm dev
-  start_directory: /home/alexs/work/nd/root/client
+  start_directory: ~/work/nd/root/client
   window_name: client-run
 - focus: 'true'
   layout: cbe1,277x66,0,0,4
@@ -34,47 +34,47 @@ windows:
   panes:
   - focus: 'true'
     shell_command: pnpm gen
-  start_directory: /home/alexs/work/nd/root/client
+  start_directory: ~/work/nd/root/client
   window_name: client
 - layout: cbe2,277x66,0,0,5
   options: {}
   panes:
   - focus: 'true'
     shell_command: code .
-  start_directory: /home/alexs/work/nd/root/client
+  start_directory: ~/work/nd/root/client
   window_name: client
 - layout: cbe3,277x66,0,0,6
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/nd/root
+  start_directory: ~/work/nd/root
   window_name: one
 - layout: cbe4,277x66,0,0,7
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/nd/root
+  start_directory: ~/work/nd/root
   window_name: two
 - layout: cbe5,277x66,0,0,8
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/nd/root
+  start_directory: ~/work/nd/root
   window_name: three
 - layout: cbe6,277x66,0,0,9
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/nd/root
+  start_directory: ~/work/nd/root
   window_name: some
 - layout: 661f,277x66,0,0,10
   options: {}
   panes:
   - focus: 'true'
     shell_command: ./run-dev.sh
-  start_directory: /home/alexs/work/nd/root/run
+  start_directory: ~/work/nd/root/run
   window_name: docker
