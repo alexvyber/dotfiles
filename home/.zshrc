@@ -4,6 +4,8 @@ export NODE_MODULES_CACHE="$HOME/.node/cache"
 export NODE_COMPILE_CACHE="$HOME/.node/cache"
 # node end
 
+export DISABLE_AUTO_TITLE='true'
+
 export HISTFILE=~/.zsh_history
 export HISTFILESIZE=10000000
 export HISTSIZE=10000000
