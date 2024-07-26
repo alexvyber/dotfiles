@@ -34,7 +34,7 @@ alias w="which" # used by w, can be rebinded
 # --
 alias br="broot"
 # alias zz="source ~/.zshrc" # Experiment | Delete if need z
-alias zz="zsh" # Experiment | Delete if need z
+alias zz="source ~/.zshrc" # Experiment | Delete if need z
 # alias py="python"
 alias xx="xplr" # can be reused
 # alias pn="pnpm"
@@ -235,7 +235,6 @@ alias rmr="rip ~/videos/raw/*"
 # alias tts="tmuxifier s"
 # alias tte="tmuxifier es"
 
-alias chrome="google-chrome"
 alias stylua="stylua --search-parent-directories"
 
 alias pd="pnpm dev"
