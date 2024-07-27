@@ -1,5 +1,35 @@
 #!/usr/bin/env zsh
 
+# utils
+get_os() {
+
+	case "$(uname -sr)" in
+
+	Darwin*)
+		echo 'mac'
+		;;
+
+	Linux*Microsoft*)
+		echo 'wsl'
+		;;
+
+	Linux*)
+		echo 'linux'
+		;;
+
+	CYGWIN* | MINGW* | MINGW32* | MSYS*)
+		echo 'windows'
+		;;
+
+	*)
+		echo 'other'
+		;;
+
+	esac
+}
+
+
+
 source ~/.zsh_docker
 
 # Colorful ouput
@@ -614,3 +644,9 @@ function image-to-webp() {
 	cwebp -q $quality $basename.jpeg -o $basename.webp
 	rm $basename.jpeg
 }
+
+# cwd () {
+# 	os="$(get_os)"
+# 	echo $os
+# }
+
