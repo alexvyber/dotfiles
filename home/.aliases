@@ -32,18 +32,7 @@ alias w="which" # used by w, can be rebinded
 
 # Two letters
 # --
-alias br="broot"
-# alias zz="source ~/.zshrc" # Experiment | Delete if need z
 alias zz="source ~/.zshrc" # Experiment | Delete if need z
-# alias py="python"
-alias xx="xplr" # can be reused
-# alias pn="pnpm"
-# alias yw="yarn workspace"
-# alias yd="yarn dev"
-# alias dc="docker-compose"
-# alias tl="tldr"
-# alias mk="minikube"
-# alias px="pnpx"
 
 # Enable aliases for sudo
 alias sudo='sudo '
@@ -90,10 +79,6 @@ alias mix_tree='tree -I "deps|_build"'
 alias mt="mix test"
 alias ismp="iex -S mix phx.server"
 
-# Replace apt with dnf
-# --
-alias apt="dnf"
-alias apt-get="dnf"
 
 # eza
 # --
@@ -143,9 +128,9 @@ alias gop="git open"
 
 # GitHub
 # --
-alias mygh="chrome github.com/alexvyber ; "
-alias newrepo="chrome github.com/new ; "
-alias 1000="chrome https://github.com/alexvyber/1000DaysOfCode ; "
+alias mygh="open_link github.com/alexvyber"
+alias newrepo="open_link github.com/new"
+alias 1000="open_link github.com/alexvyber/1000DaysOfCode"
 
 # Only for simple messages without special tockens that bash will be parsing | it was nice try:(
 alias ga.cm='{ read -r m && git add . && git commit -m "$m" ; } <<<'             # add all && commit message
@@ -160,8 +145,6 @@ alias gpom="git push -u origin main"
 # alias cmd.show="bat $CMD_PATH"
 # alias timer='echo "Timer started. Stop with Ctrl-D." && date +"%H:%M:%S" && time cat && date +"%H:%M:%S"'
 
-alias cho="choose"
-alias cam="bat mix.exs"
 
 # Go
 # --
@@ -188,8 +171,6 @@ alias :w="git commit -m "
 
 # VS Codium
 # --
-alias cod="codium ."
-# alias code="codium "
 alias code.="code ."
 
 # JS Aliases
@@ -201,38 +182,26 @@ alias capdd='cat package.json | jq ".devDependencies"'
 alias bap="bat package.json"
 alias prets="prettier --write '*/**/*.(js|jsx|ts|tsx|md)|*.ts'"
 alias nvm="fnm"
-alias nn="fnm"
-# alias nu="fnm use"
 alias np="nvim package.json"
-alias nodee="node ~p/node-repl"
 
-# Coreutils
-# --
-# alias ln="coreutils ln"
 
 # Other
 # --
 alias readme="glow -p README.md"
 alias myip="curl ifconfig.me"
 alias btm="btm --color nord-light"
-alias doc="docker-compose"
 
 # alias rip="rip --graveyard $HOME/tmp/.graveyard"
-
 alias rg="rg -i"
 
 alias car="cargo run -q"
 alias ca="cargo"
-# alias echo="eh"
 
 alias pd="podman "
 
 alias files="nautilus"
 alias bro="bun run"
 alias rmr="rip ~/videos/raw/*"
-# alias tt="tmuxifier"
-# alias tts="tmuxifier s"
-# alias tte="tmuxifier es"
 
 alias stylua="stylua --search-parent-directories"
 
@@ -257,7 +226,6 @@ alias ptl="pnpm turbo lint"
 alias pbb="pnpm turbo build"
 alias pll="pnpm turbo lint"
 alias pdd="pnpm turbo dev"
-alias cw="chromium-browser"
 alias xop="xdg-open"
 alias vl2="vlc --rate 2.0"
 alias vl="vlc --rate 2.0"
@@ -286,5 +254,4 @@ alias gpsom="git push --set-upstream origin main"
 alias count.done='node -e "console.log($(fd -e md |wcl) - 1)"'
 alias count.expect='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) )"'
 alias count.diff='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) - $(fd -e md |wcl) + 1 )"'
-# alias rmrfpwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
 alias rippwd='rip ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'

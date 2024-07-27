@@ -1,36 +1,8 @@
 #!/usr/bin/env zsh
 
-# utils
-get_os() {
-
-	case "$(uname -sr)" in
-
-	Darwin*)
-		echo 'mac'
-		;;
-
-	Linux*Microsoft*)
-		echo 'wsl'
-		;;
-
-	Linux*)
-		echo 'linux'
-		;;
-
-	CYGWIN* | MINGW* | MINGW32* | MSYS*)
-		echo 'windows'
-		;;
-
-	*)
-		echo 'other'
-		;;
-
-	esac
-}
-
-
-
+source ~/.functions_declare_hashes.zsh
 source ~/.zsh_docker
+source ~/.functions_new
 
 # Colorful ouput
 # https://stackoverflow.com/a/5947802
@@ -275,52 +247,8 @@ pdfShitMore() {
 		pdftk "$i" cat 4-end output shit.pdf
 		mv shit.pdf "${name}.pdf"
 
-		# rm shit.pdf
 	done
 }
-
-# !!! ZSH specific !!!
-# Declare hashes for zsh
-# Globals: nothing
-# Input:   nothing
-# Output:  nothing
-# TODO: MAKE this work automaticly with current folders on drives
-
-declareHashes() {
-	typeset -r -A paths=(
-		# FILER
-		f "/mnt/FILER"
-		js "/mnt/FILER/js"
-		ts "/mnt/FILER/ts"
-		react "/mnt/FILER/react"
-		node "/mnt/FILER/node"
-		doing "/mnt/FILER/doing"
-
-		s "/mnt/SHITTER"
-		t "$HOME/tmp"
-
-		# HOME
-		days "$HOME/personal/1000days"
-		cache "$HOME/.cache"
-		learn "$HOME/learn"
-		crm "$HOME/work/crm"
-		client "$HOME/work/gate/kardon.pro/client"
-		local "$HOME/.local"
-		config "$HOME/.config"
-		nvim "$HOME/.config/nvim"
-		awesome "$HOME/.config/awesome"
-		books "$HOME/books"
-		work "$HOME/work"
-		ex "$HOME/personal/ex"
-		tmp "$HOME/tmp"
-		dot "$HOME/dotfiles"
-		code "$HOME/learn/code"
-		p "$HOME/personal"
-		k "$HOME/personal/katzen"
-        v "$HOME/@alexvyber"
-	)
-	for k in "${(@k)paths}" ; do hash -d $k=$paths[$k] ; done
-} # End of function Declare hashes for zsh
 
 mkd() {
 	mkdir "$1"
@@ -644,9 +572,3 @@ function image-to-webp() {
 	cwebp -q $quality $basename.jpeg -o $basename.webp
 	rm $basename.jpeg
 }
-
-# cwd () {
-# 	os="$(get_os)"
-# 	echo $os
-# }
-

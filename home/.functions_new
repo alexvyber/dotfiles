@@ -1,0 +1,41 @@
+get_os() {
+	case "$(uname -sr)" in
+
+	Darwin*)
+		echo 'mac'
+		;;
+
+	Linux*Microsoft*)
+		echo 'wsl'
+		;;
+
+	Linux*)
+		echo 'linux'
+		;;
+
+	CYGWIN* | MINGW* | MINGW32* | MSYS*)
+		echo 'windows'
+		;;
+
+	*)
+		echo 'other'
+		;;
+
+	esac
+}
+
+open_link() {
+
+	case "$(get_os)" in
+
+	mac)
+		open -a "Google Chrome" https://$1
+		;;
+
+	linux)
+		google-chrome $1
+		;;
+
+	esac
+
+}
