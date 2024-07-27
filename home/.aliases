@@ -219,8 +219,6 @@ alias doc="docker-compose"
 
 # alias rip="rip --graveyard $HOME/tmp/.graveyard"
 
-alias task="go-task"
-
 alias rg="rg -i"
 
 alias car="cargo run -q"
@@ -290,4 +288,3 @@ alias count.expect='node -e "console.log(Math.ceil((new Date().getTime() - new D
 alias count.diff='node -e "console.log(Math.ceil((new Date().getTime() - new Date(\"2022-06-01\").getTime()) / 24 / 60 / 60 / 1000) - $(fd -e md |wcl) + 1 )"'
 # alias rmrfpwd='rm -rf ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
 alias rippwd='rip ../$(pwd | tr -d "\r\n" | rev | cut -d"/" -f1 | rev) && cd ../'
-alias after-fnm-use="go-task -t ~/.config/task/install_global_npm_packages.yaml install"
