@@ -1,0 +1,1 @@
+node $HOME/scripts/src/random-time.mjs $PWD $1

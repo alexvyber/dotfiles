@@ -1,0 +1,1 @@
+node $HOME/scripts/src/print-time-of-mp3-files.mjs $PWD $1
