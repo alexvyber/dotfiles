@@ -39,3 +39,33 @@ open_link() {
 	esac
 
 }
+
+ghshit() {
+	case "$(get_os)" in
+
+	mac)
+		cat ~/.shitgh | pbcopy
+		;;
+
+	linux)
+		cat ~/.shitgh | xclip -selection clipboard
+		;;
+
+	esac
+
+}
+
+cwd() {
+	case "$(get_os)" in
+
+	mac)
+		pwd | tr -d "\r\n" | pbcopy
+		;;
+
+	linux)
+		pwd | tr -d "\r\n" | xclip -selection clipboard
+		;;
+
+	esac
+
+}
