@@ -121,7 +121,7 @@ alias ga.="git add ."
 alias gP="git -P"
 alias gd="git diff ."
 alias gpll='git pull'
-alias gr="git resotre ."
+alias gr="git restore ."
 alias gr.clean="git restore . && git clean -fd ."
 
 # -- git-open
