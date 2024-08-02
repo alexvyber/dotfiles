@@ -135,6 +135,10 @@ ga.cm.today() {
 	# fi
 }
 
+ga.deleted() {
+	git add $(git ls-files -d)
+}
+
 gcm() {
 	# This function exist only to not use quotes. That's stupid!
 	# for loop with $* expand all input into one string

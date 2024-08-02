@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const { styleText } = require("node:util");
+
 const fs = require("node:fs");
 const path = require("node:path");
 
@@ -21,11 +23,11 @@ const prettierFileContent = `
     "lineWidth": 120,
     "indentStyle": "space",
     "indentWidth": 2,
-    "ignore": ["dist", "build", "node_modules"],
+    "ignore": ["dist", "build", "node_modules", "bin"],
     "attributePosition": "multiline"
   },
   "linter": {
-    "ignore": ["dist", "build", "node_modules"],
+    "ignore": ["dist", "build", "node_modules", "bin"],
     "enabled": true,
     "rules": {
       "recommended": true,
@@ -221,19 +223,24 @@ if (!fs.existsSync(fileName)) {
 
 async function main() {
   const packageJsonPath = path.join(process.cwd(), "package.json");
-  if (!packageJsonPath) return;
 
-  const pj = await import(packageJsonPath, { with: { type: 'json' } });
+  try {
+    const pj = await import(packageJsonPath, { with: { type: "json" } });
 
-  Object.assign(pj.default.scripts, { format: "biome format --write ." });
-  Object.assign(pj.default.scripts, { lint: "biome lint --write ." });
-  Object.assign(pj.default.scripts, {
-    "lint:unsafe": "biome lint --write --unsafe .",
-  });
+    if (pj) {
+      Object.assign(pj.default.scripts, { format: "biome format --write ." });
+      Object.assign(pj.default.scripts, { lint: "biome lint --write ." });
+      Object.assign(pj.default.scripts, {
+        "lint:unsafe": "biome lint --write --unsafe .",
+      });
 
-  fs.writeFile(packageJsonPath, JSON.stringify(pj.default), null, (err) => {
-    console.error(err);
-  });
+      fs.writeFile(packageJsonPath, JSON.stringify(pj.default), null, (err) => {
+        console.error(err);
+      });
+    }
+  } catch (error) {
+    console.log(styleText(["red", "bold"], error.message));
+  }
 }
 
 main();
