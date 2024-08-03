@@ -119,6 +119,13 @@ today.folder() {
 # - $2 time spent
 # - $3 TIL...
 # Output:  nothing
+
+gpu() {
+	git remote add origin https://github.com/alexvyber/bulka.git
+git branch -M main
+git push -u origin main
+}
+
 ga.cm.today() {
 	since_start=$(getDaysSinceStart)
 	message=$(printf "Day $(getDaysSinceStart) ($1 | $2): $3")
