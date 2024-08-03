@@ -1,0 +1,33 @@
+session_name: vyber-cli
+windows:
+- focus: 'true'
+  layout: d21d,264x68,0,0,0
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/vyber-cli
+  window_name: zsh
+- layout: d21e,264x68,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/vyber-cli
+  window_name: zsh
+- layout: d21f,264x68,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/vyber-cli
+  window_name: zsh
+- layout: d220,264x68,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/vyber-cli
+  window_name: zsh
+- layout: d221,264x68,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/vyber-cli
+  window_name: zsh
