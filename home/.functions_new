@@ -70,15 +70,10 @@ cwd() {
 
 }
 
-
-
-
 newrepo() {
-	if [ -z "$1" ] 
-	then 
+	if [ -z "$1" ]; then
 		open_link github.com/new
-	else 
-	 	open_link "github.com/new?name=$1"
+	else
+		open_link "github.com/new?name=$1"
 	fi
- 
 }

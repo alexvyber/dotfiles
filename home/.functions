@@ -121,9 +121,10 @@ today.folder() {
 # Output:  nothing
 
 gpu() {
-	git remote add origin https://github.com/alexvyber/bulka.git
-git branch -M main
-git push -u origin main
+	repo_name=$(pwd | rev | cut -d "/" -f 1 | rev)
+	git remote add origin https://github.com/alexvyber/$repo_name.git
+	git branch -M main
+	git push -u origin main
 }
 
 ga.cm.today() {
