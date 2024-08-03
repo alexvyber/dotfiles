@@ -6,61 +6,61 @@ windows:
   panes:
   - focus: 'true'
     shell_command: yarn dev
-  start_directory: /home/alexs/work/amperspb/cms
+  start_directory: ~/work/amperspb/cms
   window_name: cms-run
 - layout: cbdf,277x66,0,0,2
   options: {}
   panes:
   - focus: 'true'
     shell_command: code .
-  start_directory: /home/alexs/work/amperspb/cms
+  start_directory: ~/work/amperspb/cms
   window_name: cms
 - layout: cbe0,277x66,0,0,3
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/amperspb/cms
+  start_directory: ~/work/amperspb/cms
   window_name: cms
 - layout: cbe1,277x66,0,0,4
   options: {}
   panes:
   - focus: 'true'
     shell_command: pnpm dev
-  start_directory: /home/alexs/work/amperspb/web
+  start_directory: ~/work/amperspb/web
   window_name: web-run
 - layout: cbe2,277x66,0,0,5
   options: {}
   panes:
   - focus: 'true'
     shell_command: code .
-  start_directory: /home/alexs/work/amperspb/web
+  start_directory: ~/work/amperspb/web
   window_name: web
 - layout: cbe3,277x66,0,0,6
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/amperspb/web
+  start_directory: ~/work/amperspb/web
   window_name: web
 - layout: cbe4,277x66,0,0,7
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/amperspb
+  start_directory: ~/work/amperspb
   window_name: root
 - layout: cbe5,277x66,0,0,8
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/amperspb
+  start_directory: ~/work/amperspb
   window_name: root
 - layout: cbe6,277x66,0,0,9
   options: {}
   panes:
   - focus: 'true'
     shell_command: zsh
-  start_directory: /home/alexs/work/amperspb
+  start_directory: ~/work/amperspb
   window_name: root

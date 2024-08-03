@@ -6,68 +6,60 @@ windows:
   panes:
   - focus: 'true'
     shell_command: pnpm dev
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet/api
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet/api
   window_name: api
 - layout: d21e,264x68,0,0,1
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet/api
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet/api
   window_name: api
 - layout: d21f,264x68,0,0,2
   options: {}
   panes:
   - focus: 'true'
     shell_command: pnpm dev
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet/web
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet/web
   window_name: web
 - layout: d220,264x68,0,0,3
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet/web
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet/web
   window_name: web
 - layout: d221,264x68,0,0,4
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet
   window_name: one
 - layout: d222,264x68,0,0,5
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet
   window_name: two
 - layout: d223,264x68,0,0,6
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet
   window_name: zsh
 - layout: d224,264x68,0,0,7
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet
   window_name: zsh
 - layout: d225,264x68,0,0,8
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet
   window_name: zsh
 - layout: d226,264x68,0,0,9
   options: {}
   panes:
   - focus: 'true'
-    # shell_command: zsh
-  start_directory: /Users/alexs/@alexvyber/shmoodle-meet
+  start_directory: ~/@alexvyber/_repos/shmoodle-meet
   window_name: zsh
