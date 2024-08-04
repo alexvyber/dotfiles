@@ -1,8 +1,8 @@
+ZSH_THEME="theme"
 
-# node 
+# node
 export NODE_MODULES_CACHE="$HOME/.node/cache"
 export NODE_COMPILE_CACHE="$HOME/.node/cache"
-# node end
 
 export DISABLE_AUTO_TITLE='true'
 
@@ -10,7 +10,6 @@ export HISTFILE=~/.zsh_history
 export HISTFILESIZE=10000000
 export HISTSIZE=10000000
 export SAVEHIST=10000000
-ZSH_THEME="theme"
 export SYSTEMD_EDITOR=nvim
 
 export GIT_EDITOR=nvim
@@ -37,11 +36,6 @@ export PATH="$$HOME/.composer/vendor/bin:$PATH"
 # https://stackoverflow.com/a/71271754/17619964
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-
-
-# fix for outline
-export PATH="${PATH:+${PATH}:}/usr/bin/core_perl"
-
 # Go path
 GOPATH=$HOME/.go
 export GOPATH
@@ -57,15 +51,9 @@ DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="false" # command auto-correction.
 DISABLE_UNTRACKED_FILES_DIRTY="false"
 
-# // TMP VARIABLES
-# GH="github.com"
-# httpGH="https://github.com"
-export PATH="$HOME/personal/scripts/bin:$PATH"
-
 # Bun
 export BUN_INSTALL="/home/alexs/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
 # bun completions
 [ -s "/home/alexs/.bun/_bun" ] && source "/home/alexs/.bun/_bun"
 
@@ -77,13 +65,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 . "$HOME/.cargo/env"
 export PATH=$PATH:/usr/local/go/bin
 
-
 # Stylef fot history search
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 source $HOME/.zsh_keybindings
-source $HOME/.zsh_docker
-source $HOME/.zsh_podman
 source $HOME/.functions
 source $HOME/.zstyle
 # source ~/.local/fzf/key-bindings.zsh
@@ -92,26 +77,20 @@ source $HOME/.zstyle
 # source ~/.oh-my-zsh/plugins/golang/golang.plugin.zsh
 # source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-
-
 # SOURCING
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
+	print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+	command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+	command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" &&
+		print -P "%F{33} %F{34}Installation successful.%f%b" ||
+		print -P "%F{160} The clone has failed.%f%b"
 fi
-
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-
-
-
 
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -120,7 +99,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw
 
 # Load the pure theme, with zsh-async library that's bundled with it.
-zi ice pick"async.zsh"
+# zi ice pick"async.zsh"
 # src"pure.zsh"
 # zi light sindresorhus/pure
 
@@ -149,7 +128,7 @@ zi ice pick"async.zsh"
 # select Linux package – in this case this is actually not needed, Zinit will
 # grep operating system name and architecture automatically when there's no `bpick'.
 # zi ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
-zi load docker/compose
+# zi load docker/compose
 
 # Vim repository on GitHub – a typical source code that needs compilation – Zinit
 # can manage it for you if you like, run `./configure` and other `make`, etc.
@@ -172,14 +151,6 @@ zi load docker/compose
 # Handle completions without loading any plugin; see "completions" command.
 # This one is to be ran just once, in interactive session.
 # zi creinstall %HOME/my_completions
-
-
-
-
-
-
-# asdf
-# . $HOME/.asdf/asdf.sh
 
 plugins=(git docker docker-compose)
 
@@ -214,7 +185,7 @@ chpwd_functions=( auto_ls $chpwd_functions )
 
 # Make beam cursor https://unix.stackexchange.com/a/496878
 _fix_cursor() {
- echo -ne '\e[5 q'
+	echo -ne '\e[5 q'
 }
 precmd_functions+=(_fix_cursor)
 
@@ -224,46 +195,24 @@ bindkey "^n" sudo-command-line # [Ctrl + N] (for Negate) Prepend/remove 'sudo' f
 do-ls() { exa; }
 add-zsh-hook chpwd do-ls
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Creating hashes for us to be able to navigate with ~t ~f etc
 declareHashes
 autoload -U zmv
 
-# tmuxifier
-# eval "$(tmuxifier init -)"
-
-# zoxide init
-# eval "$(zoxide init zsh --cmd c)"
-
 alias luamake=/home/alexs/repos/lua-language-server/3rd/luamake/luamake
-
-# source /home/alexs/.config/broot/launcher/bash/br
 
 # fnm
 export PATH=/home/alexs/.fnm:$PATH
 eval "$(fnm env --use-on-cd)"
-
-# export VOLTA_HOME="$HOME/.volta"
-# export PATH="$VOLTA_HOME/bin:$PATH"
-# export PYENV_ROOT="$HOME/.pyenv"
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-# eval "$(pyenv virtualenv-init -)"
-
-# Load Angular CLI autocompletion.
-# source <(ng completion script)
 
 # source <(kubectl completion zsh)
 
 # pnpm
 export PNPM_HOME="/home/alexs/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-
 
 # Bind ctrl-r but not up arrow
 eval "$(atuin init zsh --disable-up-arrow)"
@@ -275,13 +224,13 @@ eval "$(atuin init zsh --disable-up-arrow)"
 
 # pwd based on the value of _ZO_RESOLVE_SYMLINKS.
 function __zoxide_pwd() {
-    \builtin pwd -L
+	\builtin pwd -L
 }
 
 # cd + custom logic based on the value of _ZO_ECHO.
 function __zoxide_cd() {
-    # shellcheck disable=SC2164
-    \builtin cd -- "$@"
+	# shellcheck disable=SC2164
+	\builtin cd -- "$@"
 }
 
 # =============================================================================
@@ -291,8 +240,8 @@ function __zoxide_cd() {
 
 # Hook to add new entries to the database.
 function __zoxide_hook() {
-    # shellcheck disable=SC2312
-    \command zoxide add -- "$(__zoxide_pwd)"
+	# shellcheck disable=SC2312
+	\command zoxide add -- "$(__zoxide_pwd)"
 }
 
 # Initialize hook.
@@ -310,53 +259,53 @@ __zoxide_z_prefix='z#'
 
 # Jump to a directory using only keywords.
 function __zoxide_z() {
-    # shellcheck disable=SC2199
-    if [[ "$#" -eq 0 ]]; then
-        __zoxide_cd ~
-    elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
-        __zoxide_cd "$1"
-    elif [[ "$@[-1]" == "${__zoxide_z_prefix}"?* ]]; then
-        # shellcheck disable=SC2124
-        \builtin local result="${@[-1]}"
-        __zoxide_cd "${result:${#__zoxide_z_prefix}}"
-    else
-        \builtin local result
-        # shellcheck disable=SC2312
-        result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" &&
-            __zoxide_cd "${result}"
-    fi
+	# shellcheck disable=SC2199
+	if [[ "$#" -eq 0 ]]; then
+		__zoxide_cd ~
+	elif [[ "$#" -eq 1 ]] && { [[ -d "$1" ]] || [[ "$1" = '-' ]] || [[ "$1" =~ ^[-+][0-9]$ ]]; }; then
+		__zoxide_cd "$1"
+	elif [[ "$@[-1]" == "${__zoxide_z_prefix}"?* ]]; then
+		# shellcheck disable=SC2124
+		\builtin local result="${@[-1]}"
+		__zoxide_cd "${result:${#__zoxide_z_prefix}}"
+	else
+		\builtin local result
+		# shellcheck disable=SC2312
+		result="$(\command zoxide query --exclude "$(__zoxide_pwd)" -- "$@")" &&
+			__zoxide_cd "${result}"
+	fi
 }
 
 # Jump to a directory using interactive search.
 function __zoxide_zi() {
-    \builtin local result
-    result="$(\command zoxide query --interactive -- "$@")" && __zoxide_cd "${result}"
+	\builtin local result
+	result="$(\command zoxide query --interactive -- "$@")" && __zoxide_cd "${result}"
 }
 
 # Completions.
 if [[ -o zle ]]; then
-    function __zoxide_z_complete() {
-        # Only show completions when the cursor is at the end of the line.
-        # shellcheck disable=SC2154
-        [[ "${#words[@]}" -eq "${CURRENT}" ]] || return 0
+	function __zoxide_z_complete() {
+		# Only show completions when the cursor is at the end of the line.
+		# shellcheck disable=SC2154
+		[[ "${#words[@]}" -eq "${CURRENT}" ]] || return 0
 
-        if [[ "${#words[@]}" -eq 2 ]]; then
-            _files -/
-        elif [[ "${words[-1]}" == '' ]] && [[ "${words[-2]}" != "${__zoxide_z_prefix}"?* ]]; then
-            \builtin local result
-            # shellcheck disable=SC2086,SC2312
-            if result="$(\command zoxide query --exclude "$(__zoxide_pwd)" --interactive -- ${words[2,-1]})"; then
-                result="${__zoxide_z_prefix}${result}"
-                # shellcheck disable=SC2296
-                compadd -Q "${(q-)result}"
-            fi
-            \builtin printf '\e[5n'
-        fi
-        return 0
-    }
+		if [[ "${#words[@]}" -eq 2 ]]; then
+			_files -/
+		elif [[ "${words[-1]}" == '' ]] && [[ "${words[-2]}" != "${__zoxide_z_prefix}"?* ]]; then
+			\builtin local result
+			# shellcheck disable=SC2086,SC2312
+			if result="$(\command zoxide query --exclude "$(__zoxide_pwd)" --interactive -- ${words[2, -1]})"; then
+				result="${__zoxide_z_prefix}${result}"
+				# shellcheck disable=SC2296
+				compadd -Q "${(q-)result}"
+			fi
+			\builtin printf '\e[5n'
+		fi
+		return 0
+	}
 
-    \builtin bindkey '\e[0n' 'reset-prompt'
-    [[ "${+functions[compdef]}" -ne 0 ]] && \compdef __zoxide_z_complete __zoxide_z
+	\builtin bindkey '\e[0n' 'reset-prompt'
+	[[ "${+functions[compdef]}" -ne 0 ]] && \compdef __zoxide_z_complete __zoxide_z
 fi
 
 # =============================================================================
@@ -372,41 +321,3 @@ fi
 # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
 #
 eval "$(zoxide init zsh)"
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# fnm
-# export PATH="/home/alexs/.local/share/fnm:$PATH"
-# eval "`fnm env`"
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
-
-
-# . "$HOME/.atuin/bin/env"
-# . /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-
-# Herd injected PHP 8.3 configuration.
-export HERD_PHP_83_INI_SCAN_DIR="/Users/alexs/Library/Application Support/Herd/config/php/83/"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/alexs/Library/Application Support/Herd/bin/":$PATH
-export PATH="/opt/homebrew/opt/krb5/bin:$PATH"
-export PATH=/path/to/depot_tools:$PATH
-
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/Users/alexs/.opam/opam-init/init.zsh' ]] || source '/Users/alexs/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration

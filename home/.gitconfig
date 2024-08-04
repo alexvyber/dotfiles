@@ -1,12 +1,14 @@
 [user]
 	name = Alexey Sokolov
 	email = alexvyber@gmail.com
+
 [core]
 	editor=nvim
 	pager = git-split-diffs --color | less -RFX
 	excludesfile = /home/alexs/.gitignore
 	autocrlf = false
 	filemode = false
+
 [alias]
 	co = checkout
 	cm = commit -m
@@ -67,18 +69,24 @@
 
 [credential "https://github.com"]
 	helper =
+
 [credential "https://gist.github.com"]
 	helper =
+
 [init]
 	defaultBranch = main
+
 [credential]
 	helper = store
+
 [split-diffs]
 	theme-name = github-light
+
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+  
 [color]
 	ui = true

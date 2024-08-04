@@ -1,5 +1,3 @@
-# .bashrc
-
 export HISTFILE=/home/$USER/.hidden/.bash_history
 export SYSTEMD_EDITOR=nvim
 export EDITOR=nvim
@@ -40,6 +38,9 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
+# TODO: work out this stuff
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
 eval "$(atuin init bash)"
+
 . "$HOME/.cargo/env"
