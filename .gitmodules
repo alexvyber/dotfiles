@@ -1,6 +1,0 @@
-[submodule "dot/dot-config/nvim"]
-	path = dot/dot-config/nvim
-	url = https://github.com/alexvyber/nvim
-[submodule "dot/dot-config/awesome"]
-	path = dot/dot-config/awesome
-	url = https://github.com/alexvyber/boring
