@@ -25,7 +25,6 @@ get_os() {
 }
 
 open_link() {
-
 	case "$(get_os)" in
 
 	mac)
@@ -37,7 +36,6 @@ open_link() {
 		;;
 
 	esac
-
 }
 
 ghshit() {
@@ -52,7 +50,6 @@ ghshit() {
 		;;
 
 	esac
-
 }
 
 cwd() {
@@ -67,7 +64,6 @@ cwd() {
 		;;
 
 	esac
-
 }
 
 newrepo() {

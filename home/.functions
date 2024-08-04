@@ -38,17 +38,16 @@ ga.deleted() {
 }
 
 :w() {
-	# This function exist only to not use quotes. That's stupid!
 	# for loop with $* expand all input into one string
 	local message=$(for words in "$*"; do echo $words; done)
 	git commit -m "$message"
 }
 
 ga.sm() {
-	# This function exist only to not use quotes. That's stupid!
 	# for loop with $* expand all input into one string
 	local message=$(for words in "$*"; do echo $words; done)
-	git add . && git commit -m "$message"
+	git add . 
+	git commit -m "$message"
 }
 
 g.diff() {
@@ -117,15 +116,6 @@ tmpd() {
 	cd "$dir" || exit
 }
 
-switch_theme() {
-	if [ $1 == "dark" ]; then
-		change_awesome_theme dark
-		switch-kitty-theme Vyber_dark
-	else
-		echo "asdf"
-	fi
-}
-
 function forkill() {
 	for n in $(pgrep $1); do sudo kill -9 $n; done
 }
@@ -135,18 +125,15 @@ cdbin() {
 	cd $(echo "$(where $1)" | rev | cut -d'/' -f2- | rev | head -n 1)
 }
 
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-# input: https://github.com/user/repo-name.git
-#	output: ./repo_name
-git_clone_cd() {
-	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+g.clone_cd() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1)
 	git clone "$1" $repo
-	c "$(pwd)/$repo"
+	cd "$(pwd)/$repo"
 	echo "Switched into $(pwd)/$repo"
 }
 
-git_clone_clean() {
-	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1 | tr "-" "_")
+g.clone_clean() {
+	repo=$(echo "$1" | rev | cut -d/ -f1 | rev | cut -d. -f1)
 	git clone "$1" $repo
 	rip "$(pwd)/$repo/.git" # rip has to be installed!
 }
@@ -193,7 +180,6 @@ symhere() {
 getor() {
 	local remote=$(git remote -v | head -1 | choose 1)
 	git remote -v | head -1 | choose 1 | xclip -selection clipboard
-
 	echo $remote
 }
 
@@ -207,33 +193,15 @@ watch_with_zsh() {
 	watch 'echo hello | zsh -c "source /path/to/functions; my_fun"'
 }
 
-g.today_commit() {
-	repo=/home/alexs/personal/1000days
-	git --git-dir=$repo/.git -C $repo commit -m "$(cat $repo/.today_commit)"
-}
-
-g.do.today_commit() {
-	repo=/home/alexs/personal/1000days
-	git --git-dir=$repo/.git -C $repo add -A
-	git --git-dir=$repo/.git -C $repo commit -m "$(cat $repo/.today_commit)"
-}
-
-g.do.today_commit.push() {
-	repo=/home/alexs/personal/1000days
-	git --git-dir=$repo/.git -C $repo add -A
-	git --git-dir=$repo/.git -C $repo commit -m "$(cat $repo/.today_commit)"
-	git --git-dir=$repo/.git -C $repo push
-}
-
 jira() {
 	branch=$(git branch | rg '\*' | choose 1)
-	chrome https://firsteld.atlassian.net/browse/$branch
+	# TODO: write script 
 }
 
 # converts image file given as $1 to webp
 # optionally specify the quality as $2, defaults to 50/100
 function image-to-webp() {
-	# Works only on MacOS becaus of `sips`
+	# Works only on MacOS because of `sips`
 	if [[ $(uname) != "Darwin" ]]; then
 		echo "Works only on MacOS"
 		return 1
