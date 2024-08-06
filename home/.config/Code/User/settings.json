@@ -2,6 +2,10 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "tailwindCSS.experimental.classRegex": [
+    ["cvax\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "'JetBrains Mono','Droid Sans Mono', 'monospace'",
   "editor.fontLigatures": true,
