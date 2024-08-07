@@ -1,0 +1,101 @@
+domains_to_block:
+  - twitter.com
+  - www.twitter.com
+  - instagram.com
+  - www.instagram.com
+  - api.twitter.com
+  - x.com
+  - www.x.com
+  - api.x.com
+  - youtube.com
+  - www.youtube.com
+  - studio.youtube.com
+  - whatsapp.com
+  - web.whatsapp.com
+  - gmail.com
+  - www.gmail.com
+  - app.convertkit.com
+  - slack.com
+  - discord.com
+
+bookmarks_api_url: "https://bookmarks.alexvyber.dev/bookmarks"
+
+repos:
+- "@alexvyber/_repos/1000days-cli"
+- "@alexvyber/_repos/1000DaysOfCode"
+- "@alexvyber/_repos/alexvyber"
+- "@alexvyber/_repos/blank"
+- "@alexvyber/_repos/boring"
+- "@alexvyber/_repos/classic"
+- "@alexvyber/_repos/cvax"
+- "@alexvyber/_repos/dazzleui"
+- "@alexvyber/_repos/doingstuff"
+- "@alexvyber/_repos/electro"
+- "@alexvyber/_repos/genstuff"
+- "@alexvyber/_repos/katzen-csv"
+- "@alexvyber/_repos/learn"
+- "@alexvyber/_repos/math-not-meth"
+- "@alexvyber/_repos/neovim"
+- "@alexvyber/_repos/one-billion-checkbox"
+- "@alexvyber/_repos/presentor"
+- "@alexvyber/_repos/pushstuff"
+- "@alexvyber/_repos/shmoodle-meet"
+- "@alexvyber/_repos/spoon"
+- "@alexvyber/_repos/StupidImageUploader"
+- "@alexvyber/_repos/StupidTimer"
+- "@alexvyber/_repos/stw"
+- "@alexvyber/_repos/turbo-helpers"
+- "@alexvyber/_repos/type-challenges"
+- "@alexvyber/_repos/vyber-cli"
+- "@alexvyber/_repos/vybzen"
+- "REPOS/node"
+- "REPOS/fastify"
+- "REPOS/TypeScript"
+- "REPOS/DefinitelyTyped"
+- "REPOS/pino"
+- "REPOS/v8"
+- "REPOS/zustand"
+- "REPOS/vite"
+- "REPOS/strapi"
+- "REPOS/react"
+- "dotfiles"
+- "work/nd/root"
+- "work/dragonfly-eld/api"
+- "work/dragonfly-eld/cms"
+- "work/dragonfly-eld/marketing"
+- "work/dragonfly-eld/mobile"
+- "work/dragonfly-eld/web"
+
+autocommit_repos:
+- "@alexvyber/_repos/vyber-cli"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
