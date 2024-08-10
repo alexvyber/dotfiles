@@ -5,7 +5,7 @@
 # alias c=""
 # alias d="docker"
 # alias e=""
-# alias f=""
+alias f="fastify"
 alias g="git"
 # alias h="omz_history"
 # alias i='clear && iex --erl "-kernel shell_history enabled"'

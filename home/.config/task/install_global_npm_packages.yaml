@@ -2,4 +2,10 @@ version: '3'
 tasks:
   install:
     cmds:
-      - npm i -g --force turbo git-open yarn pnpm@latest git-split-diffs prettier rustywind@latest typescript@latest open @biomejs/biome@latest nodemon git-split-diffs pm2 gulp prettier@latest @alexvyber/vyber-cli
+      - npm i -g --force yarn@latest pnpm@latest 
+      - npm i -g --force git-open open
+      - npm i -g --force typescript@latest 
+      - npm i -g --force git-split-diffs 
+      - npm i -g --force @alexvyber/vyber-cli 
+      - npm i -g --force @biomejs/biome@latest prettier@latest rustywind@latest
+      - npm i -g --force nodemon gulp git-split-diffs pm2 turbo
