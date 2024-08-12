@@ -21,6 +21,8 @@ domains_to_block:
 bookmarks_api_url: "https://bookmarks.alexvyber.dev/bookmarks"
 
 repos:
+- "dotfiles"
+
 - "@alexvyber/_repos/1000days-cli"
 - "@alexvyber/_repos/1000DaysOfCode"
 - "@alexvyber/_repos/alexvyber"
@@ -48,6 +50,8 @@ repos:
 - "@alexvyber/_repos/type-challenges"
 - "@alexvyber/_repos/vyber-cli"
 - "@alexvyber/_repos/vybzen"
+
+### REPOS ###
 - "REPOS/node"
 - "REPOS/fastify"
 - "REPOS/TypeScript"
@@ -58,8 +62,10 @@ repos:
 - "REPOS/vite"
 - "REPOS/strapi"
 - "REPOS/react"
-- "dotfiles"
+
+### WORK ###
 - "work/nd/root"
+
 # drivingbees
 - "work/driving-bees/api"
 - "work/driving-bees/cms"
@@ -69,13 +75,43 @@ repos:
 - "work/driving-bees/docs"
 
 autocommit_repos:
+- "dotfiles"
+
+- "work/driving-bees/api"
+- "work/driving-bees/cms"
+- "work/driving-bees/marketing"
+- "work/driving-bees/mobile"
+- "work/driving-bees/web"
+- "work/driving-bees/docs"
+
 - "@alexvyber/_repos/vyber-cli"
-
-
-
-
-
-
+- "@alexvyber/_repos/1000days-cli"
+- "@alexvyber/_repos/1000DaysOfCode"
+- "@alexvyber/_repos/alexvyber"
+- "@alexvyber/_repos/blank"
+- "@alexvyber/_repos/boring"
+- "@alexvyber/_repos/classic"
+- "@alexvyber/_repos/cvax"
+- "@alexvyber/_repos/dazzleui"
+- "@alexvyber/_repos/doingstuff"
+- "@alexvyber/_repos/electro"
+- "@alexvyber/_repos/genstuff"
+- "@alexvyber/_repos/katzen-csv"
+- "@alexvyber/_repos/learn"
+- "@alexvyber/_repos/math-not-meth"
+- "@alexvyber/_repos/neovim"
+- "@alexvyber/_repos/one-billion-checkbox"
+- "@alexvyber/_repos/presentor"
+- "@alexvyber/_repos/pushstuff"
+- "@alexvyber/_repos/shmoodle-meet"
+- "@alexvyber/_repos/spoon"
+- "@alexvyber/_repos/StupidImageUploader"
+- "@alexvyber/_repos/StupidTimer"
+- "@alexvyber/_repos/stw"
+- "@alexvyber/_repos/turbo-helpers"
+- "@alexvyber/_repos/type-challenges"
+- "@alexvyber/_repos/vyber-cli"
+- "@alexvyber/_repos/vybzen"
 
 
 
