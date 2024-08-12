@@ -62,6 +62,42 @@ repos:
 - "REPOS/vite"
 - "REPOS/strapi"
 - "REPOS/react"
+- "REPOS/eslint"
+- "REPOS/fastify"
+- "REPOS/fastify-vite"
+- "REPOS/headlessui"
+- "REPOS/jotai"
+- "REPOS/knex"
+- "REPOS/ky"
+- "REPOS/ladle"
+- "REPOS/nativewind"
+- "REPOS/next.js"
+- "REPOS/nextra"
+- "REPOS/node"
+- "REPOS/openapi-typescript"
+- "REPOS/pino"
+- "REPOS/prettier-plugin-tailwindcss"
+- "REPOS/react-pdf"
+- "REPOS/react-sortablejs"
+- "REPOS/remeda"
+- "REPOS/sonner"
+- "REPOS/sort-package-json"
+- "REPOS/sql-ts"
+- "REPOS/storybookjs"
+- "REPOS/strapi"
+- "REPOS/stylex"
+- "REPOS/ts-reset"
+- "REPOS/TypeScript"
+- "REPOS/typescript-eslint"
+- "REPOS/TypeStat"
+- "REPOS/undici"
+- "REPOS/uploadthing"
+- "REPOS/v"
+- "REPOS/v8"
+- "REPOS/vite"
+- "REPOS/vite-plugin-stylex"
+- "REPOS/zustand"
+
 
 ### WORK ###
 - "work/nd/root"
@@ -112,8 +148,6 @@ autocommit_repos:
 - "@alexvyber/_repos/type-challenges"
 - "@alexvyber/_repos/vyber-cli"
 - "@alexvyber/_repos/vybzen"
-
-
 
 
 
