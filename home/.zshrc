@@ -33,6 +33,10 @@ export PATH="/home/alexs/REPOS/depot_tools/:$PATH"
 export PATH="$HOME/bin/js:$PATH"
 export PATH="$$HOME/.composer/vendor/bin:$PATH"
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # https://stackoverflow.com/a/71271754/17619964
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 

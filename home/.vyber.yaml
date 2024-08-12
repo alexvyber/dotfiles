@@ -60,11 +60,13 @@ repos:
 - "REPOS/react"
 - "dotfiles"
 - "work/nd/root"
-- "work/dragonfly-eld/api"
-- "work/dragonfly-eld/cms"
-- "work/dragonfly-eld/marketing"
-- "work/dragonfly-eld/mobile"
-- "work/dragonfly-eld/web"
+# drivingbees
+- "work/driving-bees/api"
+- "work/driving-bees/cms"
+- "work/driving-bees/marketing"
+- "work/driving-bees/mobile"
+- "work/driving-bees/web"
+- "work/driving-bees/docs"
 
 autocommit_repos:
 - "@alexvyber/_repos/vyber-cli"
