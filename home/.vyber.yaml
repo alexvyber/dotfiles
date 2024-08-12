@@ -83,7 +83,6 @@ repos:
 - "REPOS/sonner"
 - "REPOS/sort-package-json"
 - "REPOS/sql-ts"
-- "REPOS/storybookjs"
 - "REPOS/strapi"
 - "REPOS/stylex"
 - "REPOS/ts-reset"
