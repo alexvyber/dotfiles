@@ -1,0 +1,40 @@
+session_name: mothman
+windows:
+- focus: 'true'
+  layout: ca1e,264x66,0,0,1
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: code .
+  start_directory: /Users/alexs/@alexvyber/_repos/mothman
+  window_name: root
+- layout: ca1f,264x66,0,0,2
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/mothman/packages/react
+  window_name: react
+- layout: ca20,264x66,0,0,3
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/mothman/packages/react
+  window_name: react
+- layout: ca21,264x66,0,0,4
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/mothman
+  window_name: zsh
+- layout: ca22,264x66,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/@alexvyber/_repos/mothman
+  window_name: zsh
+- layout: ca22,264x66,0,0,5
+  options: {}
+  panes:
+  - focus: 'true'
+  start_directory: /Users/alexs/REPOS/ladle
+  window_name: ladle
