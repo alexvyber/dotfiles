@@ -12,13 +12,13 @@ windows:
   options: {}
   panes:
   - focus: 'true'
-  start_directory: $HOME/@alexvyber/_repos/mothman/packages/react
+  start_directory: $HOME/@alexvyber/_repos/mothman
   window_name: react
 - layout: ca20,264x66,0,0,3
   options: {}
   panes:
   - focus: 'true'
-  start_directory: $HOME/@alexvyber/_repos/mothman/packages/react
+  start_directory: $HOME/@alexvyber/_repos/mothman
   window_name: react
 - layout: ca21,264x66,0,0,4
   options: {}
