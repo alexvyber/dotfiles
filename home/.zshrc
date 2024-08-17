@@ -27,6 +27,7 @@ export PATH="$HOME/elixir/scrips/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/bin/custom:$PATH"
 export PATH="$HOME/.config/tmuxifier/bin:$PATH"
+export PATH="$HOME/.atuin/bin:$PATH"
 export PATH="$HOME/.spoof-dpi/bin:$PATH"
 export PATH="$HOME/scripts/bin:$PATH"
 export PATH="/home/alexs/REPOS/depot_tools/:$PATH"
@@ -325,3 +326,4 @@ fi
 # To initialize zoxide, add this to your configuration (usually ~/.zshrc):
 #
 eval "$(zoxide init zsh)"
+
