@@ -102,23 +102,25 @@ repos:
 - "work/nd/root"
 
 # drivingbees
-- "work/driving-bees/api"
-- "work/driving-bees/cms"
-- "work/driving-bees/marketing"
-- "work/driving-bees/mobile"
-- "work/driving-bees/changelog"
-- "work/driving-bees/web"
-- "work/driving-bees/docs"
+- "work/drivingbees/api"
+- "work/drivingbees/cms"
+- "work/drivingbees/marketing"
+- "work/drivingbees/mobile"
+- "work/drivingbees/changelog"
+- "work/drivingbees/web"
+- "work/drivingbees/docs"
 
 autocommit_repos:
 - "dotfiles"
 
-- "work/driving-bees/api"
-- "work/driving-bees/cms"
-- "work/driving-bees/marketing"
-- "work/driving-bees/mobile"
-- "work/driving-bees/web"
-- "work/driving-bees/docs"
+# drivingbees
+- "work/drivingbees/api"
+- "work/drivingbees/cms"
+- "work/drivingbees/marketing"
+- "work/drivingbees/mobile"
+- "work/drivingbees/changelog"
+- "work/drivingbees/web"
+- "work/drivingbees/docs"
 
 - "@alexvyber/_repos/vyber-cli"
 - "@alexvyber/_repos/1000days-cli"
