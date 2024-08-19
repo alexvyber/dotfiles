@@ -101,7 +101,6 @@ repos:
 ### WORK ###
 - "work/nd/root"
 
-
 # drivingbees
 - "work/drivingbees/api"
 - "work/drivingbees/cms"
@@ -111,6 +110,12 @@ repos:
 - "work/drivingbees/design-system"
 - "work/drivingbees/web"
 - "work/drivingbees/docs"
+
+# drivingbees
+- "work/acepicks/api"
+- "work/acepicks/cms"
+- "work/acepicks/mobile"
+- "work/acepicks/web"
 
 autocommit_repos:
 - "dotfiles"
@@ -124,6 +129,12 @@ autocommit_repos:
 - "work/drivingbees/design-system"
 - "work/drivingbees/web"
 - "work/drivingbees/docs"
+
+# drivingbees
+- "work/acepicks/api"
+- "work/acepicks/cms"
+- "work/acepicks/mobile"
+- "work/acepicks/web"
 
 - "@alexvyber/_repos/vyber-cli"
 - "@alexvyber/_repos/1000days-cli"
