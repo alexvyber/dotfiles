@@ -101,12 +101,14 @@ repos:
 ### WORK ###
 - "work/nd/root"
 
+
 # drivingbees
 - "work/drivingbees/api"
 - "work/drivingbees/cms"
 - "work/drivingbees/marketing"
 - "work/drivingbees/mobile"
 - "work/drivingbees/changelog"
+- "work/drivingbees/design-system"
 - "work/drivingbees/web"
 - "work/drivingbees/docs"
 
@@ -119,6 +121,7 @@ autocommit_repos:
 - "work/drivingbees/marketing"
 - "work/drivingbees/mobile"
 - "work/drivingbees/changelog"
+- "work/drivingbees/design-system"
 - "work/drivingbees/web"
 - "work/drivingbees/docs"
 
