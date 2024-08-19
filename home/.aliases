@@ -35,7 +35,7 @@ alias zz="source ~/.zshrc" # Experiment | Delete if need z
 # --
 alias sudo='sudo '
 
-alias task="go-task "
+# alias task="go-task "
 
 # Editing config files
 # --
