@@ -3,29 +3,29 @@ session_name: acepicks
 windows:
   - layout: cabe,137x66,0,0,1
     options: {}
-    start_directory: /home/alexs/work/acepicks/api
+    start_directory: $HOME/work/acepicks/api
     window_name: api
 
   - layout: cac0,137x66,0,0,3
     options: {}
-    start_directory: /home/alexs/work/acepicks/cms
+    start_directory: $HOME/work/acepicks/cms
     window_name: cms
 
   - layout: cac2,137x66,0,0,5
     options: {}
-    start_directory: /home/alexs/work/acepicks/web
+    start_directory: $HOME/work/acepicks/web
     window_name: web
 
 
   - focus: 'true'
     :layout: cac3,137x66,0,0,6
     options: {}
-    start_directory: /home/alexs/work/acepicks
+    start_directory: $HOME/work/acepicks
     window_name: root
 
   - layout: cac4,137x66,0,0,7
     options: {}
-    start_directory: /home/alexs/work/acepicks
+    start_directory: $HOME/work/acepicks
     window_name: root
 
 
@@ -34,7 +34,7 @@ windows:
     panes:
       - focus: 'true'
         shell_command: sleep 5 && pnpm dev
-    start_directory: /home/alexs/work/acepicks/api
+    start_directory: $HOME/work/acepicks/api
     window_name: api
 
   - layout: cabf,137x66,0,0,2
@@ -42,7 +42,7 @@ windows:
     panes:
       - focus: 'true'
         shell_command: sleep 5 && yarn dev
-    start_directory: /home/alexs/work/acepicks/cms
+    start_directory: $HOME/work/acepicks/cms
     window_name: cms
 
   - layout: cac1,137x66,0,0,4
@@ -50,7 +50,7 @@ windows:
     panes:
       - focus: 'true'
         shell_command: pnpm dev
-    start_directory: /home/alexs/work/acepicks/web
+    start_directory: $HOME/work/acepicks/web
     window_name: web
 
 
@@ -58,10 +58,10 @@ windows:
     options: {}
     panes:
       - shell_command:
-          - cd /home/alexs/work/acepicks/api
+          - cd $HOME/work/acepicks/api
           - docker compose up
       - focus: 'true'
         shell_command:
-          - cd /home/alexs/work/acepicks/cms
+          - cd $HOME/work/acepicks/cms
           - docker run -it --rm -p 5070:7700 getmeili/meilisearch:v1.9
     window_name: db
