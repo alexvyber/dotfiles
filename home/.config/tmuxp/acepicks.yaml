@@ -1,0 +1,67 @@
+session_name: acepicks
+
+windows:
+  - layout: cabe,137x66,0,0,1
+    options: {}
+    start_directory: /home/alexs/work/acepicks/api
+    window_name: api
+
+  - layout: cac0,137x66,0,0,3
+    options: {}
+    start_directory: /home/alexs/work/acepicks/cms
+    window_name: cms
+
+  - layout: cac2,137x66,0,0,5
+    options: {}
+    start_directory: /home/alexs/work/acepicks/web
+    window_name: web
+
+
+  - focus: 'true'
+    :layout: cac3,137x66,0,0,6
+    options: {}
+    start_directory: /home/alexs/work/acepicks
+    window_name: root
+
+  - layout: cac4,137x66,0,0,7
+    options: {}
+    start_directory: /home/alexs/work/acepicks
+    window_name: root
+
+
+  - layout: cabd,137x66,0,0,0
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: pnpm dev
+    start_directory: /home/alexs/work/acepicks/api
+    window_name: api
+
+  - layout: cabf,137x66,0,0,2
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: yarn dev
+    start_directory: /home/alexs/work/acepicks/cms
+    window_name: cms
+
+  - layout: cac1,137x66,0,0,4
+    options: {}
+    panes:
+      - focus: 'true'
+        shell_command: pnpm dev
+    start_directory: /home/alexs/work/acepicks/web
+    window_name: web
+
+
+  - layout: 1ce2,137x66,0,0[137x33,0,0,9,137x32,0,34,12]
+    options: {}
+    panes:
+      - shell_command:
+          - cd /home/alexs/work/acepicks/api
+          - docker compose up
+      - focus: 'true'
+        shell_command:
+          - cd /home/alexs/work/acepicks/cms
+          - docker run -it --rm -p 5070:7700 getmeili/meilisearch:v1.9
+    window_name: db
