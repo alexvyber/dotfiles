@@ -46,7 +46,7 @@ ga.deleted() {
 ga.sm() {
 	# for loop with $* expand all input into one string
 	local message=$(for words in "$*"; do echo $words; done)
-	git add . 
+	git add .
 	git commit -m "$message"
 }
 
@@ -195,7 +195,7 @@ watch_with_zsh() {
 
 jira() {
 	branch=$(git branch | rg '\*' | choose 1)
-	# TODO: write script 
+	# TODO: write script
 }
 
 # converts image file given as $1 to webp
