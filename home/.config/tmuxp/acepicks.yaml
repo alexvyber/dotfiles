@@ -4,6 +4,9 @@ windows:
   - layout: cabe,137x66,0,0,1
     options: {}
     start_directory: $HOME/work/acepicks/client
+    panes:
+    - focus: 'true'
+      shell_command: code .
     window_name: client
 
   - layout: cac0,137x66,0,0,3
