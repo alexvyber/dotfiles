@@ -50,6 +50,13 @@ ga.sm() {
 	git commit -m "$message"
 }
 
+unalias gcm
+gcm() {
+	# for loop with $* expand all input into one string
+	local message=$(for words in "$*"; do echo $words; done)
+	git commit -m "$message"
+}
+
 g.diff() {
 	if [ "$1" != "" ]; then
 		git diff $1~ $1
